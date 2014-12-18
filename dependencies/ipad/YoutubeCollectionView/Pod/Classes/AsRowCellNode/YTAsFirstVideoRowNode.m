@@ -70,10 +70,7 @@
 
 
 - (void)buttonTapped:(id)buttonTapped {
-
    [[MxTabBarManager sharedTabBarManager] pushWithVideo:self.nodeInfo];
-
-//      [self.delegate gridViewCellTap:self.detailVideo];// TODO [test] djzhang gridViewCellTap
 }
 
 @end

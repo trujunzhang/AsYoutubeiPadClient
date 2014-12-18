@@ -100,7 +100,7 @@
 
 + (CGRect)frameForDurationWithCloverSize:(CGSize)cloverSize withDurationWidth:(CGFloat)durationWidthIs {
    CGFloat durationHeight = 18;
-   return CGRectMake(cloverSize.width - durationWidthIs + 1, cloverSize.height - durationHeight, durationWidthIs, durationHeight);
+   return CGRectMake(cloverSize.width - durationWidthIs - 1, cloverSize.height - durationHeight - 1, durationWidthIs, durationHeight);
 }
 
 

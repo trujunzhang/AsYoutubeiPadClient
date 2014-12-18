@@ -5,6 +5,7 @@
 
 #import "YTAsThirdVideoRowNode.h"
 #import "UIColor+iOS8Colors.h"
+#import "Foundation.h"
 
 
 @interface YTAsThirdVideoRowNode () {
@@ -21,33 +22,19 @@
 
 - (void)makeRowNode {
    _channelTitleNode = [ASTextNode initWithAttributedString:
-    [[NSAttributedString alloc] initWithString:[YoutubeParser getVideoSnippetChannelTitle:self.nodeInfo]
-                                    attributes:[self textStyleForChannelTitle]]];
+    [NSAttributedString attributedStringForCollectionChannelTitle:[YoutubeParser getVideoSnippetChannelTitle:self.nodeInfo]
+                                                         fontSize:12.0f]];
+
    [self addSubnode:_channelTitleNode];
 
    // hairline cell separator
    _divider = [[ASDisplayNode alloc] init];
 
    _divider.backgroundColor =
-    [UIColor iOS8lightGrayColor];
-//    [UIColor lightGrayColor];
+//    [UIColor iOS8lightGrayColor];
+    [UIColor lightGrayColor];
+
    [self addSubnode:_divider];
-}
-
-
-- (NSDictionary *)textStyleForChannelTitle {
-   UIFont * font = [UIFont fontWithName:@"HelveticaNeue" size:12.0f];
-
-   NSMutableParagraphStyle * style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-   style.paragraphSpacing = 0.5 * font.lineHeight;
-   style.hyphenationFactor = 1.0;
-   style.lineBreakMode = NSLineBreakByTruncatingTail;
-
-   return @{
-    NSFontAttributeName : font,
-    NSParagraphStyleAttributeName : style,
-    NSForegroundColorAttributeName : [UIColor lightGrayColor]
-   };
 }
 
 
@@ -57,9 +44,8 @@
 
 
 - (void)layout {
-   CGFloat titleLeftX = 2.0f;
    CGFloat titleWidth = 180.0f;
-   _channelTitleNode.frame = CGRectMake(titleLeftX, self.cellRect.size.height-18, titleWidth, 20);
+   _channelTitleNode.frame = CGRectMake(VIDEO_TITLE_PADDING_LEFT, self.cellRect.size.height - 18, titleWidth, 20);
 
    CGFloat pixelHeight = 1.0f / [[UIScreen mainScreen] scale];
    _divider.frame =

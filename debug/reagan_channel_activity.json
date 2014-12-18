@@ -1,0 +1,1381 @@
+//GET https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&channelId=UCEJi23qnygQHE5UeLXoV_JQ&maxResults=50&key={YOUR_API_KEY}
+//
+//Authorization:  Bearer ya29.4ADVxVpP2XI2lXH9Yo_448AI9_tppSjgzXwPR-yVZYxJPx6G7lSEosmU
+//X-JavaScript-User-Agent:  Google APIs Explorer
+
+
+//200 OK
+//
+//- Hide headers -
+//
+//cache-control:  private, max-age=120, must-revalidate, no-transform
+//content-encoding:  gzip
+//content-length:  6684
+//content-type:  application/json; charset=UTF-8
+//date:  Thu, 18 Dec 2014 12:34:32 GMT
+//etag:  "F9iA7pnxqNgrkOutjQAa9F2k8HY/Rs3nYIqRfFyoHo5_5FEjot4OTlQ"
+//expires:  Thu, 18 Dec 2014 12:34:32 GMT
+//server:  GSE
+//vary:  Origin, X-Origin
+
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/Rs3nYIqRfFyoHo5_5FEjot4OTlQ\"",
+  "nextPageToken": "CDIQAA",
+  "pageInfo": {
+    "totalResults": 654,
+    "resultsPerPage": 50
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/oCZt-AqgyscYkYhFXEsp-3pat94\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Qa7icmqgsow"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-02T17:28:52.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Challenger: President Reagan's Challenger Disaster Speech - 1/28/86",
+        "description": "President Reagan talks to the nation about the Challenger Disaster 1/28/86. For more information on the ongoing works of President Reagan's Foundation, visit.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Qa7icmqgsow/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Qa7icmqgsow/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Qa7icmqgsow/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/0a09SSyNLQWRIa6OV12KO-OeqIM\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "eEIqdcHbc8I"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-16T20:30:13.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Normandy Speech: Ceremony Commemorating the 40th Anniversary of the Normandy Invasion, D-Day  6/6/84",
+        "description": "President Reagan's Address at the Ceremony Commemorating the 40th Anniversary of the Normandy Invasion, D-day at Point-du-Hoc - 6/6/84. For more ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/eEIqdcHbc8I/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/eEIqdcHbc8I/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/eEIqdcHbc8I/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/QyGgU_WIwQbwh2jFteVGgADtpKg\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1Leb7ynduCU"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-16T23:06:46.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Normandy Speech: President Reagans Address Commemorating 40th Anniversary of Normandy/D-Day  6/6/84",
+        "description": "President Reagan's Address at a United States-France Ceremony Commemorating the 40th Anniversary of the Normandy Invasion/D-Day - 6/6/84. For more ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1Leb7ynduCU/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1Leb7ynduCU/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1Leb7ynduCU/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/ZWC-oprFqWZqsoSDfCSx4uD-aKE\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "qXBswFfh6AY"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-03T00:33:53.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "\"A Time for Choosing\" by Ronald Reagan",
+        "description": "Televised Campaign Address for Goldwater Presidential Campaign - 10/27/64. For more information on the ongoing works of President Reagan's Foundation, ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/qXBswFfh6AY/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/qXBswFfh6AY/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/qXBswFfh6AY/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/QGlC5MIHxFgU_LrEYqEhznmtaIQ\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "13xx1J5FdNE"
+      },
+      "snippet": {
+        "publishedAt": "2009-08-13T16:22:07.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Address to the Nation on U.S. Air Strike against Libya - 4/14/86",
+        "description": "President Reagan's Address to the Nation on United States Air Strike against Libya on 4/14/86. For more information on the ongoing works of President Reagan' ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/13xx1J5FdNE/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/13xx1J5FdNE/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/13xx1J5FdNE/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/95ZlXUn0Bz9lp23II2oerv2ABKE\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "F1USSb9o6Ws"
+      },
+      "snippet": {
+        "publishedAt": "2009-06-29T18:21:36.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Ceremony to launch Drunk Driving campaign and Presidential Humanitarian Award to Michael Jackson",
+        "description": "A ceremony to launch Drunk Driving campaign & Presidential Humanitarian Award to Michael Jackson on May 14, 1984. For more information on the ongoing ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/F1USSb9o6Ws/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/F1USSb9o6Ws/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/F1USSb9o6Ws/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/6THyQ7dwdmXbeCkc9lKi0D9nGFM\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "LToM9bAnsyM"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-15T22:38:48.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "1st Inaugural Address: President Reagans Inaugural Address  1/20/81",
+        "description": "President Reagan's 1st Inaugural address including being sworn into office - 1/20/81. For more information on the ongoing works of President Reagan's Foundat ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/LToM9bAnsyM/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/LToM9bAnsyM/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/LToM9bAnsyM/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/47u-TI_63-1nEMf7fo6bhhiuR7E\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9VA4W1wDMAk"
+      },
+      "snippet": {
+        "publishedAt": "2011-04-23T18:11:46.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Address to the Nation on the Soviet Attack on a Korean Airliner (KAL 007)",
+        "description": "President Reagan's Address to the Nation on the Soviet Attack on a Korean Airliner (KAL 007) on September 5, 1983. For more information on the ongoing ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9VA4W1wDMAk/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9VA4W1wDMAk/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9VA4W1wDMAk/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/B2_9I7BuXuVsafSaMXKQ_wNELbw\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "j3ZTCPJ39LA"
+      },
+      "snippet": {
+        "publishedAt": "2009-12-01T22:49:45.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Remarks and Q & A with reporters on the Air Traffic Controllers (PATCO) strike",
+        "description": "President Reagan's remarks and Q & A session with reporters on the Air Traffic Controllers (PATCO) strike on 8/3/81. For more information on the ongoing work...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/j3ZTCPJ39LA/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/j3ZTCPJ39LA/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/j3ZTCPJ39LA/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/JG1fkSJoal6xUQin9T1sk-STJLQ\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ynIW7CN08sc"
+      },
+      "snippet": {
+        "publishedAt": "2010-06-29T19:38:40.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Address to the Nation on Independence Day - 7/4/86",
+        "description": "President Reagan's Address to the Nation on Independence Day on July 4, 1986. For more information on the ongoing works of President Reagan's Foundation, ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ynIW7CN08sc/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ynIW7CN08sc/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ynIW7CN08sc/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/5CSrqySLSmA2we-d15XnVvMXX4U\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "5MDFX-dNtsM"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-15T18:07:07.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "\"Berlin Wall\" Speech - President Reagan's Address at the Brandenburg Gate - 6/12/87",
+        "description": "President Reagan's remarks on East-West relations at the Brandenburg Gate in West Berlin, Germany on June 12, 1987. For more information on the ongoing ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/5MDFX-dNtsM/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/5MDFX-dNtsM/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/5MDFX-dNtsM/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/WekWH5fy0M-liRtEarrrPUizhZ0\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "UKVsq2daR8Q"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-15T23:45:48.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Farewell Speech - President Reagan's Farewell Speech from the Oval Office  1/11/89",
+        "description": "President Ronald Reagan's Farewell Address to the Nation on 1/11/89. For more information on the ongoing works of President Reagan's Foundation, visit us at ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UKVsq2daR8Q/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UKVsq2daR8Q/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UKVsq2daR8Q/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/i3Veh67HBhtgRMIFBkxC9dzpOdc\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jRhCC-6Wdp8"
+      },
+      "snippet": {
+        "publishedAt": "2009-08-28T21:33:28.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's remarks at JFK Library Fundraiser - 6/24/85",
+        "description": "President Reagan's remarks at JFK Library Fundraiser on June 24, 1985. For more information on the ongoing works of President Reagan's Foundation, visit us ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jRhCC-6Wdp8/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jRhCC-6Wdp8/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jRhCC-6Wdp8/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/_cd0lKHA61YxHQZX_SsAhIWTLLM\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "TEtevsyhmxI"
+      },
+      "snippet": {
+        "publishedAt": "2011-04-13T21:32:58.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Radio Address to the Nation on the Observance of Easter and Passover - 4/2/83",
+        "description": "President Reagan's Radio Address to the Nation on the Observance of Easter and Passover on April 2, 1983. For more information on the ongoing works of ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/TEtevsyhmxI/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/TEtevsyhmxI/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/TEtevsyhmxI/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/saFoRHO0J5K7Jw69CtnR2CQ-FjE\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Zn9fR_-X9uw"
+      },
+      "snippet": {
+        "publishedAt": "2012-01-31T23:52:17.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "\"PROUDER, STONGER, BETTER\"",
+        "description": "1984 Re-election Campaign Commercial for Ronald Reagan.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Zn9fR_-X9uw/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Zn9fR_-X9uw/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Zn9fR_-X9uw/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/CQrYsvCN3ruR92uOYO_2emwQ6so\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "2y1CDnbG56I"
+      },
+      "snippet": {
+        "publishedAt": "2010-04-29T19:08:33.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Remarks at Memorial Day Ceremonies Honoring an Unknown Serviceman of the Vietnam Conflict - 5/28/84",
+        "description": "President Reagan's Remarks at Memorial Day Ceremonies Honoring an Unknown Serviceman of the Vietnam Conflict on May 28, 1984. For more information ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/2y1CDnbG56I/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/2y1CDnbG56I/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/2y1CDnbG56I/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/YlDdMFTdv6uqKKA64EkW2yteR8Q\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_eSmfldz_bA"
+      },
+      "snippet": {
+        "publishedAt": "2013-09-17T18:58:15.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Ronald Reagan's Remarks at the Republican National Convention in Kansas City, Missouri — 9/19/76",
+        "description": "For more information on the ongoing works of President Reagan's Foundation, please visit http://www.reaganfoundation.org.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_eSmfldz_bA/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_eSmfldz_bA/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_eSmfldz_bA/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/F1StAEmjmWGlyfJUaaB_IPUzDig\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ulQ7kJIhZqg"
+      },
+      "snippet": {
+        "publishedAt": "2014-10-24T23:22:35.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Remembering \"A Time for Choosing\"",
+        "description": "Fifty years ago, journalist David Broder described Ronald Reagan's speech on behalf of presidential candidate Barry Goldwater as “the most successful politic...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ulQ7kJIhZqg/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ulQ7kJIhZqg/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ulQ7kJIhZqg/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/xlpJlYj93RbIUx_18zSb4OqobUQ\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "bP6WCxBBrmo"
+      },
+      "snippet": {
+        "publishedAt": "2010-04-16T23:55:58.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Remarks at the Annual White House Correspondents Association Dinner",
+        "description": "President Reagan's Remarks at the Annual White House Correspondents Association Dinner on April 21, 1988. For more information on the ongoing works of ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/bP6WCxBBrmo/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/bP6WCxBBrmo/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/bP6WCxBBrmo/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/lMF7bilSHS9slkHar5SmT2lGMLg\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VabSFBQjT7U"
+      },
+      "snippet": {
+        "publishedAt": "2014-09-29T16:27:07.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Perspectives on Leadership Forum with Dr. Ben Carson — 9/28/14",
+        "description": "On Sunday, September 28 Dr. Ben Carson visited the Reagan Library for a lecture and book signing on his number one New York Times bestselling book.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VabSFBQjT7U/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VabSFBQjT7U/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VabSFBQjT7U/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/70xRpUkLVZf3LAXyHgGyPc6Onzg\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9kiFK6xxE08"
+      },
+      "snippet": {
+        "publishedAt": "2012-12-10T22:08:30.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Address to the Nation About Christmas and the Situation in Poland — 12/23/81",
+        "description": "For more information on the ongoing works of President Reagan's Foundation, please visit http://www.reaganfoundation.org.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9kiFK6xxE08/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9kiFK6xxE08/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9kiFK6xxE08/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/J2JZ0QnETDmi5xOdarGF6spnAks\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "DHJmjpxuEuk"
+      },
+      "snippet": {
+        "publishedAt": "2012-08-16T15:18:49.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Remarks at the Annual White House Correspondents Dinner - 4/17/86",
+        "description": "For more information on the ongoing works of President Reagan's Foundation, please visit http://www.reaganfoundation.org.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/DHJmjpxuEuk/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/DHJmjpxuEuk/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/DHJmjpxuEuk/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/POyveEds7swYel8zuQegvhGF840\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "H3w_rsGmPAw"
+      },
+      "snippet": {
+        "publishedAt": "2012-08-15T19:08:56.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Remarks at a Dinner Honoring Speaker of the House of Representatives Thomas P. O'Neill, Jr.",
+        "description": "For more information on the ongoing works of President Reagan's Foundation, please visit http://www.reaganfoundation.org.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/H3w_rsGmPAw/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/H3w_rsGmPAw/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/H3w_rsGmPAw/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/Qa3EV0SuZ7OkA4lfF5F8OkcYo2A\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "uCu7-Ka_zbY"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-21T19:10:35.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "British Parliament: President Reagan's Address to Members of the British Parliament - 6/8/82",
+        "description": "President Reagan's address to members of the British Parliament on 6/8/82. For more information on the ongoing works of President Reagan's Foundation, visit .",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/uCu7-Ka_zbY/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/uCu7-Ka_zbY/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/uCu7-Ka_zbY/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/fbz2Kqph-g92unZ5OPpa_8uWNKk\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "AYrlDlrLDSQ"
+      },
+      "snippet": {
+        "publishedAt": "2009-07-23T21:53:05.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Ronald Reagan speaks out on Socialized Medicine - Audio",
+        "description": "Ronald Reagan speaks out on Socialized Medicine, circa 1961. Audio file. For more information on the ongoing works of President Reagan's Foundation, visit ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/AYrlDlrLDSQ/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/AYrlDlrLDSQ/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/AYrlDlrLDSQ/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/xzGuIpyOvXWURMgUfWPKFeDvBIQ\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "6Ry_kId1jOY"
+      },
+      "snippet": {
+        "publishedAt": "2012-09-12T21:58:20.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "A Video Tour of the Reagan Library (pre-renovation)  with Host Gary Sinise",
+        "description": "A Video Tour of the Reagan Library (pre-renovation) with Host Gary Sinise. For more information on the ongoing works of President Reagan's Foundation, visit ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6Ry_kId1jOY/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6Ry_kId1jOY/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6Ry_kId1jOY/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/8Wp6moGpGq_LJdEHGN0Tl2ZCmI8\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fgqJb6QIO6k"
+      },
+      "snippet": {
+        "publishedAt": "2011-03-03T01:35:59.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "A tribute to President Reagan done by Bel Air Presbyterian",
+        "description": "A tribute to President Reagan done by Bel Air Presbyterian -- his home parish. Thanks to the Bel Air Presbyterian for the video.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fgqJb6QIO6k/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fgqJb6QIO6k/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fgqJb6QIO6k/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/tcX9JdyzpAXWV_1dAWUQw1LCQwQ\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_lzPbJ_ek5c"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-22T22:44:12.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "2nd Inaugural Address: President Reagan's Inaugural Address - 1/21/85",
+        "description": "President Reagan's 2nd Inaugural Address including taking the Oath of Office on 1/21/85. For more information on the ongoing works of President Reagan's ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_lzPbJ_ek5c/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_lzPbJ_ek5c/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_lzPbJ_ek5c/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/7U_VTnJEJOR3iU0r24j5jQad2Eg\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1ZtIMgKsegs"
+      },
+      "snippet": {
+        "publishedAt": "2014-03-31T22:58:19.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Inside the Reagan Library: Behind-the-Scenes of the Greg Gutfeld Book Signing — 3/26/14",
+        "description": "To purchase an autographed copy of Greg Gutfeld's latest book, \"Not Cool: The Hipster Elite and Their War on You\" (Publish Date: March 18, 2014) visit https:...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1ZtIMgKsegs/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1ZtIMgKsegs/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1ZtIMgKsegs/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/ot3tfYB9o71BlMhFc3FCW4Q6lAw\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "YdJ3jJr8YGw"
+      },
+      "snippet": {
+        "publishedAt": "2010-04-28T22:56:13.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Remarks at The Annual National Prayer Breakfast on February 4, 1982.",
+        "description": "President Reagan's Remarks at The Annual National Prayer Breakfast on February 4, 1982. For more information on the ongoing works of President Reagan's ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/YdJ3jJr8YGw/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/YdJ3jJr8YGw/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/YdJ3jJr8YGw/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/FW7RsIvNsq4SBiNf-bUxZiHSCPA\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_-0V7r8XYE8"
+      },
+      "snippet": {
+        "publishedAt": "2010-05-01T00:51:23.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Remarks at a Service in Fort Campbell, Kentucky",
+        "description": "President Reagan's Remarks at a Service in Fort Campbell, Kentucky, for the Members of the 101st Airborne Division who died in the Airplane crash in Gander, .",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_-0V7r8XYE8/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_-0V7r8XYE8/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_-0V7r8XYE8/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/Qzd7sICJhb7WoXHVTjO00JjUwJY\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "J5iBJvuXwo0"
+      },
+      "snippet": {
+        "publishedAt": "2014-03-18T16:25:59.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Visiting the Reagan Library (Voiced by President Ronald Reagan)",
+        "description": "In this video, take a two minute tour of the Reagan Library, voiced by President Ronald Reagan. For more information on the ongoing works of President Reagan ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/J5iBJvuXwo0/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/J5iBJvuXwo0/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/J5iBJvuXwo0/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/6CpQlN8XTbTp15gtpPbJUuTiP-M\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Q-azn1U9yGk"
+      },
+      "snippet": {
+        "publishedAt": "2012-03-11T02:31:58.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "A Reagan Forum with Mark Levin - 3/9/12",
+        "description": "A Reagan Forum with Mark Levin on Friday, March 9, 2012. For more information on the ongoing works of President Reagan's Foundation, please visit ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Q-azn1U9yGk/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Q-azn1U9yGk/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Q-azn1U9yGk/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/mczeVCyFsDuhSKjqszlTAYFTX_I\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "j2UlBvJIE24"
+      },
+      "snippet": {
+        "publishedAt": "2013-11-03T13:46:18.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "A Reagan Forum with Dr. Charles Krauthammer — 11/2/13",
+        "description": "For more information on the ongoing works of President Reagan's Foundation, please visit http://www.reaganfoundation.org.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/j2UlBvJIE24/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/j2UlBvJIE24/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/j2UlBvJIE24/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/XOzzv7jl7e6icd7nbARSaRZTlpc\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "FcSm-KAEFFA"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-03T19:44:54.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "\"Evil Empire\" Speech by President Reagan - Address to the National Association of Evangelicals",
+        "description": "Address to the National Association of Evangelicals at Sheraton Twin Towers Hotel, Orlando, FL on 3/8/83. For more information on the ongoing works of Presid.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/FcSm-KAEFFA/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/FcSm-KAEFFA/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/FcSm-KAEFFA/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/sS0G5zH99OY6eljTm2V6BaHKcTI\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "DtNJQ6gP8W4"
+      },
+      "snippet": {
+        "publishedAt": "2014-06-12T17:08:01.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "A Reagan Forum with Vin Scully — 6/11/14",
+        "description": "For more information on the ongoing works of President Reagan's Foundation, please visit http://www.reaganfoundation.org.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/DtNJQ6gP8W4/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/DtNJQ6gP8W4/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/DtNJQ6gP8W4/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/RNuvroXGUPaP5_1llL1WBe1f078\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jgb0tu0FRn0"
+      },
+      "snippet": {
+        "publishedAt": "2014-10-08T15:56:49.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Inside the Reagan Library: Behind-the-Scenes at the Ben Carson Book Signing — 9/28/14",
+        "description": "To purchase a hardcover copy of Ben Carson's book \"One Nation: What We Can All Do to Save America's Future\" visit https://secure3.convio.net/reagan/site/Ecom...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jgb0tu0FRn0/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jgb0tu0FRn0/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jgb0tu0FRn0/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/gyjqTQRI376BiBA1PHGC9Hvia7Q\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7T-7BnFo5ao"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-27T22:33:59.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Economic Recovery: President Reagan's Address to Congress on the Economic Recovery Program - 4/28/81",
+        "description": "President Reagan's Address to a joint session of congress on the program for economic recovery - 4/28/81. For more information on the ongoing works of Presid.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7T-7BnFo5ao/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7T-7BnFo5ao/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7T-7BnFo5ao/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/DBABb6ErgPbHno6qlDL5LIeH4Dk\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "P0EDIQ5uEEo"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-02T19:25:15.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Notre Dame Commencement Address: President Reagans Source of all Strength Speech, 1981",
+        "description": "1981 Notre Dame Commencement Address by President Ronald Reagan. For more information on the ongoing works of President Reagan's Foundation, visit ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/P0EDIQ5uEEo/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/P0EDIQ5uEEo/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/P0EDIQ5uEEo/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/YFUKbUGn7KHpx5-pQf-MCifftGc\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "zO4NswWWzI8"
+      },
+      "snippet": {
+        "publishedAt": "2010-05-01T02:22:50.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Radio Address to The Nation on the Observance of Mother's Day",
+        "description": "President Reagan's Radio Address to The Nation on the Observance of Mother's Day on May 7, 1983. For more information on the ongoing works of President ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zO4NswWWzI8/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zO4NswWWzI8/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zO4NswWWzI8/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/ebnWqeMV7yJKp9MeObtYcPQ-aMQ\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ApTnYwh5KvE"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-16T18:25:19.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "National Security: President Reagans Address on Defense and National Security  3/23/83",
+        "description": "President Reagan's Address to the Nation on Defense and National Security including the SDI - 3/23/83. For more information on the ongoing works of President ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ApTnYwh5KvE/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ApTnYwh5KvE/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ApTnYwh5KvE/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/-28nvifTwrMWq6Gncwn-h7uys1c\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "FCJa2mjLPmQ"
+      },
+      "snippet": {
+        "publishedAt": "2011-02-15T20:11:00.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "NASCAR - Reagan Tribute Video",
+        "description": "The Ronald Reagan Presidential Foundation is honored to partner with NASCAR for the 2011 Daytona 500 and the Auto Club 400. Ronald Reagan loved all ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/FCJa2mjLPmQ/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/FCJa2mjLPmQ/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/FCJa2mjLPmQ/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/54B3dpSnu8xjtU35LtFKtzCZ8VI\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "tuPI8e8knSw"
+      },
+      "snippet": {
+        "publishedAt": "2011-01-05T00:39:03.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Remarks at an Ecumenical Prayer Breakfast in Dallas, Texas - 8/23/84",
+        "description": "President Reagan's Remarks at an Ecumenical Prayer Breakfast in Dallas, Texas on August 23, 1984. For more information on the ongoing works of President ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/tuPI8e8knSw/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/tuPI8e8knSw/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/tuPI8e8knSw/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/fX-BPnixF_pFAgXp1sTRt0BNRQo\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9JxcTCbrudQ"
+      },
+      "snippet": {
+        "publishedAt": "2013-08-28T22:44:22.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Inside the Reagan Library: Rancho Del Cielo and Camp David",
+        "description": "For more information on the ongoing works of President Reagan's Foundation, please visit http://www.reaganfoundation.org.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9JxcTCbrudQ/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9JxcTCbrudQ/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9JxcTCbrudQ/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/SnOUCyIEFJu0WKreaUdrQQLyWGU\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Csrpq5UgZdE"
+      },
+      "snippet": {
+        "publishedAt": "2012-08-17T19:28:05.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "The Ronald Reagan Great Communicator Debate Series",
+        "description": "The Ronald Reagan Great Communicator Debate Series is designed to develop proactive, informed, educated, and conscientious citizens and leaders by ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Csrpq5UgZdE/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Csrpq5UgZdE/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Csrpq5UgZdE/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/j4vBEl8A2MDLfnKNSCpMjUMVDQw\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7kPxl8oMP2M"
+      },
+      "snippet": {
+        "publishedAt": "2010-06-03T17:51:05.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "President Reagan's Remarks at a Candle-Lighting Ceremony for Prayer in Schools - 9/25/82",
+        "description": "President Reagan's Remarks at a Candle-Lighting Ceremony for Prayer in Schools on September 25, 1982. For more information on the ongoing works of ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7kPxl8oMP2M/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7kPxl8oMP2M/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7kPxl8oMP2M/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/R35YYVxLmQLwjamoqJYAnFtp7-I\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "wrFfjmZ28a4"
+      },
+      "snippet": {
+        "publishedAt": "2014-01-22T22:07:35.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Excerpts from: President Reagan's Inaugural Address — January 20, 1981",
+        "description": "For more information on the ongoing works of President Reagan's Foundation, please visit http://www.reaganfoundation.org.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wrFfjmZ28a4/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wrFfjmZ28a4/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wrFfjmZ28a4/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/48kK9sVu3V0c4dTNX0ZFtRSLCCU\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fAtYMD-H2UY"
+      },
+      "snippet": {
+        "publishedAt": "2009-04-17T00:07:44.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Candidacy for Presidency: Ronald Reagans announcement of Candidacy for President of U.S.  11/13/79",
+        "description": "Ronald Reagan's Announcement of Candidacy for President of the United States on 11/13/79. For more information on the ongoing works of President Reagan's ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fAtYMD-H2UY/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fAtYMD-H2UY/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fAtYMD-H2UY/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/tLlpEKNUECai4T0CDlo_IMnhJug\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "sF-dWMybMtY"
+      },
+      "snippet": {
+        "publishedAt": "2014-05-10T19:16:01.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "Inside the Reagan Library: The Motorcade",
+        "description": "For more information on the ongoing works of President Reagan's Foundation, please visit http://www.reaganfoundation.org.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/sF-dWMybMtY/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/sF-dWMybMtY/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/sF-dWMybMtY/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"F9iA7pnxqNgrkOutjQAa9F2k8HY/eLyk7UmxKrslN9VBTguaAtY_qQI\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "fmtNJdX0Q44"
+      },
+      "snippet": {
+        "publishedAt": "2009-10-02T00:05:02.000Z",
+        "channelId": "UCEJi23qnygQHE5UeLXoV_JQ",
+        "title": "The Reagan Legacy: The End of the Cold War",
+        "description": "An overview of President Reagan's role in ending the Cold War and bringing down the Berlin Wall. For more information on the ongoing works of President ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fmtNJdX0Q44/default.jpg"
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fmtNJdX0Q44/mqdefault.jpg"
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fmtNJdX0Q44/hqdefault.jpg"
+          }
+        },
+        "channelTitle": "ReaganFoundation",
+        "liveBroadcastContent": "none"
+      }
+    }
+  ]
+}

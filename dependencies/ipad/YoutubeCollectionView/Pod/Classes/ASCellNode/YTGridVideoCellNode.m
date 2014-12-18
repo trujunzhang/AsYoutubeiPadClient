@@ -186,10 +186,7 @@
 
 
 - (void)buttonTapped:(id)buttonTapped {
-
    [[MxTabBarManager sharedTabBarManager] pushWithVideo:self.video];
-
-//      [self.delegate gridViewCellTap:self.detailVideo];// TODO [test] djzhang gridViewCellTap
 }
 
 @end

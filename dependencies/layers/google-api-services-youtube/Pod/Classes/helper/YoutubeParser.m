@@ -194,10 +194,10 @@
 
 + (NSString *)getChannelBannerImageUrl:(YTYouTubeChannel *)channel {
    NSString * imageUrl = channel.brandingSettings.image.bannerMobileMediumHdImageUrl;
-   if (imageUrl)
-      return imageUrl;
 
-   return channel.brandingSettings.image.bannerImageUrl;
+   NSLog(@"imageUrl = %@", imageUrl);
+
+   return imageUrl;
 }
 
 

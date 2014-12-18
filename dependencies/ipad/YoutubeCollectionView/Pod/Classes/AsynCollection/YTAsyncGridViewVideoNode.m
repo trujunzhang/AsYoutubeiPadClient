@@ -146,8 +146,6 @@
 
 - (void)channelThumbnailsTapped:(id)buttonTapped {
    [[MxTabBarManager sharedTabBarManager] pushWithVideo:self.cardInfo];
-
-//   [self.delegate gridViewCellTap:self.cardInfo];  // TODO [test] djzhang gridViewCellTap
 }
 
 

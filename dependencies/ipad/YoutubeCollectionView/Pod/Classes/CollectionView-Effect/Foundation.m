@@ -125,6 +125,44 @@
 
 
 #pragma mark -
+#pragma mark YTAsSecondVideoRowNode
+
+
++ (NSAttributedString *)attributedStringForCollectionVideoTitle:(NSString *)text fontSize:(CGFloat)fontSize {
+   UIFont * font =
+    [UIFont fontWithName:@"Helvetica" size:fontSize];
+//    [UIFont boldSystemFontOfSize:fontSize];
+
+   NSDictionary * titleAttributes =
+    @{ NSFontAttributeName : font,
+     NSForegroundColorAttributeName : [UIColor blackColor],
+     NSParagraphStyleAttributeName : [NSParagraphStyle justifiedParagraphStyleForCollectionVideoTitle]
+    };
+
+   return [[NSAttributedString alloc] initWithString:text attributes:titleAttributes];
+}
+
+
+#pragma mark -
+#pragma mark YTAsThirdVideoRowNode
+
+
++ (NSAttributedString *)attributedStringForCollectionChannelTitle:(NSString *)text fontSize:(CGFloat)fontSize {
+   UIFont * font =
+    [UIFont fontWithName:@"Helvetica" size:fontSize];
+//    [UIFont boldSystemFontOfSize:fontSize];
+
+   NSDictionary * titleAttributes =
+    @{ NSFontAttributeName : font,
+     NSForegroundColorAttributeName : [UIColor lightGrayColor],
+     NSParagraphStyleAttributeName : [NSParagraphStyle justifiedParagraphStyleForCollectionChannelTitle]
+    };
+
+   return [[NSAttributedString alloc] initWithString:text attributes:titleAttributes];
+}
+
+
+#pragma mark -
 #pragma mark AsDetailRowChannelInfo
 
 
@@ -138,7 +176,7 @@
     };
 
    NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:text
-                                                                                  attributes:titleAttributes];
+                                                                                         attributes:titleAttributes];
 
    [attributedString addAttribute:NSFontAttributeName
                             value:font
@@ -275,6 +313,32 @@
    style.lineSpacing = 5.0;
    style.headIndent = 0.0f;
    style.tailIndent = 0.0f;
+
+   return style;
+}
+
+
+#pragma mark -
+#pragma mark YTAsSecondVideoRowNode
+
+
++ (NSParagraphStyle *)justifiedParagraphStyleForCollectionVideoTitle {
+   NSMutableParagraphStyle * style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+
+   style.paragraphSpacing = 1.0;
+
+   return style;
+}
+
+
+#pragma mark -
+#pragma mark YTAsThirdVideoRowNode
+
+
++ (NSParagraphStyle *)justifiedParagraphStyleForCollectionChannelTitle {
+   NSMutableParagraphStyle * style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+
+   style.paragraphSpacing = 1.0;
 
    return style;
 }

@@ -4,6 +4,7 @@
 //
 
 #import "YTAsSecondVideoRowNode.h"
+#import "Foundation.h"
 
 
 @interface YTAsSecondVideoRowNode () {
@@ -19,26 +20,11 @@
 - (void)makeRowNode {
    // 2.2
    _videoTitleNode = [ASTextNode initWithAttributedString:
-    [[NSAttributedString alloc] initWithString:[YoutubeParser getVideoSnippetTitle:self.nodeInfo]
-                                    attributes:[self textStyleForVideoTitle]]];
+    [NSAttributedString attributedStringForCollectionVideoTitle:[YoutubeParser getVideoSnippetTitle:self.nodeInfo]
+                                                       fontSize:13.0f]];
+
+
    [self addSubnode:_videoTitleNode];
-}
-
-
-- (NSDictionary *)textStyleForVideoTitle {
-   NSString * fontName = @"HelveticaNeue";
-//   fontName = @"ChalkboardSE-Regular";
-//   UIFont * font = [UIFont fontWithName:fontName size:12.0f];
-   UIFont * font = [UIFont fontWithName:fontName size:13.0f];
-
-   NSMutableParagraphStyle * style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-//   style.paragraphSpacing = 1.5 * font.lineHeight;
-//   style.paragraphSpacing = 20;
-//   style.hyphenationFactor = 1.0;
-//   style.lineBreakMode = NSLineBreakByTruncatingTail;
-
-
-   return @{ NSFontAttributeName : font, NSParagraphStyleAttributeName : style };
 }
 
 
@@ -48,8 +34,7 @@
 
 
 - (void)layout {
-   CGFloat titleLeftX = 2.0f;
-   _videoTitleNode.frame = CGRectMake(titleLeftX, 8, self.cellRect.size.width - titleLeftX * 2, 36);
+   _videoTitleNode.frame = CGRectMake(VIDEO_TITLE_PADDING_LEFT, 10, self.cellRect.size.width - VIDEO_TITLE_PADDING_LEFT * 2, COLLECTION_CELL_SECOND_HEIGHT - 12);
 }
 
 

@@ -20,6 +20,10 @@
 + (NSAttributedString *)attributedStringForChannelStatisticsSubscriberCount:(NSString *)text;
 
 + (NSAttributedString *)attributedStringForLeftMenuSubscriptionTitleText:(NSString *)text fontSize:(CGFloat)fontSize;
+
++ (NSAttributedString *)attributedStringForCollectionVideoTitle:(NSString *)text fontSize:(CGFloat)fontSize;
++ (NSAttributedString *)attributedStringForCollectionChannelTitle:(NSString *)text fontSize:(CGFloat)fontSize;
+
 + (NSMutableAttributedString *)attributedStringForDetailRowDescription:(NSString *)text fontSize:(CGFloat)fontSize;
 + (NSAttributedString *)attributedStringForDetailRowChannelTitle:(NSString *)text fontSize:(CGFloat)fontSize;
 + (NSAttributedString *)attributedStringForDetailRowChannelPublishedAt:(NSString *)text fontSize:(CGFloat)fontSize;
@@ -35,6 +39,8 @@
 + (NSParagraphStyle *)justifiedParagraphStyle;
 + (NSParagraphStyle *)justifiedParagraphStyleForDuration;
 + (NSMutableParagraphStyle *)justifiedParagraphStyleForTitleText:(UIFont *)font;
++ (NSParagraphStyle *)justifiedParagraphStyleForCollectionVideoTitle;
++ (NSParagraphStyle *)justifiedParagraphStyleForCollectionChannelTitle ;
 + (NSParagraphStyle *)justifiedParagraphStyleForDescription;
 + (NSParagraphStyle *)justifiedParagraphStyleForDetailRowChannelTitle;
 + (NSParagraphStyle *)justifiedParagraphStyleForDetailRowVideoViewCount;

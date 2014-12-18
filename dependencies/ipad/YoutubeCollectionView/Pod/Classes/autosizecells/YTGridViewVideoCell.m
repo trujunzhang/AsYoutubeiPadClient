@@ -141,11 +141,7 @@
 
 
 - (void)tapDetected {
-   NSLog(@"single Tap on imageview");
-
    [[MxTabBarManager sharedTabBarManager] pushWithVideo:self.video];
-
-//   [self.delegate gridViewCellTap:self.detailVideo];// TODO [test] djzhang gridViewCellTap
 }
 
 

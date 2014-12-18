@@ -143,11 +143,7 @@
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-   YTYouTubeVideoCache * video = [[self getYoutubeRequestInfo].videoList objectAtIndex:indexPath.row];
-
-   [[MxTabBarManager sharedTabBarManager] pushWithVideo:video];
-
-//   [self.delegate gridViewCellTap:detailVideo];// TODO [test] djzhang gridViewCellTap
+   [[MxTabBarManager sharedTabBarManager] pushWithVideo:[[self getYoutubeRequestInfo].videoList objectAtIndex:indexPath.row]];
 }
 
 
