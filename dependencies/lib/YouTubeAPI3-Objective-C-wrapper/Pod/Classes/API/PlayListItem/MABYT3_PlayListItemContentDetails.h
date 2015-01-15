@@ -17,6 +17,6 @@
 @property (strong, nonatomic) NSString *endAt;
 @property (strong, nonatomic) NSString *note;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

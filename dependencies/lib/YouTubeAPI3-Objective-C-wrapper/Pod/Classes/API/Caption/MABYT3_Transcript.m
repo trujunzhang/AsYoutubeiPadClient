@@ -14,34 +14,34 @@
 
 - (id)init {
 
-   self = [super init];
-   if (self) {
-      _kind = @"youtube#transcript";
-      _identifier = @"";
+    self = [super init];
+    if(self) {
+        _kind = @"youtube#transcript";
+        _identifier = @"";
 
-      _textList = [[NSMutableArray alloc] init];
-   }
-   return self;
+        _textList = [[NSMutableArray alloc] init];
+    }
+    return self;
 }
 
 
 - (id)initFromDictionary:(NSDictionary *)dict {
 
-   self = [super init];
-   if (self) {
-      _kind = @"youtube#transcript";
-      _identifier = @"";
+    self = [super init];
+    if(self) {
+        _kind = @"youtube#transcript";
+        _identifier = @"";
 
-      _textList = [[NSMutableArray alloc] init];
+        _textList = [[NSMutableArray alloc] init];
 
-      NSDictionary * targetsDict = [dict objectForKey:@"text"];
-      for (NSDictionary * targetDict in targetsDict) {
-         MABYT3_TranscriptText * track = [[MABYT3_TranscriptText alloc] initFromDictionary:targetDict];
-         [_textList addObject:track];
-      }
+        NSDictionary *targetsDict = [dict objectForKey:@"text"];
+        for (NSDictionary *targetDict in targetsDict) {
+            MABYT3_TranscriptText *track = [[MABYT3_TranscriptText alloc] initFromDictionary:targetDict];
+            [_textList addObject:track];
+        }
 
-   }
-   return self;
+    }
+    return self;
 }
 
 @end

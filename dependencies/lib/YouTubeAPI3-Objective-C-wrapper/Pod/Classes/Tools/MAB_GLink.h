@@ -15,6 +15,6 @@
 @property (strong, nonatomic) NSString *href;
 @property (nonatomic) NSUInteger countHint;
 
-- (id) initFromDictionary:(NSDictionary *)textdict;
+- (id)initFromDictionary:(NSDictionary *)textdict;
 
 @end

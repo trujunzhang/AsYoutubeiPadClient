@@ -12,10 +12,10 @@
 
 @implementation MABYT3_SubscriptionContentDetails
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _totalItemCount = 0;
         _newItemCount = 0;
         _activityType = kYTActivityTypeAll;
@@ -23,26 +23,26 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _totalItemCount = 0;
         _newItemCount = 0;
         _activityType = kYTActivityTypeAll;
-        
-        if ([dict objectForKey:@"totalItemCount"]) {
+
+        if([dict objectForKey:@"totalItemCount"]) {
             _totalItemCount = [[dict objectForKey:@"totalItemCount"] unsignedLongValue];
         }
-        if ([dict objectForKey:@"newItemCount"]) {
+        if([dict objectForKey:@"newItemCount"]) {
             _newItemCount = [[dict objectForKey:@"newItemCount"] unsignedLongValue];
         }
-        if ([dict objectForKey:@"activityType"]) {
-            if ([[dict objectForKey:@"activityType"] isEqualToString:@"uploads"]) {
+        if([dict objectForKey:@"activityType"]) {
+            if([[dict objectForKey:@"activityType"] isEqualToString:@"uploads"]) {
                 _activityType = kYTActivityTypeUploads;
             }
         }
-        
+
     }
     return self;
 }

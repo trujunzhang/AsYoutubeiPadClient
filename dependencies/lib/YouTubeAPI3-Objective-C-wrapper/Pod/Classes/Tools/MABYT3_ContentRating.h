@@ -30,6 +30,6 @@
 @property (strong, nonatomic) NSString *catvRating;
 @property (strong, nonatomic) NSString *catvfrRating;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

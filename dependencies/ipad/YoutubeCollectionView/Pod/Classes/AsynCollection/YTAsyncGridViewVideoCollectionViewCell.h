@@ -12,15 +12,13 @@
 #import "YoutubeConstants.h"
 
 
-
-
 @interface YTAsyncGridViewVideoCollectionViewCell : UICollectionViewCell
 
-@property(nonatomic) CGSize const featureImageSizeOptional;
-@property(nonatomic, strong) CALayer * placeholderLayer;
-@property(nonatomic, strong) CALayer * contentLayer;
-@property(nonatomic, strong) ASDisplayNode * containerNode;
-@property(nonatomic, strong) NSOperation * nodeConstructionOperation;
+@property (nonatomic) CGSize const featureImageSizeOptional;
+@property (nonatomic, strong) CALayer *placeholderLayer;
+@property (nonatomic, strong) CALayer *contentLayer;
+@property (nonatomic, strong) ASDisplayNode *containerNode;
+@property (nonatomic, strong) NSOperation *nodeConstructionOperation;
 
 - (void)bind:(YTYouTubeVideoCache *)cache placeholderImage:(UIImage *)placeholder cellSize:(CGSize)cellSize nodeConstructionQueue:(NSOperationQueue *)nodeConstructionQueue;
 @end

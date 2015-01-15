@@ -14,6 +14,6 @@
 
 @interface YoutubeGridLayoutViewController : YoutubeCollectionViewBase
 
-@property(nonatomic, strong) NSArray * numbersPerLineArray;
-@property(nonatomic, strong) KRLCollectionViewGridLayout * layout;
+@property (nonatomic, strong) NSArray *numbersPerLineArray;
+@property (nonatomic, strong) KRLCollectionViewGridLayout *layout;
 @end

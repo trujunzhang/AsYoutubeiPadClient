@@ -13,10 +13,10 @@
 @implementation MABYT3_ChannelAuditDetails
 
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _overallGoodStanding = YES;
         _communityGuidelinesGoodStanding = YES;
         _copyrightStrikesGoodStanding = YES;
@@ -25,36 +25,36 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _overallGoodStanding = YES;
         _communityGuidelinesGoodStanding = YES;
         _copyrightStrikesGoodStanding = YES;
         _contentIdClaimsGoodStanding = YES;
-        
-        if ([dict objectForKey:@"overallGoodStanding"]) {
-            if ([[dict objectForKey:@"overallGoodStanding"] integerValue] == 0) {
+
+        if([dict objectForKey:@"overallGoodStanding"]) {
+            if([[dict objectForKey:@"overallGoodStanding"] integerValue] == 0) {
                 _overallGoodStanding = NO;
             }
         }
-        if ([dict objectForKey:@"communityGuidelinesGoodStanding"]) {
-            if ([[dict objectForKey:@"communityGuidelinesGoodStanding"] integerValue] == 0) {
+        if([dict objectForKey:@"communityGuidelinesGoodStanding"]) {
+            if([[dict objectForKey:@"communityGuidelinesGoodStanding"] integerValue] == 0) {
                 _communityGuidelinesGoodStanding = NO;
             }
         }
-        if ([dict objectForKey:@"copyrightStrikesGoodStanding"]) {
-            if ([[dict objectForKey:@"copyrightStrikesGoodStanding"] integerValue] == 0) {
+        if([dict objectForKey:@"copyrightStrikesGoodStanding"]) {
+            if([[dict objectForKey:@"copyrightStrikesGoodStanding"] integerValue] == 0) {
                 _copyrightStrikesGoodStanding = NO;
             }
         }
-        if ([dict objectForKey:@"contentIdClaimsGoodStanding"]) {
-            if ([[dict objectForKey:@"contentIdClaimsGoodStanding"] integerValue] == 0) {
+        if([dict objectForKey:@"contentIdClaimsGoodStanding"]) {
+            if([[dict objectForKey:@"contentIdClaimsGoodStanding"] integerValue] == 0) {
                 _contentIdClaimsGoodStanding = NO;
             }
         }
-        
+
     }
     return self;
 }

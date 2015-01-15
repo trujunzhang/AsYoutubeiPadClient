@@ -35,11 +35,11 @@
 @implementation NSString (XMLEntities)
 
 - (NSString *)stringByDecodingXMLEntities {
-	return [self stringByDecodingHTMLEntities];
+    return [self stringByDecodingHTMLEntities];
 }
 
 - (NSString *)stringByEncodingXMLEntities {
-	return [self stringByEncodingHTMLEntities];
+    return [self stringByEncodingHTMLEntities];
 }
 
 @end

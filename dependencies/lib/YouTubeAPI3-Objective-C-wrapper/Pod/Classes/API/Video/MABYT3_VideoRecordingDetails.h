@@ -16,6 +16,6 @@
 @property (strong, nonatomic) MABYT3_Location *location;
 @property (strong, nonatomic) MAB_GDate *recordingDate;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

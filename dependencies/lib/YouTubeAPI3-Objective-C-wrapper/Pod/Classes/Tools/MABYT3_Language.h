@@ -18,6 +18,6 @@
 @property (strong, nonatomic) NSString *hl;
 @property (strong, nonatomic) NSString *name;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

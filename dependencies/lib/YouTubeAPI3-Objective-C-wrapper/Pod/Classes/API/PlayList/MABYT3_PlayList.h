@@ -24,6 +24,6 @@
 @property (strong, nonatomic) NSString *embedHtml;
 @property (nonatomic) NSUInteger itemCount;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

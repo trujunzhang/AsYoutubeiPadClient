@@ -10,13 +10,12 @@
 #include "YoutubeConstants.h"
 
 
-
-
 @interface YTAsGridVideoCellNode : ASCellNode
 
 - (instancetype)initWithCellNodeOfSize:(CGSize)size withVideo:(YTYouTubeVideoCache *)video;
 
-@property(nonatomic, strong) YTYouTubeVideoCache * video;
-@property(nonatomic) CGFloat durationLabelWidth;
+@property (nonatomic, strong) YTYouTubeVideoCache *video;
+@property (nonatomic) CGFloat durationLabelWidth;
+
 - (void)bind:(YTYouTubeVideoCache *)video placeholderImage:(UIImage *)placeholder;
 @end

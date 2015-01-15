@@ -12,14 +12,15 @@
 #import "ASDisplayNode+Subclasses.h"
 
 
-
-
-
 @interface TarBarItemNode : ASCellNode
 
-@property(nonatomic) CGSize cellSize;
+@property (nonatomic) CGSize cellSize;
+
 - (id)initWithCellSize:(CGSize)cellSize withTitle:(id)title isSelected:(BOOL)isSelected;
+
 - (void)layoutByCellSize:(CGSize)cgSize;
+
 - (void)setNodeSelected;
+
 - (void)resetNodeSelected;
 @end

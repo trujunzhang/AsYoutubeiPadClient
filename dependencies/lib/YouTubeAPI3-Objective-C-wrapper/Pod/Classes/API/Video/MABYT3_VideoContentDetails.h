@@ -14,13 +14,13 @@
 
 @interface MABYT3_VideoContentDetails : NSObject
 
-@property(nonatomic) NSString * duration;
-@property(nonatomic) YTVideoDimension dimension;
-@property(nonatomic) YTVideoDefinition definition;
-@property(nonatomic) BOOL caption;
-@property(nonatomic) BOOL licensedContent;
-@property(strong, nonatomic) MABYT3_RegionRestriction * regionRestriction;
-@property(strong, nonatomic) MABYT3_ContentRating * contentRating;
+@property (nonatomic) NSString *duration;
+@property (nonatomic) YTVideoDimension dimension;
+@property (nonatomic) YTVideoDefinition definition;
+@property (nonatomic) BOOL caption;
+@property (nonatomic) BOOL licensedContent;
+@property (strong, nonatomic) MABYT3_RegionRestriction *regionRestriction;
+@property (strong, nonatomic) MABYT3_ContentRating *contentRating;
 
 - (id)initFromDictionary:(NSDictionary *)dict;
 

@@ -12,10 +12,10 @@
 
 @implementation MABYT3_Activity
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _kind = @"youtube#subscription";
         _etag = @"";
         _identifier = @"";
@@ -25,29 +25,29 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _kind = @"youtube#subscription";
         _etag = @"";
         _identifier = @"";
         _snippet = [[MABYT3_ActivitySnippet alloc] init];
         _contentDetails = [[MABYT3_ActivityContentDetails alloc] init];
-        
-        if ([dict objectForKey:@"kind"]) {
+
+        if([dict objectForKey:@"kind"]) {
             _kind = [dict objectForKey:@"kind"];
         }
-        if ([dict objectForKey:@"etag"]) {
+        if([dict objectForKey:@"etag"]) {
             _etag = [dict objectForKey:@"etag"];
         }
-        if ([dict objectForKey:@"id"]) {
+        if([dict objectForKey:@"id"]) {
             _identifier = [dict objectForKey:@"id"];
         }
-        if ([dict objectForKey:@"snippet"]) {
+        if([dict objectForKey:@"snippet"]) {
             _snippet = [[MABYT3_ActivitySnippet alloc] initFromDictionary:[dict objectForKey:@"snippet"]];
         }
-        if ([dict objectForKey:@"contentDetails"]) {
+        if([dict objectForKey:@"contentDetails"]) {
             _contentDetails = [[MABYT3_ActivityContentDetails alloc] initFromDictionary:[dict objectForKey:@"contentDetails"]];
         }
     }

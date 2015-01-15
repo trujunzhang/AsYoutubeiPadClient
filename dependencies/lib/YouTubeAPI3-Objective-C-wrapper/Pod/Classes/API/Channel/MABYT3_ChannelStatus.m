@@ -12,27 +12,27 @@
 
 @implementation MABYT3_ChannelStatus
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _privacyStatus = kYTPrivacyStatusPublic;
         _isLinked = NO;
     }
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _privacyStatus = kYTPrivacyStatusPublic;
         _isLinked = NO;
-        if ([dict objectForKey:@"privacyStatus"]) {
+        if([dict objectForKey:@"privacyStatus"]) {
             _privacyStatus = [self privacyStatusFromString:[dict objectForKey:@"privacyStatus"]];
         }
-        if ([dict objectForKey:@"isLinked"]) {
-            if ([[dict objectForKey:@"isLinked"] integerValue] > 0) {
+        if([dict objectForKey:@"isLinked"]) {
+            if([[dict objectForKey:@"isLinked"] integerValue] > 0) {
                 _isLinked = YES;
             }
         }
@@ -40,14 +40,14 @@
     return self;
 }
 
-- (YTPrivacyStatus) privacyStatusFromString:(NSString *)prvString {
-    
+- (YTPrivacyStatus)privacyStatusFromString:(NSString *)prvString {
+
     YTPrivacyStatus retVal = kYTPrivacyStatusPublic;
-    
-    if ([prvString isEqualToString:@"private"]) {
+
+    if([prvString isEqualToString:@"private"]) {
         retVal = kYTPrivacyStatusPrivate;
     }
-    else if ([prvString isEqualToString:@"unlisted"]) {
+    else if([prvString isEqualToString:@"unlisted"]) {
         retVal = kYTPrivacyStatusUnlisted;
     }
     return retVal;

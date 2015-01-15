@@ -18,10 +18,10 @@
 
 
 @interface YTAsGridVideoCellNode () {
-   CGSize _kittenSize;
+    CGSize _kittenSize;
 
 
-   YTAsyncGridViewVideoNode * _asyncGridViewVideoNode;
+    YTAsyncGridViewVideoNode *_asyncGridViewVideoNode;
 }
 @end
 
@@ -30,24 +30,24 @@
 
 
 - (instancetype)initWithCellNodeOfSize:(CGSize)size withVideo:(YTYouTubeVideoCache *)video { //242,242
-   if (!(self = [super init]))
-      return nil;
+    if(!(self = [super init]))
+        return nil;
 
-   _kittenSize = size;
-   self.video = video;
+    _kittenSize = size;
+    self.video = video;
 
-   _asyncGridViewVideoNode = [[YTAsyncGridViewVideoNode alloc] initWithCardInfo:self.video
-                                                                       cellSize:_kittenSize
-                                                                       isBacked:NO];
+    _asyncGridViewVideoNode = [[YTAsyncGridViewVideoNode alloc] initWithCardInfo:self.video
+                                                                        cellSize:_kittenSize
+                                                                        isBacked:NO];
 
-   [self addSubnode:_asyncGridViewVideoNode];
+    [self addSubnode:_asyncGridViewVideoNode];
 
-   return self;
+    return self;
 }
 
 
 - (CGSize)calculateSizeThatFits:(CGSize)constrainedSize {
-   return _kittenSize;
+    return _kittenSize;
 }
 
 

@@ -12,10 +12,10 @@
 
 @implementation MABYT3_VideoCategory
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _kind = @"youtube#videoCategory";
         _etag = @"";
         _identifier = @"";
@@ -26,39 +26,39 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _kind = @"youtube#videoCategory";
         _etag = @"";
         _identifier = @"";
         _channelId = @"";
         _title = @"";
         _assignable = NO;
-        
-        if ([dict objectForKey:@"kind"]) {
+
+        if([dict objectForKey:@"kind"]) {
             _kind = [dict objectForKey:@"kind"];
         }
-        if ([dict objectForKey:@"etag"]) {
+        if([dict objectForKey:@"etag"]) {
             _etag = [dict objectForKey:@"etag"];
         }
-        if ([dict objectForKey:@"id"]) {
+        if([dict objectForKey:@"id"]) {
             _identifier = [dict objectForKey:@"id"];
         }
-        if ([dict objectForKey:@"snippet"]) {
+        if([dict objectForKey:@"snippet"]) {
             NSDictionary *dict2 = [dict objectForKey:@"snippet"];
-            if ([dict2 objectForKey:@"title"]) {
+            if([dict2 objectForKey:@"title"]) {
                 _title = [dict2 objectForKey:@"title"];
             }
-            if ([dict2 objectForKey:@"channelId"]) {
+            if([dict2 objectForKey:@"channelId"]) {
                 _channelId = [dict2 objectForKey:@"channelId"];
             }
-            if ([dict2 objectForKey:@"assignable"]) {
+            if([dict2 objectForKey:@"assignable"]) {
                 _assignable = [[dict2 objectForKey:@"assignable"] boolValue];
             }
         }
-        
+
     }
     return self;
 }

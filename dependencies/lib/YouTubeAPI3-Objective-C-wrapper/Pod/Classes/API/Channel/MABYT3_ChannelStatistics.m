@@ -12,10 +12,10 @@
 
 @implementation MABYT3_ChannelStatistics
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _viewCount = 0;
         _commentCount = 0;
         _subscriberCount = 0;
@@ -25,29 +25,29 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _viewCount = 0;
         _commentCount = 0;
         _subscriberCount = 0;
         _videoCount = 0;
         _hiddenSubscriberCount = NO;
-        if ([dict objectForKey:@"viewCount"]) {
+        if([dict objectForKey:@"viewCount"]) {
             _viewCount = [[[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"viewCount"]] unsignedLongValue];
         }
-        if ([dict objectForKey:@"commentCount"]) {
+        if([dict objectForKey:@"commentCount"]) {
             _commentCount = [[[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"commentCount"]] unsignedLongValue];
         }
-        if ([dict objectForKey:@"subscriberCount"]) {
+        if([dict objectForKey:@"subscriberCount"]) {
             _subscriberCount = [[[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"subscriberCount"]] unsignedLongValue];
         }
-        if ([dict objectForKey:@"videoCount"]) {
+        if([dict objectForKey:@"videoCount"]) {
             _videoCount = [[[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"videoCount"]] unsignedLongValue];
         }
-        if ([dict objectForKey:@"hiddenSubscriberCount"]) {
-            if ([[dict objectForKey:@"hiddenSubscriberCount"] integerValue] > 0) {
+        if([dict objectForKey:@"hiddenSubscriberCount"]) {
+            if([[dict objectForKey:@"hiddenSubscriberCount"] integerValue] > 0) {
                 _hiddenSubscriberCount = YES;
             }
         }

@@ -13,7 +13,7 @@
 
 }
 
-@property(nonatomic, strong) id channel;
+@property (nonatomic, strong) id channel;
 
 - (NSArray *)getTableRows:(NSArray *)subscriptionsList;
 

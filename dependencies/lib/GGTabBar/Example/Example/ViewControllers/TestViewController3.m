@@ -17,27 +17,27 @@
 @implementation TestViewController3
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-   if (self) {
-      self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil
-                                                      image:[UIImage imageNamed:@"camera_normal"]
-                                              selectedImage:[UIImage imageNamed:@"camera_pressed"]];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self) {
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil
+                                                        image:[UIImage imageNamed:@"camera_normal"]
+                                                selectedImage:[UIImage imageNamed:@"camera_pressed"]];
 
-      self.title = @"Suggestions";
-   }
-   return self;
+        self.title = @"Suggestions";
+    }
+    return self;
 }
 
 
 - (void)viewDidLoad {
-   [super viewDidLoad];
-   // Do any additional setup after loading the view from its nib.
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
 }
 
 
 - (void)didReceiveMemoryWarning {
-   [super didReceiveMemoryWarning];
-   // Dispose of any resources that can be recreated.
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

@@ -19,6 +19,6 @@
 @property (strong, nonatomic) NSString *referenceUrl;
 @property (strong, nonatomic) NSString *imageUrl;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

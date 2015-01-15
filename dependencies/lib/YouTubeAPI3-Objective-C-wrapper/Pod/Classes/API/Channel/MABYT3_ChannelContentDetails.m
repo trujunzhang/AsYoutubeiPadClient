@@ -12,26 +12,26 @@
 
 @implementation MABYT3_ChannelContentDetails
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _googlePlusUserId = @"";
         _relatedPlaylists = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _googlePlusUserId = @"";
         _relatedPlaylists = [[NSMutableDictionary alloc] init];
-        if ([dict objectForKey:@"relatedPlaylists"]) {
+        if([dict objectForKey:@"relatedPlaylists"]) {
             _relatedPlaylists = [dict objectForKey:@"relatedPlaylists"];
         }
-        if ([dict objectForKey:@"googlePlusUserId"]) {
+        if([dict objectForKey:@"googlePlusUserId"]) {
             _googlePlusUserId = [dict objectForKey:@"googlePlusUserId"];
         }
     }

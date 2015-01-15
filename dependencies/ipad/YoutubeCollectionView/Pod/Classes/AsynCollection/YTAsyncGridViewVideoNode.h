@@ -13,13 +13,11 @@
 #import "YoutubeConstants.h"
 
 
-
-
 @interface YTAsyncGridViewVideoNode : ASDisplayNode
 
-@property(nonatomic) CGSize const nodeCellSize;
+@property (nonatomic) CGSize const nodeCellSize;
 
-@property(nonatomic, strong) YTYouTubeVideoCache * cardInfo;
+@property (nonatomic, strong) YTYouTubeVideoCache *cardInfo;
 
 - (instancetype)initWithCardInfo:(YTYouTubeVideoCache *)cardInfo cellSize:(CGSize)cellSize isBacked:(BOOL)isBacked;
 @end

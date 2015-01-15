@@ -10,9 +10,9 @@
 
 @implementation MABYT3_Thumbnail
 
-- (id) init {
+- (id)init {
     self = [super init];
-    if (self) {
+    if(self) {
         _url = @"";
         _width = 0;
         _height = 0;
@@ -20,21 +20,21 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _url = @"";
         _width = 0;
         _height = 0;
-        
-        if ([dict objectForKey:@"url"]) {
+
+        if([dict objectForKey:@"url"]) {
             _url = [dict objectForKey:@"url"];
         }
-        if ([dict objectForKey:@"width"]) {
+        if([dict objectForKey:@"width"]) {
             _width = [[dict objectForKey:@"width"] integerValue];
         }
-        if ([dict objectForKey:@"height"]) {
+        if([dict objectForKey:@"height"]) {
             _height = [[dict objectForKey:@"height"] integerValue];
         }
     }

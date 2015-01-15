@@ -19,6 +19,6 @@
 @property (strong, nonatomic) NSString *title;
 @property (nonatomic) unsigned long position;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

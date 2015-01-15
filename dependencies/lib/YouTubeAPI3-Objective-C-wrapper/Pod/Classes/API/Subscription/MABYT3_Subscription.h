@@ -22,6 +22,6 @@
 @property (strong, nonatomic) MABYT3_SubscriptionContentDetails *contentDetails;
 @property (strong, nonatomic) MABYT3_SubscriberSnippet *subscriberSnippet;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

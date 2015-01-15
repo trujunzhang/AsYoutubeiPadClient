@@ -16,24 +16,24 @@
 
 
 - (id)initFromDictionary:(NSDictionary *)dict {
-   self = [super init];
-   if (self) {
+    self = [super init];
+    if(self) {
 
-      NSArray * keys = [dict allKeys];
-      for (NSString * key in keys) {
-         MABYT3_Thumbnail * thumbnail = [[MABYT3_Thumbnail alloc] initFromDictionary:[dict objectForKey:key]];
-         if ([key isEqualToString:@"standard"]) {
-            self.standard = thumbnail;
-         } else if ([key isEqualToString:@"medium"]) {
-            self.medium = thumbnail;
-         } else if ([key isEqualToString:@"high"]) {
-            self.high = thumbnail;
-         } else if ([key isEqualToString:@"default"]) {
-            self.standard = thumbnail;
-         }
-      }
-   }
-   return self;
+        NSArray *keys = [dict allKeys];
+        for (NSString *key in keys) {
+            MABYT3_Thumbnail *thumbnail = [[MABYT3_Thumbnail alloc] initFromDictionary:[dict objectForKey:key]];
+            if([key isEqualToString:@"standard"]) {
+                self.standard = thumbnail;
+            } else if([key isEqualToString:@"medium"]) {
+                self.medium = thumbnail;
+            } else if([key isEqualToString:@"high"]) {
+                self.high = thumbnail;
+            } else if([key isEqualToString:@"default"]) {
+                self.standard = thumbnail;
+            }
+        }
+    }
+    return self;
 }
 
 

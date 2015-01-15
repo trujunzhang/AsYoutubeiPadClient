@@ -10,10 +10,10 @@
 
 @implementation MABYT3_Location
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _latitude = 0.0;
         _longitude = 0.0;
         _altitude = 0.0;
@@ -21,24 +21,24 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _latitude = 0.0;
         _longitude = 0.0;
         _altitude = 0.0;
-        
-        if ([dict objectForKey:@"latitude"]) {
+
+        if([dict objectForKey:@"latitude"]) {
             _latitude = [[dict objectForKey:@"latitude"] doubleValue];
         }
-        if ([dict objectForKey:@"longitude"]) {
+        if([dict objectForKey:@"longitude"]) {
             _longitude = [[dict objectForKey:@"longitude"] doubleValue];
         }
-        if ([dict objectForKey:@"altitude"]) {
+        if([dict objectForKey:@"altitude"]) {
             _altitude = [[dict objectForKey:@"altitude"] doubleValue];
         }
-        
+
     }
     return self;
 }

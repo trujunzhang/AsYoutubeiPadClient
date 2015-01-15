@@ -12,6 +12,7 @@
 #import "MAB_GDate.h"
 #import "MABYT3_ResourceId.h"
 #import "MABYT3_Thumbnail.h"
+
 @class MABYT3_ThumbnailDetails;
 
 
@@ -26,6 +27,6 @@
 @property (strong, nonatomic) MABYT3_ThumbnailDetails *thumbnails;
 //@property (strong, nonatomic) NSMutableDictionary *thumbnails;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

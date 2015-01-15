@@ -12,10 +12,10 @@
 
 @implementation MABYT3_ChannelSectionSnippet
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _type = kYTChannelSectioTypeAllPlaylists;
         _style = kYTChannelSectioStyleHorizontalRow;
         _channelId = @"";
@@ -25,83 +25,83 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _type = kYTChannelSectioTypeAllPlaylists;
         _style = kYTChannelSectioStyleHorizontalRow;
         _channelId = @"";
         _title = @"";
         _position = 0;
-        
-        if ([dict objectForKey:@"channelId"]) {
+
+        if([dict objectForKey:@"channelId"]) {
             _channelId = [dict objectForKey:@"channelId"];
         }
-        if ([dict objectForKey:@"title"]) {
+        if([dict objectForKey:@"title"]) {
             _title = [dict objectForKey:@"title"];
         }
-        if ([dict objectForKey:@"position"]) {
+        if([dict objectForKey:@"position"]) {
             _position = [[dict objectForKey:@"position"] unsignedLongValue];
         }
-        if ([dict objectForKey:@"style"]) {
+        if([dict objectForKey:@"style"]) {
             _style = [self sectionStyleFromString:[dict objectForKey:@"style"]];
         }
-        if ([dict objectForKey:@"type"]) {
+        if([dict objectForKey:@"type"]) {
             _type = [self sectionTypeFromString:[dict objectForKey:@"type"]];
         }
     }
     return self;
 }
 
-- (YTChannelSectioStyle) sectionStyleFromString:(NSString *)stlString {
-    
+- (YTChannelSectioStyle)sectionStyleFromString:(NSString *)stlString {
+
     YTChannelSectioStyle retVal = kYTChannelSectioStyleHorizontalRow;
-    
-    if ([stlString isEqualToString:@"verticalList"]) {
+
+    if([stlString isEqualToString:@"verticalList"]) {
         retVal = kYTChannelSectioStyleVerticalList;
     }
     return retVal;
 }
 
-- (YTChannelSectioType) sectionTypeFromString:(NSString *)typString {
-    
+- (YTChannelSectioType)sectionTypeFromString:(NSString *)typString {
+
     YTChannelSectioType retVal = kYTChannelSectioTypeAllPlaylists;
-    
-    if ([typString isEqualToString:@"completedEvents"]) {
+
+    if([typString isEqualToString:@"completedEvents"]) {
         retVal = kYTChannelSectioTypeCompletedEvents;
     }
-    if ([typString isEqualToString:@"likedPlaylists"]) {
+    if([typString isEqualToString:@"likedPlaylists"]) {
         retVal = kYTChannelSectioTypeLikedPlaylists;
     }
-    if ([typString isEqualToString:@"likes"]) {
+    if([typString isEqualToString:@"likes"]) {
         retVal = kYTChannelSectioTypeLikes;
     }
-    if ([typString isEqualToString:@"liveEvents"]) {
+    if([typString isEqualToString:@"liveEvents"]) {
         retVal = kYTChannelSectioTypeLiveEvents;
     }
-    if ([typString isEqualToString:@"multipleChannels"]) {
+    if([typString isEqualToString:@"multipleChannels"]) {
         retVal = kYTChannelSectioTypeMultipleChannels;
     }
-    if ([typString isEqualToString:@"multiplePlaylists"]) {
+    if([typString isEqualToString:@"multiplePlaylists"]) {
         retVal = kYTChannelSectioTypeMultiplePlaylists;
     }
-    if ([typString isEqualToString:@"popularUploads"]) {
+    if([typString isEqualToString:@"popularUploads"]) {
         retVal = kYTChannelSectioTypePopularUploads;
     }
-    if ([typString isEqualToString:@"recentActivity"]) {
+    if([typString isEqualToString:@"recentActivity"]) {
         retVal = kYTChannelSectioTypeRecentActivity;
     }
-    if ([typString isEqualToString:@"recentPosts"]) {
+    if([typString isEqualToString:@"recentPosts"]) {
         retVal = kYTChannelSectioTypeRecentPosts;
     }
-    if ([typString isEqualToString:@"recentUploads"]) {
+    if([typString isEqualToString:@"recentUploads"]) {
         retVal = kYTChannelSectioTypeRecentUploads;
     }
-    if ([typString isEqualToString:@"singlePlaylist"]) {
+    if([typString isEqualToString:@"singlePlaylist"]) {
         retVal = kYTChannelSectioTypeSinglePlaylist;
     }
-    if ([typString isEqualToString:@"upcomingEvents"]) {
+    if([typString isEqualToString:@"upcomingEvents"]) {
         retVal = kYTChannelSectioTypeUpcomingEvents;
     }
     return retVal;

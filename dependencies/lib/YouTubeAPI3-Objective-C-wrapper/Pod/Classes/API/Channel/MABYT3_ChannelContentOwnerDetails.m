@@ -12,27 +12,27 @@
 
 @implementation MABYT3_ChannelContentOwnerDetails
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _contentOwner = @"";
         _timeLinked = [[MAB_GDate alloc] init];
     }
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _contentOwner = @"";
         _timeLinked = [[MAB_GDate alloc] init];
-        
-        if ([dict objectForKey:@"contentOwner"]) {
+
+        if([dict objectForKey:@"contentOwner"]) {
             _contentOwner = [dict objectForKey:@"contentOwner"];
         }
-        if ([dict objectForKey:@"timeLinked"]) {
+        if([dict objectForKey:@"timeLinked"]) {
             _timeLinked = [[MAB_GDate alloc] initFromString:[dict objectForKey:@"timeLinked"]];
         }
     }

@@ -12,10 +12,10 @@
 
 @implementation MABYT3_ChannelSnippet
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _title = @"";
         _descriptionString = @"";
         _publishedAt = [[MAB_GDate alloc] init];
@@ -24,28 +24,28 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _title = @"";
         _descriptionString = @"";
         _publishedAt = [[MAB_GDate alloc] init];
         _thumbnails = [[NSMutableDictionary alloc] init];
-        
-        if ([dict objectForKey:@"title"]) {
+
+        if([dict objectForKey:@"title"]) {
             _title = [dict objectForKey:@"title"];
         }
-        if ([dict objectForKey:@"description"]) {
+        if([dict objectForKey:@"description"]) {
             _descriptionString = [dict objectForKey:@"description"];
         }
-        if ([dict objectForKey:@"publishedAt"]) {
+        if([dict objectForKey:@"publishedAt"]) {
             _publishedAt = [[MAB_GDate alloc] initFromString:[dict objectForKey:@"publishedAt"]];
         }
-        if ([dict objectForKey:@"thumbnails"]) {
+        if([dict objectForKey:@"thumbnails"]) {
             NSDictionary *thmbDict = [dict objectForKey:@"thumbnails"];
             NSArray *keys = [thmbDict allKeys];
-            for (int i = 0; i < keys.count; i++) {
+            for (int i = 0;i < keys.count;i++) {
                 MABYT3_Thumbnail *thmb = [[MABYT3_Thumbnail alloc] initFromDictionary:[thmbDict objectForKey:keys[i]]];
                 [_thumbnails setObject:thmb forKey:keys[i]];
             }

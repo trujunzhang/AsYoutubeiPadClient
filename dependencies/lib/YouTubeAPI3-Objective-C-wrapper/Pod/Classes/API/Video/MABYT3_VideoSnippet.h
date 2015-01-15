@@ -10,22 +10,23 @@
 #import "MAB_GDate.h"
 #import "MABYT3_Thumbnail.h"
 #import "MABYT3_enums.h"
+
 @class MABYT3_ThumbnailDetails;
 
 
 @interface MABYT3_VideoSnippet : NSObject
 
-@property(strong, nonatomic) MAB_GDate * publishedAt;
-@property(strong, nonatomic) NSString * channelId;
-@property(strong, nonatomic) NSString * title;
-@property(strong, nonatomic) NSString * descriptionString;
+@property (strong, nonatomic) MAB_GDate *publishedAt;
+@property (strong, nonatomic) NSString *channelId;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *descriptionString;
 //@property(strong, nonatomic) NSMutableDictionary * thumbnails;
-@property(strong, nonatomic) MABYT3_ThumbnailDetails * thumbnails;
+@property (strong, nonatomic) MABYT3_ThumbnailDetails *thumbnails;
 
-@property(strong, nonatomic) NSString * channelTitle;
-@property(strong, nonatomic) NSMutableArray * tags;
-@property(strong, nonatomic) NSString * categoryId;
-@property(nonatomic) YTLiveBroadcastContent liveBroadcastContent;
+@property (strong, nonatomic) NSString *channelTitle;
+@property (strong, nonatomic) NSMutableArray *tags;
+@property (strong, nonatomic) NSString *categoryId;
+@property (nonatomic) YTLiveBroadcastContent liveBroadcastContent;
 
 - (id)initFromDictionary:(NSDictionary *)dict;
 

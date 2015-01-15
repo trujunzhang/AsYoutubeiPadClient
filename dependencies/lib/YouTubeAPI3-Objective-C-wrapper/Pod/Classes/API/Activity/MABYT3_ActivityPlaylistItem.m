@@ -12,10 +12,10 @@
 
 @implementation MABYT3_ActivityPlaylistItem
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _playlistId = @"";
         _playlistItemId = @"";
         _resourceId = [[MABYT3_ResourceId alloc] init];
@@ -23,25 +23,25 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _playlistId = @"";
         _playlistItemId = @"";
         _resourceId = [[MABYT3_ResourceId alloc] init];
-        
-        if ([dict objectForKey:@"playlistId"]) {
+
+        if([dict objectForKey:@"playlistId"]) {
             _playlistId = [dict objectForKey:@"playlistId"];
         }
-        if ([dict objectForKey:@"playlistItemId"]) {
+        if([dict objectForKey:@"playlistItemId"]) {
             _playlistItemId = [dict objectForKey:@"playlistItemId"];
         }
-        if ([dict objectForKey:@"resourceId"]) {
+        if([dict objectForKey:@"resourceId"]) {
             _resourceId = [[MABYT3_ResourceId alloc] initFromDictionary:[dict objectForKey:@"resourceId"]];
         }
-        
-        
+
+
     }
     return self;
 }

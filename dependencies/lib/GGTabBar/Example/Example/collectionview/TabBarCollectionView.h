@@ -11,8 +11,8 @@
 
 @interface TabBarCollectionView : UIViewController
 
-@property(nonatomic, strong) NSMutableArray * titleArray;
-@property(nonatomic) CGFloat viewHeight;
+@property (nonatomic, strong) NSMutableArray *titleArray;
+@property (nonatomic) CGFloat viewHeight;
 
 - (instancetype)initWithTitleArray:(NSMutableArray *)titleArray withViewHeight:(CGFloat)viewHeight;
 

@@ -39,6 +39,7 @@
 
 // Old Instance Methods
 - (NSString *)stringByDecodingXMLEntities;
+
 - (NSString *)stringByEncodingXMLEntities;
 
 @end

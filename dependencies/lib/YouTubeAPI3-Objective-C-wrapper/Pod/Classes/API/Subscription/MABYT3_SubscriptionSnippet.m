@@ -14,10 +14,10 @@
 
 @implementation MABYT3_SubscriptionSnippet
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _publishedAt = [[MAB_GDate alloc] init];
         _channelTitle = @"";
         _title = @"";
@@ -29,10 +29,10 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _publishedAt = [[MAB_GDate alloc] init];
         _channelTitle = @"";
         _title = @"";
@@ -40,30 +40,30 @@
         _resourceId = [[MABYT3_ResourceId alloc] init];
         _channelId = @"";
         _thumbnails = [[NSMutableDictionary alloc] init];
-        
-        if ([dict objectForKey:@"publishedAt"]) {
+
+        if([dict objectForKey:@"publishedAt"]) {
             _publishedAt = [[MAB_GDate alloc] initFromString:[dict objectForKey:@"publishedAt"]];
         }
-        if ([dict objectForKey:@"channelTitle"]) {
+        if([dict objectForKey:@"channelTitle"]) {
             _channelTitle = [dict objectForKey:@"channelTitle"];
         }
-        if ([dict objectForKey:@"title"]) {
+        if([dict objectForKey:@"title"]) {
             _title = [dict objectForKey:@"title"];
         }
-        if ([dict objectForKey:@"description"]) {
+        if([dict objectForKey:@"description"]) {
             _descriptionString = [dict objectForKey:@"description"];
         }
-        if ([dict objectForKey:@"resourceId"]) {
+        if([dict objectForKey:@"resourceId"]) {
             _resourceId = [[MABYT3_ResourceId alloc] initFromDictionary:[dict objectForKey:@"resourceId"]];
         }
-        if ([dict objectForKey:@"channelId"]) {
+        if([dict objectForKey:@"channelId"]) {
             _channelId = [dict objectForKey:@"channelId"];
         }
 
-       if ([dict objectForKey:@"thumbnails"]) {
-          NSDictionary * thmbDict = [dict objectForKey:@"thumbnails"];
-          _thumbnails = [[MABYT3_ThumbnailDetails alloc] initFromDictionary:thmbDict];
-       }
+        if([dict objectForKey:@"thumbnails"]) {
+            NSDictionary *thmbDict = [dict objectForKey:@"thumbnails"];
+            _thumbnails = [[MABYT3_ThumbnailDetails alloc] initFromDictionary:thmbDict];
+        }
 
 //        if ([dict objectForKey:@"thumbnails"]) {
 //            NSDictionary *thmbDict = [dict objectForKey:@"thumbnails"];

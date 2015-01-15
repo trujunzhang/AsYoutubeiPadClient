@@ -10,7 +10,7 @@
 
 
 @interface YTGridMoreCellNode () {
-   CGSize _kittenSize;
+    CGSize _kittenSize;
 
 }
 @end
@@ -20,14 +20,14 @@
 
 
 - (instancetype)initWithCellNodeOfSize:(CGSize)size { //242,242
-   if (!(self = [super init]))
-      return nil;
+    if(!(self = [super init]))
+        return nil;
 
-   _kittenSize = size;
+    _kittenSize = size;
 
-   [self setupUI];
+    [self setupUI];
 
-   return self;
+    return self;
 }
 
 
@@ -38,38 +38,38 @@
 
 
 - (CGSize)calculateSizeThatFits:(CGSize)constrainedSize {
-   return _kittenSize;
+    return _kittenSize;
 }
 
 
 - (NSDictionary *)textStyleForVideoTitle {
-   NSString * fontName = @"HelveticaNeue";
+    NSString *fontName = @"HelveticaNeue";
 //   fontName = @"ChalkboardSE-Regular";
-   UIFont * font = [UIFont fontWithName:fontName size:12.0f];
+    UIFont *font = [UIFont fontWithName:fontName size:12.0f];
 
-   NSMutableParagraphStyle * style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-   style.paragraphSpacing = 0.5 * font.lineHeight;
-   style.hyphenationFactor = 1.0;
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    style.paragraphSpacing = 0.5 * font.lineHeight;
+    style.hyphenationFactor = 1.0;
 //   style.lineBreakMode = NSLineBreakByTruncatingTail;
 
 
-   return @{ NSFontAttributeName : font, NSParagraphStyleAttributeName : style };
+    return @{NSFontAttributeName : font, NSParagraphStyleAttributeName : style};
 }
 
 
 - (NSDictionary *)textStyleForChannelTitle {
-   UIFont * font = [UIFont fontWithName:@"HelveticaNeue" size:12.0f];
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:12.0f];
 
-   NSMutableParagraphStyle * style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-   style.paragraphSpacing = 0.5 * font.lineHeight;
-   style.hyphenationFactor = 1.0;
-   style.lineBreakMode = NSLineBreakByTruncatingTail;
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    style.paragraphSpacing = 0.5 * font.lineHeight;
+    style.hyphenationFactor = 1.0;
+    style.lineBreakMode = NSLineBreakByTruncatingTail;
 
-   return @{
-    NSFontAttributeName : font,
-    NSParagraphStyleAttributeName : style,
-    NSForegroundColorAttributeName : [UIColor lightGrayColor]
-   };
+    return @{
+            NSFontAttributeName : font,
+            NSParagraphStyleAttributeName : style,
+            NSForegroundColorAttributeName : [UIColor lightGrayColor]
+    };
 }
 
 

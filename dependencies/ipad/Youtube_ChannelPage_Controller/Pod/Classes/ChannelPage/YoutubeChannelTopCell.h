@@ -12,22 +12,22 @@
 
 @interface YoutubeChannelTopCell : UIView
 
-@property(strong, nonatomic) IBOutlet UIView * shadowView;
+@property (strong, nonatomic) IBOutlet UIView *shadowView;
 
 
-@property(strong, nonatomic) IBOutlet UIImageView * youtubeCover;
+@property (strong, nonatomic) IBOutlet UIImageView *youtubeCover;
 
-@property(strong, nonatomic) IBOutlet UIImageView * channelPhoto;
+@property (strong, nonatomic) IBOutlet UIImageView *channelPhoto;
 
-@property(strong, nonatomic) IBOutlet UILabel * channelTitle;
+@property (strong, nonatomic) IBOutlet UILabel *channelTitle;
 
-@property(strong, nonatomic) IBOutlet UILabel * channelSubscriberCount;
+@property (strong, nonatomic) IBOutlet UILabel *channelSubscriberCount;
 
-@property(strong, nonatomic) IBOutlet UIButton * channelSubscribedState;
+@property (strong, nonatomic) IBOutlet UIButton *channelSubscribedState;
 
-@property(nonatomic, strong) YTYouTubeSubscription * subscription;
+@property (nonatomic, strong) YTYouTubeSubscription *subscription;
 
-@property(nonatomic, strong) YTYouTubeChannel * currentChannel;
+@property (nonatomic, strong) YTYouTubeChannel *currentChannel;
 
 - (instancetype)initWithSubscription:(GTLYouTubeSubscription *)subscription;
 @end

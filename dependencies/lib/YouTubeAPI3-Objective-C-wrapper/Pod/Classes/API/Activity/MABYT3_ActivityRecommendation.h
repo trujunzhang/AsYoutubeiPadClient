@@ -17,6 +17,6 @@
 @property (strong, nonatomic) NSString *reason;
 @property (strong, nonatomic) MABYT3_ResourceId *seedResourceId;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

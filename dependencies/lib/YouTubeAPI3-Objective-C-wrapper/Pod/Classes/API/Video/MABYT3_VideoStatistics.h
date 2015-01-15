@@ -13,21 +13,21 @@
 
 
 // The number of comments for the detailVideo.
-@property(retain) NSNumber * commentCount;  // unsignedLongLongValue
+@property (retain) NSNumber *commentCount;  // unsignedLongLongValue
 
 // The number of users who have indicated that they disliked the detailVideo by giving
 // it a negative rating.
-@property(retain) NSNumber * dislikeCount;  // unsignedLongLongValue
+@property (retain) NSNumber *dislikeCount;  // unsignedLongLongValue
 
 // The number of users who currently have the detailVideo marked as a favorite detailVideo.
-@property(retain) NSNumber * favoriteCount;  // unsignedLongLongValue
+@property (retain) NSNumber *favoriteCount;  // unsignedLongLongValue
 
 // The number of users who have indicated that they liked the detailVideo by giving it
 // a positive rating.
-@property(retain) NSNumber * likeCount;  // unsignedLongLongValue
+@property (retain) NSNumber *likeCount;  // unsignedLongLongValue
 
 // The number of times the detailVideo has been viewed.
-@property(retain) NSNumber * viewCount;  // unsignedLongLongValue
+@property (retain) NSNumber *viewCount;  // unsignedLongLongValue
 
 - (id)initFromDictionary:(NSDictionary *)dict;
 

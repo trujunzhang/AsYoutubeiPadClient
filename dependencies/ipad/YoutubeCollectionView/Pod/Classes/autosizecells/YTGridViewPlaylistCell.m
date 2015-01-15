@@ -11,7 +11,6 @@
 #import "YoutubeConstants.h"
 
 
-
 @implementation YTGridViewPlaylistCell
 
 - (void)awakeFromNib {

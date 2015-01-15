@@ -12,7 +12,7 @@
 }
 
 + (id)getLocalDetailVideo {
-   MDYTDetailVideoInfo* videoInfo= [[MDYTDetailVideoInfo alloc] init];
-   return videoInfo;
+    MDYTDetailVideoInfo *videoInfo = [[MDYTDetailVideoInfo alloc] init];
+    return videoInfo;
 }
 @end

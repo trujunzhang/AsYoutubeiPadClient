@@ -19,6 +19,6 @@
 @property (strong, nonatomic) MAB_GDate *publishedAt;
 @property (strong, nonatomic) NSMutableDictionary *thumbnails;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

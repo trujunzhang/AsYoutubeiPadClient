@@ -20,6 +20,6 @@
 @property (strong, nonatomic) NSString *stringValue;
 @property (strong, nonatomic) NSDate *dateValue;
 
-- (id) initFromString:(NSString *)textString;
+- (id)initFromString:(NSString *)textString;
 
 @end

@@ -24,50 +24,43 @@
 
 @implementation SYSubtitleItem
 
-- (instancetype)initWithXMLDic:(NSDictionary *)xmlDic
-{
+- (instancetype)initWithXMLDic:(NSDictionary *)xmlDic {
     self = [super init];
-    if (self)
-    {
+    if(self) {
         self.startTime = xmlDic[@"_start"];
-        self.duration  = xmlDic[@"_dur"];
+        self.duration = xmlDic[@"_dur"];
         self.text = xmlDic[@"__text"];
-        
+
         self.text = [self.text stringByDecodingXMLEntities];
     }
     return self;
 }
 
-- (NSString *)srtStringWithItemNumber:(NSUInteger)itemNumber
-{
+- (NSString *)srtStringWithItemNumber:(NSUInteger)itemNumber {
     NSMutableString *string = [NSMutableString string];
-    
+
     if(itemNumber > 0)
         [string appendFormat:@"%ld\n", itemNumber];
-    
+
     [string appendFormat:@"%@ --> %@\n", [self startTimeString], [self endTimeString]];
     [string appendFormat:@"%@\n\n", self.text];
-    
+
     return [string copy];
 }
 
-- (NSString *)startTimeString
-{
+- (NSString *)startTimeString {
     return [NSString stringForTimeFormattedForSeconds:[self.startTime doubleValue]];
 }
 
-- (NSString *)durationString
-{
+- (NSString *)durationString {
     return [NSString stringForTimeFormattedForSeconds:[self.duration doubleValue]];
 }
 
-- (NSString *)endTimeString
-{
+- (NSString *)endTimeString {
     return [NSString stringForTimeFormattedForSeconds:[self.startTime doubleValue] + [self.duration doubleValue]];
 }
 
-- (NSString *)description
-{
+- (NSString *)description {
     return [self srtStringWithItemNumber:0];
 }
 

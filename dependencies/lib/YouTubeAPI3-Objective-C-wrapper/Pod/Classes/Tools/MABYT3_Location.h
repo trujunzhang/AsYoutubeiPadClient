@@ -14,6 +14,6 @@
 @property (nonatomic) double longitude;
 @property (nonatomic) double altitude;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

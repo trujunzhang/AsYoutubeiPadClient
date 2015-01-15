@@ -14,46 +14,46 @@
 
 - (id)init {
 
-   self = [super init];
-   if (self) {
-      _kind = @"youtube#transcript_list";
-      _identifier = @"";
+    self = [super init];
+    if(self) {
+        _kind = @"youtube#transcript_list";
+        _identifier = @"";
 
-      _trackList = [[NSMutableArray alloc] init];
+        _trackList = [[NSMutableArray alloc] init];
 
-   }
-   return self;
+    }
+    return self;
 }
 
 
 - (id)initFromDictionary:(NSDictionary *)dict {
 
-   self = [super init];
-   if (self) {
-      _kind = @"youtube#transcript_list";
-      _identifier = @"";
+    self = [super init];
+    if(self) {
+        _kind = @"youtube#transcript_list";
+        _identifier = @"";
 
-      _trackList = [[NSMutableArray alloc] init];
+        _trackList = [[NSMutableArray alloc] init];
 
-      if ([dict objectForKey:@"_docid"]) {
-         _identifier = [dict objectForKey:@"_docid"];
-      }
+        if([dict objectForKey:@"_docid"]) {
+            _identifier = [dict objectForKey:@"_docid"];
+        }
 
-      if ([dict objectForKey:@"track"]) {
-         MABYT3_Track * track = [[MABYT3_Track alloc] initFromDictionary:[dict objectForKey:@"track"]
-                                                                withKind:@"track"];
-         [_trackList addObject:track];
-      }
-      if ([dict objectForKey:@"target"]) {
-         NSDictionary * targetsDict = [dict objectForKey:@"target"];
-         for (NSDictionary * targetDict in targetsDict) {
-            MABYT3_Track * track = [[MABYT3_Track alloc] initFromDictionary:targetDict withKind:@"target"];
+        if([dict objectForKey:@"track"]) {
+            MABYT3_Track *track = [[MABYT3_Track alloc] initFromDictionary:[dict objectForKey:@"track"]
+                                                                  withKind:@"track"];
             [_trackList addObject:track];
-         }
-      }
+        }
+        if([dict objectForKey:@"target"]) {
+            NSDictionary *targetsDict = [dict objectForKey:@"target"];
+            for (NSDictionary *targetDict in targetsDict) {
+                MABYT3_Track *track = [[MABYT3_Track alloc] initFromDictionary:targetDict withKind:@"target"];
+                [_trackList addObject:track];
+            }
+        }
 
-   }
-   return self;
+    }
+    return self;
 }
 
 @end

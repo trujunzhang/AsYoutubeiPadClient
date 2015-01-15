@@ -44,7 +44,6 @@ target 'mxAsTubeiPad', :exclusive => true do
   pod 'XMLDictionary', :path => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/XMLDictionary'
 
 
-
   # ________________collect common library___________________
   pod "IOS_Collection_Code", :path => "../dependencies/collect/IOS_Collection_Code"
 

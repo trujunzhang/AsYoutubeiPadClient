@@ -13,42 +13,42 @@
 
 - (id)init {
 
-   self = [super init];
-   if (self) {
-      _kind = @"youtube#transcriptText";
-      _identifier = @"";
+    self = [super init];
+    if(self) {
+        _kind = @"youtube#transcriptText";
+        _identifier = @"";
 
-   }
-   return self;
+    }
+    return self;
 }
 
 
 //<text ="0.11" dur="1.34">Today I want to answer one of your questions</text>
 - (id)initFromDictionary:(NSDictionary *)dict {
 
-   self = [super init];
-   if (self) {
-      _kind = @"youtube#transcriptText";
-      _identifier = @"";
-      _textValue = @"";
+    self = [super init];
+    if(self) {
+        _kind = @"youtube#transcriptText";
+        _identifier = @"";
+        _textValue = @"";
 
-      if ([dict objectForKey:@"id"]) {
-         _identifier = [dict objectForKey:@"id"];
-      }
+        if([dict objectForKey:@"id"]) {
+            _identifier = [dict objectForKey:@"id"];
+        }
 
-      if ([dict objectForKey:@"start"]) {
-         _start = [dict objectForKey:@"start"];
-      }
-      if ([dict objectForKey:@"dur"]) {
-         _dur = [dict objectForKey:@"dur"];
-      }
+        if([dict objectForKey:@"start"]) {
+            _start = [dict objectForKey:@"start"];
+        }
+        if([dict objectForKey:@"dur"]) {
+            _dur = [dict objectForKey:@"dur"];
+        }
 
-      if ([dict objectForKey:@"leafContent"]) {
-         _textValue = [dict objectForKey:@"leafContent"];
-      }
+        if([dict objectForKey:@"leafContent"]) {
+            _textValue = [dict objectForKey:@"leafContent"];
+        }
 
 
-   }
-   return self;
+    }
+    return self;
 }
 @end

@@ -19,7 +19,7 @@
 @property (strong, nonatomic) MABYT3_ResourceId *identifier;
 @property (strong, nonatomic) MABYT3_SearchItemSnippet *snippet;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 
 @end

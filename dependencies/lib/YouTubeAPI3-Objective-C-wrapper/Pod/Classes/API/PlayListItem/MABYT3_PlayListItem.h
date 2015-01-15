@@ -22,6 +22,6 @@
 @property (strong, nonatomic) MABYT3_PlayListItemContentDetails *contentDetails;
 @property (nonatomic) YTPrivacyStatus privacyStatus;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

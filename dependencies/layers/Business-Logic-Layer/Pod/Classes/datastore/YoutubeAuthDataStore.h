@@ -7,16 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class YoutubeAuthInfo;
 
 
 @interface YoutubeAuthDataStore : NSObject
 
 + (void)resetAuthToken;
+
 + (YoutubeAuthInfo *)saveAuthAccessToken:(NSString *)accessToken refreshToken:(NSString *)refreshToken;
+
 + (YoutubeAuthInfo *)readTokens;
+
 - (void)resetAuthUserChannel;
+
 - (YoutubeAuthInfo *)readAuthUserInfo;
+
 - (YoutubeAuthInfo *)saveAuthUserChannelWithTitle:(NSString *)title withEmail:(NSString *)email withThumbmailUrl:(NSString *)thumbnailUrl;
 
 

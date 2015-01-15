@@ -17,6 +17,6 @@
 @property (nonatomic) unsigned long newItemCount;
 @property (nonatomic) YTActivityType activityType;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

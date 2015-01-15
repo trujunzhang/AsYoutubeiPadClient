@@ -12,17 +12,17 @@
 @implementation YoutubeAuthInfo
 
 - (instancetype)init {
-   self = [super init];
-   if (self) {
-      self.title = @"";
-      self.email = @"";
-      self.thumbnailUrl = @"";
+    self = [super init];
+    if(self) {
+        self.title = @"";
+        self.email = @"";
+        self.thumbnailUrl = @"";
 
-      self.accessToken = @"";
-      self.refreshToken = @"";
-   }
+        self.accessToken = @"";
+        self.refreshToken = @"";
+    }
 
-   return self;
+    return self;
 }
 
 
@@ -30,25 +30,25 @@
 
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-   [aCoder encodeObject:self.title forKey:@"title"];
-   [aCoder encodeObject:self.email forKey:@"email"];
-   [aCoder encodeObject:self.thumbnailUrl forKey:@"thumbnailUrl"];
+    [aCoder encodeObject:self.title forKey:@"title"];
+    [aCoder encodeObject:self.email forKey:@"email"];
+    [aCoder encodeObject:self.thumbnailUrl forKey:@"thumbnailUrl"];
 
-   [aCoder encodeObject:self.accessToken forKey:@"accessToken"];
-   [aCoder encodeObject:self.refreshToken forKey:@"refreshToken"];
+    [aCoder encodeObject:self.accessToken forKey:@"accessToken"];
+    [aCoder encodeObject:self.refreshToken forKey:@"refreshToken"];
 }
 
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-   if (self = [super init]) {
-      self.title = [aDecoder decodeObjectForKey:@"title"];
-      self.email = [aDecoder decodeObjectForKey:@"email"];
-      self.thumbnailUrl = [aDecoder decodeObjectForKey:@"thumbnailUrl"];
+    if(self = [super init]) {
+        self.title = [aDecoder decodeObjectForKey:@"title"];
+        self.email = [aDecoder decodeObjectForKey:@"email"];
+        self.thumbnailUrl = [aDecoder decodeObjectForKey:@"thumbnailUrl"];
 
-      self.accessToken = [aDecoder decodeObjectForKey:@"accessToken"];
-      self.refreshToken = [aDecoder decodeObjectForKey:@"refreshToken"];
-   }
-   return self;
+        self.accessToken = [aDecoder decodeObjectForKey:@"accessToken"];
+        self.refreshToken = [aDecoder decodeObjectForKey:@"refreshToken"];
+    }
+    return self;
 }
 
 

@@ -8,8 +8,8 @@
 
 
 @interface MxTabBarManager ()<GYoutubeHelperDelegate> {
-   UITabBarController * _tabBarController;
-   YTLeftMenuViewController * _leftViewController; // left
+    UITabBarController *_tabBarController;
+    YTLeftMenuViewController *_leftViewController; // left
 }
 
 
@@ -19,59 +19,59 @@
 @implementation MxTabBarManager
 
 + (MxTabBarManager *)sharedTabBarManager {
-   static MxTabBarManager * cache;
-   static dispatch_once_t onceToken;
-   dispatch_once(&onceToken, ^{
-       cache = [[MxTabBarManager alloc] init];
-       [GYoutubeHelper getInstance].delegate = cache;
-   });
+    static MxTabBarManager *cache;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        cache = [[MxTabBarManager alloc] init];
+        [GYoutubeHelper getInstance].delegate = cache;
+    });
 
-   return cache;
+    return cache;
 }
 
 
 - (void)registerTabBarController:(UITabBarController *)tabBarController withLeftViewController:(id)leftViewController {
-   _tabBarController = tabBarController;
-   _leftViewController = leftViewController;
+    _tabBarController = tabBarController;
+    _leftViewController = leftViewController;
 }
 
 
 - (void)setLeftMenuControllerDelegate:(id)delegate {
-   _leftViewController.delegate = delegate;
+    _leftViewController.delegate = delegate;
 }
 
 
 - (UINavigationController *)currentNavigationController {
-   return _tabBarController.selectedViewController;
+    return _tabBarController.selectedViewController;
 }
 
 
 - (YTVideoDetailViewController *)makeVideoDetailViewController:(id)video {
-   YTVideoDetailViewController * controller = [[YTVideoDetailViewController alloc] initWithVideo:video];
-   controller.view.backgroundColor = [ClientUIHelper mainUIBackgroundColor];
+    YTVideoDetailViewController *controller = [[YTVideoDetailViewController alloc] initWithVideo:video];
+    controller.view.backgroundColor = [ClientUIHelper mainUIBackgroundColor];
 
-   return controller;
+    return controller;
 }
 
 
 - (void)pushAndResetControllers:(NSArray *)controllers {
-   [[LeftRevealHelper sharedLeftRevealHelper] closeLeftMenuAndNoRearOpen];
+    [[LeftRevealHelper sharedLeftRevealHelper] closeLeftMenuAndNoRearOpen];
 
-   UINavigationController * navigationController = [self currentNavigationController];
+    UINavigationController *navigationController = [self currentNavigationController];
 
-   navigationController.viewControllers = nil;
-   navigationController.viewControllers = controllers;
+    navigationController.viewControllers = nil;
+    navigationController.viewControllers = controllers;
 }
 
 
 - (void)pushWithVideo:(id)video {
-   [[LeftRevealHelper sharedLeftRevealHelper] closeLeftMenuAndNoRearOpen];
+    [[LeftRevealHelper sharedLeftRevealHelper] closeLeftMenuAndNoRearOpen];
 
-   YTVideoDetailViewController * controller = [self makeVideoDetailViewController:video];
+    YTVideoDetailViewController *controller = [self makeVideoDetailViewController:video];
 
-   UINavigationController * navigationController = [self currentNavigationController];
+    UINavigationController *navigationController = [self currentNavigationController];
 
-   [navigationController pushViewController:controller animated:YES];
+    [navigationController pushViewController:controller animated:YES];
 }
 
 
@@ -80,12 +80,12 @@
 
 
 - (void)callbackAfterFetchingAuthorSubscriptionListCompletion:(NSArray *)subscriptionList {
-   [_leftViewController insertSubscriptionRowsAfterFetching:subscriptionList];
+    [_leftViewController insertSubscriptionRowsAfterFetching:subscriptionList];
 }
 
 
 - (void)callbackUpdateYoutubeChannelCompletion:(YoutubeAuthInfo *)info {
-   [_leftViewController refreshChannelInfo:info];
+    [_leftViewController refreshChannelInfo:info];
 }
 
 @end

@@ -12,10 +12,10 @@
 
 @implementation MABYT3_SearchItemSnippet
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _publishedAt = [[MAB_GDate alloc] init];
         _channelId = @"";
         _title = @"";
@@ -27,10 +27,10 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _publishedAt = [[MAB_GDate alloc] init];
         _channelId = @"";
         _title = @"";
@@ -38,30 +38,30 @@
         _thumbnails = [[NSMutableDictionary alloc] init];
         _channelTitle = @"";
         _liveBroadcastContent = kYTLiveBroadcastContentNone;
-        
-        if ([dict objectForKey:@"publishedAt"]) {
+
+        if([dict objectForKey:@"publishedAt"]) {
             _publishedAt = [[MAB_GDate alloc] initFromString:[dict objectForKey:@"publishedAt"]];
         }
-        if ([dict objectForKey:@"channelId"]) {
+        if([dict objectForKey:@"channelId"]) {
             _channelId = [dict objectForKey:@"channelId"];
         }
-        if ([dict objectForKey:@"title"]) {
+        if([dict objectForKey:@"title"]) {
             _title = [dict objectForKey:@"title"];
         }
-        if ([dict objectForKey:@"description"]) {
+        if([dict objectForKey:@"description"]) {
             _descriptionString = [dict objectForKey:@"description"];
         }
-        if ([dict objectForKey:@"channelTitle"]) {
+        if([dict objectForKey:@"channelTitle"]) {
             _channelTitle = [dict objectForKey:@"channelTitle"];
         }
-        if ([dict objectForKey:@"liveBroadcastContent"]) {
+        if([dict objectForKey:@"liveBroadcastContent"]) {
             _liveBroadcastContent = [self liveBroadcastContentFromString:[dict objectForKey:@"liveBroadcastContent"]];
         }
-        
-        if ([dict objectForKey:@"thumbnails"]) {
+
+        if([dict objectForKey:@"thumbnails"]) {
             NSDictionary *thmbDict = [dict objectForKey:@"thumbnails"];
             NSArray *keys = [thmbDict allKeys];
-            for (int i = 0; i < keys.count; i++) {
+            for (int i = 0;i < keys.count;i++) {
                 MABYT3_Thumbnail *thmb = [[MABYT3_Thumbnail alloc] initFromDictionary:[thmbDict objectForKey:keys[i]]];
                 [_thumbnails setObject:thmb forKey:keys[i]];
             }
@@ -70,14 +70,14 @@
     return self;
 }
 
-- (YTLiveBroadcastContent) liveBroadcastContentFromString:(NSString *)prvString {
-    
+- (YTLiveBroadcastContent)liveBroadcastContentFromString:(NSString *)prvString {
+
     YTLiveBroadcastContent retVal = kYTLiveBroadcastContentNone;
-    
-    if ([prvString isEqualToString:@"upcoming"]) {
+
+    if([prvString isEqualToString:@"upcoming"]) {
         retVal = kYTLiveBroadcastContentUpcoming;
     }
-    else if ([prvString isEqualToString:@"live"]) {
+    else if([prvString isEqualToString:@"live"]) {
         retVal = kYTLiveBroadcastContentLive;
     }
     return retVal;

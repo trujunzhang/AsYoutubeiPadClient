@@ -15,27 +15,27 @@
 @implementation GYoutubeAuthUser
 
 - (instancetype)init {
-   self = [super init];
-   if (self) {
-      self.channel = [[YTYouTubeAuthorChannel alloc] init];
-   }
+    self = [super init];
+    if(self) {
+        self.channel = [[YTYouTubeAuthorChannel alloc] init];
+    }
 
-   return self;
+    return self;
 }
 
 
 - (NSArray *)getTableRows:(NSArray *)subscriptionsList {
-   NSMutableArray * rows = [[NSMutableArray alloc] init];
-   for (YTYouTubeSubscription * subscription in subscriptionsList) {
-      NSString * title = [YoutubeParser getSubscriptionSnippetTitle:subscription];
-      NSString * thumbnailsUrl = [YoutubeParser getSubscriptionSnippetThumbnailUrl:subscription];
-      NSString * channelId = [YoutubeParser getChannelIdBySubscription:subscription];
-      NSArray * row = @[ title, thumbnailsUrl, channelId ];
+    NSMutableArray *rows = [[NSMutableArray alloc] init];
+    for (YTYouTubeSubscription *subscription in subscriptionsList) {
+        NSString *title = [YoutubeParser getSubscriptionSnippetTitle:subscription];
+        NSString *thumbnailsUrl = [YoutubeParser getSubscriptionSnippetThumbnailUrl:subscription];
+        NSString *channelId = [YoutubeParser getChannelIdBySubscription:subscription];
+        NSArray *row = @[title, thumbnailsUrl, channelId];
 
-      [rows addObject:row];
-   }
+        [rows addObject:row];
+    }
 
-   return [rows copy];
+    return [rows copy];
 }
 
 

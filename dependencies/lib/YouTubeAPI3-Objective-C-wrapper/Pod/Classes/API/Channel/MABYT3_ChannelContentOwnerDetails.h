@@ -16,6 +16,6 @@
 @property (strong, nonatomic) NSString *contentOwner;
 @property (strong, nonatomic) MAB_GDate *timeLinked;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

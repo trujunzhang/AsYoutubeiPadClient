@@ -19,6 +19,6 @@
 @property (strong, nonatomic) NSString *title;
 @property (nonatomic) BOOL assignable;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

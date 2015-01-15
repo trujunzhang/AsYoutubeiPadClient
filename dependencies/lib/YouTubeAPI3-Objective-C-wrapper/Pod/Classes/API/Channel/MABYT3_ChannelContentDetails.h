@@ -15,6 +15,6 @@
 @property (strong, nonatomic) NSString *googlePlusUserId;
 @property (strong, nonatomic) NSMutableDictionary *relatedPlaylists;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

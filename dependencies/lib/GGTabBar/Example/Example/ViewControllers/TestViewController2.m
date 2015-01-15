@@ -14,27 +14,24 @@
 
 @implementation TestViewController2
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if(self) {
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil
                                                         image:[UIImage imageNamed:@"global_normal"]
                                                 selectedImage:[UIImage imageNamed:@"global_pressed"]];
 
-       self.title = @"More From";
+        self.title = @"More From";
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

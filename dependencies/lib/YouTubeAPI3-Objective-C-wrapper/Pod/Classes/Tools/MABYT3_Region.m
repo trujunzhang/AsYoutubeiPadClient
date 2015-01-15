@@ -12,10 +12,10 @@
 
 @implementation MABYT3_Region
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _kind = @"youtube#i18nLanguage";
         _etag = @"";
         _identifier = @"";
@@ -25,35 +25,35 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _kind = @"youtube#i18nLanguage";
         _etag = @"";
         _identifier = @"";
         _gl = @"";
         _name = @"";
-        
-        if ([dict objectForKey:@"kind"]) {
+
+        if([dict objectForKey:@"kind"]) {
             _kind = [dict objectForKey:@"kind"];
         }
-        if ([dict objectForKey:@"etag"]) {
+        if([dict objectForKey:@"etag"]) {
             _etag = [dict objectForKey:@"etag"];
         }
-        if ([dict objectForKey:@"id"]) {
+        if([dict objectForKey:@"id"]) {
             _identifier = [dict objectForKey:@"id"];
         }
-        if ([dict objectForKey:@"snippet"]) {
+        if([dict objectForKey:@"snippet"]) {
             NSDictionary *dict2 = [dict objectForKey:@"snippet"];
-            if ([dict2 objectForKey:@"gl"]) {
+            if([dict2 objectForKey:@"gl"]) {
                 _gl = [dict2 objectForKey:@"gl"];
             }
-            if ([dict2 objectForKey:@"name"]) {
+            if([dict2 objectForKey:@"name"]) {
                 _name = [dict2 objectForKey:@"name"];
             }
         }
-        
+
     }
     return self;
 }

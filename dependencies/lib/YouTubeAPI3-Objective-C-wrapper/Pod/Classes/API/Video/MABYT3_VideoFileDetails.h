@@ -11,5 +11,4 @@
 @interface MABYT3_VideoFileDetails : NSObject
 
 
-
 @end

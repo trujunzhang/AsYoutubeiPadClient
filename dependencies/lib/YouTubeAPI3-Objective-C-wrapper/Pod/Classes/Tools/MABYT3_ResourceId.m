@@ -13,42 +13,42 @@
 
 - (id)init {
 
-   self = [super init];
-   if (self) {
-      _kind = @"";
-      _channelId = @"";
-      _videoId = @"";
-      _playlistId = @"";
-   }
-   return self;
+    self = [super init];
+    if(self) {
+        _kind = @"";
+        _channelId = @"";
+        _videoId = @"";
+        _playlistId = @"";
+    }
+    return self;
 }
 
 
 - (id)initFromDictionary:(NSDictionary *)dict {
 
-   self = [super init];
-   if (self) {
-      _kind = @"";
-      _channelId = @"";
-      _videoId = @"";
-      _playlistId = @"";
+    self = [super init];
+    if(self) {
+        _kind = @"";
+        _channelId = @"";
+        _videoId = @"";
+        _playlistId = @"";
 
-      if ([dict objectForKey:@"kind"]) {
-         _kind = [dict objectForKey:@"kind"];
-      }
-      if ([dict objectForKey:@"channelId"]) {
-         _channelId = [dict objectForKey:@"channelId"];
-         _JSON = [[NSMutableDictionary alloc] init];
-         [_JSON setValue:_channelId forKey:@"channelId"];
-      }
-      if ([dict objectForKey:@"playlistId"]) {
-         _playlistId = [dict objectForKey:@"playlistId"];
-      }
-      if ([dict objectForKey:@"videoId"]) {
-         _videoId = [dict objectForKey:@"videoId"];
-      }
-   }
-   return self;
+        if([dict objectForKey:@"kind"]) {
+            _kind = [dict objectForKey:@"kind"];
+        }
+        if([dict objectForKey:@"channelId"]) {
+            _channelId = [dict objectForKey:@"channelId"];
+            _JSON = [[NSMutableDictionary alloc] init];
+            [_JSON setValue:_channelId forKey:@"channelId"];
+        }
+        if([dict objectForKey:@"playlistId"]) {
+            _playlistId = [dict objectForKey:@"playlistId"];
+        }
+        if([dict objectForKey:@"videoId"]) {
+            _videoId = [dict objectForKey:@"videoId"];
+        }
+    }
+    return self;
 }
 
 @end

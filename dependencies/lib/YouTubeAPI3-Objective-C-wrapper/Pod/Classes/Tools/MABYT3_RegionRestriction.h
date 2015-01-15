@@ -13,6 +13,6 @@
 @property (strong, nonatomic) NSMutableArray *allowed;
 @property (strong, nonatomic) NSMutableArray *blocked;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

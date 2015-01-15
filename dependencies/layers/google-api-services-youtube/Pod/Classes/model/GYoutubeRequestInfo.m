@@ -8,10 +8,10 @@
 
 #import "GYoutubeRequestInfo.h"
 
-@interface GYoutubeRequestInfo(){
+@interface GYoutubeRequestInfo () {
 
 }
-@property(nonatomic, copy) NSString * queryType;
+@property (nonatomic, copy) NSString *queryType;
 
 @end
 
@@ -21,13 +21,13 @@
 
 
 - (instancetype)init {
-   self = [super init];
-   if (self) {
-      self.hasLoadingMore = NO;
-      self.hasFirstFetch = NO;
-   }
+    self = [super init];
+    if(self) {
+        self.hasLoadingMore = NO;
+        self.hasFirstFetch = NO;
+    }
 
-   return self;
+    return self;
 }
 
 
@@ -36,107 +36,107 @@
 
 
 - (void)baseReset {
-   self.nextPageToken = @"";
-   self.hasLoadingMore = YES;
-   self.isLoading = NO;
-   self.hasFirstFetch = YES;
+    self.nextPageToken = @"";
+    self.hasLoadingMore = YES;
+    self.isLoading = NO;
+    self.hasFirstFetch = YES;
 }
 
 // "AV2OkzIGykA"
 - (void)resetRequestInfoForSuggestionList:(NSString *)videoId {
-   self.itemType = YTSegmentItemVideo;
+    self.itemType = YTSegmentItemVideo;
 
-   self.queryType = [GYoutubeRequestInfo getQueryTypeArray][YTSegmentItemVideo];
-   self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
+    self.queryType = [GYoutubeRequestInfo getQueryTypeArray][YTSegmentItemVideo];
+    self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
 
-   [self baseReset];
+    [self baseReset];
 
-   NSDictionary * parameters = @{
-    @"part" : @"id,snippet",
-    @"type" : @"video",
-    @"relatedToVideoId" : videoId,
-    @"fields" : @"items(id/videoId),nextPageToken",
-   };
-   self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    NSDictionary *parameters = @{
+            @"part" : @"id,snippet",
+            @"type" : @"video",
+            @"relatedToVideoId" : videoId,
+            @"fields" : @"items(id/videoId),nextPageToken",
+    };
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 }
 
 
 - (void)resetRequestInfoForPlayList:(YTPlaylistItemsType)playlistItemsType {
-   self.itemType = YTSegmentItemVideo;
-   self.queryType = [GYoutubeRequestInfo getQueryTypeArray][YTSegmentItemVideo];
-   self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
+    self.itemType = YTSegmentItemVideo;
+    self.queryType = [GYoutubeRequestInfo getQueryTypeArray][YTSegmentItemVideo];
+    self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
 
-   [self baseReset];
+    [self baseReset];
 
-   self.playlistItemsType = playlistItemsType;
+    self.playlistItemsType = playlistItemsType;
 }
 
 
 - (void)resetRequestInfoForActivityListFromChannelWithChannelId:(NSString *)channelId {
-   self.queryType = [GYoutubeRequestInfo getQueryTypeArray][YTSegmentItemVideo];
+    self.queryType = [GYoutubeRequestInfo getQueryTypeArray][YTSegmentItemVideo];
 
-   self.itemType = [self getItemType];
-   self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
+    self.itemType = [self getItemType];
+    self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
 
-   [self baseReset];
+    [self baseReset];
 
-   NSDictionary * parameters = @{
-    @"channelId" : channelId,
-    @"part" : @"id,contentDetails",
-   };
-   self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    NSDictionary *parameters = @{
+            @"channelId" : channelId,
+            @"part" : @"id,contentDetails",
+    };
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 }
 
 
 - (void)resetRequestInfoForVideoListFromChannelWithChannelId:(NSString *)channelId {
-   self.queryType = [GYoutubeRequestInfo getQueryTypeArray][YTSegmentItemVideo];
+    self.queryType = [GYoutubeRequestInfo getQueryTypeArray][YTSegmentItemVideo];
 
-   self.itemType = [self getItemType];
-   self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
+    self.itemType = [self getItemType];
+    self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
 
-   [self baseReset];
+    [self baseReset];
 
-   NSDictionary * parameters = @{
-    @"channelId" : channelId,
-    @"part" : @"id,snippet",
-    @"order" : @"date",
-    @"fields" : @"items(id/videoId),nextPageToken",
-   };
-   self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    NSDictionary *parameters = @{
+            @"channelId" : channelId,
+            @"part" : @"id,snippet",
+            @"order" : @"date",
+            @"fields" : @"items(id/videoId),nextPageToken",
+    };
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 }
 
 
 - (void)resetRequestInfoForPlayListFromChannelWithChannelId:(NSString *)channelId {
-   self.queryType = [GYoutubeRequestInfo getQueryTypeArray][YTSegmentItemPlaylist];
+    self.queryType = [GYoutubeRequestInfo getQueryTypeArray][YTSegmentItemPlaylist];
 
-   self.itemType = [self getItemType];
-   self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
+    self.itemType = [self getItemType];
+    self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
 
-   [self baseReset];
+    [self baseReset];
 
-   NSDictionary * parameters = @{
-    @"channelId" : channelId,
-    @"part" : @"id,snippet",
-   };
-   self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    NSDictionary *parameters = @{
+            @"channelId" : channelId,
+            @"part" : @"id,snippet",
+    };
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 }
 
 
 - (void)resetRequestInfoForSearchWithItemType:(YTSegmentItemType)itemType withQueryTeam:(NSString *)queryTeam {
-   self.queryType = [GYoutubeRequestInfo getQueryTypeArray][itemType];
+    self.queryType = [GYoutubeRequestInfo getQueryTypeArray][itemType];
 
-   self.itemType = [self getItemType];
-   self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
+    self.itemType = [self getItemType];
+    self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
 
-   [self baseReset];
+    [self baseReset];
 
-   NSDictionary * parameters = @{
-    @"q" : queryTeam,
-    @"type" : self.queryType,
-    @"part" : @"id,snippet",
-    @"fields" : @"items(id/videoId),nextPageToken",
-   };
-   self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    NSDictionary *parameters = @{
+            @"q" : queryTeam,
+            @"type" : self.queryType,
+            @"part" : @"id,snippet",
+            @"fields" : @"items(id/videoId),nextPageToken",
+    };
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 }
 
 
@@ -145,18 +145,18 @@
 
 
 - (void)putNextPageToken:(NSString *)pageToken {
-   if (pageToken == nil || [pageToken isEqualToString:@""]) {
-      self.hasLoadingMore = NO;
-      return;
-   }
-   if ([self.nextPageToken isEqualToString:@""] == NO && [pageToken isEqualToString:self.nextPageToken]) {
-      self.hasLoadingMore = NO;
-   }
-   if ([self.nextPageToken isEqualToString:@""]) { // First request
-      self.nextPageToken = pageToken;
-   }
+    if(pageToken == nil || [pageToken isEqualToString:@""]) {
+        self.hasLoadingMore = NO;
+        return;
+    }
+    if([self.nextPageToken isEqualToString:@""] == NO && [pageToken isEqualToString:self.nextPageToken]) {
+        self.hasLoadingMore = NO;
+    }
+    if([self.nextPageToken isEqualToString:@""]) { // First request
+        self.nextPageToken = pageToken;
+    }
 
-   [self.parameters setObject:pageToken forKey:@"pageToken"];
+    [self.parameters setObject:pageToken forKey:@"pageToken"];
 }
 
 
@@ -165,15 +165,15 @@
 
 
 - (YTSegmentItemType)getItemType {
-   int index = 0;
-   NSArray * array = [GYoutubeRequestInfo getSegmentTitlesArray];
-   for (int i = 0; i < array.count; ++i) {
-      if ([self.queryType isEqualToString:array[i]]) {
-         index = i;
-         break;
-      }
-   }
-   return [GYoutubeRequestInfo getItemTypeByIndex:index];
+    int index = 0;
+    NSArray *array = [GYoutubeRequestInfo getSegmentTitlesArray];
+    for (int i = 0;i < array.count;++i) {
+        if([self.queryType isEqualToString:array[i]]) {
+            index = i;
+            break;
+        }
+    }
+    return [GYoutubeRequestInfo getItemTypeByIndex:index];
 }
 
 
@@ -182,19 +182,19 @@
 
 
 - (void)resetInfo {
-   self.videoList = [[NSMutableArray alloc] init];
-   self.hasLoadingMore = YES;
+    self.videoList = [[NSMutableArray alloc] init];
+    self.hasLoadingMore = YES;
 }
 
 
 - (BOOL)hasNextPage {
-   return self.hasLoadingMore;
+    return self.hasLoadingMore;
 }
 
 
 - (void)appendNextPageData:(NSArray *)array {
-   NSLog(@"leng = %d", array.count);
-   [self.videoList addObjectsFromArray:array];
+    NSLog(@"leng = %d", array.count);
+    [self.videoList addObjectsFromArray:array];
 }
 
 
@@ -202,58 +202,58 @@
 
 
 + (NSArray *)getChannelPageSegmentTitlesArray {
-   NSArray * array = [NSArray arrayWithObjects:
-    @"Activity",
-    @"Videos",
-    @"Playlists",
-     nil];
-   return array;
+    NSArray *array = [NSArray arrayWithObjects:
+            @"Activity",
+            @"Videos",
+            @"Playlists",
+                    nil];
+    return array;
 }
 
 
 + (NSArray *)getSegmentTitlesArray {
-   NSArray * array = [NSArray arrayWithObjects:
-    @"Videos",
-    @"Channels",
-    @"Playlists",
-     nil];
-   return array;
+    NSArray *array = [NSArray arrayWithObjects:
+            @"Videos",
+            @"Channels",
+            @"Playlists",
+                    nil];
+    return array;
 }
 
 
 + (NSArray *)getQueryTypeArray {
-   NSArray * array = [NSArray arrayWithObjects:
-    @"video",
-    @"channel",
-    @"playlist",
-     nil];
-   return array;
+    NSArray *array = [NSArray arrayWithObjects:
+            @"video",
+            @"channel",
+            @"playlist",
+                    nil];
+    return array;
 }
 
 
 + (NSString *)getIdentifyByItemType:(YTSegmentItemType)itemType {
-   switch (itemType) {
-      case YTSegmentItemVideo:
-         return @"VideoIdentifier";
-      case YTSegmentItemChannel:
-         return @"ChannelIdentifier";
-      case YTSegmentItemPlaylist:
-         return @"PlaylistIdentifier";
-   }
-   return nil;
+    switch (itemType) {
+        case YTSegmentItemVideo:
+            return @"VideoIdentifier";
+        case YTSegmentItemChannel:
+            return @"ChannelIdentifier";
+        case YTSegmentItemPlaylist:
+            return @"PlaylistIdentifier";
+    }
+    return nil;
 }
 
 
 + (YTSegmentItemType)getItemTypeByIndex:(int)index {
-   switch (index) {
-      case 0:
-         return YTSegmentItemVideo;
-      case 1:
-         return YTSegmentItemChannel;
-      case 2:
-         return YTSegmentItemPlaylist;
-   }
-   return YTSegmentItemVideo;
+    switch (index) {
+        case 0:
+            return YTSegmentItemVideo;
+        case 1:
+            return YTSegmentItemChannel;
+        case 2:
+            return YTSegmentItemPlaylist;
+    }
+    return YTSegmentItemVideo;
 }
 
 

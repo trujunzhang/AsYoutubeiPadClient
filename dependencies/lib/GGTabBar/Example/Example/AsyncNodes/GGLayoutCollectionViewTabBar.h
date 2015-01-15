@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "GGTabBar.h"
+
 @class TabBarCollectionView;
 
 
 @interface GGLayoutCollectionViewTabBar : GGTabBar
 
-@property(nonatomic, strong) TabBarCollectionView * collectionView;
+@property (nonatomic, strong) TabBarCollectionView *collectionView;
 @end

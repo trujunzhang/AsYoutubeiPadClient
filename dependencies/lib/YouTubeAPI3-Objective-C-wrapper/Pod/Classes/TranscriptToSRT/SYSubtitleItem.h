@@ -15,10 +15,13 @@
 @property (nonatomic, strong) NSString *text;
 
 - (instancetype)initWithXMLDic:(NSDictionary *)xmlDic;
+
 - (NSString *)srtStringWithItemNumber:(NSUInteger)itemNumber;
 
 - (NSString *)startTimeString;
+
 - (NSString *)durationString;
+
 - (NSString *)endTimeString;
 
 @end

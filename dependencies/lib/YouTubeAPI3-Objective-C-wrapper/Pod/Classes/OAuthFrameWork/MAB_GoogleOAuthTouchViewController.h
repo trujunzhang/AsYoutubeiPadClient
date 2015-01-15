@@ -11,18 +11,17 @@
 #import "MAB_GoogleAccessToken.h"
 #import "MAB_GoogleUserCredentials.h"
 
-@interface MAB_GoogleOAuthTouchViewController : UIViewController <UIWebViewDelegate>
-{
+@interface MAB_GoogleOAuthTouchViewController : UIViewController<UIWebViewDelegate> {
     UIWebView *webview;
     UINavigationBar *navBar;
     UIButton *cancelBtn;
     UIActivityIndicatorView *loading;
-    
+
     BOOL isVerified;
     NSString *urlstring;
     NSInteger navy;
     NSString *stoken;
-    
+
 }
 
 @property (weak, nonatomic) NSString *clientID;

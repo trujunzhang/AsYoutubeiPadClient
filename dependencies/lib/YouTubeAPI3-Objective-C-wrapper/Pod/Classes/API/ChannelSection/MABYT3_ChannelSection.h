@@ -21,6 +21,6 @@
 @property (strong, nonatomic, readonly) MABYT3_ChannelSectionSnippet *snippet;
 @property (strong, nonatomic, readonly) MABYT3_ChannelSectionContentDetails *contentDetails;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

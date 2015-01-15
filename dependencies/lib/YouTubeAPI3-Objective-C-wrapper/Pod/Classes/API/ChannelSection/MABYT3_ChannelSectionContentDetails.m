@@ -12,27 +12,27 @@
 
 @implementation MABYT3_ChannelSectionContentDetails
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _channels = [[NSMutableArray alloc] init];
         _playlists = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _channels = [[NSMutableArray alloc] init];
         _playlists = [[NSMutableArray alloc] init];
-        
-        if ([dict objectForKey:@"playlists"]) {
+
+        if([dict objectForKey:@"playlists"]) {
             _playlists = [[dict objectForKey:@"playlists"] mutableCopy];
         }
-        if ([dict objectForKey:@"channels"]) {
+        if([dict objectForKey:@"channels"]) {
             _channels = [[dict objectForKey:@"channels"] mutableCopy];
         }
     }

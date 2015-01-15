@@ -25,6 +25,6 @@
 @property (nonatomic) NSUInteger position;
 @property (strong, nonatomic) MABYT3_ResourceId *resourceId;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

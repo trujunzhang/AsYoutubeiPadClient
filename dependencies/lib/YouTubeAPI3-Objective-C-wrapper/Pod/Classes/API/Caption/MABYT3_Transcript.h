@@ -8,12 +8,12 @@
 
 @interface MABYT3_Transcript : NSObject
 
-@property(strong, nonatomic) NSString * kind;
+@property (strong, nonatomic) NSString *kind;
 
-@property(strong, nonatomic) NSString * identifier;
+@property (strong, nonatomic) NSString *identifier;
 
 
-@property(nonatomic, strong) NSMutableArray * textList;
+@property (nonatomic, strong) NSMutableArray *textList;
 
 - (id)initFromDictionary:(NSDictionary *)dict;
 @end

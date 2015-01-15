@@ -10,7 +10,6 @@
 @interface MDYTDetailVideoInfo : YTYouTubeVideoCache
 
 
-
 @end
 
 

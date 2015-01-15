@@ -10,10 +10,10 @@
 
 @implementation MABYT3_VideoRecordingDetails
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _locationDescription = @"";
         _location = [[MABYT3_Location alloc] init];
         _recordingDate = [[MAB_GDate alloc] init];
@@ -21,24 +21,24 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _locationDescription = @"";
         _location = [[MABYT3_Location alloc] init];
         _recordingDate = [[MAB_GDate alloc] init];
-        
-        if ([dict objectForKey:@"locationDescription"]) {
+
+        if([dict objectForKey:@"locationDescription"]) {
             _locationDescription = [dict objectForKey:@"locationDescription"];
         }
-        if ([dict objectForKey:@"location"]) {
+        if([dict objectForKey:@"location"]) {
             _location = [[MABYT3_Location alloc] initFromDictionary:[dict objectForKey:@"location"]];
         }
-        if ([dict objectForKey:@"recordingDate"]) {
+        if([dict objectForKey:@"recordingDate"]) {
             _recordingDate = [[MAB_GDate alloc] initFromString:[dict objectForKey:@"recordingDate"]];
         }
-        
+
     }
     return self;
 }

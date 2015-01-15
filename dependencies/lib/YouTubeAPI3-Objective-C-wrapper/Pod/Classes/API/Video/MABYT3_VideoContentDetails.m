@@ -13,36 +13,36 @@
 
 - (id)init {
 
-   self = [super init];
-   if (self) {
-      _duration = 0;
-      _dimension = kYTVideoDimension2D;
-      _definition = kYTVideoDefinitionSD;
-      _caption = NO;
-      _licensedContent = NO;
-      _regionRestriction = [[MABYT3_RegionRestriction alloc] init];
-      _contentRating = [[MABYT3_ContentRating alloc] init];
-   }
-   return self;
+    self = [super init];
+    if(self) {
+        _duration = 0;
+        _dimension = kYTVideoDimension2D;
+        _definition = kYTVideoDefinitionSD;
+        _caption = NO;
+        _licensedContent = NO;
+        _regionRestriction = [[MABYT3_RegionRestriction alloc] init];
+        _contentRating = [[MABYT3_ContentRating alloc] init];
+    }
+    return self;
 }
 
 
 - (id)initFromDictionary:(NSDictionary *)dict {
 
-   self = [super init];
-   if (self) {
-      _duration = 0;
-      _dimension = kYTVideoDimension2D;
-      _definition = kYTVideoDefinitionSD;
-      _caption = NO;
-      _licensedContent = NO;
-      _regionRestriction = [[MABYT3_RegionRestriction alloc] init];
-      _contentRating = [[MABYT3_ContentRating alloc] init];
+    self = [super init];
+    if(self) {
+        _duration = 0;
+        _dimension = kYTVideoDimension2D;
+        _definition = kYTVideoDefinitionSD;
+        _caption = NO;
+        _licensedContent = NO;
+        _regionRestriction = [[MABYT3_RegionRestriction alloc] init];
+        _contentRating = [[MABYT3_ContentRating alloc] init];
 
-      if ([dict objectForKey:@"duration"]) {
-         //"PT35S"
-         //"PT7M52S"
-         //"PT1H35M38S"
+        if([dict objectForKey:@"duration"]) {
+            //"PT35S"
+            //"PT7M52S"
+            //"PT1H35M38S"
 //         NSString * duration = [dict objectForKey:@"duration"];
 //         NSString * dur = [[duration stringByReplacingOccurrencesOfString:@"PT"
 //                                                               withString:@""] stringByReplacingOccurrencesOfString:@"S"
@@ -54,35 +54,35 @@
 //            NSArray * arr = [dur componentsSeparatedByString:@"M"];
 //            _duration = (60 * [arr[0] integerValue]) + [arr[1] integerValue];
 //         }
-         _duration = [dict objectForKey:@"duration"];
+            _duration = [dict objectForKey:@"duration"];
 
-      }
-      if ([dict objectForKey:@"dimension"]) {
-         if ([[dict objectForKey:@"dimension"] isEqualToString:@"3d"]) {
-            _dimension = kYTVideoDimension3D;
-         }
-      }
-      if ([dict objectForKey:@"definition"]) {
-         if ([[dict objectForKey:@"definition"] isEqualToString:@"hd"]) {
-            _definition = kYTVideoDefinitionHD;
-         }
-      }
-      if ([dict objectForKey:@"caption"]) {
-         if ([[dict objectForKey:@"caption"] isEqualToString:@"true"]) {
-            _caption = YES;
-         }
-      }
-      if ([dict objectForKey:@"licensedContent"]) {
-         _licensedContent = [[dict objectForKey:@"licensedContent"] boolValue];
-      }
-      if ([dict objectForKey:@"regionRestriction"]) {
-         _regionRestriction = [[MABYT3_RegionRestriction alloc] initFromDictionary:[dict objectForKey:@"regionRestriction"]];
-      }
-      if ([dict objectForKey:@"contentRating"]) {
-         _contentRating = [[MABYT3_ContentRating alloc] initFromDictionary:[dict objectForKey:@"contentRating"]];
-      }
-   }
-   return self;
+        }
+        if([dict objectForKey:@"dimension"]) {
+            if([[dict objectForKey:@"dimension"] isEqualToString:@"3d"]) {
+                _dimension = kYTVideoDimension3D;
+            }
+        }
+        if([dict objectForKey:@"definition"]) {
+            if([[dict objectForKey:@"definition"] isEqualToString:@"hd"]) {
+                _definition = kYTVideoDefinitionHD;
+            }
+        }
+        if([dict objectForKey:@"caption"]) {
+            if([[dict objectForKey:@"caption"] isEqualToString:@"true"]) {
+                _caption = YES;
+            }
+        }
+        if([dict objectForKey:@"licensedContent"]) {
+            _licensedContent = [[dict objectForKey:@"licensedContent"] boolValue];
+        }
+        if([dict objectForKey:@"regionRestriction"]) {
+            _regionRestriction = [[MABYT3_RegionRestriction alloc] initFromDictionary:[dict objectForKey:@"regionRestriction"]];
+        }
+        if([dict objectForKey:@"contentRating"]) {
+            _contentRating = [[MABYT3_ContentRating alloc] initFromDictionary:[dict objectForKey:@"contentRating"]];
+        }
+    }
+    return self;
 }
 
 

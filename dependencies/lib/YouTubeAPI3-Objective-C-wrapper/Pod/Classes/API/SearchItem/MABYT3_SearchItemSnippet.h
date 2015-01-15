@@ -23,6 +23,6 @@
 @property (strong, nonatomic) NSString *channelTitle;
 @property (nonatomic) YTLiveBroadcastContent liveBroadcastContent;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

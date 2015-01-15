@@ -10,10 +10,10 @@
 
 @implementation MABYT3_VideoStatus
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _uploadStatus = @"processed";
         _failureReason = @"";
         _rejectionReason = @"";
@@ -26,10 +26,10 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _uploadStatus = @"processed";
         _failureReason = @"";
         _rejectionReason = @"";
@@ -38,41 +38,41 @@
         _license = kYTVideoLicenseYT;
         _embeddable = YES;
         _publicStatsViewable = YES;
-        
-        if ([dict objectForKey:@"uploadStatus"]) {
+
+        if([dict objectForKey:@"uploadStatus"]) {
             _uploadStatus = [dict objectForKey:@"uploadStatus"];
         }
-        if ([dict objectForKey:@"failureReason"]) {
+        if([dict objectForKey:@"failureReason"]) {
             _failureReason = [dict objectForKey:@"failureReason"];
         }
-        if ([dict objectForKey:@"rejectionReason"]) {
+        if([dict objectForKey:@"rejectionReason"]) {
             _rejectionReason = [dict objectForKey:@"rejectionReason"];
         }
-        if ([dict objectForKey:@"privacyStatus"]) {
+        if([dict objectForKey:@"privacyStatus"]) {
             _privacyStatus = [self privacyStatusFromString:[dict objectForKey:@"privacyStatus"]];
         }
-        if ([dict objectForKey:@"publishedAt"]) {
+        if([dict objectForKey:@"publishedAt"]) {
             _publishedAt = [[MAB_GDate alloc] initFromString:[dict objectForKey:@"publishedAt"]];
         }
-        if ([dict objectForKey:@"embeddable"]) {
+        if([dict objectForKey:@"embeddable"]) {
             _embeddable = [[dict objectForKey:@"embeddable"] boolValue];
         }
-        if ([dict objectForKey:@"publicStatsViewable"]) {
+        if([dict objectForKey:@"publicStatsViewable"]) {
             _publicStatsViewable = [[dict objectForKey:@"publicStatsViewable"] boolValue];
         }
-        
+
     }
     return self;
 }
 
-- (YTPrivacyStatus) privacyStatusFromString:(NSString *)prvString {
-    
+- (YTPrivacyStatus)privacyStatusFromString:(NSString *)prvString {
+
     YTPrivacyStatus retVal = kYTPrivacyStatusPublic;
-    
-    if ([prvString isEqualToString:@"private"]) {
+
+    if([prvString isEqualToString:@"private"]) {
         retVal = kYTPrivacyStatusPrivate;
     }
-    else if ([prvString isEqualToString:@"unlisted"]) {
+    else if([prvString isEqualToString:@"unlisted"]) {
         retVal = kYTPrivacyStatusUnlisted;
     }
     return retVal;

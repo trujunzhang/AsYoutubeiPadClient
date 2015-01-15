@@ -17,6 +17,6 @@
 @property (nonatomic) BOOL copyrightStrikesGoodStanding;
 @property (nonatomic) BOOL contentIdClaimsGoodStanding;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

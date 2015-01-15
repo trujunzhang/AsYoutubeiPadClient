@@ -28,6 +28,6 @@
 
 @property (strong, nonatomic) MABYT3_VideoLiveStreamingDetails *liveStreamingDetails;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

@@ -18,6 +18,6 @@
 @property (strong, nonatomic) NSString *channelId;
 @property (strong, nonatomic) NSString *title;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

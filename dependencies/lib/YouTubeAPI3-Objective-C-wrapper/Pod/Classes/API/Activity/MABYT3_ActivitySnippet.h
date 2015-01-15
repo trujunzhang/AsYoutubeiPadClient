@@ -24,6 +24,6 @@
 @property (nonatomic) YTActivityFeedType type;
 @property (strong, nonatomic) NSString *groupId;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

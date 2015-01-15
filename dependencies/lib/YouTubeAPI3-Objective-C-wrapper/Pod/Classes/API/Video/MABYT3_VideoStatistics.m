@@ -13,45 +13,45 @@
 
 - (id)init {
 
-   self = [super init];
-   if (self) {
-      _viewCount = 0;
-      _likeCount = 0;
-      _dislikeCount = 0;
-      _favoriteCount = 0;
-      _commentCount = 0;
-   }
-   return self;
+    self = [super init];
+    if(self) {
+        _viewCount = 0;
+        _likeCount = 0;
+        _dislikeCount = 0;
+        _favoriteCount = 0;
+        _commentCount = 0;
+    }
+    return self;
 }
 
 
 - (id)initFromDictionary:(NSDictionary *)dict {
 
-   self = [super init];
-   if (self) {
-      _viewCount = 0;
-      _likeCount = 0;
-      _dislikeCount = 0;
-      _favoriteCount = 0;
-      _commentCount = 0;
+    self = [super init];
+    if(self) {
+        _viewCount = 0;
+        _likeCount = 0;
+        _dislikeCount = 0;
+        _favoriteCount = 0;
+        _commentCount = 0;
 
-      if ([dict objectForKey:@"viewCount"]) {
-         _viewCount = [[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"viewCount"]];
-      }
-      if ([dict objectForKey:@"likeCount"]) {
-         _likeCount = [[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"likeCount"]];
-      }
-      if ([dict objectForKey:@"dislikeCount"]) {
-         _dislikeCount = [[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"dislikeCount"]];
-      }
-      if ([dict objectForKey:@"favoriteCount"]) {
-         _favoriteCount = [[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"favoriteCount"]];
-      }
-      if ([dict objectForKey:@"commentCount"]) {
-         _commentCount = [[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"commentCount"]];
-      }
-   }
-   return self;
+        if([dict objectForKey:@"viewCount"]) {
+            _viewCount = [[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"viewCount"]];
+        }
+        if([dict objectForKey:@"likeCount"]) {
+            _likeCount = [[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"likeCount"]];
+        }
+        if([dict objectForKey:@"dislikeCount"]) {
+            _dislikeCount = [[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"dislikeCount"]];
+        }
+        if([dict objectForKey:@"favoriteCount"]) {
+            _favoriteCount = [[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"favoriteCount"]];
+        }
+        if([dict objectForKey:@"commentCount"]) {
+            _commentCount = [[[NSNumberFormatter alloc] init] numberFromString:[dict objectForKey:@"commentCount"]];
+        }
+    }
+    return self;
 }
 
 @end

@@ -17,15 +17,15 @@
 
 @interface MABYT3_Track : NSObject
 
-@property(strong, nonatomic) NSString * kind;
+@property (strong, nonatomic) NSString *kind;
 
-@property(strong, nonatomic) NSString * identifier;
-@property(strong, nonatomic) NSString * name;
-@property(strong, nonatomic) NSString * lang_code;
-@property(strong, nonatomic) NSString * lang_original;
-@property(strong, nonatomic) NSString * lang_translated;
-@property(nonatomic) BOOL lang_default;
-@property(strong, nonatomic) NSString * cantran;
+@property (strong, nonatomic) NSString *identifier;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *lang_code;
+@property (strong, nonatomic) NSString *lang_original;
+@property (strong, nonatomic) NSString *lang_translated;
+@property (nonatomic) BOOL lang_default;
+@property (strong, nonatomic) NSString *cantran;
 
 - (id)initFromDictionary:(NSDictionary *)dict withKind:(NSString *)kind;
 @end

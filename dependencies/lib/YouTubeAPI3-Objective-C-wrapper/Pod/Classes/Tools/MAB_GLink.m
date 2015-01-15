@@ -10,10 +10,10 @@
 
 @implementation MAB_GLink
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _rel = @"";
         _type = @"";
         _href = @"";
@@ -22,27 +22,27 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)textdict {
-    
+- (id)initFromDictionary:(NSDictionary *)textdict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _rel = @"";
         _type = @"";
         _href = @"";
-        
-        if ([textdict objectForKey:@"rel"]) {
+
+        if([textdict objectForKey:@"rel"]) {
             _rel = [textdict objectForKey:@"rel"];
         }
-        if ([textdict objectForKey:@"type"]) {
+        if([textdict objectForKey:@"type"]) {
             _type = [textdict objectForKey:@"type"];
         }
-        if ([textdict objectForKey:@"href"]) {
+        if([textdict objectForKey:@"href"]) {
             _href = [textdict objectForKey:@"href"];
         }
-        if ([textdict objectForKey:@"countHint"]) {
+        if([textdict objectForKey:@"countHint"]) {
             _countHint = [[textdict objectForKey:@"countHint"] integerValue];
         }
-        
+
     }
     return self;
 }

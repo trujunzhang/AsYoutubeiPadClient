@@ -11,12 +11,12 @@
 
 @interface MABYT3_ResourceId : NSObject
 
-@property(strong, nonatomic) NSString * kind;
-@property(strong, nonatomic) NSString * channelId;
-@property(strong, nonatomic) NSString * videoId;
-@property(strong, nonatomic) NSString * playlistId;
+@property (strong, nonatomic) NSString *kind;
+@property (strong, nonatomic) NSString *channelId;
+@property (strong, nonatomic) NSString *videoId;
+@property (strong, nonatomic) NSString *playlistId;
 
-@property(strong, nonatomic) NSMutableDictionary * JSON;
+@property (strong, nonatomic) NSMutableDictionary *JSON;
 
 - (id)initFromDictionary:(NSDictionary *)dict;
 

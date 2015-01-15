@@ -10,30 +10,30 @@
 
 @implementation MABYT3_RegionRestriction
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _allowed = [[NSMutableArray alloc] init];
         _blocked = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _allowed = [[NSMutableArray alloc] init];
         _blocked = [[NSMutableArray alloc] init];
-        
-        if ([dict objectForKey:@"allowed"]) {
+
+        if([dict objectForKey:@"allowed"]) {
             _allowed = [[dict objectForKey:@"allowed"] mutableCopy];
         }
-        if ([dict objectForKey:@"blocked"]) {
+        if([dict objectForKey:@"blocked"]) {
             _blocked = [[dict objectForKey:@"blocked"] mutableCopy];
         }
-        
+
     }
     return self;
 }

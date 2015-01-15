@@ -12,10 +12,10 @@
 
 @implementation MABYT3_ActivityRecommendation
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _resourceId = [[MABYT3_ResourceId alloc] init];
         _seedResourceId = [[MABYT3_ResourceId alloc] init];
         _reason = @"";
@@ -23,25 +23,25 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _resourceId = [[MABYT3_ResourceId alloc] init];
         _seedResourceId = [[MABYT3_ResourceId alloc] init];
         _reason = @"";
-        
-        if ([dict objectForKey:@"reason"]) {
+
+        if([dict objectForKey:@"reason"]) {
             _reason = [dict objectForKey:@"reason"];
         }
-        if ([dict objectForKey:@"resourceId"]) {
+        if([dict objectForKey:@"resourceId"]) {
             _resourceId = [[MABYT3_ResourceId alloc] initFromDictionary:[dict objectForKey:@"resourceId"]];
         }
-        if ([dict objectForKey:@"seedResourceId"]) {
+        if([dict objectForKey:@"seedResourceId"]) {
             _seedResourceId = [[MABYT3_ResourceId alloc] initFromDictionary:[dict objectForKey:@"seedResourceId"]];
         }
-        
-        
+
+
     }
     return self;
 }

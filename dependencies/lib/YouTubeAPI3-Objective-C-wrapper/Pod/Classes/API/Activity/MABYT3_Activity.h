@@ -20,6 +20,6 @@
 @property (strong, nonatomic) MABYT3_ActivitySnippet *snippet;
 @property (strong, nonatomic) MABYT3_ActivityContentDetails *contentDetails;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

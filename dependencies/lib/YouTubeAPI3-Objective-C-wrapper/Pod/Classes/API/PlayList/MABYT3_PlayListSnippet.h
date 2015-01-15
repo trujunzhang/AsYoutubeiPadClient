@@ -22,6 +22,6 @@
 @property (strong, nonatomic) NSString *channelTitle;
 @property (strong, nonatomic) NSMutableArray *tags;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

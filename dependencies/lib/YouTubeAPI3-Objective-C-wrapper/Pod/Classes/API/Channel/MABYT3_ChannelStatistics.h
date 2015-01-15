@@ -18,6 +18,6 @@
 @property (nonatomic) BOOL hiddenSubscriberCount;
 @property (nonatomic) unsigned long videoCount;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

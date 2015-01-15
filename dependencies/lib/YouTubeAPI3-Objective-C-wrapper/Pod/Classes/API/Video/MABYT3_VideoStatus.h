@@ -21,6 +21,6 @@
 @property (nonatomic) BOOL embeddable;
 @property (nonatomic) BOOL publicStatsViewable;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

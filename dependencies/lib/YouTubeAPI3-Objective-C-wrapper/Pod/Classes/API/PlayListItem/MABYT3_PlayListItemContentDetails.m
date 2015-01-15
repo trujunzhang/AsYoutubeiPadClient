@@ -12,10 +12,10 @@
 
 @implementation MABYT3_PlayListItemContentDetails
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _videoId = @"";
         _startAt = @"";
         _endAt = @"";
@@ -24,25 +24,25 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _videoId = @"";
         _startAt = @"0";
         _endAt = @"0";
         _note = @"";
-        
-        if ([dict objectForKey:@"videoId"]) {
+
+        if([dict objectForKey:@"videoId"]) {
             _videoId = [dict objectForKey:@"videoId"];
         }
-        if ([dict objectForKey:@"startAt"]) {
+        if([dict objectForKey:@"startAt"]) {
             _startAt = [dict objectForKey:@"startAt"];
         }
-        if ([dict objectForKey:@"endAt"]) {
+        if([dict objectForKey:@"endAt"]) {
             _endAt = [dict objectForKey:@"endAt"];
         }
-        if ([dict objectForKey:@"note"]) {
+        if([dict objectForKey:@"note"]) {
             _note = [dict objectForKey:@"note"];
         }
     }

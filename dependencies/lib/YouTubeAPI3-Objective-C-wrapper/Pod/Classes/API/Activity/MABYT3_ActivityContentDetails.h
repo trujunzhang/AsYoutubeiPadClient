@@ -26,6 +26,6 @@
 @property (strong, nonatomic) MABYT3_ActivityRecommendation *recommendation;
 @property (strong, nonatomic) MABYT3_ActivitySocial *social;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

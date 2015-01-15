@@ -16,20 +16,17 @@
 
 @implementation GGTabBarTests
 
-- (void)setUp
-{
+- (void)setUp {
     [super setUp];
 }
 
-- (void)tearDown
-{
+- (void)tearDown {
     [super tearDown];
 }
 
 /** Manually craft an expected dictionary and compare it with the generated dictionary
- */
-- (void)testHorizontalLayoutGeneration
-{
+*/
+- (void)testHorizontalLayoutGeneration {
     // Build TabBar Buttons
     UIButton *btn1 = [[UIButton alloc] init];
     UIButton *btn2 = [[UIButton alloc] init];
@@ -61,19 +58,18 @@
     XCTAssertEqual([[viewsDictionary allKeys] count], 7);
 
     NSDictionary *expectedDict = @{[NSString stringWithFormat:@"button%ld", (long)btn1.tag] : btn1,
-                                   [NSString stringWithFormat:@"button%ld", (long)btn2.tag] : btn2,
-                                   [NSString stringWithFormat:@"button%ld", (long)btn3.tag] : btn3,
-                                   [NSString stringWithFormat:@"separator%ld", (long)sep1.tag] :sep1,
-                                   [NSString stringWithFormat:@"separator%ld", (long)sep2.tag] :sep2,
-                                   [NSString stringWithFormat:@"marginSeparator%ld", (long)marginSep1.tag] : marginSep1,
-                                   [NSString stringWithFormat:@"marginSeparator%ld", (long)marginSep2.tag] : marginSep2};
+            [NSString stringWithFormat:@"button%ld", (long)btn2.tag] : btn2,
+            [NSString stringWithFormat:@"button%ld", (long)btn3.tag] : btn3,
+            [NSString stringWithFormat:@"separator%ld", (long)sep1.tag] : sep1,
+            [NSString stringWithFormat:@"separator%ld", (long)sep2.tag] : sep2,
+            [NSString stringWithFormat:@"marginSeparator%ld", (long)marginSep1.tag] : marginSep1,
+            [NSString stringWithFormat:@"marginSeparator%ld", (long)marginSep2.tag] : marginSep2};
 
     XCTAssertEqualObjects(viewsDictionary, expectedDict);
 }
 
 
-- (void)testHorizontalLayoutConstraintGeneration
-{
+- (void)testHorizontalLayoutConstraintGeneration {
     GGTabBar *tabBar = [[GGTabBar alloc] init];
 
     // Build TabBar Buttons
@@ -100,12 +96,12 @@
     // tabBarController viewsDictionaryWithButtons:separators:
     NSDictionary *viewsDictionary;
     viewsDictionary = @{@"button1" : b1,
-                        @"button2" : b2,
-                        @"button3" : b3,
-                        @"separator1" : sep1,
-                        @"separator2" : sep2,
-                        @"marginSeparator1" : marginSep1,
-                        @"marginSeparator2" : marginSep2};
+            @"button2" : b2,
+            @"button3" : b3,
+            @"separator1" : sep1,
+            @"separator2" : sep2,
+            @"marginSeparator1" : marginSep1,
+            @"marginSeparator2" : marginSep2};
 
     NSString *constraint;
     constraint = [tabBar visualFormatConstraintStringWithButtons:@[b1, b2, b3]

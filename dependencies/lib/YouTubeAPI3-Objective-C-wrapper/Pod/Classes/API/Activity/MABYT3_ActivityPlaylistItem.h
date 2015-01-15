@@ -17,6 +17,6 @@
 @property (strong, nonatomic) NSString *playlistItemId;
 @property (strong, nonatomic) MABYT3_ResourceId *resourceId;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

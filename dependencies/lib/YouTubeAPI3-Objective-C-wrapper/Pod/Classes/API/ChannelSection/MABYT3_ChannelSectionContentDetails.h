@@ -15,6 +15,6 @@
 @property (strong, nonatomic) NSMutableArray *playlists;
 @property (strong, nonatomic) NSMutableArray *channels;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

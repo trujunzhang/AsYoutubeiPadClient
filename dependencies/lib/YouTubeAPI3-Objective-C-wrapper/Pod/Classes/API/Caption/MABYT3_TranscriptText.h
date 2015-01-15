@@ -11,13 +11,13 @@
 @interface MABYT3_TranscriptText : NSObject
 
 
-@property(strong, nonatomic) NSString * kind;
+@property (strong, nonatomic) NSString *kind;
 
-@property(strong, nonatomic) NSString * identifier;
+@property (strong, nonatomic) NSString *identifier;
 
-@property(strong, nonatomic) NSString * start;
-@property(strong, nonatomic) NSString * dur;
-@property(strong, nonatomic) NSString * textValue;
+@property (strong, nonatomic) NSString *start;
+@property (strong, nonatomic) NSString *dur;
+@property (strong, nonatomic) NSString *textValue;
 
 - (id)initFromDictionary:(NSDictionary *)dict;
 @end

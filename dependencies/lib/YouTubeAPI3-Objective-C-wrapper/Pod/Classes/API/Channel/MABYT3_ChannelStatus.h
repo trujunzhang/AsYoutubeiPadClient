@@ -16,6 +16,6 @@
 @property (nonatomic) YTPrivacyStatus privacyStatus;
 @property (nonatomic) BOOL isLinked;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

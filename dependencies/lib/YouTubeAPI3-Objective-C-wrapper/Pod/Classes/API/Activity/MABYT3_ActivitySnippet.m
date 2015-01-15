@@ -12,10 +12,10 @@
 
 @implementation MABYT3_ActivitySnippet
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _publishedAt = [[MAB_GDate alloc] init];
         _channelId = @"";
         _title = @"";
@@ -28,10 +28,10 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _publishedAt = [[MAB_GDate alloc] init];
         _channelId = @"";
         _title = @"";
@@ -40,31 +40,31 @@
         _channelTitle = @"";
         _type = kYTActivityUpload;
         _groupId = @"";
-        
-        if ([dict objectForKey:@"publishedAt"]) {
+
+        if([dict objectForKey:@"publishedAt"]) {
             _publishedAt = [[MAB_GDate alloc] initFromString:[dict objectForKey:@"publishedAt"]];
         }
-        if ([dict objectForKey:@"channelId"]) {
+        if([dict objectForKey:@"channelId"]) {
             _channelId = [dict objectForKey:@"channelId"];
         }
-        if ([dict objectForKey:@"title"]) {
+        if([dict objectForKey:@"title"]) {
             _title = [dict objectForKey:@"title"];
         }
-        if ([dict objectForKey:@"description"]) {
+        if([dict objectForKey:@"description"]) {
             _descriptionString = [dict objectForKey:@"description"];
         }
-        if ([dict objectForKey:@"channelTitle"]) {
+        if([dict objectForKey:@"channelTitle"]) {
             _channelTitle = [dict objectForKey:@"channelTitle"];
         }
-        
-        if ([dict objectForKey:@"type"]) {
+
+        if([dict objectForKey:@"type"]) {
             _type = [self feedTypeFromString:[dict objectForKey:@"type"]];
         }
-        
-        if ([dict objectForKey:@"thumbnails"]) {
+
+        if([dict objectForKey:@"thumbnails"]) {
             NSDictionary *thmbDict = [dict objectForKey:@"thumbnails"];
             NSArray *keys = [thmbDict allKeys];
-            for (int i = 0; i < keys.count; i++) {
+            for (int i = 0;i < keys.count;i++) {
                 MABYT3_Thumbnail *thmb = [[MABYT3_Thumbnail alloc] initFromDictionary:[thmbDict objectForKey:keys[i]]];
                 [_thumbnails setObject:thmb forKey:keys[i]];
             }
@@ -73,35 +73,35 @@
     return self;
 }
 
-- (YTActivityFeedType) feedTypeFromString:(NSString *)feedString {
-    
+- (YTActivityFeedType)feedTypeFromString:(NSString *)feedString {
+
     YTActivityFeedType retVal = kYTActivityUpload;
-    
-    if ([feedString isEqualToString:@"bulletin"]) {
+
+    if([feedString isEqualToString:@"bulletin"]) {
         retVal = kYTActivityBulletin;
     }
-    else if ([feedString isEqualToString:@"channelItem"]) {
+    else if([feedString isEqualToString:@"channelItem"]) {
         retVal = kYTActivityChannelItem;
     }
-    else if ([feedString isEqualToString:@"comment"]) {
+    else if([feedString isEqualToString:@"comment"]) {
         retVal = kYTActivityComment;
     }
-    else if ([feedString isEqualToString:@"favorite"]) {
+    else if([feedString isEqualToString:@"favorite"]) {
         retVal = kYTActivityFavorite;
     }
-    else if ([feedString isEqualToString:@"like"]) {
+    else if([feedString isEqualToString:@"like"]) {
         retVal = kYTActivityLike;
     }
-    else if ([feedString isEqualToString:@"playlistItem"]) {
+    else if([feedString isEqualToString:@"playlistItem"]) {
         retVal = kYTActivityPlaylistItem;
     }
-    else if ([feedString isEqualToString:@"recommendation"]) {
+    else if([feedString isEqualToString:@"recommendation"]) {
         retVal = kYTActivityRecommendation;
     }
-    else if ([feedString isEqualToString:@"social"]) {
+    else if([feedString isEqualToString:@"social"]) {
         retVal = kYTActivitySocial;
     }
-    else if ([feedString isEqualToString:@"subscription"]) {
+    else if([feedString isEqualToString:@"subscription"]) {
         retVal = kYTActivitySubscription;
     }
     return retVal;

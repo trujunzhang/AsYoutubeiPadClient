@@ -19,69 +19,69 @@ static CGFloat DetailRowVideoTitleHeight = 30.0f;
 
 
 @implementation AsDetailRowVideoInfo {
-   ASTextNode * _videoTitleNode;
-   ASTextNode * _likeCountNode;
-   ASTextNode * _viewCountNode;
+    ASTextNode *_videoTitleNode;
+    ASTextNode *_likeCountNode;
+    ASTextNode *_viewCountNode;
 
-   ASDisplayNode * _divider;
+    ASDisplayNode *_divider;
 
 }
 
 - (instancetype)initWithVideo:(YTYouTubeVideoCache *)videoCache withTableWidth:(CGFloat)tableViewWidth {
-   if (!(self = [super init]))
-      return nil;
+    if(!(self = [super init]))
+        return nil;
 
-   // create a text node
-   _videoTitleNode = [ASTextNode initWithAttributedString:
-    [NSAttributedString attributedStringForDetailRowChannelTitle:[YoutubeParser getVideoSnippetTitle:videoCache]
-                                                        fontSize:16.0f]];
+    // create a text node
+    _videoTitleNode = [ASTextNode initWithAttributedString:
+            [NSAttributedString attributedStringForDetailRowChannelTitle:[YoutubeParser getVideoSnippetTitle:videoCache]
+                                                                fontSize:16.0f]];
 
-   [self addSubnode:_videoTitleNode];
+    [self addSubnode:_videoTitleNode];
 
-   _likeCountNode = [ASTextNode initWithAttributedString:
-    [NSAttributedString attributedStringForDetailRowVideoLikeCount:[YoutubeParser getVideoStatisticsLikeCount:videoCache]
-                                                          fontSize:12.0f]];
+    _likeCountNode = [ASTextNode initWithAttributedString:
+            [NSAttributedString attributedStringForDetailRowVideoLikeCount:[YoutubeParser getVideoStatisticsLikeCount:videoCache]
+                                                                  fontSize:12.0f]];
 
-   [self addSubnode:_likeCountNode];
+    [self addSubnode:_likeCountNode];
 
-   _viewCountNode = [ASTextNode initWithAttributedString:
-    [NSAttributedString attributedStringForDetailRowVideoViewCount:[YoutubeParser getVideoStatisticsViewCount:videoCache]
-                                                          fontSize:12.0f]];
+    _viewCountNode = [ASTextNode initWithAttributedString:
+            [NSAttributedString attributedStringForDetailRowVideoViewCount:[YoutubeParser getVideoStatisticsViewCount:videoCache]
+                                                                  fontSize:12.0f]];
 
-   [self addSubnode:_viewCountNode];
+    [self addSubnode:_viewCountNode];
 
 
-   return self;
+    return self;
 }
 
 
 - (void)didLoad {
-   // enable highlighting now that self.layer has loaded -- see ASHighlightOverlayLayer.h
-   self.layer.as_allowsHighlightDrawing = YES;
+    // enable highlighting now that self.layer has loaded -- see ASHighlightOverlayLayer.h
+    self.layer.as_allowsHighlightDrawing = YES;
 
-   [super didLoad];
+    [super didLoad];
 }
 
 
 - (CGSize)calculateSizeThatFits:(CGSize)constrainedSize {
-   // called on a background thread.  custom nodes must call -measure: on their subnodes in -calculateSizeThatFits:
+    // called on a background thread.  custom nodes must call -measure: on their subnodes in -calculateSizeThatFits:
 //   CGSize measuredSize = [_videoTitleNode measure:CGSizeMake(constrainedSize.width - 2 * kTextPaddingHorizontal, constrainedSize.height - 2 * kTextPaddingHorizontal)];
 
-   return CGSizeMake(constrainedSize.width, DetailRowVideoInfoHeight);
+    return CGSizeMake(constrainedSize.width, DetailRowVideoInfoHeight);
 }
 
 
 - (void)layout {
-   // called on the main thread.  we'll use the stashed size from above, instead of blocking on text sizing
+    // called on the main thread.  we'll use the stashed size from above, instead of blocking on text sizing
 
-   _videoTitleNode.frame = [FrameCalculator frameForDetailRowVideoInfoTitle:self.calculatedSize
-                                                            withTitleHeight:DetailRowVideoTitleHeight
-                                                             withFontHeight:20];
+    _videoTitleNode.frame = [FrameCalculator frameForDetailRowVideoInfoTitle:self.calculatedSize
+                                                             withTitleHeight:DetailRowVideoTitleHeight
+                                                              withFontHeight:20];
 
-   _likeCountNode.frame = [FrameCalculator frameForDetailRowVideoInfoLikeCount:_videoTitleNode.frame];
+    _likeCountNode.frame = [FrameCalculator frameForDetailRowVideoInfoLikeCount:_videoTitleNode.frame];
 
-   _viewCountNode.frame = [FrameCalculator frameForDetailRowVideoInfoViewCount:_videoTitleNode.frame
-                                                              withContainWidth:self.calculatedSize.width];
+    _viewCountNode.frame = [FrameCalculator frameForDetailRowVideoInfoViewCount:_videoTitleNode.frame
+                                                               withContainWidth:self.calculatedSize.width];
 
 }
 

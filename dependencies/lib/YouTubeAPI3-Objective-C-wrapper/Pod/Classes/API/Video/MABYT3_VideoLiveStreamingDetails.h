@@ -17,6 +17,6 @@
 @property (strong, nonatomic) MAB_GDate *scheduledEndTime;
 @property (nonatomic) unsigned long concurrentViewers;
 
-- (id) initFromDictionary:(NSDictionary *)dict;
+- (id)initFromDictionary:(NSDictionary *)dict;
 
 @end

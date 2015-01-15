@@ -15,18 +15,18 @@
 
 @interface YoutubeChannelPageViewController ()<YoutubeCollectionNextPageDelegate, GGTabBarControllerDelegate>
 
-@property(strong, nonatomic) IBOutlet UIView * topBannerContainer;
-@property(strong, nonatomic) IBOutlet UIView * tabbarViewsContainer;
+@property (strong, nonatomic) IBOutlet UIView *topBannerContainer;
+@property (strong, nonatomic) IBOutlet UIView *tabbarViewsContainer;
 
 
-@property(nonatomic, strong) NSString * channelId;
-@property(nonatomic, strong) YTYouTubeChannel * pageChannel;
+@property (nonatomic, strong) NSString *channelId;
+@property (nonatomic, strong) YTYouTubeChannel *pageChannel;
 
-@property(nonatomic, strong) YTAsyncYoutubeChannelTopCellNode * topBanner;
-@property(nonatomic, strong) GGTabBarController * videoTabBarController;
+@property (nonatomic, strong) YTAsyncYoutubeChannelTopCellNode *topBanner;
+@property (nonatomic, strong) GGTabBarController *videoTabBarController;
 
-@property(nonatomic, strong) YTCollectionViewController * selectedController;
-@property(nonatomic) YTSegmentItemType selectedSegmentItemType;
+@property (nonatomic, strong) YTCollectionViewController *selectedController;
+@property (nonatomic) YTSegmentItemType selectedSegmentItemType;
 
 @end
 
@@ -35,101 +35,101 @@
 
 
 - (instancetype)initWithChannelId:(NSString *)channelId withTitle:(NSString *)title {
-   self = [super init];
-   if (self) {
-      self.channelId = channelId;
-      self.title = title;
+    self = [super init];
+    if(self) {
+        self.channelId = channelId;
+        self.title = title;
 
-      YoutubeResponseBlock completion = ^(NSArray * array, NSObject * respObject) {
-          self.pageChannel = array[0];
-          // 1
-          [self makeTopBanner:self.topBannerContainer];
-      };
-      ErrorResponseBlock error = ^(NSError * error) {
-          NSString * debug = @"debug";
-      };
-      [[GYoutubeHelper getInstance] fetchChannelForPageView:self.channelId completion:completion errorHandler:error];
-   }
+        YoutubeResponseBlock completion = ^(NSArray *array, NSObject *respObject) {
+            self.pageChannel = array[0];
+            // 1
+            [self makeTopBanner:self.topBannerContainer];
+        };
+        ErrorResponseBlock error = ^(NSError *error) {
+            NSString *debug = @"debug";
+        };
+        [[GYoutubeHelper getInstance] fetchChannelForPageView:self.channelId completion:completion errorHandler:error];
+    }
 
-   return self;
+    return self;
 }
 
 
 - (void)viewDidLoad {
-   [super viewDidLoad];
+    [super viewDidLoad];
 
-   // Do any additional setup after loading the view from its nib.
-   [self makeSegmentTabs:self.tabbarViewsContainer];
+    // Do any additional setup after loading the view from its nib.
+    [self makeSegmentTabs:self.tabbarViewsContainer];
 
-   if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-      self.edgesForExtendedLayout = UIRectEdgeNone;
-      self.automaticallyAdjustsScrollViewInsets = NO;
-   }
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 
 - (void)makeSegmentTabs:(UIView *)parentView {
-   // 1
-   NSMutableArray * tabBarControllers = [[NSMutableArray alloc] init];
-   for (NSString * title in [GYoutubeRequestInfo getChannelPageSegmentTitlesArray]) {
-      YTCollectionViewController * controller = [[YTCollectionViewController alloc] initWithNextPageDelegate:self
-                                                                                                   withTitle:title];
-      controller.numbersPerLineArray = [NSArray arrayWithObjects:@"3", @"4", nil];
+    // 1
+    NSMutableArray *tabBarControllers = [[NSMutableArray alloc] init];
+    for (NSString *title in [GYoutubeRequestInfo getChannelPageSegmentTitlesArray]) {
+        YTCollectionViewController *controller = [[YTCollectionViewController alloc] initWithNextPageDelegate:self
+                                                                                                    withTitle:title];
+        controller.numbersPerLineArray = [NSArray arrayWithObjects:@"3", @"4", nil];
 
-      [tabBarControllers addObject:controller];
-   }
+        [tabBarControllers addObject:controller];
+    }
 
-   // 2
-   GGTabBar * topTabBar = [[GGLayoutStringTabBar alloc] initWithFrame:CGRectZero
+    // 2
+    GGTabBar *topTabBar = [[GGLayoutStringTabBar alloc] initWithFrame:CGRectZero
                                                       viewControllers:tabBarControllers
                                                                 inTop:YES
                                                         selectedIndex:0
                                                           tabBarWidth:0];
 
-   GGTabBarController * tabBarController = [[GGTabBarController alloc] initWithTabBarView:topTabBar];
-   tabBarController.delegate = self;
+    GGTabBarController *tabBarController = [[GGTabBarController alloc] initWithTabBarView:topTabBar];
+    tabBarController.delegate = self;
 
-   tabBarController.view.frame = parentView.bounds;// used
-   tabBarController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    tabBarController.view.frame = parentView.bounds;// used
+    tabBarController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
-   self.videoTabBarController = tabBarController;
-   [parentView addSubview:self.videoTabBarController.view];
+    self.videoTabBarController = tabBarController;
+    [parentView addSubview:self.videoTabBarController.view];
 }
 
 
 - (void)makeTopBanner:(UIView *)parentView {
 
-   // Create a new private queue
-   dispatch_queue_t _backgroundQueue;
-   _backgroundQueue = dispatch_queue_create("com.youtube.page.topcell", NULL);
+    // Create a new private queue
+    dispatch_queue_t _backgroundQueue;
+    _backgroundQueue = dispatch_queue_create("com.youtube.page.topcell", NULL);
 
-   dispatch_async(_backgroundQueue, ^{
+    dispatch_async(_backgroundQueue, ^{
 
-       self.topBanner = [[YTAsyncYoutubeChannelTopCellNode alloc] initWithChannel:self.pageChannel];
+        self.topBanner = [[YTAsyncYoutubeChannelTopCellNode alloc] initWithChannel:self.pageChannel];
 
-       // self.view isn't a node, so we can only use it on the main thread
-       dispatch_sync(dispatch_get_main_queue(), ^{
+        // self.view isn't a node, so we can only use it on the main thread
+        dispatch_sync(dispatch_get_main_queue(), ^{
 
-           self.topBanner.frame = parentView.bounds;// used
-           self.topBanner.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;// used
+            self.topBanner.frame = parentView.bounds;// used
+            self.topBanner.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;// used
 
-           [parentView addSubview:self.topBanner.view];
-       });
-   });
+            [parentView addSubview:self.topBanner.view];
+        });
+    });
 }
 
 
 - (void)didReceiveMemoryWarning {
-   [super didReceiveMemoryWarning];
-   // Dispose of any resources that can be recreated.
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 
 - (void)viewDidLayoutSubviews {
-   [super viewDidLayoutSubviews];
+    [super viewDidLayoutSubviews];
 
-   [self.selectedController.view setNeedsLayout];
-   [self.topBanner setNeedsLayout];
+    [self.selectedController.view setNeedsLayout];
+    [self.topBanner setNeedsLayout];
 }
 
 
@@ -138,23 +138,23 @@
 
 
 - (BOOL)ggTabBarController:(GGTabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-   return YES;
+    return YES;
 }
 
 
 - (void)ggTabBarController:(GGTabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-   if (self.selectedController == viewController)
-      return;
+    if(self.selectedController == viewController)
+        return;
 
-   [self fetchListWithController:viewController withType:tabBarController.selectedIndex];
+    [self fetchListWithController:viewController withType:tabBarController.selectedIndex];
 }
 
 
 - (void)fetchListWithController:(YTCollectionViewController *)controller withType:(YTSegmentItemType)type {
-   self.selectedController = controller;
-   self.selectedSegmentItemType = type;
+    self.selectedController = controller;
+    self.selectedSegmentItemType = type;
 
-   [self executeRefreshTask];
+    [self executeRefreshTask];
 }
 
 
@@ -163,37 +163,37 @@
 
 
 - (void)executeRefreshTask {
-   if ([self.selectedController getYoutubeRequestInfo].hasFirstFetch)
-      return;
+    if([self.selectedController getYoutubeRequestInfo].hasFirstFetch)
+        return;
 
-   NSString * channelId = self.channelId;
-   switch (self.selectedSegmentItemType) {
-      case YTSegmentItemVideo:
-         [self.selectedController fetchActivityListByType:self.selectedSegmentItemType
-                                            withChannelId:channelId];
-         break;
-      case YTSegmentItemChannel:
-         [self.selectedController fetchVideoListFromChannelWithChannelId:channelId];
-         break;
-      case YTSegmentItemPlaylist:
-         [self.selectedController fetchPlayListFromChannelWithChannelId:channelId];
-         break;
-   }
+    NSString *channelId = self.channelId;
+    switch (self.selectedSegmentItemType) {
+        case YTSegmentItemVideo:
+            [self.selectedController fetchActivityListByType:self.selectedSegmentItemType
+                                               withChannelId:channelId];
+            break;
+        case YTSegmentItemChannel:
+            [self.selectedController fetchVideoListFromChannelWithChannelId:channelId];
+            break;
+        case YTSegmentItemPlaylist:
+            [self.selectedController fetchPlayListFromChannelWithChannelId:channelId];
+            break;
+    }
 }
 
 
 - (void)executeNextPageTask {
-   switch (self.selectedSegmentItemType) {
-      case YTSegmentItemVideo:
-         [self.selectedController fetchActivityListByPageToken];
-         break;
-      case YTSegmentItemChannel:
-         [self.selectedController fetchVideoListFromChannelByPageToken];
-         break;
-      case YTSegmentItemPlaylist:
-         [self.selectedController fetchPlayListFromChannelByPageToken];
-         break;
-   }
+    switch (self.selectedSegmentItemType) {
+        case YTSegmentItemVideo:
+            [self.selectedController fetchActivityListByPageToken];
+            break;
+        case YTSegmentItemChannel:
+            [self.selectedController fetchVideoListFromChannelByPageToken];
+            break;
+        case YTSegmentItemPlaylist:
+            [self.selectedController fetchPlayListFromChannelByPageToken];
+            break;
+    }
 }
 
 

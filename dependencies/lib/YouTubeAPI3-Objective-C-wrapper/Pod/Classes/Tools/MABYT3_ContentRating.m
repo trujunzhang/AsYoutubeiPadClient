@@ -10,10 +10,10 @@
 
 @implementation MABYT3_ContentRating
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _mpaaRating = @"mpaaUnrated";
         _tvpgRating = @"tvpgUnrated";
         _bbfcRating = @"bbfcUnrated";
@@ -37,10 +37,10 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _mpaaRating = @"mpaaUnrated";
         _tvpgRating = @"tvpgUnrated";
         _bbfcRating = @"bbfcUnrated";
@@ -60,65 +60,65 @@
         _mibacRating = @"mibacUnrated";
         _catvRating = @"catvUnrated";
         _catvfrRating = @"catvfrUnrated";
-        
-        if ([dict objectForKey:@"mpaaRating"]) {
+
+        if([dict objectForKey:@"mpaaRating"]) {
             _mpaaRating = [dict objectForKey:@"mpaaRating"];
         }
-        if ([dict objectForKey:@"tvpgRating"]) {
+        if([dict objectForKey:@"tvpgRating"]) {
             _tvpgRating = [dict objectForKey:@"tvpgRating"];
         }
-        if ([dict objectForKey:@"bbfcRating"]) {
+        if([dict objectForKey:@"bbfcRating"]) {
             _bbfcRating = [dict objectForKey:@"bbfcRating"];
         }
-        if ([dict objectForKey:@"chvrsRating"]) {
+        if([dict objectForKey:@"chvrsRating"]) {
             _chvrsRating = [dict objectForKey:@"chvrsRating"];
         }
-        if ([dict objectForKey:@"eirinRating"]) {
+        if([dict objectForKey:@"eirinRating"]) {
             _eirinRating = [dict objectForKey:@"eirinRating"];
         }
-        if ([dict objectForKey:@"cbfcRating"]) {
+        if([dict objectForKey:@"cbfcRating"]) {
             _cbfcRating = [dict objectForKey:@"cbfcRating"];
         }
-        if ([dict objectForKey:@"fmocRating"]) {
+        if([dict objectForKey:@"fmocRating"]) {
             _fmocRating = [dict objectForKey:@"fmocRating"];
         }
-        if ([dict objectForKey:@"icaaRating"]) {
+        if([dict objectForKey:@"icaaRating"]) {
             _icaaRating = [dict objectForKey:@"icaaRating"];
         }
-        if ([dict objectForKey:@"acbRating"]) {
+        if([dict objectForKey:@"acbRating"]) {
             _acbRating = [dict objectForKey:@"acbRating"];
         }
-        if ([dict objectForKey:@"oflcRating"]) {
+        if([dict objectForKey:@"oflcRating"]) {
             _oflcRating = [dict objectForKey:@"oflcRating"];
         }
-        if ([dict objectForKey:@"fskRating"]) {
+        if([dict objectForKey:@"fskRating"]) {
             _fskRating = [dict objectForKey:@"fskRating"];
         }
-        if ([dict objectForKey:@"kmrbRating"]) {
+        if([dict objectForKey:@"kmrbRating"]) {
             _kmrbRating = [dict objectForKey:@"kmrbRating"];
         }
-        if ([dict objectForKey:@"djctqRating"]) {
+        if([dict objectForKey:@"djctqRating"]) {
             _djctqRating = [dict objectForKey:@"djctqRating"];
         }
-        if ([dict objectForKey:@"russiaRating"]) {
+        if([dict objectForKey:@"russiaRating"]) {
             _russiaRating = [dict objectForKey:@"russiaRating"];
         }
-        if ([dict objectForKey:@"rtcRating"]) {
+        if([dict objectForKey:@"rtcRating"]) {
             _rtcRating = [dict objectForKey:@"rtcRating"];
         }
-        if ([dict objectForKey:@"ytRating"]) {
+        if([dict objectForKey:@"ytRating"]) {
             _ytRating = [dict objectForKey:@"ytRating"];
         }
-        if ([dict objectForKey:@"mibacRating"]) {
+        if([dict objectForKey:@"mibacRating"]) {
             _mibacRating = [dict objectForKey:@"mibacRating"];
         }
-        if ([dict objectForKey:@"catvRating"]) {
+        if([dict objectForKey:@"catvRating"]) {
             _catvRating = [dict objectForKey:@"catvRating"];
         }
-        if ([dict objectForKey:@"catvfrRating"]) {
+        if([dict objectForKey:@"catvfrRating"]) {
             _catvfrRating = [dict objectForKey:@"catvfrRating"];
         }
-        
+
     }
     return self;
 }

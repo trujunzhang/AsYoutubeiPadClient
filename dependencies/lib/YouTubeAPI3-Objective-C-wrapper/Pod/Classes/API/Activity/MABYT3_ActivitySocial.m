@@ -12,10 +12,10 @@
 
 @implementation MABYT3_ActivitySocial
 
-- (id) init {
-    
+- (id)init {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _type = @"";
         _resourceId = [[MABYT3_ResourceId alloc] init];
         _author = @"";
@@ -25,33 +25,33 @@
     return self;
 }
 
-- (id) initFromDictionary:(NSDictionary *)dict {
-    
+- (id)initFromDictionary:(NSDictionary *)dict {
+
     self = [super init];
-    if (self) {
+    if(self) {
         _type = @"";
         _resourceId = [[MABYT3_ResourceId alloc] init];
         _author = @"";
         _referenceUrl = @"";
         _imageUrl = @"";
-        
-        if ([dict objectForKey:@"type"]) {
+
+        if([dict objectForKey:@"type"]) {
             _type = [dict objectForKey:@"type"];
         }
-        if ([dict objectForKey:@"resourceId"]) {
+        if([dict objectForKey:@"resourceId"]) {
             _resourceId = [[MABYT3_ResourceId alloc] initFromDictionary:[dict objectForKey:@"resourceId"]];
         }
-        if ([dict objectForKey:@"author"]) {
+        if([dict objectForKey:@"author"]) {
             _author = [dict objectForKey:@"author"];
         }
-        if ([dict objectForKey:@"referenceUrl"]) {
+        if([dict objectForKey:@"referenceUrl"]) {
             _referenceUrl = [dict objectForKey:@"referenceUrl"];
         }
-        if ([dict objectForKey:@"imageUrl"]) {
+        if([dict objectForKey:@"imageUrl"]) {
             _imageUrl = [dict objectForKey:@"imageUrl"];
         }
-        
-        
+
+
     }
     return self;
 }
