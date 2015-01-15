@@ -14,7 +14,7 @@
 
 
 @interface AsLeftMenuViewController ()<ASTableViewDataSource, ASTableViewDelegate>
-@property(nonatomic, strong) ASTableView * tableView;
+@property (nonatomic, strong) ASTableView *tableView;
 
 
 @end
@@ -24,15 +24,15 @@
 
 
 - (instancetype)init {
-   if (!(self = [super init]))
-      return nil;
+    if(!(self = [super init]))
+        return nil;
 
-   self.tableView = [[ASTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-   self.tableView.asyncDataSource = self;
-   self.tableView.asyncDelegate = self;
+    self.tableView = [[ASTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    self.tableView.asyncDataSource = self;
+    self.tableView.asyncDelegate = self;
 
 
-   return self;
+    return self;
 }
 
 
@@ -41,46 +41,46 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-   return [self.tableSectionArray count];
+    return [self.tableSectionArray count];
 }
 
 
 - (ASCellNode *)tableView:(ASTableView *)tableView nodeForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-   LeftMenuItemTree * menuItemTree = self.tableSectionArray[indexPath.section];
-   NSArray * line = menuItemTree.rowsArray[indexPath.row];
+    LeftMenuItemTree *menuItemTree = self.tableSectionArray[indexPath.section];
+    NSArray *line = menuItemTree.rowsArray[indexPath.row];
 
 
-   YTAsLeftTableCellNode * node =
-    [[YTAsLeftTableCellNode alloc]
-     initWithNodeCellSize:CGSizeMake(250, ROW_HEIGHT)
-                lineTitle:[LeftMenuItemTree getTitleInRow:line]
-              lineIconUrl:[LeftMenuItemTree getThumbnailUrlInRow:line]
-            isRemoteImage:menuItemTree.isRemoteImage];
+    YTAsLeftTableCellNode *node =
+            [[YTAsLeftTableCellNode alloc]
+                    initWithNodeCellSize:CGSizeMake(250, ROW_HEIGHT)
+                               lineTitle:[LeftMenuItemTree getTitleInRow:line]
+                             lineIconUrl:[LeftMenuItemTree getThumbnailUrlInRow:line]
+                           isRemoteImage:menuItemTree.isRemoteImage];
 
-   return node;
+    return node;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   LeftMenuItemTree * menuItemTree = self.tableSectionArray[section];
+    LeftMenuItemTree *menuItemTree = self.tableSectionArray[section];
 
-   return menuItemTree.rowsArray.count;
+    return menuItemTree.rowsArray.count;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-   LeftMenuItemTree * menuItemTree = self.tableSectionArray[section];
-   if (menuItemTree.hideTitle) {
-      return 0;
-   }
+    LeftMenuItemTree *menuItemTree = self.tableSectionArray[section];
+    if(menuItemTree.hideTitle) {
+        return 0;
+    }
 
-   return 42;
+    return 42;
 }
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-   return [self.headers objectAtIndex:section];
+    return [self.headers objectAtIndex:section];
 }
 
 
@@ -117,17 +117,17 @@
 
 
 - (void)viewDidLoad {
-   [self setCurrentTableView:self.tableView];
-   [self defaultRefreshForSubscriptionList];
+    [self setCurrentTableView:self.tableView];
+    [self defaultRefreshForSubscriptionList];
 
-   [super viewDidLoad];
+    [super viewDidLoad];
 }
 
 
 - (void)viewWillLayoutSubviews {
-   [super viewWillLayoutSubviews];
+    [super viewWillLayoutSubviews];
 
-   _tableView.frame = self.view.bounds;
+    _tableView.frame = self.view.bounds;
 }
 
 
@@ -144,9 +144,9 @@
 - (void)leftMenuSignOutTable {
 //   [_tableView deleteSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:YES];
 
-   NSArray * indexPaths = @[
-    [NSIndexPath indexPathForItem:0 inSection:1],
-   ];
+    NSArray *indexPaths = @[
+            [NSIndexPath indexPathForItem:0 inSection:1],
+    ];
 
 //
 //   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{

@@ -12,7 +12,7 @@
 @implementation LeftMenuTableHeaderView
 
 - (void)setupUI:(NSString *)title {
-   self.titleLabel.text = title;
+    self.titleLabel.text = title;
 }
 
 @end

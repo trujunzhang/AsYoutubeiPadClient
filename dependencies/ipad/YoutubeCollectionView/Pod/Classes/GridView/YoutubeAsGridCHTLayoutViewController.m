@@ -23,18 +23,18 @@
 //#define ASGRIDROWCELL YTAsGridVideoCellNode
 
 @interface YoutubeAsGridCHTLayoutViewController ()<ASCollectionViewDataSource, ASCollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout>
-@property(strong, nonatomic) ASCollectionView * collectionView;
+@property (strong, nonatomic) ASCollectionView *collectionView;
 @end
 
 
 @implementation YoutubeAsGridCHTLayoutViewController
 
 - (void)viewDidLoad {
-   [self makeCollectionView];
-   [self setUICollectionView:self.collectionView];
+    [self makeCollectionView];
+    [self setUICollectionView:self.collectionView];
 
-   [self.collectionView reloadData];
-   [super viewDidLoad];
+    [self.collectionView reloadData];
+    [super viewDidLoad];
 }
 
 
@@ -43,20 +43,20 @@
 
 
 - (void)reloadTableView:(NSArray *)array withLastRowCount:(NSUInteger)lastRowCount {
-   int newCount = array.count;
-   NSMutableArray * indexPaths = [[NSMutableArray alloc] init];
-   for (int i = 0; i < newCount; i++) {
-      NSIndexPath * indexPath = [NSIndexPath indexPathForItem:(lastRowCount + i) inSection:0];
-      [indexPaths addObject:indexPath];
-   }
+    int newCount = array.count;
+    NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
+    for (int i = 0;i < newCount;i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:(lastRowCount + i) inSection:0];
+        [indexPaths addObject:indexPath];
+    }
 
 //   [self.collectionView appendNodesWithIndexPaths:indexPaths];
 }
 
 
 - (void)tableWillAppear { // used
-   [self showTopRefreshing];
-   [self.nextPageDelegate executeNextPageTask];
+    [self showTopRefreshing];
+    [self.nextPageDelegate executeNextPageTask];
 }
 
 
@@ -65,24 +65,24 @@
 
 
 - (void)makeCollectionView {
-   if (!self.collectionView) {
-      self.layout = [[CHTCollectionViewWaterfallLayout alloc] init];
+    if(!self.collectionView) {
+        self.layout = [[CHTCollectionViewWaterfallLayout alloc] init];
 
-      self.layout.sectionInset = [self getUIEdgeInsetsForLayout];
-      self.layout.footerHeight = DEFAULT_LOADING_MORE_HEIGHT;
-      self.layout.minimumColumnSpacing = LAYOUT_MINIMUMCOLUMNSPACING;
-      self.layout.minimumInteritemSpacing = 10;
-      self.layout.delegate = self;
+        self.layout.sectionInset = [self getUIEdgeInsetsForLayout];
+        self.layout.footerHeight = DEFAULT_LOADING_MORE_HEIGHT;
+        self.layout.minimumColumnSpacing = LAYOUT_MINIMUMCOLUMNSPACING;
+        self.layout.minimumInteritemSpacing = 10;
+        self.layout.delegate = self;
 
-      self.collectionView = [[ASCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.layout];
-      self.collectionView.asyncDataSource = self;
-      self.collectionView.asyncDelegate = self;
+        self.collectionView = [[ASCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.layout];
+        self.collectionView.asyncDataSource = self;
+        self.collectionView.asyncDelegate = self;
 
-      [self.collectionView registerClass:[YoutubeFooterView class]
-              forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter
-                     withReuseIdentifier:FOOTER_IDENTIFIER];
+        [self.collectionView registerClass:[YoutubeFooterView class]
+                forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter
+                       withReuseIdentifier:FOOTER_IDENTIFIER];
 
-   }
+    }
 }
 
 
@@ -90,23 +90,23 @@
 
 
 - (void)dealloc {
-   self.collectionView.asyncDataSource = nil;
-   self.collectionView.asyncDelegate = nil;
+    self.collectionView.asyncDataSource = nil;
+    self.collectionView.asyncDelegate = nil;
 }
 
 
 - (void)viewDidLayoutSubviews {
-   [super viewDidLayoutSubviews];
+    [super viewDidLayoutSubviews];
 
-   CGRect rect = self.view.bounds;
-   self.collectionView.frame = rect;
+    CGRect rect = self.view.bounds;
+    self.collectionView.frame = rect;
 
-   [self updateLayout:[UIApplication sharedApplication].statusBarOrientation];
+    [self updateLayout:[UIApplication sharedApplication].statusBarOrientation];
 }
 
 
 - (void)updateLayout:(UIInterfaceOrientation)orientation {
-   self.layout.columnCount = [self getCurrentColumnCount:orientation];
+    self.layout.columnCount = [self getCurrentColumnCount:orientation];
 }
 
 
@@ -114,59 +114,59 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-   return [self getYoutubeRequestInfo].videoList.count;
+    return [self getYoutubeRequestInfo].videoList.count;
 }
 
 
 - (ASCellNode *)collectionView:(ASCollectionView *)collectionView nodeForItemAtIndexPath:(NSIndexPath *)indexPath {
-   ASCellNode * node = [self getCellNodeAtIndexPath:indexPath];
+    ASCellNode *node = [self getCellNodeAtIndexPath:indexPath];
 
-   return node;
+    return node;
 }
 
 
 - (ASCellNode *)getCellNodeAtIndexPath:(NSIndexPath *)indexPath {
 
-   ASCellNode * node;
+    ASCellNode *node;
 
-   YTSegmentItemType itemType = [self getYoutubeRequestInfo].itemType;
+    YTSegmentItemType itemType = [self getYoutubeRequestInfo].itemType;
 
-   if (itemType == YTSegmentItemVideo) {
-      YTYouTubeVideoCache * video = [[self getYoutubeRequestInfo].videoList objectAtIndex:indexPath.row];
+    if(itemType == YTSegmentItemVideo) {
+        YTYouTubeVideoCache *video = [[self getYoutubeRequestInfo].videoList objectAtIndex:indexPath.row];
 
-      ASGRIDROWCELL * videoCellNode = [[ASGRIDROWCELL alloc] initWithCellNodeOfSize:[self cellSize] withVideo:video];
+        ASGRIDROWCELL *videoCellNode = [[ASGRIDROWCELL alloc] initWithCellNodeOfSize:[self cellSize] withVideo:video];
 
-      node = videoCellNode;
-   }
+        node = videoCellNode;
+    }
 
-   return node;
+    return node;
 }
 
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
            viewForSupplementaryElementOfKind:(NSString *)kind
                                  atIndexPath:(NSIndexPath *)indexPath {
-   UICollectionReusableView * reusableView = nil;
+    UICollectionReusableView *reusableView = nil;
 
-   if ([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
-      YoutubeFooterView * footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-                                                                          withReuseIdentifier:FOOTER_IDENTIFIER
-                                                                                 forIndexPath:indexPath];
-      footerView.hidden = NO;
+    if([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
+        YoutubeFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                                           withReuseIdentifier:FOOTER_IDENTIFIER
+                                                                                  forIndexPath:indexPath];
+        footerView.hidden = NO;
 
-      if ([self getYoutubeRequestInfo].hasLoadingMore) {
-         [footerView startAnimation];
-         if (self.nextPageDelegate)
-            [self.nextPageDelegate executeNextPageTask];
-      } else {
-         footerView.hidden = YES;
-         [footerView stopAnimation];
-      }
+        if([self getYoutubeRequestInfo].hasLoadingMore) {
+            [footerView startAnimation];
+            if(self.nextPageDelegate)
+                [self.nextPageDelegate executeNextPageTask];
+        } else {
+            footerView.hidden = YES;
+            [footerView stopAnimation];
+        }
 
-      reusableView = footerView;
-   }
+        reusableView = footerView;
+    }
 
-   return reusableView;
+    return reusableView;
 }
 
 
@@ -178,7 +178,7 @@
 
 
 - (CGSize)collectionWaterfallView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-   return [self cellSize];
+    return [self cellSize];
 }
 
 

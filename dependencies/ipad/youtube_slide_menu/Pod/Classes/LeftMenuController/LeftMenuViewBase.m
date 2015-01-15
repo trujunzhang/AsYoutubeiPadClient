@@ -16,8 +16,8 @@
 
 
 @interface LeftMenuViewBase ()<UserInfoViewSigningOutDelegate, UIAlertViewDelegate>
-@property(nonatomic, strong) UITableView * baseTableView;
-@property(nonatomic, strong) ASImageNode * imageNode;
+@property (nonatomic, strong) UITableView *baseTableView;
+@property (nonatomic, strong) ASImageNode *imageNode;
 
 @end
 
@@ -26,28 +26,28 @@
 
 
 - (void)viewDidLoad {
-   [super viewDidLoad];
+    [super viewDidLoad];
 
-   NSAssert(self.baseTableView, @"not found uitableview instance!");
+    NSAssert(self.baseTableView, @"not found uitableview instance!");
 
-   _imageNode = [[ASImageNode alloc] init];
-   _imageNode.image = [UIImage imageNamed:@"mt_side_menu_bg"];
+    _imageNode = [[ASImageNode alloc] init];
+    _imageNode.image = [UIImage imageNamed:@"mt_side_menu_bg"];
 
-   _imageNode.frame = self.view.frame;// used
-   _imageNode.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    _imageNode.frame = self.view.frame;// used
+    _imageNode.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
 
-   [self.view addSubview:_imageNode.view];
-   [self.view addSubview:self.baseTableView];
+    [self.view addSubview:_imageNode.view];
+    [self.view addSubview:self.baseTableView];
 }
 
 
 - (void)setCurrentTableView:(UITableView *)tableView {
-   self.baseTableView = tableView;
+    self.baseTableView = tableView;
 
-   self.baseTableView.backgroundColor = [UIColor clearColor];
-   self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-   self.baseTableView.showsVerticalScrollIndicator = NO;
+    self.baseTableView.backgroundColor = [UIColor clearColor];
+    self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.baseTableView.showsVerticalScrollIndicator = NO;
 }
 
 
@@ -61,32 +61,32 @@
 
 
 - (void)setupSlideTableViewWithAuthInfo:(YoutubeAuthInfo *)user {
-   if (user == nil)
-      user = [[[YoutubeAuthDataStore alloc] init] readAuthUserInfo];
+    if(user == nil)
+        user = [[[YoutubeAuthDataStore alloc] init] readAuthUserInfo];
 
-   self.baseTableView.tableHeaderView = [self getUserHeaderView:user];
+    self.baseTableView.tableHeaderView = [self getUserHeaderView:user];
 }
 
 
 - (void)makeDefaultTableSections { // initialize once
-   // 1  make section array
-   if ([[GYoutubeHelper getInstance] isSignedIn]) {
-      self.tableSectionArray = [LeftMenuItemTree getSignInMenuItemTreeArray];
-   } else {
-      self.tableSectionArray = [LeftMenuItemTree getSignOutMenuItemTreeArray];
-   }
+    // 1  make section array
+    if([[GYoutubeHelper getInstance] isSignedIn]) {
+        self.tableSectionArray = [LeftMenuItemTree getSignInMenuItemTreeArray];
+    } else {
+        self.tableSectionArray = [LeftMenuItemTree getSignOutMenuItemTreeArray];
+    }
 
-   // 2 section header titles
-   self.headers = [[NSMutableArray alloc] init];
-   for (int i = 0; i < [self.tableSectionArray count]; i++) {
-      LeftMenuItemTree * menuItemTree = self.tableSectionArray[i];
+    // 2 section header titles
+    self.headers = [[NSMutableArray alloc] init];
+    for (int i = 0;i < [self.tableSectionArray count];i++) {
+        LeftMenuItemTree *menuItemTree = self.tableSectionArray[i];
 
-      LeftMenuTableHeaderView * header = [[[NSBundle mainBundle] loadNibNamed:@"LeftMenuTableHeaderView"
-                                                                        owner:nil
-                                                                      options:nil] lastObject];
-      [header setupUI:menuItemTree.title];
-      [self.headers addObject:header];
-   }
+        LeftMenuTableHeaderView *header = [[[NSBundle mainBundle] loadNibNamed:@"LeftMenuTableHeaderView"
+                                                                         owner:nil
+                                                                       options:nil] lastObject];
+        [header setupUI:menuItemTree.title];
+        [self.headers addObject:header];
+    }
 
 }
 
@@ -97,67 +97,67 @@
 
 - (UIView *)getUserHeaderView:(YoutubeAuthInfo *)user {
 
-   UIView * headerView = nil;
+    UIView *headerView = nil;
 
-   if ([[GYoutubeHelper getInstance] isSignedIn]) {
-      UserInfoView * userInfoView = [[[NSBundle mainBundle] loadNibNamed:@"UserInfoView" owner:nil
-                                                                 options:nil] lastObject];
-      userInfoView.delegate = self;
-      headerView = [userInfoView bind:user];
-   } else {
-      headerView = [[[NSBundle mainBundle] loadNibNamed:@"UserLoginView" owner:nil options:nil] lastObject];
+    if([[GYoutubeHelper getInstance] isSignedIn]) {
+        UserInfoView *userInfoView = [[[NSBundle mainBundle] loadNibNamed:@"UserInfoView" owner:nil
+                                                                  options:nil] lastObject];
+        userInfoView.delegate = self;
+        headerView = [userInfoView bind:user];
+    } else {
+        headerView = [[[NSBundle mainBundle] loadNibNamed:@"UserLoginView" owner:nil options:nil] lastObject];
 
-      UITapGestureRecognizer * singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                         action:@selector(handleSingleTap:)];
-      [headerView addGestureRecognizer:singleFingerTap];
-   }
+        UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                          action:@selector(handleSingleTap:)];
+        [headerView addGestureRecognizer:singleFingerTap];
+    }
 
-   headerView.frame = CGRectMake(0, 0, 256, 70);
+    headerView.frame = CGRectMake(0, 0, 256, 70);
 
-   return headerView;
+    return headerView;
 }
 
 
 //The event handling method
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
-   [self loginInTouch];
+    [self loginInTouch];
 }
 
 
 - (void)loginInTouch {
-   GTMOAuth2ViewControllerTouch * viewController =
-    [[GYoutubeHelper getInstance] getYoutubeOAuth2ViewControllerTouchWithTouchDelegate:self
-                                                                       leftBarDelegate:self
-                                                                          cancelAction:@selector(cancelGdriveSignIn:)];
+    GTMOAuth2ViewControllerTouch *viewController =
+            [[GYoutubeHelper getInstance] getYoutubeOAuth2ViewControllerTouchWithTouchDelegate:self
+                                                                               leftBarDelegate:self
+                                                                                  cancelAction:@selector(cancelGdriveSignIn:)];
 
-   UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-   navigationController.view.backgroundColor = [UIColor whiteColor];
-   navigationController.modalPresentationStyle = UIModalPresentationPageSheet;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    navigationController.view.backgroundColor = [UIColor whiteColor];
+    navigationController.modalPresentationStyle = UIModalPresentationPageSheet;
 
-   [self presentViewController:navigationController animated:YES completion:nil];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 
 - (void)viewController:(UIViewController *)viewController
       finishedWithAuth:(YTOAuth2Authentication *)auth
                  error:(NSError *)error {
-   [self cancelGdriveSignIn:nil];
+    [self cancelGdriveSignIn:nil];
 
-   if (error != nil) {
-      // Authentication failed
-      NSLog(@"failed");
-   } else {
-      // Authentication succeeded
-      NSLog(@"Success");
+    if(error != nil) {
+        // Authentication failed
+        NSLog(@"failed");
+    } else {
+        // Authentication succeeded
+        NSLog(@"Success");
 
-      [[GYoutubeHelper getInstance] saveAuthorizeAndFetchUserInfo:auth];
-   }
+        [[GYoutubeHelper getInstance] saveAuthorizeAndFetchUserInfo:auth];
+    }
 }
 
 
 - (void)cancelGdriveSignIn:(id)cancelGdriveSignIn {
-   [self dismissViewControllerAnimated:YES completion:^(void) {
-   }];
+    [self dismissViewControllerAnimated:YES completion:^(void) {
+    }];
 }
 
 
@@ -166,30 +166,30 @@
 
 
 - (void)defaultRefreshForSubscriptionList {
-   [self setupSlideTableViewWithAuthInfo:nil];
-   [self makeDefaultTableSections];
+    [self setupSlideTableViewWithAuthInfo:nil];
+    [self makeDefaultTableSections];
 
-   [self leftMenuReloadTable];
+    [self leftMenuReloadTable];
 }
 
 
 - (void)removeWhenSignOut {
-   [self setupSlideTableViewWithAuthInfo:nil];
+    [self setupSlideTableViewWithAuthInfo:nil];
 //   [self makeDefaultTableSections];
 
-   [self leftMenuSignOutTable];
+    [self leftMenuSignOutTable];
 }
 
 
 - (void)insertSubscriptionRowsAfterFetching:(NSArray *)subscriptionList {
-   if ([[GYoutubeHelper getInstance] isSignedIn] == NO)
-      return;
+    if([[GYoutubeHelper getInstance] isSignedIn] == NO)
+        return;
 
-   [LeftMenuItemTree reloadSubscriptionItemTree:subscriptionList inSectionArray:self.tableSectionArray];
+    [LeftMenuItemTree reloadSubscriptionItemTree:subscriptionList inSectionArray:self.tableSectionArray];
 
-   [self leftMenuUpdateSubscriptionSection:subscriptionList];
+    [self leftMenuUpdateSubscriptionSection:subscriptionList];
 
-   // test
+    // test
 //   if (debugLeftMenuTapSubscription) {
 //      if (subscriptionList.count > subscriptionIndex) {
 //         [self.delegate endToggleLeftMenuEventForChannelPageWithChannelId:[LeftMenuItemTree getChannelIdUrlInRow:subscriptionList[subscriptionIndex]]
@@ -201,7 +201,7 @@
 
 
 - (void)refreshChannelInfo:(YoutubeAuthInfo *)info {
-   [self setupSlideTableViewWithAuthInfo:info];
+    [self setupSlideTableViewWithAuthInfo:info];
 }
 
 
@@ -210,14 +210,14 @@
 
 
 - (void)signingOutTapped {
-   UIAlertView * myAlert = [[UIAlertView alloc]
-    initWithTitle:@"Title"
-          message:@"Message"
-         delegate:self
-cancelButtonTitle:@"Cancel"
-otherButtonTitles:@"Ok", nil];
+    UIAlertView *myAlert = [[UIAlertView alloc]
+            initWithTitle:@"Title"
+                  message:@"Message"
+                 delegate:self
+        cancelButtonTitle:@"Cancel"
+        otherButtonTitles:@"Ok", nil];
 
-   [myAlert show];
+    [myAlert show];
 }
 
 
@@ -226,12 +226,12 @@ otherButtonTitles:@"Ok", nil];
 
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-   if (buttonIndex == 0) {
-   }
-   else if (buttonIndex == 1) {
-      [[GYoutubeHelper getInstance] signingOut];
-      [self removeWhenSignOut];
-   }
+    if(buttonIndex == 0) {
+    }
+    else if(buttonIndex == 1) {
+        [[GYoutubeHelper getInstance] signingOut];
+        [self removeWhenSignOut];
+    }
 }
 
 
