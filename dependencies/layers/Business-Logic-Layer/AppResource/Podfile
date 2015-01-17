@@ -26,9 +26,11 @@ target 'mxAsTubeiPad', :exclusive => true do
   # ________________Google-API-Client___________________
   pod "YouTubeAPI3-Objective-C-wrapper", :path => "../dependencies/lib/YouTubeAPI3-Objective-C-wrapper"
 
-  pod "Google-API-Client-local", :path => "/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/google-api-client/Google-API-Client-local"
-  pod "gtm-http-fetcher-local", :path => "/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/google-api-client/gtm-http-fetcher-local"
-  pod "gtm-oauth2-local", :path => "/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/google-api-client/gtm-oauth2-local"
+  pod 'Google-API-Client'
+
+  # pod "Google-API-Client-local", :path => "/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/google-api-client/Google-API-Client-local"
+  # pod "gtm-http-fetcher-local", :path => "/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/google-api-client/gtm-http-fetcher-local"
+  # pod "gtm-oauth2-local", :path => "/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/google-api-client/gtm-oauth2-local"
 
   # ________________common tools library___________________
   pod 'ASImageResize', :path => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/ASImageResize'
