@@ -4,42 +4,13 @@
 //================================================================================================
 // Google-client-api
 //================================================================================================
-// module
 #import "GTLYouTube_Sources.h"
-//#import "GTLYouTube_Sources.m"
-//#import "GTLYouTubeChannel.h"
-//#import "GTLYouTubeSubscription.h"
-//#import "GTLYouTubeSubscriptionSnippet.h"
-//#import "GTLYouTubeThumbnailDetails.h"
-//#import "GTLYouTubeThumbnail.h"
-//#import "GTLYouTubeChannelSnippet.h"
-//#import "GTLYouTubeVideo.h"
-//#import "GTLYouTubeVideoSnippet.h"
-//#import "GTLYouTubeVideoStatistics.h"
-//#import "GTLYouTubePlaylistItem.h"
-//#import "GTLYouTubePlaylistItemContentDetails.h"
-//#import "GTLYouTubeChannelBrandingSettings.h"
-//#import "GTLYouTubeImageSettings.h"
 
-//
 #import "GTLUtilities.h"
 #import "GTMHTTPUploadFetcher.h"
 #import "GTMHTTPFetcherLogging.h"
 #import "GTMOAuth2Authentication.h"
 #import "GTMOAuth2ViewControllerTouch.h"
-
-
-//#import "GTLServiceYouTube.h"
-//#import "GTLQueryYouTube.h"
-//#import "GTLYouTubeSearchListResponse.h"
-//#import "GTLYouTubeChannel.h"
-//#import "GTLYouTubeChannelContentDetails.h"
-//#import "GTLYouTubeSubscriptionListResponse.h"
-//#import "GTLYouTubePlaylistItemListResponse.h"
-//#import "GTLYouTubeChannelListResponse.h"
-//#import "GTLYouTubeSearchResult.h"
-//#import "GTLYouTubeResourceId.h"
-//#import "GTLYouTubePlaylistItem.h"
 
 
 
@@ -48,31 +19,10 @@
 //================================================================================================
 #import "MABYT3_APIRequest.h"
 
-// module
-#import "MABYT3_Video.h"
-#import "MABYT3_Thumbnail.h"
-#import "MABYT3_ThumbnailDetails.h"
-#import "MABYT3_SearchItem.h"
-#include "MABYT3_Activity.h"
-#import "MABYT3_Channel.h"
-#import "MABYT3_ActivityContentDetails.h"
-#import "MABYT3_ResourceId.h"
-#import "MABYT3_PlayList.h"
-#import "MABYT3_PlayListItem.h"
-#import "MABYT3_ChannelBrandingSettings.h"
-#import "MABYT3_VideoCategory.h"
-#import "MABYT3_Language.h"
-#import "MABYT3_GuideCategory.h"
-#import "MABYT3_ChannelSection.h"
-
+#import "MABYouTube_Sources.h"
 
 // other
 #import "YoutubeVideoCache.h"
-#import "MABYT3_TranscriptList.h"
-#import "MABYT3_Transcript.h"
-#import "MABYT3_Track.h"
-
-
 #import "YoutubeVideoDescriptionStringAttribute.h"
 
 
