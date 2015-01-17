@@ -25,8 +25,6 @@
 
 + (GTLYouTubeChannelContentDetailsRelatedPlaylists *)getAuthChannelRelatedPlaylists:(YTYouTubeAuthorChannel *)channel;
 
-+ (NSError *)getError:(NSData *)data httpresp:(NSHTTPURLResponse *)httpresp;
-
 + (NSString *)getChannelBrandingSettingsTitle:(YTYouTubeChannel *)channel;
 
 + (NSString *)getChannelStatisticsSubscriberCount:(YTYouTubeChannel *)channel;

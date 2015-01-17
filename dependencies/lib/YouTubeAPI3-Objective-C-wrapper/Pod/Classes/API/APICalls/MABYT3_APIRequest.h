@@ -33,6 +33,7 @@ static NSUInteger search_maxResults = 20;
 
 - (NSMutableDictionary *)commonDictionary:(NSMutableDictionary *)parameters maxResultsString:(NSString *)maxResultsString;
 
+- (NSError *)getError:(NSData *)data httpresp:(NSHTTPURLResponse *)httpresp;
 @end
 
 

@@ -10,7 +10,6 @@
 #import "AFHTTPRequestOperation.h"
 #import "GYoutubeRequestInfo.h"
 #import "YoutubeResponseInfo.h"
-#import "YoutubeParser.h"
 #import "XMLDictionary.h"
 #import "MABYT3_ConvertTranscriptToSrt.h"
 #import "HCYoutubeParser.h"
@@ -26,6 +25,29 @@
     return dictionary;
 }
 
+- (NSError *)getError:(NSData *)data httpresp:(NSHTTPURLResponse *)httpresp {
+    NSError *error;
+    NSError *e = nil;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:NSJSONReadingMutableContainers
+                                                           error:&e];
+    if([dict objectForKey:@"error"]) {
+        NSDictionary *dict2 = [dict objectForKey:@"error"];
+        if([dict2 objectForKey:@"errors"]) {
+            NSArray *items = [dict2 objectForKey:@"errors"];
+            if(items.count > 0) {
+                NSString *dom = @"YTAPI";
+                if([items[0] objectForKey:@"domain"]) {
+                    dom = [items[0] objectForKey:@"domain"];
+                }
+                error = [NSError errorWithDomain:dom
+                                            code:httpresp.statusCode
+                                        userInfo:items[0]];
+            }
+        }
+    }
+    return error;
+}
 
 @end
 
@@ -77,8 +99,7 @@
                                                completion(responseInfo, nil);
                                            });
                                        } else {
-                                           NSError *error = [YoutubeParser getError:responseObject
-                                                                           httpresp:httpResponse];
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(nil, error);
                                            });
@@ -114,8 +135,7 @@
                                                completion(responseInfo, nil);
                                            });
                                        } else {
-                                           NSError *error = [YoutubeParser getError:responseObject
-                                                                           httpresp:httpResponse];
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(nil, error);
                                            });
@@ -212,8 +232,7 @@
                                                completion(responseInfo, nil);
                                            });
                                        } else {
-                                           NSError *error = [YoutubeParser getError:responseObject
-                                                                           httpresp:httpResponse];
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(nil, error);
                                            });
@@ -313,8 +332,7 @@
                                                completion(responseInfo, nil);
                                            });
                                        } else {
-                                           NSError *error = [YoutubeParser getError:responseObject
-                                                                           httpresp:httpResponse];
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(nil, error);
                                            });
@@ -783,8 +801,7 @@
                                                completion(responseInfo, nil);
                                            });
                                        } else {
-                                           NSError *error = [YoutubeParser getError:responseObject
-                                                                           httpresp:httpResponse];
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(nil, error);
                                            });
@@ -818,8 +835,8 @@
                                                completion(responseInfo, nil);
                                            });
                                        } else {
-                                           NSError *error = [YoutubeParser getError:responseObject
-                                                                           httpresp:httpResponse];
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
+
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(nil, error);
                                            });
@@ -849,8 +866,7 @@
                                                completion(responseInfo, nil);
                                            });
                                        } else {
-                                           NSError *error = [YoutubeParser getError:responseObject
-                                                                           httpresp:httpResponse];
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(nil, error);
                                            });
@@ -880,8 +896,7 @@
                                                completion(responseInfo, nil);
                                            });
                                        } else {
-                                           NSError *error = [YoutubeParser getError:responseObject
-                                                                           httpresp:httpResponse];
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(nil, error);
                                            });
@@ -912,8 +927,7 @@
                                                completion(responseInfo, nil);
                                            });
                                        } else {
-                                           NSError *error = [YoutubeParser getError:responseObject
-                                                                           httpresp:httpResponse];
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(nil, error);
                                            });
@@ -944,8 +958,7 @@
                                                completion(responseInfo, nil);
                                            });
                                        } else {
-                                           NSError *error = [YoutubeParser getError:responseObject
-                                                                           httpresp:httpResponse];
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(nil, error);
                                            });
@@ -979,7 +992,7 @@
             responseInfo = [self parseSearchListWithData:operation.responseData];
         }
         else {
-            error = [YoutubeParser getError:operation.responseData httpresp:operation.response];
+            error = [self getError:operation.responseData httpresp:operation.response];
         }
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             handler(responseInfo, error);
@@ -1989,5 +2002,9 @@
 
     return [YoutubeResponseInfo infoWithArray:arr pageToken:[self parsePageToken:dict]];
 }
+
+#pragma mark - 
+#pragma mark 
+
 
 @end
