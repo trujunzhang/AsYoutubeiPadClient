@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage = 'http://jinthagerman.github.com/youtube_slide_menu'
   s.author   = { 'Jin Budelmann' => 'jin@bitcrank.com' }
   s.source   = { :git => 'https://github.com/jinthagerman/youtube_slide_menu.git', :tag => '0.1.0' }
-  s.platform = :ios
+  s.platform = :ios, '7.0'
 
   #s.source_files = 'Pod/Classes/*/*.{h,m}'
 

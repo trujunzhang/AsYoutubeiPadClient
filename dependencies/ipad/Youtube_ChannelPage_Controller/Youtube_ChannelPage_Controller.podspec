@@ -8,12 +8,10 @@ Pod::Spec.new do |s|
   s.homepage = 'http://jinthagerman.github.com/Youtube_ChannelPage_Controller'
   s.author   = { 'Jin Budelmann' => 'jin@bitcrank.com' }
   s.source   = { :git => 'https://github.com/jinthagerman/Youtube_ChannelPage_Controller.git', :tag => '0.1.0' }
-  s.platform = :ios
-
+  s.platform = :ios, '7.0'
 
   s.resources = "Pod/Assets/*/*.*"
   s.requires_arc = true
-
 
   s.subspec 'ChannelPage' do |sub|
     sub.source_files = 'Pod/Classes/ChannelPage/*.{h,m}'
