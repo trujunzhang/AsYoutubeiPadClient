@@ -13,16 +13,14 @@
 #import "YoutubeAuthDataStore.h"
 #import "YoutubeAuthInfo.h"
 
-#import "GYoutubeRequestInfo.h"
-#import "GTLYouTubeActivityListResponse.h"
 #import "YoutubeParser.h"
 #import "YoutubeResponseInfo.h"
-
+#import "MAB_GoogleUserCredentials.h"
 
 static GYoutubeHelper *instance = nil;
 
 
-@interface GYoutubeHelper ()<MAB_GoogleUserCredentialsDelegate> {
+@interface GYoutubeHelper () {
     GTLServiceTicket *_searchListTicket;
 }
 @end
@@ -252,11 +250,11 @@ static GYoutubeHelper *instance = nil;
         [self.delegate callbackUpdateYoutubeChannelCompletion:info];
 
         // 2
-        if(debugLeftMenuTapSubscription) {
-            [self fetchAuthSubscriptionsList];
-        } else {
-            [self getUserSubscriptions:self.delegate];
-        }
+//        if(debugLeftMenuTapSubscription) {
+//            [self fetchAuthSubscriptionsList];
+//        } else {
+        [self getUserSubscriptions:self.delegate];
+//        }
 
         // "id" -> "UC0wObT_HayGfWLdRAnFyPwA"
         NSLog(@" user name = %@", [YoutubeParser getAuthChannelTitle:channel]);

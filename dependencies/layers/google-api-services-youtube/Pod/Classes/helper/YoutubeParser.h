@@ -6,12 +6,10 @@
 //  Copyright (c) 2014 djzhang. All rights reserved.
 //
 
-#import "YoutubeConstants.h"
-
 
 @interface YoutubeParser : NSObject
 
-+ (NSString *)getVideoIdsByActivityList:searchResultList;
++ (NSString *)getVideoIdsByActivityList:(NSMutableArray *)searchResultList;
 
 + (NSString *)getVideoIdsBySearchResult:(NSMutableArray *)searchResultList;
 
@@ -23,56 +21,56 @@
 
 + (NSString *)timeFormatConvertToSeconds:(NSString *)timeSecs;
 
-+ (GTLYouTubeChannelContentDetailsRelatedPlaylists *)getAuthChannelRelatedPlaylists:(YTYouTubeAuthorChannel *)channel;
++ (id)getAuthChannelRelatedPlaylists:(id)channel;
 
-+ (NSString *)getChannelBrandingSettingsTitle:(YTYouTubeChannel *)channel;
++ (NSString *)getChannelBrandingSettingsTitle:(id)channel;
 
-+ (NSString *)getChannelStatisticsSubscriberCount:(YTYouTubeChannel *)channel;
++ (NSString *)getChannelStatisticsSubscriberCount:(id)channel;
 
 // Channel for author
-+ (NSString *)getAuthChannelSnippetThumbnailUrl:(YTYouTubeAuthorChannel *)channel;
++ (NSString *)getAuthChannelSnippetThumbnailUrl:(id)channel;
 
-+ (NSString *)getAuthChannelTitle:(YTYouTubeAuthorChannel *)channel;
++ (NSString *)getAuthChannelTitle:(id)channel;
 
-+ (NSString *)getAuthChannelID:(YTYouTubeAuthorChannel *)channel;
++ (NSString *)getAuthChannelID:(id)channel;
 
 
 // Channel for other request
-+ (NSString *)getChannelBannerImageUrl:(YTYouTubeChannel *)channel;
++ (NSString *)getChannelBannerImageUrl:(id)channel;
 
-+ (NSArray *)getChannelBannerImageUrlArray:(YTYouTubeChannel *)channel;
++ (NSArray *)getChannelBannerImageUrlArray:(id)channel;
 
-+ (NSString *)getChannelSnippetThumbnail:(YTYouTubeChannel *)channel;
++ (NSString *)getChannelSnippetThumbnail:(id)channel;
 
 // Subscription
-+ (NSString *)getChannelIdBySubscription:(YTYouTubeSubscription *)subscription;
++ (NSString *)getChannelIdBySubscription:(id)subscription;
 
-+ (NSString *)getSubscriptionSnippetThumbnailUrl:(YTYouTubeSubscription *)subscription;
++ (NSString *)getSubscriptionSnippetThumbnailUrl:(id)subscription;
 
-+ (NSString *)getSubscriptionSnippetTitle:(YTYouTubeSubscription *)subscription;
++ (NSString *)getSubscriptionSnippetTitle:(id)subscription;
 
 // Video cache
-+ (NSString *)getVideoSnippetThumbnails:(YTYouTubeVideoCache *)video;
++ (NSString *)getVideoSnippetThumbnails:(id)video;
 
-+ (NSString *)getWatchVideoId:(YTYouTubeVideoCache *)video;
++ (NSString *)getWatchVideoId:(id)video;
 
-+ (NSString *)getChannelIdByVideo:(YTYouTubeVideoCache *)video;
++ (NSString *)getChannelIdByVideo:(id)video;
 
-+ (NSString *)getVideoSnippetTitle:(YTYouTubeVideoCache *)video;
++ (NSString *)getVideoSnippetTitle:(id)video;
 
-+ (NSString *)getVideoStatisticsViewCount:(YTYouTubeVideoCache *)video;
++ (NSString *)getVideoStatisticsViewCount:(id)video;
 
-+ (NSString *)getVideoStatisticsLikeCount:(YTYouTubeVideoCache *)video;
++ (NSString *)getVideoStatisticsLikeCount:(id)video;
 
-+ (NSString *)getVideoDescription:(YTYouTubeVideoCache *)video;
++ (NSString *)getVideoDescription:(id)video;
 
-+ (NSString *)getVideoSnippetChannelTitle:(YTYouTubeVideoCache *)video;
++ (NSString *)getVideoSnippetChannelTitle:(id)video;
 
-+ (NSString *)getVideoSnippetChannelPublishedAt:(YTYouTubeVideoCache *)video;
++ (NSString *)getVideoSnippetChannelPublishedAt:(id)video;
 
-+ (NSString *)getVideoDurationForVideoInfo:(YTYouTubeVideoCache *)video;
++ (NSString *)getVideoDurationForVideoInfo:(id)video;
 
-+ (void)parseDescriptionStringWithRegExp:(YTYouTubeVideoCache *)videoCache;
++ (void)parseDescriptionStringWithRegExp:(id)videoCache;
 
 + (void)cacheWithKey:(NSString *)key withValue:(NSString *)value;
 

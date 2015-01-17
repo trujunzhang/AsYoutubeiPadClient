@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/muhammadbassio'
   s.author   = { 'muhammadbassio' => 'jin@bitcrank.com' }
   s.source   = { :git => 'https://github.com/muhammadbassio/YouTubeAPI3-Objective-C-wrapper', :tag => '0.1.0' }
-  s.platform = :ios
+  s.platform = :ios, '7.0'
 
   s.requires_arc = true
 

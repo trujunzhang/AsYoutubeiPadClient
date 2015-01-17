@@ -5,33 +5,32 @@ platform :ios, 7.0
 
 target 'mxAsTubeiPad', :exclusive => true do
 
-  pod 'AsyncDisplayKit', :git => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/AsyncDisplayKit', :commit => '5cb261b'
-
-  pod 'Reveal-iOS-SDK', '~> 111.1.1'
-  pod 'pop', '~> 111.1.1'
-  pod 'SDWebImage', '~> 111.1.1'
-
-  # ________________open projects___________________
-  pod "GGTabBar", :path => "../dependencies/lib/GGTabBar"
-  pod "YKMediaPlayerKit", :path => "../dependencies/lib/YKMediaPlayerKit"
-  pod "MPMoviePlayerController-Subtitles", :path => "../dependencies/lib/MPMoviePlayerController-Subtitles"
-
-  pod "KRLCollectionViewGridLayout", :path => "../dependencies/lib/KRLCollectionViewGridLayout"
-
-  pod 'AFNetworking', :path => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/AFNetworking'
-  pod 'SWRevealViewController'
-  pod 'ISMemoryCache'
-  pod 'EGOCache'
-
-  # ________________Google-API-Client___________________
-  pod "YouTubeAPI3-Objective-C-wrapper", :path => "../dependencies/lib/YouTubeAPI3-Objective-C-wrapper"
-  pod 'Google-API-Client'
-
   # ________________common tools library___________________
   pod 'ASImageResize'
   pod 'XMLDictionary'
   pod 'Regexer'
   pod 'Bolts'
+  pod 'Reveal-iOS-SDK'
+  pod 'pop'
+  pod 'SDWebImage'
+  pod 'AFNetworking', :path => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/AFNetworking'
+  # pod 'AFNetworking'
+  pod 'SWRevealViewController'
+  pod 'ISMemoryCache'
+  pod 'EGOCache'
+
+  pod 'AsyncDisplayKit', :git => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/AsyncDisplayKit', :commit => '5cb261b'
+
+  # ________________open projects___________________
+  pod "GGTabBar", :path => "../dependencies/lib/GGTabBar"
+  pod "YKMediaPlayerKit", :path => "../dependencies/lib/YKMediaPlayerKit"
+  pod "MPMoviePlayerController-Subtitles", :path => "../dependencies/lib/MPMoviePlayerController-Subtitles"
+  pod "KRLCollectionViewGridLayout", :path => "../dependencies/lib/KRLCollectionViewGridLayout"
+
+  # ________________Google-API-Client___________________
+  pod "YouTubeAPI3-Objective-C-wrapper", :path => "../dependencies/lib/YouTubeAPI3-Objective-C-wrapper"
+  pod 'Google-API-Client'
+
 
   # ________________collect common library___________________
   pod "IOS_Collection_Code", :path => "../dependencies/collect/IOS_Collection_Code"
@@ -50,11 +49,6 @@ target 'mxAsTubeiPad', :exclusive => true do
 end
 
 target 'mxAsTubeiPadTests', :exclusive => true do
-
   # pod 'OCMockito', '~> 1.0'
-
-  #pod 'OCHamcrest', :path => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/OCHamcrest'
-  #pod 'OCMockito', :path => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/OCMockito'
-
 
 end

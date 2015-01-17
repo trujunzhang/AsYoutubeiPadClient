@@ -7,13 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YoutubeConstants.h"
-
 
 @interface YoutubeChannelTopCell : UIView
 
 @property (strong, nonatomic) IBOutlet UIView *shadowView;
-
 
 @property (strong, nonatomic) IBOutlet UIImageView *youtubeCover;
 
@@ -25,9 +22,9 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *channelSubscribedState;
 
-@property (nonatomic, strong) YTYouTubeSubscription *subscription;
+@property (nonatomic, strong) id subscription;
 
-@property (nonatomic, strong) YTYouTubeChannel *currentChannel;
+@property (nonatomic, strong) id currentChannel;
 
-- (instancetype)initWithSubscription:(GTLYouTubeSubscription *)subscription;
+- (instancetype)initWithSubscription:(id)subscription;
 @end

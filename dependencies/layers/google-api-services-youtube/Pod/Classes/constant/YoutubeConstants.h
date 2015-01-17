@@ -1,5 +1,5 @@
-#ifdef __OBJC__
-
+#if !defined YOUTUBECONSTANTS_H
+#define YOUTUBECONSTANTS_H
 
 //================================================================================================
 // Google-client-api
@@ -60,6 +60,11 @@
 #import "MABYT3_PlayList.h"
 #import "MABYT3_PlayListItem.h"
 #import "MABYT3_ChannelBrandingSettings.h"
+#import "MABYT3_VideoCategory.h"
+#import "MABYT3_Language.h"
+#import "MABYT3_GuideCategory.h"
+#import "MABYT3_ChannelSection.h"
+
 
 // common
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
@@ -70,6 +75,9 @@
 #import "MABYT3_Transcript.h"
 #import "MABYT3_Track.h"
 
+
+#import "YoutubeVideoDescriptionStringAttribute.h"
+
 #endif
 
 
@@ -79,7 +87,7 @@
 
 #define SUBSCRIPTION_LIST_MAX 2
 #define subscriptionIndex  0
-#define debugLeftMenuTapSubscription NO
+//#define debugLeftMenuTapSubscription NO
 //#define debugLeftMenuTapSubscription YES
 
 #define debugCollectionViewToDetail  NO
@@ -105,11 +113,11 @@
 // Channel for other request
 #define YTYouTubeChannel  MABYT3_Channel
 
-#if debugLeftMenuTapSubscription == YES
-#define YTYouTubeSubscription  MABYT3_Subscription
-#elif debugLeftMenuTapSubscription == NO
+//#if debugLeftMenuTapSubscription == YES
+//#define YTYouTubeSubscription  MABYT3_Subscription
+//#elif debugLeftMenuTapSubscription == NO
 #define YTYouTubeSubscription  GTLYouTubeSubscription
-#endif
+//#endif
 
 #define YTYouTubeMABThumbmail  MABYT3_Thumbnail
 
@@ -117,12 +125,8 @@
 #define YTServiceYouTube  GTLServiceYouTube
 #define YTOAuth2Authentication  GTMOAuth2Authentication
 
-
-
-
 //
 #define YTQueryYouTube  GTLQueryYouTube
-
 
 // different
 //#define YTYouTubeSearchResult  GTLYouTubeSearchResult

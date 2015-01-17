@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 djzhang. All rights reserved.
 //
 
-#import "MABYT3_APIRequest.h"
 #import "YoutubeParser.h"
 #import "ISMemoryCache.h"
 #import "RXMatch.h"
 #import "NSString+Regexer.h"
-#import "YoutubeVideoDescriptionStringAttribute.h"
+#import "YoutubeConstants.h"
+
 
 
 @interface YoutubeParser ()
@@ -22,7 +22,7 @@
 @implementation YoutubeParser
 
 
-+ (NSString *)getVideoIdsByActivityList:searchResultList {
++ (NSString *)getVideoIdsByActivityList:(NSMutableArray *)searchResultList {
     NSMutableArray *videoIds = [[NSMutableArray alloc] init];
     for (YTYouTubeActivity *searchResult in searchResultList) {
         NSString *videoId = [YoutubeParser getvideoIdByActivity:searchResult.contentDetails];

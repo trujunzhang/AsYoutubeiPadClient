@@ -6,10 +6,10 @@
 #import "AsDetailRowVideoInfo.h"
 
 #import "YoutubeParser.h"
-#import "YoutubeVideoDescriptionStringAttribute.h"
 #import "Foundation.h"
 #import "AsyncDisplayKitStatic.h"
 #import "FrameCalculator.h"
+#import "YoutubeConstants.h"
 #import <AsyncDisplayKit/ASDisplayNode+Subclasses.h>
 #import <AsyncDisplayKit/ASHighlightOverlayLayer.h>
 

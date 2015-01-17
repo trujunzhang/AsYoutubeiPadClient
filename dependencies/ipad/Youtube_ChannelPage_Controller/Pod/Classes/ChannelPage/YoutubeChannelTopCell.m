@@ -11,7 +11,7 @@
 #import "YoutubeChannelTopCell.h"
 #import "YoutubeParser.h"
 #import "CacheImageConstant.h"
-
+#import "YoutubeConstants.h"
 
 @implementation YoutubeChannelTopCell
 

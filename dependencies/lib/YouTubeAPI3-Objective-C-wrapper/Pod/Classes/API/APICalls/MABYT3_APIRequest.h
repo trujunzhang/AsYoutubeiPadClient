@@ -7,17 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MAB_GoogleUserCredentials.h"
-#import "MABYT3_Activity.h"
-#import "MABYT3_ChannelSection.h"
-#import "MABYT3_GuideCategory.h"
-#import "MABYT3_Language.h"
-#import "MABYT3_Region.h"
-#import "MABYT3_PlayListItem.h"
-#import "MABYT3_PlayList.h"
-#import "MABYT3_VideoCategory.h"
-#import "MABYT3_SearchItem.h"
-#import "MABYT3_Video.h"
 
 #import "AFHTTPSessionManager.h"
 
@@ -115,14 +104,14 @@ static NSUInteger search_maxResults = 20;
 
 - (void)INSERTVideo:(NSString *)videoId inPlayList:(NSString *)playlistID atPosition:(NSInteger)pos andHandler:(void (^)(NSError *, BOOL))handler;
 
-- (void)INSERTPlayList:(NSString *)playlistTitle withDescription:(NSString *)desc andPrivacyStatus:(YTPrivacyStatus)status andHandler:(void (^)(NSError *, NSString *, BOOL))handler;
+- (void)INSERTPlayList:(NSString *)playlistTitle withDescription:(NSString *)desc andPrivacyStatus:(id)status andHandler:(void (^)(NSError *, NSString *, BOOL))handler;
 
 - (void)INSERTPlayList:(NSString *)playlistTitle andDescription:(NSString *)desc andHandler:(void (^)(NSError *, NSString *, BOOL))handler;
 
 
 - (void)UPDATEPlayListItem:(NSString *)itemId withVideo:(NSString *)videoId inPlayList:(NSString *)playlistID atPosition:(NSInteger)pos andHandler:(void (^)(NSError *, BOOL))handler;
 
-- (void)UPDATEPlayList:(NSString *)playlistID withTitle:(NSString *)playlistTitle withDescription:(NSString *)desc andPrivacyStatus:(YTPrivacyStatus)status andHandler:(void (^)(NSError *, BOOL))handler;
+- (void)UPDATEPlayList:(NSString *)playlistID withTitle:(NSString *)playlistTitle withDescription:(NSString *)desc andPrivacyStatus:(id)status andHandler:(void (^)(NSError *, BOOL))handler;
 
 - (void)UPDATEPlayList:(NSString *)playlistID withTitle:(NSString *)playlistTitle andDescription:(NSString *)desc andHandler:(void (^)(NSError *, BOOL))handler;
 
