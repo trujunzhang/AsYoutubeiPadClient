@@ -11,7 +11,7 @@
 #import "RXMatch.h"
 #import "NSString+Regexer.h"
 #import "YoutubeConstants.h"
-
+#import "GTLYouTubeChannelContentDetails.h"
 
 
 @interface YoutubeParser ()

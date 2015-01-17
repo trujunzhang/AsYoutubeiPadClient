@@ -5,43 +5,43 @@
 // Google-client-api
 //================================================================================================
 // module
-#import "GTLYouTubeChannel.h"
-#import "GTLYouTubeSubscription.h"
-#import "GTLYouTubeSubscriptionSnippet.h"
-#import "GTLYouTubeThumbnailDetails.h"
-#import "GTLYouTubeThumbnail.h"
-#import "GTLYouTubeChannelSnippet.h"
-#import "GTLYouTubeVideo.h"
-#import "GTLYouTubeVideoSnippet.h"
-#import "GTLYouTubeVideoStatistics.h"
-#import "GTLYouTubePlaylistItem.h"
-#import "GTLYouTubePlaylistItemContentDetails.h"
-#import "GTLYouTubeChannelBrandingSettings.h"
-#import "GTLYouTubeImageSettings.h"
+#import "GTLYouTube_Sources.h"
+//#import "GTLYouTube_Sources.m"
+//#import "GTLYouTubeChannel.h"
+//#import "GTLYouTubeSubscription.h"
+//#import "GTLYouTubeSubscriptionSnippet.h"
+//#import "GTLYouTubeThumbnailDetails.h"
+//#import "GTLYouTubeThumbnail.h"
+//#import "GTLYouTubeChannelSnippet.h"
+//#import "GTLYouTubeVideo.h"
+//#import "GTLYouTubeVideoSnippet.h"
+//#import "GTLYouTubeVideoStatistics.h"
+//#import "GTLYouTubePlaylistItem.h"
+//#import "GTLYouTubePlaylistItemContentDetails.h"
+//#import "GTLYouTubeChannelBrandingSettings.h"
+//#import "GTLYouTubeImageSettings.h"
 
 //
 #import "GTLUtilities.h"
 #import "GTMHTTPUploadFetcher.h"
 #import "GTMHTTPFetcherLogging.h"
-
-#import "GTLQueryYouTube.h"
-#import "GTLYouTubeSearchListResponse.h"
-#import "GTLYouTubeChannel.h"
-#import "GTLYouTubeChannelContentDetails.h"
-#import "GTLYouTubeSubscriptionListResponse.h"
-#import "GTLYouTubePlaylistItemListResponse.h"
-#import "GTLYouTubeChannelListResponse.h"
-#import "GTLYouTubeSearchResult.h"
-#import "GTLYouTubeResourceId.h"
-#import "GTLYouTubePlaylistItem.h"
-
-
-//
-#import "GTLServiceYouTube.h"
 #import "GTMOAuth2Authentication.h"
 #import "GTMOAuth2ViewControllerTouch.h"
 
-//
+
+//#import "GTLServiceYouTube.h"
+//#import "GTLQueryYouTube.h"
+//#import "GTLYouTubeSearchListResponse.h"
+//#import "GTLYouTubeChannel.h"
+//#import "GTLYouTubeChannelContentDetails.h"
+//#import "GTLYouTubeSubscriptionListResponse.h"
+//#import "GTLYouTubePlaylistItemListResponse.h"
+//#import "GTLYouTubeChannelListResponse.h"
+//#import "GTLYouTubeSearchResult.h"
+//#import "GTLYouTubeResourceId.h"
+//#import "GTLYouTubePlaylistItem.h"
+
+
 
 //================================================================================================
 // YouTubeAPI3-Objective-C-wrapper
@@ -66,9 +66,6 @@
 #import "MABYT3_ChannelSection.h"
 
 
-// common
-#import <AsyncDisplayKit/AsyncDisplayKit.h>
-
 // other
 #import "YoutubeVideoCache.h"
 #import "MABYT3_TranscriptList.h"
@@ -77,6 +74,11 @@
 
 
 #import "YoutubeVideoDescriptionStringAttribute.h"
+
+
+// common
+#import <AsyncDisplayKit/AsyncDisplayKit.h>
+
 
 #endif
 
