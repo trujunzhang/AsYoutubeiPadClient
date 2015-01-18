@@ -7,6 +7,7 @@
 //
 
 
+#import <google-api-services-youtube/GYoutubeHelper.h>
 #import "GYoutubeHelper.h"
 
 #import "GYoutubeAuthUser.h"
@@ -465,32 +466,6 @@ static GYoutubeHelper *instance = nil;
 }
 
 
-- (void)fetchAuthUserChannelWithCompletion:(YoutubeResponseBlock)completion errorHandler:(ErrorResponseBlock)errorBlock {
-    YTServiceYouTube *service = self.youTubeService;
-
-//   YTQueryYouTube * query = [YTQueryYouTube queryForChannelsListWithPart:@"id,snippet,auditDetails,brandingSettings,contentDetails,invideoPromotion,statistics,status,topicDetails"];
-//   YTQueryYouTube * query = [YTQueryYouTube queryForChannelsListWithPart:@"id,snippet,contentDetails"];
-//   YTQueryYouTube * query = [YTQueryYouTube queryForChannelsListWithPart:@"id,snippet"];
-    YTQueryYouTube *query = [YTQueryYouTube queryForChannelsListWithPart:@"snippet"];
-    query.mine = YES;
-//   query.fields=@"snippet()";
-
-    _searchListTicket = [service executeQuery:query
-                            completionHandler:^(GTLServiceTicket *ticket,
-                                    GTLYouTubeChannelListResponse *resultList,
-                                    NSError *error) {
-                                // The contentDetails of the response has the playlists available for "my channel".
-                                NSArray *array = [resultList items];
-                                if([array count] > 0) {
-                                    completion(array, nil);
-                                }
-                                errorBlock(error);
-                                _searchListTicket = nil;
-                            }];
-
-}
-
-
 - (void)fetchChannelThumbnailsWithChannelId:(NSString *)channelId completion:(YoutubeResponseBlock)completion errorHandler:(ErrorResponseBlock)errorBlock {
     NSDictionary *parameters = @{
             @"part" : @"snippet",
@@ -707,6 +682,42 @@ static GYoutubeHelper *instance = nil;
                                         NSLog(@"ERROR: %@", error);
                                     }
                                 }];
+}
+
+#pragma mark -
+#pragma mark "channels" methods : "youtube.channels.list"
+
+- (void)fetchAuthUserChannelWithCompletion:(YoutubeResponseBlock)completionBlock errorHandler:(ErrorResponseBlock)errorBlock {
+    YTServiceYouTube *service = self.youTubeService;
+
+    YTQueryYouTube *query = [YTQueryYouTube queryForChannelsListWithPart:@"snippet"];
+    query.mine = YES;
+
+    [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLYouTubeChannelListResponse *resultList, NSError *error) {
+        // The contentDetails of the response has the playlists available for "my channel".
+        NSArray *array = [resultList items];
+        if([array count] > 0) {
+            completionBlock(array, nil);
+        }
+        errorBlock(error);
+    }];
+}
+
+- (void)fetchChannelListWithChannelIDs:(NSString *)channelIDs completion:(YoutubeResponseBlock)completionBlock errorHandler:(ErrorResponseBlock)errorBlock {
+    YTServiceYouTube *service = self.youTubeService;
+
+    YTQueryYouTube *query = [YTQueryYouTube queryForChannelsListWithPart:@"snippet"];
+    query.mine = YES;
+    query.identifier = channelIDs;
+
+    [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLYouTubeChannelListResponse *resultList, NSError *error) {
+        // The contentDetails of the response has the playlists available for "my channel".
+        NSArray *array = [resultList items];
+        if([array count] > 0) {
+            completionBlock(array, nil);
+        }
+        errorBlock(error);
+    }];
 }
 
 
