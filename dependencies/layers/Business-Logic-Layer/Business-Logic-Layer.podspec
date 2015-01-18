@@ -13,9 +13,6 @@ Pod::Spec.new do |s|
   s.resources = "Pod/Assets/*/*.*"
   s.requires_arc = true
 
-  s.subspec 'datastore' do |sub|
-    sub.source_files = 'Pod/Classes/datastore/*.{h,m}'
-  end
 
   s.subspec 'resolution' do |sub|
     sub.source_files = 'Pod/Classes/resolution/*.{h,m}'

@@ -40,6 +40,9 @@ Pod::Spec.new do |s|
     sub.source_files = 'Pod/Classes/MAB_Sources/*.{h,m}'
   end
 
+  s.subspec 'YoutubeAuthor' do |sub|
+    sub.source_files = 'Pod/Classes/YoutubeAuthor/*.{h,m}'
+  end
 
 
 end

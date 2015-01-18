@@ -8,7 +8,7 @@
 
 
 #import "UserInfoView.h"
-#import <Business-Logic-Layer/YoutubeAuthInfo.h>
+#import "YoutubeAuthInfo.h"
 #import "CacheImageConstant.h"
 
 
