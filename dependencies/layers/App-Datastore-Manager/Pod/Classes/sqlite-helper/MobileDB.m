@@ -113,8 +113,8 @@ static MobileDB *_dbInstance;
 
     } else {
         // add the abVideo
-        sql = [NSString stringWithFormat:@"insert into Videos(videoID,videoTitle,channelTitle) values('%@','%@','%@');",
-                                         abVideo.videoID, abVideo.videoTitle, abVideo.channelTitle];
+        sql = [NSString stringWithFormat:@"insert into Videos(videoID,videoTitle,channelTitle,videoThumbnail) values('%@','%@','%@','%@');",
+                                         abVideo.videoID, abVideo.videoTitle, abVideo.channelTitle, abVideo.videoThumbnail];
 
         [db sqlExecute:sql];
     }
@@ -124,13 +124,15 @@ static MobileDB *_dbInstance;
 
 - (void)allVideos:(VideoResultsBlock)videosBlock {
     NSMutableArray *videos = [[NSMutableArray alloc] init];
-    NSString *sql = @"select videoID,videoTitle,channelTitle from Videos";
+    NSString *sql = @"select videoID,videoTitle,channelTitle,videoThumbnail from Videos";
     id<ABRecordset> results = [db sqlSelect:sql];
     while (![results eof]) {
         ABVideo *abVideo = [[ABVideo alloc] init];
         abVideo.videoID = [[results fieldWithName:@"videoID"] stringValue];
         abVideo.videoTitle = [[results fieldWithName:@"videoTitle"] stringValue];
         abVideo.channelTitle = [[results fieldWithName:@"channelTitle"] stringValue];
+        abVideo.videoThumbnail = [[results fieldWithName:@"videoThumbnail"] stringValue];
+
 
         [videos addObject:abVideo];
         [results moveNext];
@@ -189,7 +191,7 @@ static MobileDB *_dbInstance;
 - (void)makeDB {
 
     // Videos
-    [db sqlExecute:@"create table Videos(videoID text, videoTitle text, channelTitle text, primary key(videoID));"];
+    [db sqlExecute:@"create table Videos(videoID text, videoTitle text, channelTitle text, videoThumbnail text, primary key(videoID));"];
 
     // Internal
     [db sqlExecute:@"create table Preferences(property text, value text, primary key(property));"];

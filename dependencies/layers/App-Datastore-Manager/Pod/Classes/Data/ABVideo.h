@@ -9,7 +9,8 @@
 
 @property (nonatomic, copy) NSString *videoThumbnail;
 
-- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle;
+
+- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle videoThumbnail:(NSString *)videoThumbnail;
 
 
 @end
