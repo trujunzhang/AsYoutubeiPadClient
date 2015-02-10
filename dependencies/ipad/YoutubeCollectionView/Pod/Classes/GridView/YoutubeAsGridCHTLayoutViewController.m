@@ -44,8 +44,6 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:(lastRowCount + i) inSection:0];
         [indexPaths addObject:indexPath];
     }
-
-//   [self.collectionView appendNodesWithIndexPaths:indexPaths];
 }
 
 
@@ -96,7 +94,7 @@
     CGRect rect = self.view.bounds;
     self.collectionView.frame = rect;
 
-    [self updateLayout:[UIApplication sharedApplication].statusBarOrientation];
+//    [self updateLayout:[UIApplication sharedApplication].statusBarOrientation];
 }
 
 
