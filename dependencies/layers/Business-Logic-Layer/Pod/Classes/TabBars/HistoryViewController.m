@@ -17,7 +17,7 @@
 @implementation HistoryViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+
 
     self.numbersPerLineArray = [NSArray arrayWithObjects:@"3", @"4", nil];
     self.nextPageDelegate = self;
@@ -34,6 +34,8 @@
         NSString *debug = @"debug";
     };
     [[MobileDB dbInstance] allVideos:videosBlock];
+
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
