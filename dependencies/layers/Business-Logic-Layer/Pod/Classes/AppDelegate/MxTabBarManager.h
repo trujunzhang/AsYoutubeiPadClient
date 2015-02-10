@@ -7,6 +7,8 @@
 
 - (void)registerTabBarController:(UITabBarController *)tabBarController withLeftViewController:(id)leftViewController;
 
+- (void)saveVideo:(id)videoInfo;
+
 - (void)setLeftMenuControllerDelegate:(id)delegate;
 
 - (UINavigationController *)currentNavigationController;

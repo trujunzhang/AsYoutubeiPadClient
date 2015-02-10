@@ -5,7 +5,6 @@
 
 #import "YTAsFirstVideoRowNode.h"
 #import "Foundation.h"
-#import "AsyncDisplayKitStatic.h"
 #import "MxTabBarManager.h"
 
 
@@ -66,11 +65,15 @@
     [_videoCoverThumbnailsNode addTarget:self
                                   action:@selector(buttonTapped:)
                         forControlEvents:ASControlNodeEventTouchUpInside];
+
 }
 
 
 - (void)buttonTapped:(id)buttonTapped {
     [[MxTabBarManager sharedTabBarManager] pushWithVideo:self.nodeInfo];
+
+    // save video info to sqlite
+    [[MxTabBarManager sharedTabBarManager] saveVideo:self.nodeInfo];
 }
 
 @end

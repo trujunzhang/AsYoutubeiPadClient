@@ -15,5 +15,16 @@
 
 @implementation ABVideo
 
+- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle {
+    self = [super init];
+    if(self) {
+        self.videoID = videoID;
+        self.videoTitle = videoTitle;
+        self.channelTitle = channelTitle;
+    }
+
+    return self;
+}
+
 
 @end

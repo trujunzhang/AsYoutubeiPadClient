@@ -5,6 +5,8 @@
 #import "LeftRevealHelper.h"
 #import "ClientUIHelper.h"
 #import "CollectionConstant.h"
+#import "MobileDB.h"
+#import "YoutubeParser.h"
 
 
 @interface MxTabBarManager ()<GYoutubeHelperDelegate> {
@@ -33,6 +35,18 @@
 - (void)registerTabBarController:(UITabBarController *)tabBarController withLeftViewController:(id)leftViewController {
     _tabBarController = tabBarController;
     _leftViewController = leftViewController;
+}
+
+#pragma mark -
+#pragma mark video local store.
+
+- (void)saveVideo:(id)videoInfo {
+    [[MobileDB dbInstance] saveVideo:
+            [[ABVideo alloc] initWithVideoID:[YoutubeParser getWatchVideoId:videoInfo]
+                                  videoTitle:[YoutubeParser getVideoSnippetTitle:videoInfo]
+                                channelTitle:[YoutubeParser getVideoSnippetChannelTitle:videoInfo]
+            ]
+    ];
 }
 
 

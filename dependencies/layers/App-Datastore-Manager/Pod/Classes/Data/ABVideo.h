@@ -7,5 +7,7 @@
 @property (strong, nonatomic) NSString *videoTitle;
 @property (strong, nonatomic) NSString *channelTitle;
 
+- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle;
+
 
 @end
