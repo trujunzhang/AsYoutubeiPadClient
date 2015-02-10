@@ -27,7 +27,8 @@ target 'mxAsTubeiPad', :exclusive => true do
   pod "GGTabBar", :path => "../dependencies/lib/GGTabBar"
   pod "YKMediaPlayerKit", :path => "../dependencies/lib/YKMediaPlayerKit"
   pod "MPMoviePlayerController-Subtitles", :path => "../dependencies/lib/MPMoviePlayerController-Subtitles"
-  # pod "KRLCollectionViewGridLayout", :path => "../dependencies/lib/KRLCollectionViewGridLayout"
+  pod "App-Datastore-Manager", :path => "../dependencies/layers/App-Datastore-Manager"
+
 
   # ________________Google-API-Client___________________
   pod "YouTubeAPI3-Objective-C-wrapper", :path => "../dependencies/lib/YouTubeAPI3-Objective-C-wrapper"
