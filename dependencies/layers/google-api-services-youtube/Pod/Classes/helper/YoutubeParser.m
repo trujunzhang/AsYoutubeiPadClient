@@ -12,6 +12,7 @@
 #import "NSString+Regexer.h"
 #import "YoutubeConstants.h"
 #import "GTLYouTubeChannelContentDetails.h"
+#import "ABVideo.h"
 
 
 @interface YoutubeParser ()
@@ -315,4 +316,13 @@
 }
 
 
++ (id)convertAbVideoToYoutubeVideo:(ABVideo *)abVideo {
+    YTYouTubeVideoCache *youtubeVideoCache = [[YoutubeVideoCache alloc] init];
+
+    youtubeVideoCache.identifier = abVideo.videoID;
+    youtubeVideoCache.snippet.title = abVideo.videoTitle;
+    youtubeVideoCache.snippet.channelTitle = abVideo.channelTitle;
+
+    return youtubeVideoCache;
+}
 @end

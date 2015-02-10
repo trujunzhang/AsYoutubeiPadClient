@@ -74,4 +74,5 @@
 
 + (void)cacheWithKey:(NSString *)key withValue:(NSString *)value;
 
++ (id)convertAbVideoToYoutubeVideo:(id)abVideo;
 @end

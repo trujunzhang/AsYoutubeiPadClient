@@ -8,9 +8,10 @@
 
 #import "HistoryViewController.h"
 #import "MobileDB.h"
+#import "YoutubeParser.h"
 
-@interface HistoryViewController ()
-
+@interface HistoryViewController ()<YoutubeCollectionNextPageDelegate>
+@property (nonatomic, strong) NSMutableArray *videosArray;
 @end
 
 @implementation HistoryViewController
@@ -18,8 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.numbersPerLineArray = [NSArray arrayWithObjects:@"3", @"4", nil];
+    self.nextPageDelegate = self;
+
+    self.videosArray = [[NSMutableArray alloc] init];
+
     // Do any additional setup after loading the view.
     VideoResultsBlock videosBlock = ^(NSArray *videos) {
+        for (ABVideo *abVideo in videos) {
+            [self.videosArray addObject:[YoutubeParser convertAbVideoToYoutubeVideo:abVideo]];
+        }
+
+
         NSString *debug = @"debug";
     };
     [[MobileDB dbInstance] allVideos:videosBlock];
@@ -28,6 +39,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark -
+#pragma mark YoutubeCollectionNextPageDelegate
+
+- (void)executeRefreshTask {
+
+}
+
+- (void)executeNextPageTask {
+
 }
 
 

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CollectionConstant.h"
 
-@interface HistoryViewController : UIViewController
+@interface HistoryViewController : YTCollectionViewController
 
 @end
