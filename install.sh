@@ -17,7 +17,6 @@ _cleanup() {
     unzip  ${appPath}/mxAsTubeiPad.zip
 
     cp ${AppResource}/Podfile          ${appPath}/mxAsTubeiPad
-    cp ${AppResource}/Main.storyboard  ${appPath}/mxAsTubeiPad/mxAsTubeiPad/Base.lproj
 }
 
 _cocoapodsInstall() {
