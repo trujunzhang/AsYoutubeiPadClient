@@ -113,7 +113,7 @@ static MobileDB *_dbInstance;
 
     } else {
         // add the abVideo
-        sql = [NSString stringWithFormat:@"insert into Videos(videoID,videoTitle,channelTitle) values(%i,'%@');",
+        sql = [NSString stringWithFormat:@"insert into Videos(videoID,videoTitle,channelTitle) values('%@','%@','%@');",
                                          abVideo.videoID, abVideo.videoTitle, abVideo.channelTitle];
 
         [db sqlExecute:sql];
