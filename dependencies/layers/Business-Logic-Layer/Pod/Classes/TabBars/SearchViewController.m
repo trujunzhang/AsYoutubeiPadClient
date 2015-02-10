@@ -129,7 +129,6 @@
 
     if([self.searchBar.text isEqualToString:@""]) {
         [self cleanUpContent];
-        [[GYoutubeHelper getInstance] cancelAutoCompleteSuggestionTask];
         return;
     }
 

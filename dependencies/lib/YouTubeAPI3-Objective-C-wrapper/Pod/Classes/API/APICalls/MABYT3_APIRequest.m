@@ -348,19 +348,8 @@
                 });
             }];
 
-    if(self.lastTask) {
-        [self.lastTask cancel];
-    }
-    self.lastTask = task;
 
     return task;
-}
-
-
-- (void)cancelAllTask {
-    if(self.lastTask) {
-        [self.lastTask cancel];
-    }
 }
 
 

@@ -50,9 +50,7 @@
     _popover = [[UIPopoverController alloc] initWithContentViewController:_popUpTableViewController];
     _popover.delegate = self;
 
-    [_popover presentPopoverFromBarButtonItem:item
-                     permittedArrowDirections:UIPopoverArrowDirectionAny
-                                     animated:YES];
+    [_popover presentPopoverFromBarButtonItem:item permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 
