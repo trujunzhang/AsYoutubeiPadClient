@@ -18,8 +18,10 @@ target 'mxAsTubeiPad', :exclusive => true do
   pod 'SWRevealViewController'
   pod 'ISMemoryCache'
   pod 'EGOCache'
+  pod 'ABSQLite'
 
-  pod 'AsyncDisplayKit', :git => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/AsyncDisplayKit', :commit => '5cb261b'
+  # pod 'AsyncDisplayKit', :git => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/AsyncDisplayKit', :commit => '5cb261b'
+  pod 'AsyncDisplayKit'
 
   # ________________open projects___________________
   pod "GGTabBar", :path => "../dependencies/lib/GGTabBar"

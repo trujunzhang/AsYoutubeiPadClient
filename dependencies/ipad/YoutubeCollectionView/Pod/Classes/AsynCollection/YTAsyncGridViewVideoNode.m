@@ -43,17 +43,17 @@
 @implementation YTAsyncGridViewVideoNode
 
 - (instancetype)initWithCardInfo:(YTYouTubeVideoCache *)cardInfo cellSize:(CGSize)cellSize isBacked:(BOOL)isBacked {
-    self = [super initWithLayerClass:[AnimatedContentsDisplayLayer class]];
-    if(self) {
-        self.nodeCellSize = cellSize;
-        self.cardInfo = cardInfo;
-
-        [self makeContainerNode];
-        [self layoutSubNodes];
-
-        [self setupAllNodesEffect];
-        [self setAllNodeBacked];
-    }
+//    self = [super initWithLayerClass:[AnimatedContentsDisplayLayer class]];
+//    if(self) {
+//        self.nodeCellSize = cellSize;
+//        self.cardInfo = cardInfo;
+//
+//        [self makeContainerNode];
+//        [self layoutSubNodes];
+//
+//        [self setupAllNodesEffect];
+//        [self setAllNodeBacked];
+//    }
 
     return self;
 }

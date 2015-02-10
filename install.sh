@@ -14,7 +14,9 @@ echo "AppCode path is:${AppResource}"
 
 _cleanup() {
     rm -rf ${appPath}/mxAsTubeiPad
-    unzip  ${appPath}/mxAsTubeiPad.zip
+}
+_upzipProject(){
+	unzip  ${appPath}/mxAsTubeiPad.zip
 
     cp ${AppResource}/Podfile          ${appPath}/mxAsTubeiPad
 }
@@ -31,6 +33,6 @@ _runProject(){
 #/Volumes/Home/Developing/SketchProjects/YoutubeiPadClient/mxAsTubeiPad/mxAsTubeiPad.xcworkspace
 #/Volumes/Home/Developing/SketchProjects/YoutubeiPadClient/mxAsTubeiPad/mxAsTubeiPad.xcworkspace
 
-_cleanup
-_cocoapodsInstall
-_runProject
+(_cleanup;_upzipProject;_cocoapodsInstall;_runProject)
+
+
