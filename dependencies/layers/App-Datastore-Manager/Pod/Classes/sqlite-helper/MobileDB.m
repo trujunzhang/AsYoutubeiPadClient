@@ -76,9 +76,8 @@ static MobileDB *_dbInstance;
         NSString *dbFilePath;
         NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentFolderPath = searchPaths[0];
-        dbFilePath = [documentFolderPath stringByAppendingPathComponent:@"MobileDB.db"];
+        dbFilePath = [documentFolderPath stringByAppendingPathComponent:@"YoutubeVideoDB.db"];
 
-        //"/Volumes/Home/djzhang/Library/Developer/CoreSimulator/Devices/F1B2461C-89B4-48A5-93D7-64546C39189E/data/Containers/Data/Application/1A1AFA4F-29CB-43C6-8097-0EB114017964/Documents/MobileDB.db"
         MobileDB *mobileDB = [[MobileDB alloc] initWithFile:dbFilePath];
         if(!mobileDB) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"File Error"
@@ -102,27 +101,27 @@ static MobileDB *_dbInstance;
 #pragma mark - Reports
 
 
-- (void)saveVideo:(ABVideo *)report {
-    NSString *sql = [NSString stringWithFormat:@"select reportID from reports where reportID = %i", report.reportID];
+- (void)saveVideo:(ABVideo *)abVideo {
+    NSString *sql = [NSString stringWithFormat:@"select reportID from reports where reportID = %i", abVideo.reportID];
     id<ABRecordset> results = [db sqlSelect:sql];
     if([results eof]) {
-        // add the report
+        // add the abVideo
         sql = [NSString stringWithFormat:@"insert into Reports(reportID,status) values(%i,'%@');",
-                                         report.reportID,
-                                         [self escapeText:report.status]];
+                                         abVideo.reportID,
+                                         [self escapeText:abVideo.status]];
         [db sqlExecute:sql];
     }
 
-    if(report.locations) {
-        for (NSNumber *locationID in report.locations) {
+    if(abVideo.locations) {
+        for (NSNumber *locationID in abVideo.locations) {
             sql = [NSString stringWithFormat:@"select locationID from ReportLocations where reportID = %i and locationID = %i",
-                                             report.reportID,
+                                             abVideo.reportID,
                                              [locationID intValue]];
             results = [db sqlSelect:sql];
 
             if([results eof]) {
                 sql = [NSString stringWithFormat:@"insert into ReportLocations(reportID,locationID) values(%i,%i);",
-                                                 report.reportID,
+                                                 abVideo.reportID,
                                                  [locationID intValue]];
                 [db sqlExecute:sql];
             }
@@ -195,13 +194,9 @@ static MobileDB *_dbInstance;
 
 
 - (void)makeDB {
-    // Locations
-    [db sqlExecute:@"create table Locations(locationID int, clientLocationID text, address1 text, city text, state text, zip text, primary key(locationID));"];
-    [db sqlExecute:@"create table LocationAttributes(locationID int, name text, value text, primary key(locationID,name));"];
 
     // Reports
     [db sqlExecute:@"create table Reports(reportID int, status text, primary key(reportID));"];
-    [db sqlExecute:@"create table ReportLocations(reportID int, locationID int, primary key (reportID,locationID));"];
 
     // Internal
     [db sqlExecute:@"create table Preferences(property text, value text, primary key(property));"];
@@ -215,10 +210,8 @@ static MobileDB *_dbInstance;
 
     if([schemaVersion isEqualToString:@"1"]) {
         [db sqlExecute:@"create index idx_preferences_property on Preferences(property);"];
-        [db sqlExecute:@"create index idx_locations_locationid on Locations(locationID);"];
-        [db sqlExecute:@"create index idx_locationattributes_locationid on LocationAttributes(locationID);"];
         [db sqlExecute:@"create index idx_reports_reportid on Reports(reportID);"];
-        [db sqlExecute:@"create index idx_reportlocations_reportid on ReportLocations(reportID);"];
+        [db sqlExecute:@"create index idx_reportattributes_reportid on ReportAttributes(reportID);"];
 
         schemaVersion = @"2";
     }

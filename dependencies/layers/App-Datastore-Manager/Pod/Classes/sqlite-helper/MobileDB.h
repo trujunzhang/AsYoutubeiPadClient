@@ -20,7 +20,7 @@ typedef void(^LocationResultsBlock)(NSArray *locations);
 
 #pragma mark - Reports
 
-- (void)saveVideo:(ABVideo *)report;
+- (void)saveVideo:(ABVideo *)abVideo;
 
 - (void)allVideos:(ReportResultsBlock)reportsBlock;
 
