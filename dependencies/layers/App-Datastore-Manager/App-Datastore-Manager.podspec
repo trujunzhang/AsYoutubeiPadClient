@@ -17,6 +17,10 @@ Pod::Spec.new do |s|
     sub.source_files = 'Pod/Classes/sqlite-helper/*.{h,m}'
   end
 
+  s.subspec 'Data' do |sub|
+    sub.source_files = 'Pod/Classes/Data/*.{h,m}'
+  end
+
 
 end
 
