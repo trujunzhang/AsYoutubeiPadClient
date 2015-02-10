@@ -151,7 +151,7 @@
 //   CGFloat divX = 12;// test
     CGFloat divY = 8;
 
-    return CGRectMake(divX, divY, 200.0f, 16);
+    return CGRectMake(divX, divY, 200.0f, 18);
 }
 
 
