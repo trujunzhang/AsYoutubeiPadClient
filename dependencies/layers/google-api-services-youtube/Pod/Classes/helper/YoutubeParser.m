@@ -323,7 +323,10 @@
     youtubeVideoCache.snippet.title = abVideo.videoTitle;
     youtubeVideoCache.snippet.channelTitle = abVideo.channelTitle;
 
-    youtubeVideoCache.snippet.thumbnails.medium = [[MABYT3_Thumbnail alloc] initFromDictionary:@{@"url" : abVideo.videoThumbnail}];
+    MABYT3_Thumbnail *thumbnail = [[MABYT3_Thumbnail alloc] initFromDictionary:@{@"url" : abVideo.videoThumbnail}];
+    MABYT3_ThumbnailDetails *details = youtubeVideoCache.snippet.thumbnails;
+
+    details.medium = thumbnail;
 
     return youtubeVideoCache;
 }

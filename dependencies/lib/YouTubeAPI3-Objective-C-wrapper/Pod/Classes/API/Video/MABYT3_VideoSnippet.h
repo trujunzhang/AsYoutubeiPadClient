@@ -20,7 +20,6 @@
 @property (strong, nonatomic) NSString *channelId;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *descriptionString;
-//@property(strong, nonatomic) NSMutableDictionary * thumbnails;
 @property (strong, nonatomic) MABYT3_ThumbnailDetails *thumbnails;
 
 @property (strong, nonatomic) NSString *channelTitle;
