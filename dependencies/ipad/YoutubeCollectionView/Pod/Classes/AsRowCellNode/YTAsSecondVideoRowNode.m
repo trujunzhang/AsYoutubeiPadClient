@@ -21,7 +21,7 @@
     // 2.2
     _videoTitleNode = [ASTextNode initWithAttributedString:
             [NSAttributedString attributedStringForCollectionVideoTitle:[YoutubeParser getVideoSnippetTitle:self.nodeInfo]
-                                                               fontSize:14.0f]];
+                                                               fontSize:13.0f]];
 
 
     [self addSubnode:_videoTitleNode];
