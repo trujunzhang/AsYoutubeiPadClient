@@ -102,7 +102,7 @@ static MobileDB *_dbInstance;
 #pragma mark - Reports
 
 
-- (void)saveReport:(ABReport *)report {
+- (void)saveVideo:(ABVideo *)report {
     NSString *sql = [NSString stringWithFormat:@"select reportID from reports where reportID = %i", report.reportID];
     id<ABRecordset> results = [db sqlSelect:sql];
     if([results eof]) {
@@ -131,12 +131,12 @@ static MobileDB *_dbInstance;
 }
 
 
-- (void)allReports:(ReportResultsBlock)reportsBlock {
+- (void)allVideos:(ReportResultsBlock)reportsBlock {
     NSMutableArray *reports = [[NSMutableArray alloc] init];
     NSString *sql = @"select reportID,status from Reports order by reportID";
     id<ABRecordset> results = [db sqlSelect:sql];
     while (![results eof]) {
-        ABReport *report = [[ABReport alloc] init];
+        ABVideo *report = [[ABVideo alloc] init];
         report.reportID = [[results fieldWithName:@"reportID"] intValue];
         report.status = [[results fieldWithName:@"status"] stringValue];
 
@@ -145,25 +145,6 @@ static MobileDB *_dbInstance;
     }
 
     reportsBlock(reports);
-}
-
-
-- (void)allReportsWithLocations:(ReportResultsBlock)reportsBlock {
-    [self allReports:^(NSArray *reports) {
-        for (ABReport *report in reports) {
-            NSMutableArray *locations = [[NSMutableArray alloc] init];
-            report.locations = locations;
-            NSString *sql = [NSString stringWithFormat:@"select locationID from ReportLocations where reportID = %i",
-                                                       report.reportID];
-            id<ABRecordset> results = [db sqlSelect:sql];
-            while (![results eof]) {
-                [locations addObject:@([[results fieldWithName:@"locationID"] intValue])];
-                [results moveNext];
-            }
-        }
-
-        reportsBlock(reports);
-    }];
 }
 
 

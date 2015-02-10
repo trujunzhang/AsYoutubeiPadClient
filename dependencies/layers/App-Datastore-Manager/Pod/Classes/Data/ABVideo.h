@@ -2,7 +2,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ABReport : NSObject
+@interface ABVideo : NSObject
 
 @property (assign) int reportID;
 @property (assign) int locationID;

@@ -6,14 +6,14 @@
 //  Copyright (c) 2012 Market Force. All rights reserved.
 //
 
-#import "ABReport.h"
+#import "ABVideo.h"
 
 
-@interface ABReport ()<NSCoding>
+@interface ABVideo ()<NSCoding>
 
 @end
 
-@implementation ABReport
+@implementation ABVideo
 
 
 @end
