@@ -326,6 +326,7 @@
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
 
     style.paragraphSpacing = 1.0;
+    style.lineSpacing = 1.0;
 
     return style;
 }
