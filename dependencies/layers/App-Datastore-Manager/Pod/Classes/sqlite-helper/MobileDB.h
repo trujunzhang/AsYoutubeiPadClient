@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "ABVideo.h"
 
-typedef void(^VideoResultsBlock)(NSArray *reports);
+typedef void(^VideoResultsBlock)(NSArray *videos);
 
 
 @interface MobileDB : NSObject
