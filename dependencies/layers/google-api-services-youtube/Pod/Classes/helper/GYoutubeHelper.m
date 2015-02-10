@@ -222,10 +222,10 @@ static GYoutubeHelper *instance = nil;
     // 1
     [self fetchAuthorizeInfo:authentication];
     // 2
-    YoutubeAuthInfo *info = [YoutubeAuthDataStore saveAuthAccessToken:authentication.accessToken
-                                                         refreshToken:authentication.refreshToken];
+//    YoutubeAuthInfo *info = [YoutubeAuthDataStore saveAuthAccessToken:authentication.accessToken
+//                                                         refreshToken:authentication.refreshToken];
     // 3
-    [self saveMABGoogleAccessToken:info];
+//    [self saveMABGoogleAccessToken:info];
 }
 
 
@@ -251,11 +251,8 @@ static GYoutubeHelper *instance = nil;
         [self.delegate callbackUpdateYoutubeChannelCompletion:info];
 
         // 2
-//        if(debugLeftMenuTapSubscription) {
-//            [self fetchAuthSubscriptionsList];
-//        } else {
-        [self getUserSubscriptions:self.delegate];
-//        }
+        [self getUserSubscriptions];
+
 
         // "id" -> "UC0wObT_HayGfWLdRAnFyPwA"
         NSLog(@" user name = %@", [YoutubeParser getAuthChannelTitle:channel]);
@@ -329,7 +326,7 @@ static GYoutubeHelper *instance = nil;
 }
 
 
-- (void)getUserSubscriptions:(id<GYoutubeHelperDelegate>)delegate {
+- (void)getUserSubscriptions {
     YoutubeResponseBlock completion = ^(NSArray *array, NSObject *respObject) {
         [self callbackAfterFetchingAuthorSubscriptionList:array];
     };
@@ -346,7 +343,6 @@ static GYoutubeHelper *instance = nil;
     YTServiceYouTube *service = self.youTubeService;
 
     YTQueryYouTube *query = [YTQueryYouTube queryForSubscriptionsListWithPart:@"id,snippet"];
-//   YTQueryYouTube * query = [YTQueryYouTube queryForSubscriptionsListWithPart:@"id,snippet"];
     query.maxResults = 50;
     query.channelId = channelId;
     query.fields = @"items/snippet(title,resourceId,thumbnails),nextPageToken";
@@ -356,7 +352,6 @@ static GYoutubeHelper *instance = nil;
                                     GTLYouTubeSubscriptionListResponse *resultList,
                                     NSError *error) {
                                 NSString *nextPageToken = resultList.nextPageToken;
-                                // The contentDetails of the response has the playlists available for "my channel".
                                 NSArray *array = [resultList items];
                                 if([array count] > 0) {
                                     completion(array, nil);
