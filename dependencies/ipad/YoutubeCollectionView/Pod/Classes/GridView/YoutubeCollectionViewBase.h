@@ -58,6 +58,8 @@
 
 - (void)fetchActivityListByPageToken;
 
+- (void)updateAfterResponse:(NSArray *)array;
+
 - (void)fetchVideoListFromChannelWithChannelId:(NSString *)channelId;
 
 - (void)fetchVideoListFromChannelByPageToken;
