@@ -10,8 +10,6 @@
 #import "YTAsyncGridViewVideoCollectionViewCell.h"
 #import "FrameCalculator.h"
 #import "YTAsyncGridViewVideoNode.h"
-#import "ASDisplayNode+Subclasses.h"
-#import "YTGridVideoCellNode.h"
 
 
 @implementation YTAsyncGridViewVideoCollectionViewCell

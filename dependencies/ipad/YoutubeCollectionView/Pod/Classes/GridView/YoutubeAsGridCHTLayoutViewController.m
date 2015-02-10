@@ -8,22 +8,17 @@
 
 
 #import "YoutubeAsGridCHTLayoutViewController.h"
-#import "CHTCollectionViewWaterfallLayout.h"
 
-#import "YTGridVideoCellNode.h"
-#import "YTAsGridVideoCellNode.h"
 #import "YTAsCollectionVideoCellNode.h"
 
 #import "YoutubeFooterView.h"
 
-
-
-//#define ASGRIDROWCELL YTGridVideoCellNode
 #define ASGRIDROWCELL YTAsCollectionVideoCellNode
-//#define ASGRIDROWCELL YTAsGridVideoCellNode
 
-@interface YoutubeAsGridCHTLayoutViewController ()<ASCollectionViewDataSource, ASCollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout>
+
+@interface YoutubeAsGridCHTLayoutViewController ()<ASCollectionViewDataSource, ASCollectionViewDelegate>
 @property (strong, nonatomic) ASCollectionView *collectionView;
+@property (nonatomic, strong) UICollectionViewFlowLayout *layout;
 @end
 
 
@@ -66,21 +61,21 @@
 
 - (void)makeCollectionView {
     if(!self.collectionView) {
-        self.layout = [[CHTCollectionViewWaterfallLayout alloc] init];
+        self.layout = [[UICollectionViewFlowLayout alloc] init];
 
         self.layout.sectionInset = [self getUIEdgeInsetsForLayout];
-        self.layout.footerHeight = DEFAULT_LOADING_MORE_HEIGHT;
-        self.layout.minimumColumnSpacing = LAYOUT_MINIMUMCOLUMNSPACING;
+//        self.layout.footerHeight = DEFAULT_LOADING_MORE_HEIGHT;
+//        self.layout.minimumColumnSpacing = LAYOUT_MINIMUMCOLUMNSPACING;
         self.layout.minimumInteritemSpacing = 10;
-        self.layout.delegate = self;
+//        self.layout.delegate = self;
 
         self.collectionView = [[ASCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.layout];
         self.collectionView.asyncDataSource = self;
         self.collectionView.asyncDelegate = self;
 
-        [self.collectionView registerClass:[YoutubeFooterView class]
-                forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter
-                       withReuseIdentifier:FOOTER_IDENTIFIER];
+//        [self.collectionView registerClass:[YoutubeFooterView class]
+//                forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter
+//                       withReuseIdentifier:FOOTER_IDENTIFIER];
 
     }
 }
@@ -106,7 +101,7 @@
 
 
 - (void)updateLayout:(UIInterfaceOrientation)orientation {
-    self.layout.columnCount = [self getCurrentColumnCount:orientation];
+//    self.layout.columnCount = [self getCurrentColumnCount:orientation];
 }
 
 
@@ -148,23 +143,23 @@
                                  atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *reusableView = nil;
 
-    if([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
-        YoutubeFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-                                                                           withReuseIdentifier:FOOTER_IDENTIFIER
-                                                                                  forIndexPath:indexPath];
-        footerView.hidden = NO;
-
-        if([self getYoutubeRequestInfo].hasLoadingMore) {
-            [footerView startAnimation];
-            if(self.nextPageDelegate)
-                [self.nextPageDelegate executeNextPageTask];
-        } else {
-            footerView.hidden = YES;
-            [footerView stopAnimation];
-        }
-
-        reusableView = footerView;
-    }
+//    if([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
+//        YoutubeFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+//                                                                           withReuseIdentifier:FOOTER_IDENTIFIER
+//                                                                                  forIndexPath:indexPath];
+//        footerView.hidden = NO;
+//
+//        if([self getYoutubeRequestInfo].hasLoadingMore) {
+//            [footerView startAnimation];
+//            if(self.nextPageDelegate)
+//                [self.nextPageDelegate executeNextPageTask];
+//        } else {
+//            footerView.hidden = YES;
+//            [footerView stopAnimation];
+//        }
+//
+//        reusableView = footerView;
+//    }
 
     return reusableView;
 }

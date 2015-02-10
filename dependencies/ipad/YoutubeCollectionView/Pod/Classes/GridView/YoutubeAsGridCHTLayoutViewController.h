@@ -9,12 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "YoutubeCollectionViewBase.h"
 
-
-@class CHTCollectionViewWaterfallLayout;
-
-
 @interface YoutubeAsGridCHTLayoutViewController : YoutubeCollectionViewBase
 
 @property (nonatomic, strong) NSArray *numbersPerLineArray;
-@property (nonatomic, strong) CHTCollectionViewWaterfallLayout *layout;
+
 @end
