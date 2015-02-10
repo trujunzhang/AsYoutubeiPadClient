@@ -98,11 +98,11 @@ static MobileDB *_dbInstance;
 }
 
 
-#pragma mark - Reports
+#pragma mark - Videos
 
 
 - (void)saveVideo:(ABVideo *)abVideo {
-    NSString *sql = [NSString stringWithFormat:@"select videoID from reports where videoID = %i", abVideo.videoID];
+    NSString *sql = [NSString stringWithFormat:@"select videoID from Videos where videoID = %i", abVideo.videoID];
     BOOL exists = NO;
 
     id<ABRecordset> results = [db sqlSelect:sql];
@@ -113,7 +113,7 @@ static MobileDB *_dbInstance;
 
     } else {
         // add the abVideo
-        sql = [NSString stringWithFormat:@"insert into Reports(videoID,videoTitle,channelTitle) values(%i,'%@');",
+        sql = [NSString stringWithFormat:@"insert into Videos(videoID,videoTitle,channelTitle) values(%i,'%@');",
                                          abVideo.videoID, abVideo.videoTitle, abVideo.channelTitle];
 
         [db sqlExecute:sql];
@@ -122,21 +122,21 @@ static MobileDB *_dbInstance;
 }
 
 
-- (void)allVideos:(ReportResultsBlock)reportsBlock {
-    NSMutableArray *reports = [[NSMutableArray alloc] init];
-    NSString *sql = @"select videoID,videoTitle,channelTitle from Reports";
+- (void)allVideos:(VideoResultsBlock)videosBlock {
+    NSMutableArray *videos = [[NSMutableArray alloc] init];
+    NSString *sql = @"select videoID,videoTitle,channelTitle from Videos";
     id<ABRecordset> results = [db sqlSelect:sql];
     while (![results eof]) {
-        ABVideo *report = [[ABVideo alloc] init];
-        report.videoID = [[results fieldWithName:@"videoID"] stringValue];
-        report.videoTitle = [[results fieldWithName:@"videoTitle"] stringValue];
-        report.channelTitle = [[results fieldWithName:@"channelTitle"] stringValue];
+        ABVideo *abVideo = [[ABVideo alloc] init];
+        abVideo.videoID = [[results fieldWithName:@"videoID"] stringValue];
+        abVideo.videoTitle = [[results fieldWithName:@"videoTitle"] stringValue];
+        abVideo.channelTitle = [[results fieldWithName:@"channelTitle"] stringValue];
 
-        [reports addObject:report];
+        [videos addObject:abVideo];
         [results moveNext];
     }
 
-    reportsBlock(reports);
+    videosBlock(videos);
 }
 
 
@@ -188,8 +188,8 @@ static MobileDB *_dbInstance;
 
 - (void)makeDB {
 
-    // Reports
-    [db sqlExecute:@"create table Reports(videoID int, status text, primary key(videoID));"];
+    // Videos
+    [db sqlExecute:@"create table Videos(videoID int, status text, primary key(videoID));"];
 
     // Internal
     [db sqlExecute:@"create table Preferences(property text, value text, primary key(property));"];
@@ -203,8 +203,8 @@ static MobileDB *_dbInstance;
 
     if([schemaVersion isEqualToString:@"1"]) {
         [db sqlExecute:@"create index idx_preferences_property on Preferences(property);"];
-        [db sqlExecute:@"create index idx_reports_reportid on Reports(videoID);"];
-        [db sqlExecute:@"create index idx_reportattributes_reportid on ReportAttributes(videoID);"];
+        [db sqlExecute:@"create index idx_videos_videoid on Videos(videoID);"];
+        [db sqlExecute:@"create index idx_videoattributes_videoid on VideoAttributes(videoID);"];
 
         schemaVersion = @"2";
     }

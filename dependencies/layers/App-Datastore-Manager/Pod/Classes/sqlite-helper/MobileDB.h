@@ -1,9 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "ABVideo.h"
 
-typedef void(^ReportResultsBlock)(NSArray *reports);
-
-typedef void(^LocationResultsBlock)(NSArray *locations);
+typedef void(^VideoResultsBlock)(NSArray *reports);
 
 
 @interface MobileDB : NSObject
@@ -22,7 +20,7 @@ typedef void(^LocationResultsBlock)(NSArray *locations);
 
 - (void)saveVideo:(ABVideo *)abVideo;
 
-- (void)allVideos:(ReportResultsBlock)reportsBlock;
+- (void)allVideos:(VideoResultsBlock)videosBlock;
 
 #pragma mark - Preferences
 
