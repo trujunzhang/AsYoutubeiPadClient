@@ -43,7 +43,7 @@ static MobileDB *_dbInstance;
 
     // backupDbPath allows for a pre-made database to be in the app. Good for testing
     NSString *backupDbPath = [[NSBundle mainBundle]
-            pathForResource:@"Mobile"
+            pathForResource:@"YoutubeVideoDB"
                      ofType:@"db"];
     BOOL copiedBackupDb = NO;
     if(backupDbPath != nil) {
@@ -189,7 +189,7 @@ static MobileDB *_dbInstance;
 - (void)makeDB {
 
     // Videos
-    [db sqlExecute:@"create table Videos(videoID int, status text, primary key(videoID));"];
+    [db sqlExecute:@"create table Videos(videoID text, videoTitle text, channelTitle text, primary key(videoID));"];
 
     // Internal
     [db sqlExecute:@"create table Preferences(property text, value text, primary key(property));"];
