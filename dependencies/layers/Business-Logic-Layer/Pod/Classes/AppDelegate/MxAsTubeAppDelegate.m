@@ -72,9 +72,6 @@
         controller.view.backgroundColor = [UIColor clearColor];
     }
 
-//   _subscriptionsViewController = ((UINavigationController *) tabBarController.viewControllers[0]).viewControllers[0];
-
-//   NSString * debug = @"debug";
 
     //3
     YTLeftMenuViewController *leftViewController = [[YTLeftMenuViewController alloc] init];
@@ -87,8 +84,6 @@
     [[LeftRevealHelper sharedLeftRevealHelper] registerRevealController:self.revealController];
     [[MxTabBarManager sharedTabBarManager] registerTabBarController:tabBarController
                                              withLeftViewController:leftViewController];
-
-//   UINavigationController * navigationController=[[MxTabBarManager sharedTabBarManager] currentNavigationController];
 
     //7
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

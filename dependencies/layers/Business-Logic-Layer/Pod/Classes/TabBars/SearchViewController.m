@@ -21,6 +21,7 @@
     YTCollectionViewController *_collectionViewController;
     YTCollectionViewController *_lastCollectionViewController;
 }
+
 @property (strong, nonatomic) UISegmentedControl *segment_title;
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UIBarButtonItem *sarchBarItem;
