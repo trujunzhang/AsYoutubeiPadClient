@@ -7,7 +7,6 @@
 //
 
 #import "HistoryViewController.h"
-#import "MxTabBarManager.h"
 #import "MobileDB.h"
 
 @interface HistoryViewController ()
