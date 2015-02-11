@@ -45,7 +45,6 @@
             [[ABVideo alloc] initWithVideoID:[YoutubeParser getWatchVideoId:videoInfo]
                                   videoTitle:[YoutubeParser getVideoSnippetTitle:videoInfo]
                                 channelTitle:[YoutubeParser getVideoSnippetChannelTitle:videoInfo]
-                              videoThumbnail:[YoutubeParser getVideoSnippetThumbnails:videoInfo]
             ]
     ];
 }

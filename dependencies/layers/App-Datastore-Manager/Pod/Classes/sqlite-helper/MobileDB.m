@@ -113,8 +113,8 @@ static MobileDB *_dbInstance;
 
     } else {
         // add the abVideo
-        sql = [NSString stringWithFormat:@"insert into Videos(videoID,videoTitle,channelTitle,videoThumbnail) values('%@','%@','%@','%@');",
-                                         abVideo.videoID, abVideo.videoTitle, abVideo.channelTitle, abVideo.videoThumbnail];
+        sql = [NSString stringWithFormat:@"insert into Videos(videoID,videoTitle,channelTitle) values('%@','%@','%@');",
+                                         abVideo.videoID, abVideo.videoTitle, abVideo.channelTitle];
 
         [db sqlExecute:sql];
     }
@@ -131,8 +131,6 @@ static MobileDB *_dbInstance;
         abVideo.videoID = [[results fieldWithName:@"videoID"] stringValue];
         abVideo.videoTitle = [[results fieldWithName:@"videoTitle"] stringValue];
         abVideo.channelTitle = [[results fieldWithName:@"channelTitle"] stringValue];
-        abVideo.videoThumbnail = [[results fieldWithName:@"videoThumbnail"] stringValue];
-
 
         [videos addObject:abVideo];
         [results moveNext];

@@ -7,10 +7,7 @@
 @property (strong, nonatomic) NSString *videoTitle;
 @property (strong, nonatomic) NSString *channelTitle;
 
-@property (nonatomic, copy) NSString *videoThumbnail;
-
-
-- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle videoThumbnail:(NSString *)videoThumbnail;
+- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle;
 
 
 @end
