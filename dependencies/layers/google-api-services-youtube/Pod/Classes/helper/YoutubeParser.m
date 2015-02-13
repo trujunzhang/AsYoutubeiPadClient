@@ -330,12 +330,21 @@
 
 
 + (id)convertAbVideoToYoutubeVideo:(ABVideo *)abVideo {
-    YTYouTubeVideoCache *youtubeVideoCache = [[YoutubeVideoCache alloc] init];
+    YTYouTubeVideoCache *video = [[YoutubeVideoCache alloc] init];
 
-    youtubeVideoCache.identifier = abVideo.videoID;
-    youtubeVideoCache.snippet.title = abVideo.videoTitle;
-    youtubeVideoCache.snippet.channelTitle = abVideo.channelTitle;
+    video.identifier = abVideo.videoID;
+    video.snippet.title = abVideo.videoTitle;
+    video.snippet.channelTitle = abVideo.channelTitle;
 
-    return youtubeVideoCache;
+    video.snippet.publishedAt.min_string = abVideo.min_string;
+
+    video.statistics.likeCount = abVideo.likeCount;
+    video.statistics.dislikeCount = abVideo.dislikeCount;
+    video.statistics.viewCount = abVideo.viewCount;
+
+    video.snippet.descriptionString = abVideo.descriptionString;
+
+
+    return video;
 }
 @end
