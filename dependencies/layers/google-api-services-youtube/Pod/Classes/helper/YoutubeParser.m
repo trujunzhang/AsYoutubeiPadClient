@@ -13,6 +13,7 @@
 #import "YoutubeConstants.h"
 #import "GTLYouTubeChannelContentDetails.h"
 #import "ABVideo.h"
+#import "YoutubeVideoCache.h"
 
 
 @interface YoutubeParser ()
@@ -112,7 +113,7 @@
 
 
 + (NSString *)getVideoStatisticsViewCount:(YTYouTubeVideoCache *)video {
-    NSNumber *number = video.statistics.viewCount;
+    NSNumber *number = [self getVideoWatchCount:video];
 
     NSNumberFormatter *formatter = [NSNumberFormatter new];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -121,12 +122,24 @@
     return [NSString stringWithFormat:@"%@ views", newString];
 }
 
++ (NSNumber *)getVideoWatchCount:(YoutubeVideoCache *)video {
+    return video.statistics.viewCount;
+}
+
 
 + (NSString *)getVideoStatisticsLikeCount:(YTYouTubeVideoCache *)video {
-    NSNumber *likeCount = video.statistics.likeCount;
-    NSNumber *dislikeCount = video.statistics.dislikeCount;
+    NSNumber *likeCount = [self getVideoLikeCount:video];
+    NSNumber *dislikeCount = [self getVideoDislikeCount:video];
 
     return [NSString stringWithFormat:@"%d likes, %d dislikes", [likeCount intValue], [dislikeCount intValue]];
+}
+
++ (NSNumber *)getVideoDislikeCount:(YoutubeVideoCache *)video {
+    return video.statistics.dislikeCount;
+}
+
++ (NSNumber *)getVideoLikeCount:(YoutubeVideoCache *)video {
+    return video.statistics.likeCount;
 }
 
 

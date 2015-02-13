@@ -7,6 +7,8 @@
 //
 
 
+@class YoutubeVideoCache;
+
 @interface YoutubeParser : NSObject
 
 + (NSString *)getVideoIdsByActivityList:(NSMutableArray *)searchResultList;
@@ -60,7 +62,13 @@
 
 + (NSString *)getVideoStatisticsViewCount:(id)video;
 
++ (NSNumber *)getVideoWatchCount:(YoutubeVideoCache *)video;
+
 + (NSString *)getVideoStatisticsLikeCount:(id)video;
+
++ (NSNumber *)getVideoDislikeCount:(YoutubeVideoCache *)video;
+
++ (NSNumber *)getVideoLikeCount:(YoutubeVideoCache *)video;
 
 + (NSString *)getVideoDescription:(id)video;
 
