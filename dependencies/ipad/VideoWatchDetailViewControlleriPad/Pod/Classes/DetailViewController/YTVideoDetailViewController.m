@@ -81,8 +81,8 @@
     [super viewWillDisappear:animated];
 
     // Beware, viewWillDisappear: is called when the player view enters full screen on iOS 6+
-    if([self isMovingFromParentViewController])
-        [_youTubeVideo stop];
+//    if([self isMovingFromParentViewController])
+//        [_youTubeVideo stop];
 }
 
 
@@ -197,7 +197,7 @@
 
     [_youTubeVideo parseWithCompletion:^(NSError *error) {
         //Then play (make sure that you have called parseWithCompletion before calling this method)
-        [_youTubeVideo playInView:pView withQualityOptions:YKQualityLow];
+//        [_youTubeVideo playInView:pView withQualityOptions:YKQualityLow];
     }];
 }
 
@@ -277,14 +277,14 @@
 
 
 - (void)setupVerticalLayout {
-    CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
-    CGFloat statusbarHeight = statusRect.size.height;
-    CGFloat navbarHeight = 44;
-    CGFloat topHeight = statusbarHeight + navbarHeight;
-    CGFloat tabbarHeight = 50;
+//    CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
+//    CGFloat statusbarHeight = statusRect.size.height;
+//    CGFloat navbarHeight = 44;
+    CGFloat topHeight = 0;//statusbarHeight + navbarHeight;
+//    CGFloat tabbarHeight = 50;
 
     CGFloat aWidth = self.view.frame.size.width;
-    CGFloat aHeight = self.view.frame.size.height - topHeight - tabbarHeight;
+    CGFloat aHeight = self.view.frame.size.height;//- topHeight - tabbarHeight;
 
     CGRect rect = self.videoPlayViewContainer.frame;
     rect.origin.x = 0;
