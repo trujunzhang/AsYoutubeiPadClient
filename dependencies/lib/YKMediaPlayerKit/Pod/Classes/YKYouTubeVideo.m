@@ -93,17 +93,15 @@
 }
 
 
-
-
 - (NSURL *)videoURL:(YKQualityOptions)quality {
     NSString *strURL = nil;
 
     switch (quality) {
         case YKQualityLow:
-            strURL = self.videos[@"medium"];
+            strURL = self.videos[@"small"];
             break;
         case YKQualityMedium:
-            strURL = self.videos[@"small"];
+            strURL = self.videos[@"medium"];
             break;
         case YKQualityHigh:
             strURL = self.videos[@"hd720"];
