@@ -195,7 +195,7 @@
 
 
 - (void)appendNextPageData:(NSArray *)array {
-    NSLog(@"leng = %d", array.count);
+    NSLog(@"append leng = %d", array.count);
     [self.videoList addObjectsFromArray:array];
 }
 
