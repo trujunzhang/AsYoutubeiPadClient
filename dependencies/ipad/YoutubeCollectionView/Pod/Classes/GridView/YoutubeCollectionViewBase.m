@@ -68,8 +68,7 @@
     [self setupRefresh];
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
 
@@ -243,6 +242,7 @@
     [self getYoutubeRequestInfo].isLoading = NO;
 
     NSUInteger lastRowCount = [self getYoutubeRequestInfo].videoList.count;
+    NSLog(@"lastRowCount = %u", lastRowCount);
     [[self getYoutubeRequestInfo] appendNextPageData:array];
 
     if(lastRowCount == 0) {

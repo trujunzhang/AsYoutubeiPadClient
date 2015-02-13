@@ -118,15 +118,6 @@
 #pragma mark -  UISegmentedControl event
 
 - (YTCollectionViewController *)makeNewCollectionViewForSearchBar {
-    // 1
-//    if(_collectionViewController) {
-//        [_collectionViewController.view removeFromSuperview];
-//        [_collectionViewController removeFromParentViewController];
-//
-//        _lastCollectionViewController = _collectionViewController;
-//    }
-
-    // 2
     YTCollectionViewController *controller = [[YTCollectionViewController alloc] initWithNextPageDelegate:self
                                                                                                 withTitle:nil];
     controller.numbersPerLineArray = [NSArray arrayWithObjects:@"3", @"4", nil];
@@ -153,6 +144,7 @@
 }
 
 - (void)replaceViewController:(YoutubeAsGridCHTLayoutViewController *)viewController withSearchText:(NSString *)text withItemType:(YTSegmentItemType)itemType {
+
     UIView *presentedView = [self.presentation.subviews firstObject];
     if(presentedView) {
         [presentedView removeFromSuperview];
@@ -165,9 +157,8 @@
 
     [self addChildViewController:viewController];
 
-    [viewController search:text withItemType:itemType];
-
     _collectionViewController = viewController;
+    [viewController search:text withItemType:itemType];
 }
 
 
