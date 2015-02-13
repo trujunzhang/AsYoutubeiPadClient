@@ -244,14 +244,10 @@
 
 
 - (void)setupHorizontalLayout {
-//    CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
-//    CGFloat statusBarHeight = statusRect.size.height;
-//    CGFloat navBarHeight = 44;
-    CGFloat topHeight = 0;//statusBarHeight + navBarHeight;
-//    CGFloat tabBarHeight = 50;
+    CGFloat topHeight = 0;
 
     CGFloat aHaflWidth = self.view.frame.size.width / 2;
-    CGFloat aHeight = self.view.frame.size.height;//- topHeight - tabBarHeight;
+    CGFloat aHeight = self.view.frame.size.height;
 
     CGRect rect = self.videoPlayViewContainer.frame;
     rect.origin.x = 0;
@@ -277,14 +273,10 @@
 
 
 - (void)setupVerticalLayout {
-//    CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
-//    CGFloat statusbarHeight = statusRect.size.height;
-//    CGFloat navbarHeight = 44;
-    CGFloat topHeight = 0;//statusbarHeight + navbarHeight;
-//    CGFloat tabbarHeight = 50;
+    CGFloat topHeight = 0;
 
     CGFloat aWidth = self.view.frame.size.width;
-    CGFloat aHeight = self.view.frame.size.height;//- topHeight - tabbarHeight;
+    CGFloat aHeight = self.view.frame.size.height;
 
     CGRect rect = self.videoPlayViewContainer.frame;
     rect.origin.x = 0;
