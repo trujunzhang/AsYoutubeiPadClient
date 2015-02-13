@@ -123,6 +123,8 @@
 
 
 - (void)resetRequestInfoForSearchWithItemType:(YTSegmentItemType)itemType withQueryTeam:(NSString *)queryTeam {
+    [self resetInfo];
+
     self.queryType = [GYoutubeRequestInfo getQueryTypeArray][itemType];
 
     self.itemType = [self getItemType];

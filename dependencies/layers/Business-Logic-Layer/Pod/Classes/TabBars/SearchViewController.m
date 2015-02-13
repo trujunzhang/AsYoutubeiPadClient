@@ -163,8 +163,7 @@
     [self fitView:viewController.view intoView:self.presentation];
 
 
-//    [self addChildViewController:viewController];
-//    [self.view addSubview:viewController.view];
+    [self addChildViewController:viewController];
 
     [viewController search:text withItemType:itemType];
 
