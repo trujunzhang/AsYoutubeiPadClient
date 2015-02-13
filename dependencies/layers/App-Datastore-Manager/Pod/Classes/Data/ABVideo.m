@@ -15,20 +15,49 @@
 
 @implementation ABVideo
 
-- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString {
+- (instancetype)initForSavingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString {
     self = [super init];
     if(self) {
         self.videoID = videoID;
-        self.videoTitle = videoTitle;
-        self.channelTitle = channelTitle;
+        self.videoTitle = [self encodeString:videoTitle];
+        self.channelTitle = [self encodeString:channelTitle];
         self.min_string = min_string;
         self.likeCount = likeCount;
         self.dislikeCount = dislikeCount;
         self.viewCount = viewCount;
-        self.descriptionString = descriptionString;
+        self.descriptionString = [self encodeString:descriptionString];
     }
 
     return self;
+}
+
+- (instancetype)initForReadingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString {
+    self = [super init];
+    if(self) {
+        self.videoID = videoID;
+        self.videoTitle = [self decodeString:videoTitle];
+        self.channelTitle = [self decodeString:channelTitle];
+        self.min_string = min_string;
+        self.likeCount = likeCount;
+        self.dislikeCount = dislikeCount;
+        self.viewCount = viewCount;
+        self.descriptionString = [self decodeString:descriptionString];
+    }
+
+    return self;
+}
+
+
+- (NSString *)encodeString:(NSString *)plainString {
+    NSData *plainData = [plainString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64String = [plainData base64EncodedStringWithOptions:0];
+    return base64String;
+}
+
+- (NSString *)decodeString:(NSString *)base64String {
+    NSData *decodedData = [[NSData alloc] initWithBase64EncodedString:base64String options:0];
+    NSString *decodedString = [[NSString alloc] initWithData:decodedData encoding:NSUTF8StringEncoding];
+    return decodedString;
 }
 
 

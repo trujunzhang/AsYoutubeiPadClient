@@ -42,14 +42,14 @@
 
 - (void)saveVideo:(id)videoInfo {
     [[MobileDB dbInstance] saveVideo:
-            [[ABVideo alloc] initWithVideoID:[YoutubeParser getWatchVideoId:videoInfo]
-                                  videoTitle:[YoutubeParser getVideoSnippetTitle:videoInfo]
-                                channelTitle:[YoutubeParser getVideoSnippetChannelTitle:videoInfo]
-                                  min_string:[YoutubeParser getVideoSnippetChannelPublishedAt:videoInfo]
-                                   likeCount:[YoutubeParser getVideoLikeCount:videoInfo]
-                                dislikeCount:[YoutubeParser getVideoDislikeCount:videoInfo]
-                                   viewCount:[YoutubeParser getVideoWatchCount:videoInfo]
-                           descriptionString:[YoutubeParser getVideoDescription:videoInfo]
+            [[ABVideo alloc] initForSavingWithVideoID:[YoutubeParser getWatchVideoId:videoInfo]
+                                           videoTitle:[YoutubeParser getVideoSnippetTitle:videoInfo]
+                                         channelTitle:[YoutubeParser getVideoSnippetChannelTitle:videoInfo]
+                                           min_string:[YoutubeParser getVideoSnippetChannelPublishedAt:videoInfo]
+                                            likeCount:[YoutubeParser getVideoLikeCount:videoInfo]
+                                         dislikeCount:[YoutubeParser getVideoDislikeCount:videoInfo]
+                                            viewCount:[YoutubeParser getVideoWatchCount:videoInfo]
+                                    descriptionString:[YoutubeParser getVideoDescription:videoInfo]
             ]
     ];
 }
