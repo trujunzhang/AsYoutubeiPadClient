@@ -21,6 +21,7 @@
     YTCollectionViewController *_collectionViewController;
     YTCollectionViewController *_lastCollectionViewController;
 }
+@property (strong, nonatomic) IBOutlet UIView *presentation;
 
 @property (strong, nonatomic) UISegmentedControl *segment_title;
 @property (nonatomic, strong) UISearchBar *searchBar;
@@ -43,37 +44,6 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-}
-
-
-- (YTCollectionViewController *)makeNewCollectionViewForSearchBar {
-    // 1
-    if(_collectionViewController) {
-        [_collectionViewController.view removeFromSuperview];
-        [_collectionViewController removeFromParentViewController];
-
-        _lastCollectionViewController = _collectionViewController;
-    }
-
-    // 2
-    YTCollectionViewController *controller = [[YTCollectionViewController alloc] initWithNextPageDelegate:self
-                                                                                                withTitle:nil];
-    controller.numbersPerLineArray = [NSArray arrayWithObjects:@"3", @"4", nil];
-
-    controller.view.frame = self.view.bounds;// used
-    controller.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-
-    return controller;
-}
-
-
-- (void)replaceViewController:(YoutubeAsGridCHTLayoutViewController *)controller withSearchText:(NSString *)text withItemType:(YTSegmentItemType)itemType {
-    [controller search:text withItemType:itemType];
-
-    [self addChildViewController:controller];
-    [self.view addSubview:controller.view];
-
-    _collectionViewController = controller;
 }
 
 
@@ -146,6 +116,36 @@
 
 #pragma mark -
 #pragma mark -  UISegmentedControl event
+
+- (YTCollectionViewController *)makeNewCollectionViewForSearchBar {
+    // 1
+    if(_collectionViewController) {
+        [_collectionViewController.view removeFromSuperview];
+        [_collectionViewController removeFromParentViewController];
+
+        _lastCollectionViewController = _collectionViewController;
+    }
+
+    // 2
+    YTCollectionViewController *controller = [[YTCollectionViewController alloc] initWithNextPageDelegate:self
+                                                                                                withTitle:nil];
+    controller.numbersPerLineArray = [NSArray arrayWithObjects:@"3", @"4", nil];
+
+    controller.view.frame = self.view.bounds;// used
+    controller.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+
+    return controller;
+}
+
+
+- (void)replaceViewController:(YoutubeAsGridCHTLayoutViewController *)controller withSearchText:(NSString *)text withItemType:(YTSegmentItemType)itemType {
+    [controller search:text withItemType:itemType];
+
+    [self addChildViewController:controller];
+    [self.view addSubview:controller.view];
+
+    _collectionViewController = controller;
+}
 
 
 - (void)segmentAction:(id)sender {

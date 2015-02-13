@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Hl-wh-9U0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Hl-wh-9U0">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Subscriptions View Controller-->
@@ -34,9 +34,24 @@
                     <view key="view" contentMode="scaleToFill" id="9Ak-VF-edH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3w-g8-S4S" userLabel="presentation">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.27058823529999998" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="r3w-g8-S4S" secondAttribute="centerX" id="2eQ-f6-vlg"/>
+                            <constraint firstItem="r3w-g8-S4S" firstAttribute="top" secondItem="9Ak-VF-edH" secondAttribute="top" id="95q-3h-vws"/>
+                            <constraint firstAttribute="centerY" secondItem="r3w-g8-S4S" secondAttribute="centerY" id="GFb-yz-XWi"/>
+                            <constraint firstItem="r3w-g8-S4S" firstAttribute="leading" secondItem="9Ak-VF-edH" secondAttribute="leading" id="nFV-uo-0u2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XkJ-K1-51q"/>
+                    <connections>
+                        <outlet property="presentation" destination="r3w-g8-S4S" id="JkP-7z-HJp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cn-M6-HvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

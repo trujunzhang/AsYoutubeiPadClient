@@ -57,7 +57,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self initViewControllers];
 
-//   if (debugCollectionViewToDetail == NO)
     [self setupPlayer:self.videoPlayViewContainer];  //used
 
     self.title = [YoutubeParser getVideoSnippetTitle:_detailVideo];

@@ -30,25 +30,6 @@
 
 @implementation MxAsTubeAppDelegate
 
-//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//   // Override point for customization after application launch.
-//   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//   // Override point for customization after application launch.
-//
-//   UIViewController * controller = [[YTLeftMenuViewController alloc] init];
-//
-//   [[MxTabBarManager sharedTabBarManager] registerTabBarController:nil
-//                                            withLeftViewController:controller];
-//
-//   controller.view.backgroundColor = [UIColor redColor];
-//
-//   self.window.rootViewController = controller;
-//
-//   [self.window makeKeyAndVisible];
-//
-//   return YES;
-//}
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [DebugUtils listAppHomeInfo];
