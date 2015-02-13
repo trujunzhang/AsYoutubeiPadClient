@@ -90,15 +90,7 @@
 
     CGRect rect = self.view.bounds;
     self.collectionView.frame = rect;
-
-//    [self updateLayout:[UIApplication sharedApplication].statusBarOrientation];
 }
-
-
-- (void)updateLayout:(UIInterfaceOrientation)orientation {
-//    self.layout.columnCount = [self getCurrentColumnCount:orientation];
-}
-
 
 #pragma mark - UICollectionViewDataSource
 
@@ -109,14 +101,6 @@
 
 
 - (ASCellNode *)collectionView:(ASCollectionView *)collectionView nodeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ASCellNode *node = [self getCellNodeAtIndexPath:indexPath];
-
-    return node;
-}
-
-
-- (ASCellNode *)getCellNodeAtIndexPath:(NSIndexPath *)indexPath {
-
     ASCellNode *node;
 
     YTSegmentItemType itemType = [self getYoutubeRequestInfo].itemType;
