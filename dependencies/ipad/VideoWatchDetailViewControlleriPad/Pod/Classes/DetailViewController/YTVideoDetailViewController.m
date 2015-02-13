@@ -61,6 +61,11 @@
 
     self.title = [YoutubeParser getVideoSnippetTitle:_detailVideo];
 
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+
 //   [self executeRefreshTask];// test
 }
 
@@ -239,14 +244,14 @@
 
 
 - (void)setupHorizontalLayout {
-    CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
-    CGFloat statusBarHeight = statusRect.size.height;
-    CGFloat navBarHeight = 44;
-    CGFloat topHeight = statusBarHeight + navBarHeight;
-    CGFloat tabBarHeight = 50;
+//    CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
+//    CGFloat statusBarHeight = statusRect.size.height;
+//    CGFloat navBarHeight = 44;
+    CGFloat topHeight = 0;//statusBarHeight + navBarHeight;
+//    CGFloat tabBarHeight = 50;
 
     CGFloat aHaflWidth = self.view.frame.size.width / 2;
-    CGFloat aHeight = self.view.frame.size.height - topHeight - tabBarHeight;
+    CGFloat aHeight = self.view.frame.size.height;//- topHeight - tabBarHeight;
 
     CGRect rect = self.videoPlayViewContainer.frame;
     rect.origin.x = 0;
