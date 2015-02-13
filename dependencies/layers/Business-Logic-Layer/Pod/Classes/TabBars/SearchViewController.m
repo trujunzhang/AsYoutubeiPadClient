@@ -19,7 +19,7 @@
 
 @interface SearchViewController ()<UISearchBarDelegate, YoutubeCollectionNextPageDelegate> {
     YTCollectionViewController *_collectionViewController;
-    YTCollectionViewController *_lastCollectionViewController;
+//    YTCollectionViewController *_lastCollectionViewController;
 }
 @property (strong, nonatomic) IBOutlet UIView *presentation;
 
@@ -119,12 +119,12 @@
 
 - (YTCollectionViewController *)makeNewCollectionViewForSearchBar {
     // 1
-    if(_collectionViewController) {
-        [_collectionViewController.view removeFromSuperview];
-        [_collectionViewController removeFromParentViewController];
-
-        _lastCollectionViewController = _collectionViewController;
-    }
+//    if(_collectionViewController) {
+//        [_collectionViewController.view removeFromSuperview];
+//        [_collectionViewController removeFromParentViewController];
+//
+//        _lastCollectionViewController = _collectionViewController;
+//    }
 
     // 2
     YTCollectionViewController *controller = [[YTCollectionViewController alloc] initWithNextPageDelegate:self
@@ -138,13 +138,37 @@
 }
 
 
-- (void)replaceViewController:(YoutubeAsGridCHTLayoutViewController *)controller withSearchText:(NSString *)text withItemType:(YTSegmentItemType)itemType {
-    [controller search:text withItemType:itemType];
+- (void)fitView:(UIView *)toPresentView intoView:(UIView *)containerView {
+    NSDictionary *viewsDictioanry = @{@"presented_view" : toPresentView};
 
-    [self addChildViewController:controller];
-    [self.view addSubview:controller.view];
+    [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[presented_view]|"
+                                                                          options:0
+                                                                          metrics:nil
+                                                                            views:viewsDictioanry]];
 
-    _collectionViewController = controller;
+    [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[presented_view]|"
+                                                                          options:0
+                                                                          metrics:nil
+                                                                            views:viewsDictioanry]];
+}
+
+- (void)replaceViewController:(YoutubeAsGridCHTLayoutViewController *)viewController withSearchText:(NSString *)text withItemType:(YTSegmentItemType)itemType {
+    UIView *presentedView = [self.presentation.subviews firstObject];
+    if(presentedView) {
+        [presentedView removeFromSuperview];
+    }
+
+    viewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.presentation addSubview:viewController.view];
+    [self fitView:viewController.view intoView:self.presentation];
+
+
+//    [self addChildViewController:viewController];
+//    [self.view addSubview:viewController.view];
+
+    [viewController search:text withItemType:itemType];
+
+    _collectionViewController = viewController;
 }
 
 
