@@ -78,11 +78,10 @@
 
     [self baseReset];
 
-    NSDictionary *parameters = @{
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
             @"channelId" : channelId,
             @"part" : @"id,contentDetails",
-    };
-    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    }];
 }
 
 
@@ -94,13 +93,12 @@
 
     [self baseReset];
 
-    NSDictionary *parameters = @{
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
             @"channelId" : channelId,
             @"part" : @"id,snippet",
             @"order" : @"date",
             @"fields" : @"items(id/videoId),nextPageToken",
-    };
-    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    }];
 }
 
 
@@ -112,11 +110,10 @@
 
     [self baseReset];
 
-    NSDictionary *parameters = @{
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
             @"channelId" : channelId,
             @"part" : @"id,snippet",
-    };
-    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    }];
 }
 
 
@@ -130,13 +127,12 @@
 
     [self baseReset];
 
-    NSDictionary *parameters = @{
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
             @"q" : queryTeam,
             @"type" : self.queryType,
             @"part" : @"id,snippet",
             @"fields" : @"items(id/videoId),nextPageToken",
-    };
-    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    }];
 }
 
 
