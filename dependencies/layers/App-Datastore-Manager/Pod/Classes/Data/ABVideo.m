@@ -15,12 +15,17 @@
 
 @implementation ABVideo
 
-- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle {
+- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString {
     self = [super init];
     if(self) {
         self.videoID = videoID;
         self.videoTitle = videoTitle;
         self.channelTitle = channelTitle;
+        self.min_string = min_string;
+        self.likeCount = likeCount;
+        self.dislikeCount = dislikeCount;
+        self.viewCount = viewCount;
+        self.descriptionString = descriptionString;
     }
 
     return self;

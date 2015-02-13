@@ -113,8 +113,11 @@ static MobileDB *_dbInstance;
 
     } else {
         // add the abVideo
-        sql = [NSString stringWithFormat:@"insert into Videos(videoID,videoTitle,channelTitle) values('%@','%@','%@');",
-                                         abVideo.videoID, abVideo.videoTitle, abVideo.channelTitle];
+        sql = [NSString stringWithFormat:
+                @"insert into Videos(videoID,videoTitle,channelTitle,min_string, likeCount, dislikeCount, viewCount, descriptionString) values('%@','%@','%@','%@','%@','%@','%@','%@');",
+                abVideo.videoID, abVideo.videoTitle, abVideo.channelTitle,
+                abVideo.min_string, abVideo.likeCount, abVideo.dislikeCount, abVideo.viewCount, abVideo.descriptionString
+        ];
 
         [db sqlExecute:sql];
     }
@@ -124,13 +127,18 @@ static MobileDB *_dbInstance;
 
 - (void)allVideos:(VideoResultsBlock)videosBlock {
     NSMutableArray *videos = [[NSMutableArray alloc] init];
-    NSString *sql = @"select videoID,videoTitle,channelTitle,videoThumbnail from Videos";
+    NSString *sql = @"select * from Videos";
     id<ABRecordset> results = [db sqlSelect:sql];
     while (![results eof]) {
         ABVideo *abVideo = [[ABVideo alloc] init];
         abVideo.videoID = [[results fieldWithName:@"videoID"] stringValue];
         abVideo.videoTitle = [[results fieldWithName:@"videoTitle"] stringValue];
         abVideo.channelTitle = [[results fieldWithName:@"channelTitle"] stringValue];
+        abVideo.min_string = [[results fieldWithName:@"min_string"] stringValue];
+        abVideo.likeCount = [[results fieldWithName:@"likeCount"] stringValue];
+        abVideo.dislikeCount = [[results fieldWithName:@"dislikeCount"] stringValue];
+        abVideo.viewCount = [[results fieldWithName:@"viewCount"] stringValue];
+        abVideo.descriptionString = [[results fieldWithName:@"descriptionString"] stringValue];
 
         [videos addObject:abVideo];
         [results moveNext];
@@ -189,7 +197,7 @@ static MobileDB *_dbInstance;
 - (void)makeDB {
 
     // Videos
-    [db sqlExecute:@"create table Videos(videoID text, videoTitle text, channelTitle text, videoThumbnail text, primary key(videoID));"];
+    [db sqlExecute:@"create table Videos(videoID text, videoTitle text, channelTitle text, videoThumbnail text,min_string text, likeCount text, dislikeCount text, viewCount text, descriptionString text, primary key(videoID));"];
 
     // Internal
     [db sqlExecute:@"create table Preferences(property text, value text, primary key(property));"];

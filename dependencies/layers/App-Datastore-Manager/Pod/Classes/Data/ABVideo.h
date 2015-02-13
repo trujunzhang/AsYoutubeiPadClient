@@ -7,8 +7,15 @@
 @property (strong, nonatomic) NSString *videoTitle;
 @property (strong, nonatomic) NSString *channelTitle;
 
+@property (strong, nonatomic) NSString *min_string;
 
-- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle;
+@property (strong, nonatomic) NSString *likeCount;
+@property (strong, nonatomic) NSString *dislikeCount;
+@property (strong, nonatomic) NSString *viewCount;
+
+@property (strong, nonatomic) NSString *descriptionString;
+
+- (instancetype)initWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString;
 
 
 @end
