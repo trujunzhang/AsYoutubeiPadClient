@@ -130,16 +130,16 @@ static MobileDB *_dbInstance;
     NSString *sql = @"select * from Videos";
     id<ABRecordset> results = [db sqlSelect:sql];
     while (![results eof]) {
-        ABVideo *abVideo = [[ABVideo alloc] init];
+        ABVideo *abVideo = [[ABVideo alloc] initForReadingWithVideoID:[[results fieldWithName:@"videoID"] stringValue]
+                                                           videoTitle:[[results fieldWithName:@"videoTitle"] stringValue]
+                                                         channelTitle:[[results fieldWithName:@"channelTitle"] stringValue]
+                                                           min_string:[[results fieldWithName:@"min_string"] stringValue]
+                                                            likeCount:[[results fieldWithName:@"likeCount"] stringValue]
+                                                         dislikeCount:[[results fieldWithName:@"dislikeCount"] stringValue]
+                                                            viewCount:[[results fieldWithName:@"viewCount"] stringValue]
+                                                    descriptionString:[[results fieldWithName:@"descriptionString"] stringValue]
+        ];
 
-        abVideo.videoID = [[results fieldWithName:@"videoID"] stringValue];
-        abVideo.videoTitle = [[results fieldWithName:@"videoTitle"] stringValue];
-        abVideo.channelTitle = [[results fieldWithName:@"channelTitle"] stringValue];
-        abVideo.min_string = [[results fieldWithName:@"min_string"] stringValue];
-        abVideo.likeCount = [[results fieldWithName:@"likeCount"] stringValue];
-        abVideo.dislikeCount = [[results fieldWithName:@"dislikeCount"] stringValue];
-        abVideo.viewCount = [[results fieldWithName:@"viewCount"] stringValue];
-        abVideo.descriptionString = [[results fieldWithName:@"descriptionString"] stringValue];
 
         [videos addObject:abVideo];
 
