@@ -54,7 +54,7 @@
     self.searchBar.userInteractionEnabled = YES;
     self.searchBar.placeholder = @"Search";
 
-    self.searchBar.text = @"sketch 3"; // test
+    self.searchBar.text = @"opium flower"; // test
     [self segmentAction:nil]; // test
 
     self.searchBar.delegate = self;
