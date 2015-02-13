@@ -42,7 +42,7 @@ Direct url to the detailVideo for given quality
 /**
 Plays detailVideo for a given quality in a modal window
 */
-- (void)play:(YKQualityOptions)quality;
+- (void)play:(YKQualityOptions)quality subtitlesPathStr:(NSString *)subtitlesPathStr;
 
 @optional
 

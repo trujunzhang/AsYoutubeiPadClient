@@ -23,7 +23,11 @@ Available after parseWithCompletion is executed.
 @property (nonatomic, strong) NSDictionary *videos;
 
 
+@property (nonatomic, strong) NSURL *onlineVideoPlayUrl;
+
 - (instancetype)initWithVideoId:(NSString *)videoId;
+
+- (instancetype)initWithOnlineVideoPlayUrl:(NSURL *)onlineVideoPlayUrl;
 
 - (void)playInView:(UIView *)pView withQualityOptions:(YKQualityOptions)quality;
 

@@ -20,6 +20,16 @@
 #pragma mark - YKVideo Protocol
 
 
+- (instancetype)initWithOnlineVideoPlayUrl:(NSURL *)onlineVideoPlayUrl {
+    self = [super init];
+    if(self) {
+        self.onlineVideoPlayUrl = onlineVideoPlayUrl;
+    }
+
+    return self;
+}
+
+
 - (instancetype)initWithVideoId:(NSString *)videoId {
     self = [super init];
     if(self) {
@@ -81,6 +91,8 @@
                                   });
                               }];
 }
+
+
 
 
 - (NSURL *)videoURL:(YKQualityOptions)quality {

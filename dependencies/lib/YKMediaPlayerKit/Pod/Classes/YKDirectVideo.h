@@ -16,4 +16,7 @@ Vimeo detailVideo url
 */
 @property (nonatomic, strong) NSURL *contentURL;
 
+- (void)playInView:(UIView *)pView withQualityOptions:(YKQualityOptions)quality;
+
+- (void)play:(YKQualityOptions)quality;
 @end
