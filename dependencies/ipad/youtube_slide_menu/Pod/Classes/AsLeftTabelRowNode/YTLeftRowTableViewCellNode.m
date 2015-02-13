@@ -90,6 +90,7 @@ static CGFloat ROW_TITLE_FONT_SIZE = 16;
     } else {
         _videoChannelThumbnailsNode = [ASImageNode initWithImageNamed:self.lineIconUrl];
     }
+    _videoChannelThumbnailsNode.contentMode = UIViewContentModeScaleAspectFit;
 
     [self addSubnode:_videoChannelThumbnailsNode];
 }

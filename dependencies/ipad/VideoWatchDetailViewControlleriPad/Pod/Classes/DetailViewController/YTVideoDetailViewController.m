@@ -195,7 +195,7 @@
 
 
 - (void)setupPlayer:(UIView *)pView {
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+//    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     _youTubeVideo = [[YKYouTubeVideo alloc] initWithVideoId:[YoutubeParser getWatchVideoId:_detailVideo]];
 
     [_youTubeVideo parseWithCompletion:^(NSError *error) {
