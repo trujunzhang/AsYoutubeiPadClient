@@ -179,9 +179,6 @@
     [self cleanup];
 
     [[self getYoutubeRequestInfo] resetRequestInfoForSearchWithItemType:itemType withQueryTeam:text];
-    NSLog(@"................................");
-    NSLog(@"before count = %u", [self getYoutubeRequestInfo].videoList.count);
-    NSLog(@"querykey = %@", text);
 }
 
 
@@ -191,8 +188,6 @@
 
 
     YoutubeResponseBlock completion = ^(NSArray *array, NSObject *respObject) {
-        NSMutableArray *mutableArray = [self getYoutubeRequestInfo].videoList;
-        NSLog(@"after count = %u", mutableArray.count);
         [self updateAfterResponse:array];
     };
     ErrorResponseBlock error = ^(NSError *error) {
