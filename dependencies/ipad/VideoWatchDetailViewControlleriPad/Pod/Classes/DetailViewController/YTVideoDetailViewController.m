@@ -72,13 +72,6 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-
-
-}
-
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
@@ -100,8 +93,8 @@
     self.secondViewController = [[UIViewController alloc] init];
     self.secondViewController.title = @"More From";
 
-    self.thirdViewController = [[YTCollectionViewController alloc] initWithNextPageDelegate:self
-                                                                                  withTitle:@"Suggestions"];
+    self.thirdViewController = [[YTCollectionViewController alloc] initWithNextPageDelegate:self withTitle:@"Suggestions"];
+
     self.thirdViewController.numbersPerLineArray = [NSArray arrayWithObjects:@"3", @"2", nil];
 
     [self.thirdViewController fetchSuggestionListByVideoId:[YoutubeParser getWatchVideoId:_detailVideo]];
