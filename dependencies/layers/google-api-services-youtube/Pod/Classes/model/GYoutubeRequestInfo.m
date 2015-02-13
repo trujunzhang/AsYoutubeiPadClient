@@ -42,7 +42,6 @@
     self.hasFirstFetch = YES;
 }
 
-// "AV2OkzIGykA"
 - (void)resetRequestInfoForSuggestionList:(NSString *)videoId {
     self.itemType = YTSegmentItemVideo;
 
@@ -51,13 +50,12 @@
 
     [self baseReset];
 
-    NSDictionary *parameters = @{
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
             @"part" : @"id,snippet",
             @"type" : @"video",
             @"relatedToVideoId" : videoId,
             @"fields" : @"items(id/videoId),nextPageToken",
-    };
-    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    }];
 }
 
 
@@ -195,7 +193,7 @@
 
 
 - (void)appendNextPageData:(NSArray *)array {
-    NSLog(@"append leng = %d", array.count);
+//    NSLog(@"append leng = %d", array.count);
     [self.videoList addObjectsFromArray:array];
 }
 
@@ -204,32 +202,18 @@
 
 
 + (NSArray *)getChannelPageSegmentTitlesArray {
-    NSArray *array = [NSArray arrayWithObjects:
-            @"Activity",
-            @"Videos",
-            @"Playlists",
-                    nil];
-    return array;
+    return [NSArray arrayWithObjects:@"Activity", @"Videos", @"Playlists", nil];
 }
 
 
 + (NSArray *)getSegmentTitlesArray {
-    NSArray *array = [NSArray arrayWithObjects:
-            @"Videos",
-            @"Channels",
-            @"Playlists",
-                    nil];
-    return array;
+    return [NSArray arrayWithObjects:@"Videos", @"Channels", @"Playlists", nil];
+
 }
 
 
 + (NSArray *)getQueryTypeArray {
-    NSArray *array = [NSArray arrayWithObjects:
-            @"video",
-            @"channel",
-            @"playlist",
-                    nil];
-    return array;
+    return [NSArray arrayWithObjects:@"video", @"channel", @"playlist", nil];
 }
 
 
