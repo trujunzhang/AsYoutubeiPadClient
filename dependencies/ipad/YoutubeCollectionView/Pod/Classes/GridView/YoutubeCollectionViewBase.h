@@ -85,6 +85,8 @@
 @property (nonatomic, strong) NSOperationQueue *nodeConstructionQueue;
 @property (nonatomic, strong) id<YoutubeCollectionNextPageDelegate> nextPageDelegate;
 
+@property (nonatomic) BOOL isFirstRequest;
+
 - (instancetype)initWithNextPageDelegate:(id<YoutubeCollectionNextPageDelegate>)nextPageDelegate withTitle:(NSString *)title;
 
 - (void)reloadTableView:(NSArray *)array withLastRowCount:(NSUInteger)lastRowCount;

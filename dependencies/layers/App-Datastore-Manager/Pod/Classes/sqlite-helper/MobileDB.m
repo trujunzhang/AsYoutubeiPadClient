@@ -131,6 +131,7 @@ static MobileDB *_dbInstance;
     id<ABRecordset> results = [db sqlSelect:sql];
     while (![results eof]) {
         ABVideo *abVideo = [[ABVideo alloc] init];
+
         abVideo.videoID = [[results fieldWithName:@"videoID"] stringValue];
         abVideo.videoTitle = [[results fieldWithName:@"videoTitle"] stringValue];
         abVideo.channelTitle = [[results fieldWithName:@"channelTitle"] stringValue];
@@ -141,6 +142,7 @@ static MobileDB *_dbInstance;
         abVideo.descriptionString = [[results fieldWithName:@"descriptionString"] stringValue];
 
         [videos addObject:abVideo];
+
         [results moveNext];
     }
 

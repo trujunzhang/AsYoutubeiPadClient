@@ -32,7 +32,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [DebugUtils listAppHomeInfo];
+    [DebugUtils listAppHomeInfo];
 
     [YTCacheImplement removeAllCacheDiskObjects];
 

@@ -24,6 +24,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.isFirstRequest = NO;
     [self executeRefreshTask];
     [super viewWillAppear:animated];
 }

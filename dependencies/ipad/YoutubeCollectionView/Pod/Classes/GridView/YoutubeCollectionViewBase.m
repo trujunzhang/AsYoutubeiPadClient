@@ -20,8 +20,6 @@
 
 
 @interface YoutubeCollectionViewBase () {
-    BOOL isFirstRequest;
-
     GYoutubeRequestInfo *_youtubeRequestInfo;
 }
 
@@ -63,7 +61,7 @@
     NSAssert(self.nextPageDelegate, @"not found YoutubeCollectionNextPageDelegate!");
     NSAssert(self.numbersPerLineArray, @"not found numbersPerLineArray!");
 
-    isFirstRequest = NO;
+    self.isFirstRequest = NO;
     self.cellSizeDictionary = [[NSMutableDictionary alloc] init];
     [self setupRefresh];
 }
@@ -72,8 +70,8 @@
     [super viewDidAppear:animated];
 
 
-    if(isFirstRequest == NO) {
-        isFirstRequest = YES;
+    if(self.isFirstRequest == NO) {
+        self.isFirstRequest = YES;
         [self tableWillAppear];
     }
 }
