@@ -192,7 +192,8 @@
 
 
     YoutubeResponseBlock completion = ^(NSArray *array, NSObject *respObject) {
-        NSLog(@"after count = %u", [self getYoutubeRequestInfo].videoList.count);
+        NSMutableArray *mutableArray = [self getYoutubeRequestInfo].videoList;
+        NSLog(@"after count = %u", mutableArray.count);
         [self updateAfterResponse:array];
     };
     ErrorResponseBlock error = ^(NSError *error) {
