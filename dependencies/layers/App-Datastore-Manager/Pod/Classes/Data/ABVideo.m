@@ -71,7 +71,7 @@
 }
 
 - (NSArray *)sqlStringSerializationForInsert {
-    NSMutableDictionary *dictionary = [self appendCommonDictionary:[self getInsertDictionary]];
+    NSMutableDictionary *dictionary = [self getInsertDictionary];
 
     NSArray *allKeys = dictionary.allKeys;
     NSString *tableFieldString = [allKeys componentsJoinedByString:@","];
@@ -79,8 +79,7 @@
 
     NSMutableArray *allValues = [[NSMutableArray alloc] init];
     for (NSString *value in dictionary.allValues) {
-        NSString *string = [NSString stringWithFormat:@"\"%@\"", value];
-        [allValues addObject:string];
+        [allValues addObject:[NSString stringWithFormat:@"\"%@\"", value]];
     }
     NSString *tableValueString = [allValues componentsJoinedByString:@","];
 
