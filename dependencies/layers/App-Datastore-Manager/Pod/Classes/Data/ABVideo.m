@@ -21,10 +21,10 @@
         self.videoID = videoID;
         self.videoTitle = [self encodeString:videoTitle];
         self.channelTitle = [self encodeString:channelTitle];
-        self.min_string = min_string;
-        self.likeCount = likeCount;
-        self.dislikeCount = dislikeCount;
-        self.viewCount = viewCount;
+        self.min_string = [self encodeString:min_string];
+        self.likeCount = [self encodeString:likeCount];
+        self.dislikeCount = [self encodeString:dislikeCount];
+        self.viewCount = [self encodeString:viewCount];
         self.descriptionString = [self encodeString:descriptionString];
         self.duration = [self encodeString:duration];
         self.time = [self currentTime];
@@ -37,15 +37,15 @@
     self = [super init];
     if(self) {
         self.videoID = videoID;
-        self.videoTitle = videoTitle;
-        self.channelTitle = channelTitle;
-        self.min_string = min_string;
-        self.duration = duration;
-        self.likeCount = likeCount;
-        self.dislikeCount = dislikeCount;
-        self.viewCount = viewCount;
-        self.descriptionString = descriptionString;
-        self.time = time;
+        self.videoTitle = [self decodeString:videoTitle];
+        self.channelTitle = [self decodeString:channelTitle];
+        self.min_string = [self decodeString:min_string];
+        self.duration = [self decodeString:duration];
+        self.likeCount = [self decodeString:likeCount];
+        self.dislikeCount = [self decodeString:dislikeCount];
+        self.viewCount = [self decodeString:viewCount];
+        self.descriptionString = [self decodeString:descriptionString];
+        self.time = [self decodeString:time];
     }
 
     return self;
