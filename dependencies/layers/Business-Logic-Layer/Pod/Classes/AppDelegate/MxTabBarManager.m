@@ -40,7 +40,7 @@
 #pragma mark -
 #pragma mark video local store.
 
-- (void)saveVideo:(id)videoInfo {
+- (void)saveVideo:(YTYouTubeVideoCache *)videoInfo {
     [[MobileDB dbInstance] saveVideo:
             [[ABVideo alloc] initForSavingWithVideoID:[YoutubeParser getWatchVideoId:videoInfo]
                                            videoTitle:[YoutubeParser getVideoSnippetTitle:videoInfo]
@@ -50,6 +50,7 @@
                                          dislikeCount:[YoutubeParser getVideoDislikeCount:videoInfo]
                                             viewCount:[YoutubeParser getVideoWatchCount:videoInfo]
                                     descriptionString:[YoutubeParser getVideoDescription:videoInfo]
+                                             duration:[YoutubeParser parseISO8601Duration:videoInfo.contentDetails.duration]
             ]
     ];
 }

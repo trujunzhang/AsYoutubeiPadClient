@@ -25,6 +25,8 @@
 
 + (id)getAuthChannelRelatedPlaylists:(id)channel;
 
++ (NSString *)parseISO8601Duration:(NSString *)duration;
+
 + (NSString *)getChannelBrandingSettingsTitle:(id)channel;
 
 + (NSString *)getChannelStatisticsSubscriberCount:(id)channel;

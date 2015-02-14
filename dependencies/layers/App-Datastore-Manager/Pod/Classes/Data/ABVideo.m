@@ -15,7 +15,7 @@
 
 @implementation ABVideo
 
-- (instancetype)initForSavingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString {
+- (instancetype)initForSavingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString duration:(NSString *)duration {
     self = [super init];
     if(self) {
         self.videoID = videoID;
@@ -26,9 +26,23 @@
         self.dislikeCount = dislikeCount;
         self.viewCount = viewCount;
         self.descriptionString = [self encodeString:descriptionString];
+        self.duration = [self encodeString:duration];
+        self.time = [self currentTime];
     }
 
     return self;
+}
+
+- (NSString *)currentTime {
+    NSDateFormatter *formatter;
+    NSString *dateString;
+
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+
+    dateString = [formatter stringFromDate:[NSDate date]];
+
+    return dateString;
 }
 
 - (instancetype)initForReadingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString {

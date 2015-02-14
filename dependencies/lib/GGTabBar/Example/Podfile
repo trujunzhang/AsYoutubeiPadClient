@@ -7,5 +7,4 @@ target 'Example', :exclusive => true do
   pod "AsyncDisplayKit", :path => "../AsyncDisplayKit"
   pod 'Reveal-iOS-SDK'
 
-  pod 'KRLCollectionViewGridLayout', '~> 0.1.1'
 end
