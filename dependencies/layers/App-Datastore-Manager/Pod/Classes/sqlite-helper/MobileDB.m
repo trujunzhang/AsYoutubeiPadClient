@@ -198,7 +198,7 @@ static MobileDB *_dbInstance;
 - (void)makeDB {
 
     // Videos
-    NSString *command = [NSString stringWithFormat:@"create table Videos(%@ primary key(videoID));", [ABVideo sqlStringSerializationForCreate]];
+    NSString *command = [NSString stringWithFormat:@"create table Videos(%@, primary key(videoID));", [ABVideo sqlStringSerializationForCreate]];
     [db sqlExecute:command];
 
     // Internal

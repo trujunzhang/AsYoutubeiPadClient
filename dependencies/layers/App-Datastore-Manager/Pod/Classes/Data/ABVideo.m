@@ -92,7 +92,7 @@
 
     NSMutableArray *allValues = [[NSMutableArray alloc] init];
     for (NSString *key in dictionary.allKeys) {
-        [allValues addObject:[NSString stringWithFormat:@"%@ %@", key, [dictionary objectForKey:key]]];
+        [allValues addObject:[NSString stringWithFormat:@" %@ %@ ", key, [dictionary objectForKey:key]]];
     }
     NSString *tableValueString = [allValues componentsJoinedByString:@","];
 

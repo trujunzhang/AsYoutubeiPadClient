@@ -337,10 +337,12 @@
     video.snippet.channelTitle = abVideo.channelTitle;
 
     video.snippet.publishedAt.min_string = abVideo.min_string;
+    video.contentDetails.duration = abVideo.duration;
 
     video.statistics.likeCount = abVideo.likeCount;
     video.statistics.dislikeCount = abVideo.dislikeCount;
     video.statistics.viewCount = abVideo.viewCount;
+
 
     video.snippet.descriptionString = abVideo.descriptionString;
 
