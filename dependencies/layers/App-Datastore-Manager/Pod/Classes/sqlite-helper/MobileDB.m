@@ -123,7 +123,7 @@ static MobileDB *_dbInstance;
 
 - (void)allVideos:(VideoResultsBlock)videosBlock {
     NSMutableArray *videos = [[NSMutableArray alloc] init];
-    NSString *sql = @"select * from Videos order by time ASC";
+    NSString *sql = @"select * from Videos order by time DESC";
     id<ABRecordset> results = [db sqlSelect:sql];
     while (![results eof]) {
         ABVideo *abVideo = [[ABVideo alloc] initForReadingWithVideoID:[[results fieldWithName:@"videoID"] stringValue]
