@@ -22,11 +22,11 @@
         self.videoTitle = [self encodeString:videoTitle];
         self.channelTitle = [self encodeString:channelTitle];
         self.min_string = [self encodeString:min_string];
-        self.likeCount = [self encodeString:likeCount];
-        self.dislikeCount = [self encodeString:dislikeCount];
-        self.viewCount = [self encodeString:viewCount];
+        self.likeCount = likeCount;
+        self.dislikeCount = dislikeCount;
+        self.viewCount = viewCount;
         self.descriptionString = [self encodeString:descriptionString];
-        self.duration = [self encodeString:duration];
+        self.duration = duration;
         self.time = [self currentTime];
     }
 
@@ -40,12 +40,12 @@
         self.videoTitle = [self decodeString:videoTitle];
         self.channelTitle = [self decodeString:channelTitle];
         self.min_string = [self decodeString:min_string];
-        self.duration = [self decodeString:duration];
-        self.likeCount = [self decodeString:likeCount];
-        self.dislikeCount = [self decodeString:dislikeCount];
-        self.viewCount = [self decodeString:viewCount];
+        self.duration = duration;
+        self.likeCount = likeCount;
+        self.dislikeCount = dislikeCount;
+        self.viewCount = viewCount;
         self.descriptionString = [self decodeString:descriptionString];
-        self.time = [self decodeString:time];
+        self.time = time;
     }
 
     return self;
