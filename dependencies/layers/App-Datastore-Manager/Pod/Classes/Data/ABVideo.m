@@ -33,32 +33,59 @@
     return self;
 }
 
-- (NSString *)currentTime {
-    NSDateFormatter *formatter;
-    NSString *dateString;
-
-    formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
-
-    dateString = [formatter stringFromDate:[NSDate date]];
-
-    return dateString;
-}
-
-- (instancetype)initForReadingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString {
+- (instancetype)initForReadingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string duration:(NSString *)duration likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString time:(NSString *)time {
     self = [super init];
     if(self) {
         self.videoID = videoID;
-        self.videoTitle = [self decodeString:videoTitle];
-        self.channelTitle = [self decodeString:channelTitle];
+        self.videoTitle = videoTitle;
+        self.channelTitle = channelTitle;
         self.min_string = min_string;
+        self.duration = duration;
         self.likeCount = likeCount;
         self.dislikeCount = dislikeCount;
         self.viewCount = viewCount;
-        self.descriptionString = [self decodeString:descriptionString];
+        self.descriptionString = descriptionString;
+        self.time = time;
     }
 
     return self;
+}
+
+
+- (NSMutableDictionary *)getInsertDictionary {
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setObject:self.videoID forKey:@"videoID"];
+    [dictionary setObject:self.videoTitle forKey:@"videoTitle"];
+    [dictionary setObject:self.channelTitle forKey:@"channelTitle"];
+    [dictionary setObject:self.min_string forKey:@"min_string"];
+    [dictionary setObject:self.duration forKey:@"duration"];
+
+    [dictionary setObject:self.likeCount forKey:@"likeCount"];
+    [dictionary setObject:self.dislikeCount forKey:@"dislikeCount"];
+    [dictionary setObject:self.viewCount forKey:@"viewCount"];
+    [dictionary setObject:self.descriptionString forKey:@"descriptionString"];
+    [dictionary setObject:self.time forKey:@"time"];
+
+
+    return dictionary;
+}
+
+- (NSArray *)sqlStringSerializationForInsert {
+    NSMutableDictionary *dictionary = [self appendCommonDictionary:[self getInsertDictionary]];
+
+    NSArray *allKeys = dictionary.allKeys;
+    NSString *tableFieldString = [allKeys componentsJoinedByString:@","];
+
+
+    NSMutableArray *allValues = [[NSMutableArray alloc] init];
+    for (NSString *value in dictionary.allValues) {
+        NSString *string = [NSString stringWithFormat:@"\"%@\"", value];
+        [allValues addObject:string];
+    }
+    NSString *tableValueString = [allValues componentsJoinedByString:@","];
+
+
+    return @[tableFieldString, tableValueString];
 }
 
 
@@ -72,6 +99,18 @@
     NSData *decodedData = [[NSData alloc] initWithBase64EncodedString:base64String options:0];
     NSString *decodedString = [[NSString alloc] initWithData:decodedData encoding:NSUTF8StringEncoding];
     return decodedString;
+}
+
+- (NSString *)currentTime {
+    NSDateFormatter *formatter;
+    NSString *dateString;
+
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+
+    dateString = [formatter stringFromDate:[NSDate date]];
+
+    return dateString;
 }
 
 

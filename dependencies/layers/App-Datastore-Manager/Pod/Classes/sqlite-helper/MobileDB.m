@@ -113,12 +113,8 @@ static MobileDB *_dbInstance;
 
     } else {
         // add the abVideo
-        sql = [NSString stringWithFormat:
-                @"insert into Videos(videoID,videoTitle,channelTitle,min_string, likeCount, dislikeCount, viewCount, descriptionString) values('%@','%@','%@','%@','%@','%@','%@','%@');",
-                abVideo.videoID, abVideo.videoTitle, abVideo.channelTitle,
-                abVideo.min_string, abVideo.likeCount, abVideo.dislikeCount, abVideo.viewCount, abVideo.descriptionString
-        ];
-
+        NSArray *sqlStringSerializationForInsert = [abVideo sqlStringSerializationForInsert];
+        sql = [NSString stringWithFormat:@"insert into OnlineVideoType(%@) values(,%@)", sqlStringSerializationForInsert[0], sqlStringSerializationForInsert[1]];
         [db sqlExecute:sql];
     }
 
@@ -134,10 +130,13 @@ static MobileDB *_dbInstance;
                                                            videoTitle:[[results fieldWithName:@"videoTitle"] stringValue]
                                                          channelTitle:[[results fieldWithName:@"channelTitle"] stringValue]
                                                            min_string:[[results fieldWithName:@"min_string"] stringValue]
+                                                             duration:[[results fieldWithName:@"duration"] stringValue]
                                                             likeCount:[[results fieldWithName:@"likeCount"] stringValue]
                                                          dislikeCount:[[results fieldWithName:@"dislikeCount"] stringValue]
                                                             viewCount:[[results fieldWithName:@"viewCount"] stringValue]
                                                     descriptionString:[[results fieldWithName:@"descriptionString"] stringValue]
+                                                                 time:[[results fieldWithName:@"time"] stringValue]
+
         ];
 
 
