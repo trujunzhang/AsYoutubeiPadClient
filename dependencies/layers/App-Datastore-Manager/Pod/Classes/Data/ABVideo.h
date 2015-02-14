@@ -24,8 +24,10 @@
 - (instancetype)initForReadingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string duration:(NSString *)duration likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString time:(NSString *)time;
 
 
-- (NSArray *)sqlStringSerializationForInsert;
++ (NSArray *)sqlStringSerializationForCreate;
 
+
+- (NSArray *)sqlStringSerializationForInsert;
 
 
 @end

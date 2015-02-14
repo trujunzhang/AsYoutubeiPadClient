@@ -51,6 +51,23 @@
     return self;
 }
 
++ (NSMutableDictionary *)getCreateDictionary {
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setObject:@"text" forKey:@"videoID"];
+    [dictionary setObject:@"text" forKey:@"videoTitle"];
+    [dictionary setObject:@"text" forKey:@"channelTitle"];
+    [dictionary setObject:@"text" forKey:@"min_string"];
+    [dictionary setObject:@"text" forKey:@"duration"];
+
+    [dictionary setObject:@"text" forKey:@"likeCount"];
+    [dictionary setObject:@"text" forKey:@"dislikeCount"];
+    [dictionary setObject:@"text" forKey:@"viewCount"];
+    [dictionary setObject:@"text" forKey:@"descriptionString"];
+    [dictionary setObject:@"text" forKey:@"time"];
+
+
+    return dictionary;
+}
 
 - (NSMutableDictionary *)getInsertDictionary {
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
@@ -68,6 +85,18 @@
 
 
     return dictionary;
+}
+
++ (NSArray *)sqlStringSerializationForCreate {
+    NSMutableDictionary *dictionary = [self getCreateDictionary];
+
+    NSMutableArray *allValues = [[NSMutableArray alloc] init];
+    for (NSString *key in dictionary.allKeys) {
+        [allValues addObject:[NSString stringWithFormat:@"%@ %@", key, [dictionary objectForKey:key]]];
+    }
+    NSString *tableValueString = [allValues componentsJoinedByString:@","];
+
+    return tableValueString;
 }
 
 - (NSArray *)sqlStringSerializationForInsert {
