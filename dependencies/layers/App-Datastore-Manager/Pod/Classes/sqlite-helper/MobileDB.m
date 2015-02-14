@@ -114,7 +114,7 @@ static MobileDB *_dbInstance;
     } else {
         // add the abVideo
         NSArray *sqlStringSerializationForInsert = [abVideo sqlStringSerializationForInsert];
-        sql = [NSString stringWithFormat:@"insert into OnlineVideoType(%@) values(,%@)", sqlStringSerializationForInsert[0], sqlStringSerializationForInsert[1]];
+        sql = [NSString stringWithFormat:@"insert into Videos(%@) values(%@)", sqlStringSerializationForInsert[0], sqlStringSerializationForInsert[1]];
         [db sqlExecute:sql];
     }
 
