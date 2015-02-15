@@ -1,12 +1,13 @@
 #import "YTVideoDetailViewController.h"
 
-#import "DJYouTubeVideo.h"
 #include "YoutubeParser.h"
 #import "YTAsTableVideoDetailViewController.h"
 #import "GGTabBarController.h"
 #import "GGLayoutStringTabBar.h"
 #import "CollectionConstant.h"
 #import "XCDYouTubeVideoPlayerViewController.h"
+#import "XCDYouTubeVideo.h"
+#import "MPMoviePlayerController+BackgroundPlayback.h"
 
 
 @interface YTVideoDetailViewController ()<YoutubeCollectionNextPageDelegate, GGTabBarControllerDelegate> {
@@ -81,8 +82,8 @@
     [super viewWillDisappear:animated];
 
     // Beware, viewWillDisappear: is called when the player view enters full screen on iOS 6+
-    if([self isMovingFromParentViewController])
-        [self.videoPlayerViewController.moviePlayer stop];
+//    if([self isMovingFromParentViewController])
+//        [self.videoPlayerViewController.moviePlayer stop];
 }
 
 #pragma mark -
@@ -192,7 +193,11 @@
 
 - (void)setupPlayer:(UIView *)pView {
     self.videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:[YoutubeParser getWatchVideoId:_detailVideo]];
+    self.videoPlayerViewController.moviePlayer.backgroundPlaybackEnabled = YES;
     [self.videoPlayerViewController presentInView:pView];
+
+
+    self.videoPlayerViewController.preferredVideoQualities = @[@(XCDYouTubeVideoQualityMedium360), @(XCDYouTubeVideoQualitySmall240)];
 
     [self.videoPlayerViewController.moviePlayer prepareToPlay];
 
