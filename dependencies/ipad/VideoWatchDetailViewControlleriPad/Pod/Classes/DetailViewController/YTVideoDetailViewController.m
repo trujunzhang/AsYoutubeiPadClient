@@ -6,6 +6,7 @@
 #import "GGTabBarController.h"
 #import "GGLayoutStringTabBar.h"
 #import "CollectionConstant.h"
+#import "XCDYouTubeVideoPlayerViewController.h"
 
 
 @interface YTVideoDetailViewController ()<YoutubeCollectionNextPageDelegate, GGTabBarControllerDelegate> {
@@ -15,6 +16,8 @@
     YTAsTableVideoDetailViewController *_videoHorizontalDetailController;
     YTAsTableVideoDetailViewController *_videoVerticalDetailController;
 }
+
+@property (nonatomic, strong) XCDYouTubeVideoPlayerViewController *videoPlayerViewController;
 
 @property (strong, nonatomic) IBOutlet UIView *videoPlayViewContainer;
 @property (strong, nonatomic) IBOutlet UIView *detailViewContainer;
@@ -188,14 +191,23 @@
                                                                             views:viewsDictionary]];
 }
 
-
-- (void)setupPlayer:(UIView *)pView {
+- (void)setupPlayer123:(UIView *)pView {
     DJYouTubeVideo *_youTubeVideo = [[DJYouTubeVideo alloc] initWithVideoId:[YoutubeParser getWatchVideoId:_detailVideo]];
 
     [_youTubeVideo parseWithCompletion:^(NSError *error) {
         //Then play (make sure that you have called parseWithCompletion before calling this method)
         [_youTubeVideo playInView:pView withQualityOptions:YKQualityMedium];
     }];
+}
+
+
+- (void)setupPlayer:(UIView *)pView {
+    self.videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:[YoutubeParser getWatchVideoId:_detailVideo]];
+    [self.videoPlayerViewController presentInView:pView];
+
+    [self.videoPlayerViewController.moviePlayer prepareToPlay];
+
+    self.videoPlayerViewController.moviePlayer.shouldAutoplay = true;
 }
 
 
