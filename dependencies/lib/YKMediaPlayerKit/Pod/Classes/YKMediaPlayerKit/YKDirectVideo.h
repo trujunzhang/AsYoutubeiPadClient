@@ -9,14 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "YKVideo.h"
 
-@interface YKDirectVideo : NSObject<YKVideo>
+@interface YKDirectVideo : NSObject <YKVideo>
 
 /**
-Vimeo detailVideo url
-*/
+ Vimeo video url
+ */
 @property (nonatomic, strong) NSURL *contentURL;
 
-- (void)playInView:(UIView *)pView withQualityOptions:(YKQualityOptions)quality;
-
-- (void)play:(YKQualityOptions)quality;
 @end

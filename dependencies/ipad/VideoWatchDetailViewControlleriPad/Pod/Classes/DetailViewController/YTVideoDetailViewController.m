@@ -1,6 +1,6 @@
 #import "YTVideoDetailViewController.h"
 
-#import "YKYouTubeVideo.h"
+#import "DJYouTubeVideo.h"
 #include "YoutubeParser.h"
 #import "YTAsVideoDetailViewController.h"
 #import "GGTabBarController.h"
@@ -12,7 +12,7 @@
     NSArray *_lastControllerArray;
     YTYouTubeVideoCache *_detailVideo;
 
-    YKYouTubeVideo *_youTubeVideo;
+    DJYouTubeVideo *_youTubeVideo;
 
     YTAsVideoDetailViewController *_videoHorizontalDetailController;
     YTAsVideoDetailViewController *_videoVerticalDetailController;
@@ -193,7 +193,7 @@
 
 - (void)setupPlayer:(UIView *)pView {
 //    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-    _youTubeVideo = [[YKYouTubeVideo alloc] initWithVideoId:[YoutubeParser getWatchVideoId:_detailVideo]];
+    _youTubeVideo = [[DJYouTubeVideo alloc] initWithVideoId:[YoutubeParser getWatchVideoId:_detailVideo]];
 
     [_youTubeVideo parseWithCompletion:^(NSError *error) {
         //Then play (make sure that you have called parseWithCompletion before calling this method)
@@ -245,8 +245,8 @@
 
 - (void)setupHorizontalLayout {
 
-    CGFloat leftWidth = self.view.frame.size.width / 2 + 20;
-    CGFloat rightWidth = self.view.frame.size.width / 2 - 20;
+    CGFloat leftWidth = self.view.frame.size.width / 2 + 80;
+    CGFloat rightWidth = self.view.frame.size.width / 2 - 80;
 
     CGFloat topHeight = self.view.frame.size.height / 2;
     CGFloat bottomHeight = self.view.frame.size.height / 2;

@@ -259,34 +259,34 @@
 - (YoutubeResponseInfo *)parseVideoInfoMetadataWithData:(NSData *)data {
     NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
-    NSMutableDictionary *parts = [responseString dictionaryFromQueryStringComponents];
+//    NSMutableDictionary *parts = [responseString dictionaryFromQueryStringComponents];
 
     NSMutableDictionary *videoDictionary = [NSMutableDictionary dictionary];
 
-    if(parts) {
-
-        NSString *fmtStreamMapString = [[parts objectForKey:@"url_encoded_fmt_stream_map"] objectAtIndex:0];
-        NSArray *fmtStreamMapArray = [fmtStreamMapString componentsSeparatedByString:@","];
-
-        for (NSString *videoEncodedString in fmtStreamMapArray) {
-            NSMutableDictionary *videoComponents = [videoEncodedString dictionaryFromQueryStringComponents];
-            NSString *type = [[[videoComponents objectForKey:@"type"] objectAtIndex:0] stringByDecodingURLFormat];
-            NSString *signature = nil;
-            if([videoComponents objectForKey:@"sig"]) {
-                signature = [[videoComponents objectForKey:@"sig"] objectAtIndex:0];
-            }
-
-            if([type rangeOfString:@"mp4"].length > 0) {
-                NSString *url = [[[videoComponents objectForKey:@"url"] objectAtIndex:0] stringByDecodingURLFormat];
-                url = [NSString stringWithFormat:@"%@&signature=%@", url, signature];
-
-                NSString *quality = [[[videoComponents objectForKey:@"quality"] objectAtIndex:0] stringByDecodingURLFormat];
-
-                NSLog(@"Found detailVideo for quality: %@", quality);
-                [videoDictionary setObject:url forKey:quality];
-            }
-        }
-    }
+//    if(parts) {
+//
+//        NSString *fmtStreamMapString = [[parts objectForKey:@"url_encoded_fmt_stream_map"] objectAtIndex:0];
+//        NSArray *fmtStreamMapArray = [fmtStreamMapString componentsSeparatedByString:@","];
+//
+//        for (NSString *videoEncodedString in fmtStreamMapArray) {
+//            NSMutableDictionary *videoComponents = [videoEncodedString dictionaryFromQueryStringComponents];
+//            NSString *type = [[[videoComponents objectForKey:@"type"] objectAtIndex:0] stringByDecodingURLFormat];
+//            NSString *signature = nil;
+//            if([videoComponents objectForKey:@"sig"]) {
+//                signature = [[videoComponents objectForKey:@"sig"] objectAtIndex:0];
+//            }
+//
+//            if([type rangeOfString:@"mp4"].length > 0) {
+//                NSString *url = [[[videoComponents objectForKey:@"url"] objectAtIndex:0] stringByDecodingURLFormat];
+//                url = [NSString stringWithFormat:@"%@&signature=%@", url, signature];
+//
+//                NSString *quality = [[[videoComponents objectForKey:@"quality"] objectAtIndex:0] stringByDecodingURLFormat];
+//
+//                NSLog(@"Found detailVideo for quality: %@", quality);
+//                [videoDictionary setObject:url forKey:quality];
+//            }
+//        }
+//    }
 
 
     return [YoutubeResponseInfo infoWithVideoDictionary:videoDictionary];

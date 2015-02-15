@@ -9,7 +9,15 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.ios.deployment_target = '6.0'
   s.source       = { :git => "https://github.com/YasKuraishi/YKMediaPlayerKit.git", :tag => "0.0.2" }
-  s.source_files = 'YKTwitterHelper', 'Pod/Classes/**/*.{h,m}'
   s.frameworks   = 'UIKit', 'CoreGraphics'
   s.requires_arc = true
+
+  s.subspec 'YKMediaPlayerKit' do |sub|
+    sub.source_files = 'Pod/Classes/YKMediaPlayerKit/**/*.{h,m}'
+  end
+
+  s.subspec 'DJMediaPlayerKit' do |sub|
+    sub.source_files = 'Pod/Classes/DJMediaPlayerKit/*.{h,m}'
+  end
+
 end

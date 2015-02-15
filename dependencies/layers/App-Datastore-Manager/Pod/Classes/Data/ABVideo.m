@@ -134,7 +134,7 @@
     NSString *dateString;
 
     formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+    [formatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
 
     dateString = [formatter stringFromDate:[NSDate date]];
 

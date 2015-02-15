@@ -13,6 +13,34 @@
 #define kYoutubeDataURL      @"http://gdata.youtube.com/feeds/api/videos/%@?alt=json"
 #define kUserAgent @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4"
 
+@interface NSString (QueryString)
+
+/**
+ Parses a query string
+
+ @return key value dictionary with each parameter as an array
+ */
+- (NSMutableDictionary *)dictionaryFromQueryStringComponents;
+
+
+/**
+ Convenient method for decoding a html encoded string
+ */
+- (NSString *)stringByDecodingURLFormat;
+
+@end
+
+@interface NSURL (QueryString)
+
+/**
+ Parses a query string of an NSURL
+
+ @return key value dictionary with each parameter as an array
+ */
+- (NSMutableDictionary *)dictionaryForQueryString;
+
+@end
+
 
 @implementation NSString (QueryString)
 
@@ -108,7 +136,7 @@
                         
                         NSString *quality = [[[videoComponents objectForKey:@"quality"] objectAtIndex:0] stringByDecodingURLFormat];
                         
-                        NSLog(@"Found detailVideo for quality: %@", quality);
+                        NSLog(@"Found video for quality: %@", quality);
                         [videoDictionary setObject:url forKey:quality];
                     }
                 }
@@ -172,7 +200,7 @@
                             
                             NSString *quality = [[[videoComponents objectForKey:@"quality"] objectAtIndex:0] stringByDecodingURLFormat];
                             
-                            NSLog(@"Found detailVideo for quality: %@", quality);
+                            NSLog(@"Found video for quality: %@", quality);
                             [videoDictionary setObject:url forKey:quality];
                         }
                     }
