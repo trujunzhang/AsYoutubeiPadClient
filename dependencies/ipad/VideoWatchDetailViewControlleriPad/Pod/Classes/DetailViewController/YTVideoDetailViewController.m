@@ -190,7 +190,6 @@
 
 
 - (void)setupPlayer:(UIView *)pView {
-//    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     DJYouTubeVideo *_youTubeVideo = [[DJYouTubeVideo alloc] initWithVideoId:[YoutubeParser getWatchVideoId:_detailVideo]];
 
     [_youTubeVideo parseWithCompletion:^(NSError *error) {
