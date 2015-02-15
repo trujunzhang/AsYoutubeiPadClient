@@ -17,19 +17,28 @@
 #import "ClientUIHelper.h"
 #import "DebugUtils.h"
 #import "CollectionConstant.h"
+#import "PlayerEventLogger.h"
 
 
 @interface MxAsTubeAppDelegate ()<UIApplicationDelegate, UITabBarControllerDelegate, SWRevealViewControllerDelegate> {
 }
 
 @property (nonatomic, strong) SWRevealViewController *revealController;
-
+@property (nonatomic, readonly) PlayerEventLogger *playerEventLogger;
 
 @end
 
 
 @implementation MxAsTubeAppDelegate
 
+- (instancetype)init {
+    if(!(self = [super init]))
+        return nil;
+
+    _playerEventLogger = [PlayerEventLogger new];
+
+    return self;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [DebugUtils listAppHomeInfo];
