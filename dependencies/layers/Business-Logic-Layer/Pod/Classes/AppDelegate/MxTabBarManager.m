@@ -50,7 +50,7 @@
                                          dislikeCount:[YoutubeParser getVideoDislikeCount:videoInfo]
                                             viewCount:[YoutubeParser getVideoWatchCount:videoInfo]
                                     descriptionString:[YoutubeParser getVideoDescription:videoInfo]
-                                             duration:[YoutubeParser parseISO8601Duration:videoInfo.contentDetails.duration]
+                                             duration:videoInfo.contentDetails.duration
             ]
     ];
 }
