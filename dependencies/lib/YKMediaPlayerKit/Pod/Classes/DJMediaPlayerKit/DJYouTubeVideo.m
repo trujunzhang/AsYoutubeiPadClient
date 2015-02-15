@@ -26,11 +26,6 @@
     [pView addSubview:self.player.moviePlayer.view];
     [self fitView:self.player.moviePlayer.view intoView:pView];
 
-//    self.player.moviePlayer.view.frame = pView.bounds;// used
-//    self.player.moviePlayer.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-
-
-
     [self.player.moviePlayer play];
 }
 
