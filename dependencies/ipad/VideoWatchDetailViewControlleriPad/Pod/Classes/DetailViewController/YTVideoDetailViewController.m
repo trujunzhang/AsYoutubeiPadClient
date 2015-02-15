@@ -77,15 +77,13 @@
 
 }
 
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
     // Beware, viewWillDisappear: is called when the player view enters full screen on iOS 6+
-//    if([self isMovingFromParentViewController])
-//        [_youTubeVideo stop];
+    if([self isMovingFromParentViewController])
+        [self.videoPlayerViewController.moviePlayer stop];
 }
-
 
 #pragma mark -
 #pragma mark - setup UIView
@@ -189,15 +187,6 @@
                                                                           options:0
                                                                           metrics:nil
                                                                             views:viewsDictionary]];
-}
-
-- (void)setupPlayer123:(UIView *)pView {
-    DJYouTubeVideo *_youTubeVideo = [[DJYouTubeVideo alloc] initWithVideoId:[YoutubeParser getWatchVideoId:_detailVideo]];
-
-    [_youTubeVideo parseWithCompletion:^(NSError *error) {
-        //Then play (make sure that you have called parseWithCompletion before calling this method)
-        [_youTubeVideo playInView:pView withQualityOptions:YKQualityMedium];
-    }];
 }
 
 
