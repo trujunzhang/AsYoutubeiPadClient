@@ -20,4 +20,7 @@ Pod::Spec.new do |s|
     sub.source_files = 'Pod/Classes/DJMediaPlayerKit/*.{h,m}'
   end
 
+  s.subspec 'XCDYouTubeKit' do |sub|
+    sub.source_files = 'Pod/Classes/XCDYouTubeKit/*.{h,m}'
+  end
 end

@@ -12,8 +12,6 @@
     NSArray *_lastControllerArray;
     YTYouTubeVideoCache *_detailVideo;
 
-    DJYouTubeVideo *_youTubeVideo;
-
     YTAsTableVideoDetailViewController *_videoHorizontalDetailController;
     YTAsTableVideoDetailViewController *_videoVerticalDetailController;
 }
@@ -193,7 +191,7 @@
 
 - (void)setupPlayer:(UIView *)pView {
 //    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-    _youTubeVideo = [[DJYouTubeVideo alloc] initWithVideoId:[YoutubeParser getWatchVideoId:_detailVideo]];
+    DJYouTubeVideo *_youTubeVideo = [[DJYouTubeVideo alloc] initWithVideoId:[YoutubeParser getWatchVideoId:_detailVideo]];
 
     [_youTubeVideo parseWithCompletion:^(NSError *error) {
         //Then play (make sure that you have called parseWithCompletion before calling this method)
