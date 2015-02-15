@@ -8,6 +8,7 @@
 #import "XCDYouTubeVideoPlayerViewController.h"
 #import "XCDYouTubeVideo.h"
 #import "MPMoviePlayerController+BackgroundPlayback.h"
+#import "DJYouTubeVideo.h"
 
 
 @interface YTVideoDetailViewController ()<YoutubeCollectionNextPageDelegate, GGTabBarControllerDelegate> {
@@ -204,6 +205,14 @@
     self.videoPlayerViewController.moviePlayer.shouldAutoplay = true;
 }
 
+- (void)setupPlayer123:(UIView *)pView {
+    DJYouTubeVideo *_youTubeVideo = [[DJYouTubeVideo alloc] initWithVideoId:[YoutubeParser getWatchVideoId:_detailVideo]];
+
+    [_youTubeVideo parseWithCompletion:^(NSError *error) {
+        //Then play (make sure that you have called parseWithCompletion before calling this method)
+        [_youTubeVideo playInView:pView withQualityOptions:YKQualityMedium];
+    }];
+}
 
 #pragma mark -
 #pragma mark Rotation stuff
