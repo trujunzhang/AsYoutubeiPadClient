@@ -12,7 +12,7 @@
 @class AsDetailRowVideoDescription;
 
 
-@interface YTAsVideoDetailViewController : UIViewController
+@interface YTAsTableVideoDetailViewController : UIViewController
 
 - (instancetype)initWithVideo:(YTYouTubeVideoCache *)video;
 

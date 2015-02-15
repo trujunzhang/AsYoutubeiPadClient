@@ -2,7 +2,7 @@
 
 #import "DJYouTubeVideo.h"
 #include "YoutubeParser.h"
-#import "YTAsVideoDetailViewController.h"
+#import "YTAsTableVideoDetailViewController.h"
 #import "GGTabBarController.h"
 #import "GGLayoutStringTabBar.h"
 #import "CollectionConstant.h"
@@ -14,8 +14,8 @@
 
     DJYouTubeVideo *_youTubeVideo;
 
-    YTAsVideoDetailViewController *_videoHorizontalDetailController;
-    YTAsVideoDetailViewController *_videoVerticalDetailController;
+    YTAsTableVideoDetailViewController *_videoHorizontalDetailController;
+    YTAsTableVideoDetailViewController *_videoVerticalDetailController;
 }
 
 @property (strong, nonatomic) IBOutlet UIView *videoPlayViewContainer;
@@ -106,8 +106,8 @@
 
     // 2
     [_detailVideo parseDescriptionString];
-    _videoHorizontalDetailController = [[YTAsVideoDetailViewController alloc] initWithVideo:_detailVideo];
-    _videoVerticalDetailController = [[YTAsVideoDetailViewController alloc] initWithVideo:_detailVideo];
+    _videoHorizontalDetailController = [[YTAsTableVideoDetailViewController alloc] initWithVideo:_detailVideo];
+    _videoVerticalDetailController = [[YTAsTableVideoDetailViewController alloc] initWithVideo:_detailVideo];
 }
 
 

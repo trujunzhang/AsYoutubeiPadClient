@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 djzhang. All rights reserved.
 //
 
-#import "YTAsVideoDetailViewController.h"
+#import "YTAsTableVideoDetailViewController.h"
 
 #import "AsDetailRowVideoDescription.h"
 #import "AsDetailRowChannelInfo.h"
@@ -15,7 +15,7 @@
 static const NSInteger kLitterSize = 3;
 
 
-@interface YTAsVideoDetailViewController ()<ASTableViewDataSource, ASTableViewDelegate> {
+@interface YTAsTableVideoDetailViewController ()<ASTableViewDataSource, ASTableViewDelegate> {
     ASTableView *_tableView;
     YTYouTubeVideoCache *_video;
 }
@@ -23,7 +23,7 @@ static const NSInteger kLitterSize = 3;
 @end
 
 
-@implementation YTAsVideoDetailViewController
+@implementation YTAsTableVideoDetailViewController
 
 
 #pragma mark -
