@@ -369,8 +369,8 @@
 - (CGSize)cellSize {
     CGSize size;
 
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    NSString *key = UIInterfaceOrientationIsPortrait(orientation) ? @"vertical" : @"horizontal";
+    NSString *key = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) ? @"vertical" : @"horizontal";
+
     NSString *keyWidth = [NSString stringWithFormat:@"%@_width", key];
     NSString *keyHeight = [NSString stringWithFormat:@"%@_height", key];
 
@@ -379,7 +379,7 @@
     if(valueWidth && valueHeight) {
         size = CGSizeMake([valueWidth floatValue], [valueHeight floatValue]);
     } else {
-        size = [self makeCellSize:orientation];
+        size = [self makeCellSize:[UIApplication sharedApplication].statusBarOrientation];
         [YoutubeParser cacheWithKey:keyWidth withValue:[NSNumber numberWithFloat:size.width]];
         [YoutubeParser cacheWithKey:keyHeight withValue:[NSNumber numberWithFloat:size.height]];
     }
