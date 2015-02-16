@@ -378,7 +378,6 @@
     if(valueWidth && valueHeight) {
         size = CGSizeMake([valueWidth floatValue], [valueHeight floatValue]);
     } else {
-
         size = [self makeCellSize:[UIApplication sharedApplication].statusBarOrientation withCollectionWidth:collectionWidth];
         [YoutubeParser cacheWithKey:keyWidth withValue:[NSNumber numberWithFloat:size.width]];
         [YoutubeParser cacheWithKey:keyHeight withValue:[NSNumber numberWithFloat:size.height]];
