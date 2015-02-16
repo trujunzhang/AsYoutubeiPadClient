@@ -12,7 +12,6 @@
 
 @interface YTAsCollectionVideoCellNode () {
     CGSize _kittenSize;
-    YTYouTubeVideoCache *_nodeVideo;
 
     YTAsFirstVideoRowNode *_asFirstVideoRowNode;
     YTAsSecondVideoRowNode *_asSecondVideoRowNode;
@@ -31,19 +30,18 @@
         return nil;
 
     _kittenSize = cellSize;
-    _nodeVideo = nodeVideo;
 
     CGRect cellNodeRect = CGRectMake(0, 0, _kittenSize.width, COLLECTION_CELL_FIRST_HEIGHT);
-    _asFirstVideoRowNode = [[YTAsFirstVideoRowNode alloc] initWithCellNodeRect:cellNodeRect
-                                                                     withVideo:nodeVideo];
+    _asFirstVideoRowNode = [[YTAsFirstVideoRowNode alloc] initWithCellNodeRect:cellNodeRect withVideo:nodeVideo];
+
 
     cellNodeRect = CGRectMake(0, COLLECTION_CELL_FIRST_HEIGHT, _kittenSize.width, COLLECTION_CELL_SECOND_HEIGHT);
-    _asSecondVideoRowNode = [[YTAsSecondVideoRowNode alloc] initWithCellNodeRect:cellNodeRect
-                                                                       withVideo:nodeVideo];
+    _asSecondVideoRowNode = [[YTAsSecondVideoRowNode alloc] initWithCellNodeRect:cellNodeRect withVideo:nodeVideo];
+
 
     cellNodeRect = CGRectMake(0, COLLECTION_CELL_FIRST_HEIGHT + COLLECTION_CELL_SECOND_HEIGHT, _kittenSize.width, COLLECTION_CELL_THIRD_HEIGHT);
-    _asThirdVideoRowNode = [[YTAsThirdVideoRowNode alloc] initWithCellNodeRect:cellNodeRect
-                                                                     withVideo:nodeVideo];
+    _asThirdVideoRowNode = [[YTAsThirdVideoRowNode alloc] initWithCellNodeRect:cellNodeRect withVideo:nodeVideo];
+
 
     [self addSubnode:_asFirstVideoRowNode];
     [self addSubnode:_asSecondVideoRowNode];
