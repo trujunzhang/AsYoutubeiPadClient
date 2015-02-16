@@ -53,19 +53,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.isFirstRequest = NO;
+
     // Do any additional setup after loading the view.
     NSAssert(self.baseCollectionView, @"not set UICollectionVier instance!");
     NSAssert(self.nextPageDelegate, @"not found YoutubeCollectionNextPageDelegate!");
     NSAssert(self.numbersPerLineArray, @"not found numbersPerLineArray!");
 
-    self.isFirstRequest = NO;
-    self.cellSizeDictionary = [[NSMutableDictionary alloc] init];
     [self setupRefresh];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
 
     if(self.isFirstRequest == NO) {
         self.isFirstRequest = YES;
@@ -390,12 +389,9 @@
 
 - (CGSize)makeCellSize:(UIInterfaceOrientation)orientation {
     int columnCount = [self getCurrentColumnCount:orientation];
-    UICollectionViewLayout *layout = self.baseCollectionView.collectionViewLayout;
-
     UIEdgeInsets uiEdgeInsets = [self getUIEdgeInsetsForLayout];
 
     CGFloat mini_num_column_space = LAYOUT_MINIMUMCOLUMNSPACING;
-//   CGFloat aFloat = layout.collectionViewContentSize.width;
     CGFloat aFloat = self.view.frame.size.width;
 
     CGFloat usableSpace =
