@@ -5,22 +5,19 @@
 //  Created by djzhang on 10/15/14.
 //  Copyright (c) 2014 djzhang. All rights reserved.
 //
+#import "YoutubeCollectionViewBase.h"
 
-
-#import "YTVideoDetailViewController.h"
 #import "GYoutubeHelper.h"
 #import "YTAsyncGridViewVideoCollectionViewCell.h"
 #import "YTGridViewPlaylistCell.h"
-#import "HexColor.h"
-#import "YoutubeCollectionViewBase.h"
 #import "YTAsRowNode.h"
 #import "ClientUIHelper.h"
-#import "MxTabBarManager.h"
-#import "LocalReponseHelper.h"
 
 
 @interface YoutubeCollectionViewBase () {
     GYoutubeRequestInfo *_youtubeRequestInfo;
+
+    int collectionWidth;
 }
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -65,6 +62,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+
+    collectionWidth = (int)self.view.frame.size.width;
 
     if(self.isFirstRequest == NO) {
         self.isFirstRequest = YES;
@@ -330,12 +329,8 @@
     ErrorResponseBlock error = ^(NSError *error) {
         NSString *debug = @"debug";
     };
-    [[GYoutubeHelper getInstance] fetchPlaylistItemsListWithRequestInfo:[self getYoutubeRequestInfo]
-                                                             completion:completion
-                                                           errorHandler:error
-    ];
+    [[GYoutubeHelper getInstance] fetchPlaylistItemsListWithRequestInfo:[self getYoutubeRequestInfo] completion:completion errorHandler:error];
 }
-
 
 #pragma mark -
 #pragma mark  Fetch suggestion list by videoID
@@ -368,10 +363,8 @@
 
     NSString *key = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) ? @"vertical" : @"horizontal";
 
-    CGFloat collectionWidth = self.view.frame.size.width;
-
-    NSString *keyWidth = [NSString stringWithFormat:@"%@_width", key];
-    NSString *keyHeight = [NSString stringWithFormat:@"%@_height", key];
+    NSString *keyWidth = [NSString stringWithFormat:@"%@_width_%d", key, collectionWidth];
+    NSString *keyHeight = [NSString stringWithFormat:@"%@_height_%d", key, collectionWidth];
 
     NSNumber *valueWidth = [YoutubeParser queryCacheWithKey:keyWidth];
     NSNumber *valueHeight = [YoutubeParser queryCacheWithKey:keyHeight];
