@@ -15,13 +15,9 @@
 
 + (NSString *)getVideoIdsBySearchResult:(NSMutableArray *)searchResultList;
 
-+ (NSString *)checkAndAppendThumbnailWithChannelId:(NSString *)channelId;
-
-+ (void)AppendThumbnailWithChannelId:(NSString *)channelId withThumbnailUrl:(NSString *)thumbnailUrl;
++ (NSString *)queryCacheWithKey:(NSString *)channelId;
 
 + (NSString *)timeFormatConvertToSecondsWithInteger:(NSUInteger)timeSecs;
-
-+ (NSString *)timeFormatConvertToSeconds:(NSString *)timeSecs;
 
 + (id)getAuthChannelRelatedPlaylists:(id)channel;
 

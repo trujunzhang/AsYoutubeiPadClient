@@ -324,10 +324,12 @@
 }
 
 
-+ (NSString *)checkAndAppendThumbnailWithChannelId:(NSString *)key {
++ (NSString *)queryCacheWithKey:(NSString *)key {
     return [[ISMemoryCache sharedCache] objectForKey:key];
 }
 
+#pragma mark -
+#pragma mark
 
 + (id)convertAbVideoToYoutubeVideo:(ABVideo *)abVideo {
     YTYouTubeVideoCache *video = [[YoutubeVideoCache alloc] init];

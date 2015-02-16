@@ -78,7 +78,7 @@
 + (instancetype)nodeWithChannelId:(NSString *)channelId {
     ASImageNode *node;
 
-    NSString *thumbnailUrl = [YoutubeParser checkAndAppendThumbnailWithChannelId:channelId];
+    NSString *thumbnailUrl = [YoutubeParser queryCacheWithKey:channelId];
     if(thumbnailUrl) {
         node = [YTAsChannelThumbnailsImageNode nodeWithImageUrl:thumbnailUrl];
     } else {
