@@ -368,6 +368,8 @@
 
     NSString *key = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) ? @"vertical" : @"horizontal";
 
+    CGFloat collectionWidth = self.view.frame.size.width;
+
     NSString *keyWidth = [NSString stringWithFormat:@"%@_width", key];
     NSString *keyHeight = [NSString stringWithFormat:@"%@_height", key];
 
@@ -376,7 +378,8 @@
     if(valueWidth && valueHeight) {
         size = CGSizeMake([valueWidth floatValue], [valueHeight floatValue]);
     } else {
-        size = [self makeCellSize:[UIApplication sharedApplication].statusBarOrientation];
+
+        size = [self makeCellSize:[UIApplication sharedApplication].statusBarOrientation withCollectionWidth:collectionWidth];
         [YoutubeParser cacheWithKey:keyWidth withValue:[NSNumber numberWithFloat:size.width]];
         [YoutubeParser cacheWithKey:keyHeight withValue:[NSNumber numberWithFloat:size.height]];
     }
@@ -385,15 +388,14 @@
 }
 
 
-- (CGSize)makeCellSize:(UIInterfaceOrientation)orientation {
+- (CGSize)makeCellSize:(UIInterfaceOrientation)orientation withCollectionWidth:(CGFloat)collectionWidth {
     int columnCount = [self getCurrentColumnCount:orientation];
     UIEdgeInsets uiEdgeInsets = [self getUIEdgeInsetsForLayout];
 
     CGFloat mini_num_column_space = LAYOUT_MINIMUMCOLUMNSPACING;
-    CGFloat aFloat = self.view.frame.size.width;
 
     CGFloat usableSpace =
-            (aFloat
+            (collectionWidth
                     - uiEdgeInsets.left - uiEdgeInsets.right
                     - ((columnCount - 1) * mini_num_column_space)
             );
