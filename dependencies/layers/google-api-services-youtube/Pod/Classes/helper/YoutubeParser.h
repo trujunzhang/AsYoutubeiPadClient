@@ -15,7 +15,9 @@
 
 + (NSString *)getVideoIdsBySearchResult:(NSMutableArray *)searchResultList;
 
-+ (NSString *)queryCacheWithKey:(NSString *)channelId;
++ (void)cacheWithKey:(NSString *)key withValue:(id)value;
+
++ (id)queryCacheWithKey:(NSString *)channelId;
 
 + (NSString *)timeFormatConvertToSecondsWithInteger:(NSUInteger)timeSecs;
 
@@ -78,7 +80,6 @@
 
 + (void)parseDescriptionStringWithRegExp:(id)videoCache;
 
-+ (void)cacheWithKey:(NSString *)key withValue:(NSString *)value;
 
 + (id)convertAbVideoToYoutubeVideo:(id)abVideo;
 @end

@@ -319,12 +319,12 @@
 #pragma mark Url cache
 
 
-+ (void)cacheWithKey:(NSString *)key withValue:(NSString *)value {
++ (void)cacheWithKey:(NSString *)key withValue:(id)value {
     [[ISMemoryCache sharedCache] setObject:value forKey:key];
 }
 
 
-+ (NSString *)queryCacheWithKey:(NSString *)key {
++ (id)queryCacheWithKey:(NSString *)key {
     return [[ISMemoryCache sharedCache] objectForKey:key];
 }
 

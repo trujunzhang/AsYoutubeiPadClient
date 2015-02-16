@@ -26,9 +26,6 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) UICollectionView *baseCollectionView;
 
-@property (nonatomic, strong) NSMutableDictionary *cellSizeDictionary;
-
-
 @end
 
 
@@ -377,16 +374,14 @@
     NSString *keyWidth = [NSString stringWithFormat:@"%@_width", key];
     NSString *keyHeight = [NSString stringWithFormat:@"%@_height", key];
 
-    NSNumber *valueWidth = [self.cellSizeDictionary objectForKey:keyWidth];
-    NSNumber *valueHeight = [self.cellSizeDictionary objectForKey:keyHeight];
+    NSNumber *valueWidth = [YoutubeParser queryCacheWithKey:keyWidth];
+    NSNumber *valueHeight = [YoutubeParser queryCacheWithKey:keyHeight];
     if(valueWidth && valueHeight) {
         size = CGSizeMake([valueWidth floatValue], [valueHeight floatValue]);
     } else {
         size = [self makeCellSize:orientation];
-        NSNumber *aWidth = [NSNumber numberWithFloat:size.width];
-        NSNumber *aHeight = [NSNumber numberWithFloat:size.height];
-        [self.cellSizeDictionary setObject:aWidth forKey:keyWidth];
-        [self.cellSizeDictionary setObject:aHeight forKey:keyHeight];
+        [YoutubeParser cacheWithKey:keyWidth withValue:[NSNumber numberWithFloat:size.width]];
+        [YoutubeParser cacheWithKey:keyHeight withValue:[NSNumber numberWithFloat:size.height]];
     }
 
     return size;
