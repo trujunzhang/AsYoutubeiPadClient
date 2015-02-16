@@ -255,13 +255,15 @@
 }
 
 
-- (void)setupHorizontalLayout {
+- (void)setupHorizontalLayout {//tabs:[3]
 
-    CGFloat leftWidth = self.view.frame.size.width / 2 + 80;
-    CGFloat rightWidth = self.view.frame.size.width / 2 - 80;
+//    CGFloat leftWidth = self.view.frame.size.width / 2 + 80;
+    CGFloat leftWidth = 640;
+    CGFloat rightWidth = self.view.frame.size.width - leftWidth;
 
-    CGFloat topHeight = self.view.frame.size.height / 2;
-    CGFloat bottomHeight = self.view.frame.size.height / 2;
+//    CGFloat topHeight = self.view.frame.size.height / 2;
+    CGFloat topHeight = 360;
+    CGFloat bottomHeight = self.view.frame.size.height - topHeight;
 
     // 1. left panels
     CGRect rect = self.videoPlayViewContainer.frame;
@@ -288,23 +290,21 @@
 }
 
 
-- (void)setupVerticalLayout {
-    CGFloat topHeight = 0;
-
+- (void)setupVerticalLayout {//tabs:[4]
     CGFloat aWidth = self.view.frame.size.width;
     CGFloat aHeight = self.view.frame.size.height;
 
 
     CGRect rect = self.videoPlayViewContainer.frame;
     rect.origin.x = 0;
-    rect.origin.y = topHeight;
+    rect.origin.y = 0;
     rect.size.width = aWidth;
     rect.size.height = aHeight / 2;
     self.videoPlayViewContainer.frame = rect;
 
     rect = self.tabBarViewContainer.frame;
     rect.origin.x = 0;
-    rect.origin.y = topHeight + aHeight / 2;
+    rect.origin.y = aHeight / 2;
     rect.size.width = aWidth;
     rect.size.height = aHeight / 2;
     self.tabBarViewContainer.frame = rect;
