@@ -137,9 +137,7 @@
     NSString *cell_identifier = [self getYoutubeRequestInfo].itemIdentify;
     YTSegmentItemType itemType = [self getYoutubeRequestInfo].itemType;
 
-    UICollectionViewCell *viewCell = [self.baseCollectionView dequeueReusableCellWithReuseIdentifier:cell_identifier
-                                                                                        forIndexPath:indexPath];
-
+    UICollectionViewCell *viewCell = [self.baseCollectionView dequeueReusableCellWithReuseIdentifier:cell_identifier forIndexPath:indexPath];
 
     switch (itemType) {
         case YTSegmentItemVideo: {
