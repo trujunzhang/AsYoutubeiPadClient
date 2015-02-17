@@ -31,16 +31,17 @@
 
     _kittenSize = cellSize;
 
-    CGRect cellNodeRect = CGRectMake(0, 0, _kittenSize.width, [YTAsRowNode getFirstCellHeight]);
-    _asFirstVideoRowNode = [[YTAsFirstVideoRowNode alloc] initWithCellNodeRect:cellNodeRect withVideo:nodeVideo];
+    CGFloat cellY = 0;
+    CGRect cgRect = CGRectMake(0, cellY, _kittenSize.width, [YTAsRowNode getFirstCellHeight]);
+    _asFirstVideoRowNode = [[YTAsFirstVideoRowNode alloc] initWithCellNodeRect:cgRect withVideo:nodeVideo];
 
+    cellY = cgRect.origin.y + cgRect.size.height;
+    cgRect = CGRectMake(0, cellY, _kittenSize.width, COLLECTION_CELL_SECOND_HEIGHT);
+    _asSecondVideoRowNode = [[YTAsSecondVideoRowNode alloc] initWithCellNodeRect:cgRect withVideo:nodeVideo];
 
-    cellNodeRect = CGRectMake(0, [YTAsRowNode getFirstCellHeight], _kittenSize.width, COLLECTION_CELL_SECOND_HEIGHT);
-    _asSecondVideoRowNode = [[YTAsSecondVideoRowNode alloc] initWithCellNodeRect:cellNodeRect withVideo:nodeVideo];
-
-
-    cellNodeRect = CGRectMake(0, [YTAsRowNode getFirstCellHeight] + COLLECTION_CELL_SECOND_HEIGHT, _kittenSize.width, COLLECTION_CELL_THIRD_HEIGHT);
-    _asThirdVideoRowNode = [[YTAsThirdVideoRowNode alloc] initWithCellNodeRect:cellNodeRect withVideo:nodeVideo];
+    cellY = cgRect.origin.y + cgRect.size.height;
+    cgRect = CGRectMake(0, cellY, _kittenSize.width, COLLECTION_CELL_THIRD_HEIGHT);
+    _asThirdVideoRowNode = [[YTAsThirdVideoRowNode alloc] initWithCellNodeRect:cgRect withVideo:nodeVideo];
 
 
     [self addSubnode:_asFirstVideoRowNode];
@@ -58,14 +59,17 @@
 
 
 - (void)layout {
-    CGRect cellNodeRect = CGRectMake(0, 0, _kittenSize.width, [YTAsRowNode getFirstCellHeight]);
-    _asFirstVideoRowNode.frame = cellNodeRect;
+    CGFloat cellY = 0;
+    CGRect cgRect = CGRectMake(0, cellY, _kittenSize.width, [YTAsRowNode getFirstCellHeight]);
+    _asFirstVideoRowNode.frame = cgRect;
 
-    cellNodeRect = CGRectMake(0, [YTAsRowNode getFirstCellHeight], _kittenSize.width, COLLECTION_CELL_SECOND_HEIGHT);
-    _asSecondVideoRowNode.frame = cellNodeRect;
+    cellY = cgRect.origin.y + cgRect.size.height;
+    cgRect = CGRectMake(0, cellY, _kittenSize.width, COLLECTION_CELL_SECOND_HEIGHT);
+    _asSecondVideoRowNode.frame = cgRect;
 
-    cellNodeRect = CGRectMake(0, [YTAsRowNode getFirstCellHeight] + COLLECTION_CELL_SECOND_HEIGHT, _kittenSize.width, COLLECTION_CELL_THIRD_HEIGHT);
-    _asThirdVideoRowNode.frame = cellNodeRect;
+    cellY = cgRect.origin.y + cgRect.size.height;
+    cgRect = CGRectMake(0, cellY, _kittenSize.width, COLLECTION_CELL_THIRD_HEIGHT);
+    _asThirdVideoRowNode.frame = cgRect;
 }
 
 
