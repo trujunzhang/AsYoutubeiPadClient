@@ -58,7 +58,7 @@
 
 - (void)fetchActivityListByPageToken;
 
-- (void)updateAfterResponse:(NSArray *)array;
+- (void)updateAfterResponse:(NSArray *)array isReload:(BOOL)reload;
 
 - (void)fetchVideoListFromChannelWithChannelId:(NSString *)channelId;
 

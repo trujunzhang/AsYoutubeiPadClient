@@ -150,7 +150,7 @@
 
 
     YoutubeResponseBlock completion = ^(NSArray *array, NSObject *respObject) {
-        [self updateAfterResponse:array];
+        [self updateAfterResponse:array isReload:NO];
     };
     ErrorResponseBlock error = ^(NSError *error) {
     };
@@ -183,7 +183,7 @@
         return;
 
     YoutubeResponseBlock completion = ^(NSArray *array, NSObject *respObject) {
-        [self updateAfterResponse:array];
+        [self updateAfterResponse:array isReload:NO];
     };
     ErrorResponseBlock error = ^(NSError *error) {
         NSString *debug = @"debug";
@@ -194,7 +194,7 @@
 }
 
 
-- (void)updateAfterResponse:(NSArray *)array {
+- (void)updateAfterResponse:(NSArray *)array isReload:(BOOL)reload {
     [self.refreshControl endRefreshing];
     [self getYoutubeRequestInfo].isLoading = NO;
 
@@ -202,7 +202,7 @@
     NSLog(@"lastRowCount = %u", lastRowCount);
     [[self getYoutubeRequestInfo] appendNextPageData:array];
 
-    if(lastRowCount == 0) {
+    if(lastRowCount == 0 || reload) {
         [self.baseCollectionView reloadData];
     } else {
         [self reloadTableView:array withLastRowCount:lastRowCount];
@@ -248,7 +248,7 @@
 //   NSLog(@" *** fetchPlayListFromChannelByPageToken = %d", [[self getYoutubeRequestInfo] hasNextPage]);
 
     YoutubeResponseBlock completion = ^(NSArray *array, NSObject *respObject) {
-        [self updateAfterResponse:array];
+        [self updateAfterResponse:array isReload:NO];
     };
     ErrorResponseBlock error = ^(NSError *error) {
         NSString *debug = @"debug";
@@ -292,7 +292,7 @@
 //   NSLog(@" *** fetchPlayListByPageToken = %d", [[self getYoutubeRequestInfo] hasNextPage]);
 
     YoutubeResponseBlock completion = ^(NSArray *array, NSObject *respObject) {
-        [self updateAfterResponse:array];
+        [self updateAfterResponse:array isReload:NO];
     };
     ErrorResponseBlock error = ^(NSError *error) {
         NSString *debug = @"debug";

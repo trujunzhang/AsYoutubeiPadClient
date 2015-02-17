@@ -49,7 +49,7 @@
 
     // 2
     self.videosArray = [[NSMutableArray alloc] init];
-    [self updateAfterResponse:self.videosArray];
+    [self updateAfterResponse:self.videosArray isReload:YES];
 }
 
 - (void)editBarButtonItemAction:(id)sender {
@@ -70,7 +70,7 @@
     for (ABVideo *abVideo in videos) {
         [self.videosArray addObject:[YoutubeParser convertAbVideoToYoutubeVideo:abVideo]];
     }
-    [self updateAfterResponse:self.videosArray];
+    [self updateAfterResponse:self.videosArray isReload:NO];
 }
 
 - (void)didReceiveMemoryWarning {
