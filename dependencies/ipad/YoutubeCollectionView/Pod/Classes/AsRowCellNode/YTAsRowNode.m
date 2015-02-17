@@ -23,8 +23,20 @@
 }
 
 
+#pragma mark -
+#pragma mark
+
++ (CGFloat)getFirstCellHeight {
+    return 138;
+}
+
++ (void)setCellFirstHeight:(CGFloat)height {
+
+}
+
+
 + (CGFloat)collectionCellHeight {
-    return COLLECTION_CELL_FIRST_HEIGHT + COLLECTION_CELL_SECOND_HEIGHT + COLLECTION_CELL_THIRD_HEIGHT;
+    return [YTAsRowNode getFirstCellHeight] + COLLECTION_CELL_SECOND_HEIGHT + COLLECTION_CELL_THIRD_HEIGHT;
 }
 
 

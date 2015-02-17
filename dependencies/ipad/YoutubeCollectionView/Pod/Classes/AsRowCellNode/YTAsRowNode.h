@@ -19,7 +19,6 @@
 
 #import "AsyncDisplayKitStatic.h"
 
-static CGFloat COLLECTION_CELL_FIRST_HEIGHT = 138.0f; //w/h=1.333333333(480/360,120/90)
 static CGFloat COLLECTION_CELL_SECOND_HEIGHT = 56.0f;
 static CGFloat COLLECTION_CELL_THIRD_HEIGHT = 2.0f;
 
@@ -36,5 +35,11 @@ static CGFloat VIDEO_TITLE_PADDING_LEFT = 4.0f;
 
 - (instancetype)initWithCellNodeRect:(CGRect)cellRect withVideo:(id)nodeInfo;
 
++ (CGFloat)getFirstCellHeight;   //w/h=1.333333333(480/360,120/90)
+
++ (void)setCellFirstHeight:(CGFloat)height;
+
 + (CGFloat)collectionCellHeight;
+
+
 @end
