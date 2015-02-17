@@ -194,15 +194,14 @@
 
 - (void)setupPlayer:(UIView *)pView {
     self.videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:[YoutubeParser getWatchVideoId:_detailVideo]];
+    self.videoPlayerViewController.preferredVideoQualities = @[@(XCDYouTubeVideoQualityMedium360), @(XCDYouTubeVideoQualitySmall240)];
+
     self.videoPlayerViewController.moviePlayer.backgroundPlaybackEnabled = YES;
     [self.videoPlayerViewController presentInView:pView];
 
-
-    self.videoPlayerViewController.preferredVideoQualities = @[@(XCDYouTubeVideoQualityMedium360), @(XCDYouTubeVideoQualitySmall240)];
+    self.videoPlayerViewController.moviePlayer.shouldAutoplay = NO;
 
     [self.videoPlayerViewController.moviePlayer prepareToPlay];
-
-    self.videoPlayerViewController.moviePlayer.shouldAutoplay = true;
 }
 
 - (void)setupPlayer123:(UIView *)pView {

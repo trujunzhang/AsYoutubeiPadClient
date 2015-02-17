@@ -17,16 +17,28 @@
 
 - (void)setForSavingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString duration:(NSString *)duration {
     self.videoID = videoID;
-    self.videoTitle = [self encodeString:videoTitle];
-    self.channelTitle = [self encodeString:channelTitle];
-    self.min_string = [self encodeString:min_string];
+    self.videoTitle = videoTitle;
+    self.channelTitle = channelTitle;
+    self.min_string = min_string;
     self.likeCount = likeCount;
     self.dislikeCount = dislikeCount;
     self.viewCount = viewCount;
-    self.descriptionString = [self encodeString:descriptionString];
+    self.descriptionString = descriptionString;
     self.duration = duration;
     self.time = [self currentTime];
 }
+//- (void)setForSavingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString duration:(NSString *)duration {
+//    self.videoID = videoID;
+//    self.videoTitle = [self encodeString:videoTitle];
+//    self.channelTitle = [self encodeString:channelTitle];
+//    self.min_string = [self encodeString:min_string];
+//    self.likeCount = likeCount;
+//    self.dislikeCount = dislikeCount;
+//    self.viewCount = viewCount;
+//    self.descriptionString = [self encodeString:descriptionString];
+//    self.duration = duration;
+//    self.time = [self currentTime];
+//}
 
 - (instancetype)initForSavingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString duration:(NSString *)duration {
     self = [super init];
