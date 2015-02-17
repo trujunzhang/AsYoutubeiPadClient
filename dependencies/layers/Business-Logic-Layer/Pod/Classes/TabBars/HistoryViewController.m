@@ -44,7 +44,12 @@
 
 
 - (void)removeAllBarButtonItemAction:(id)sender {
+    // 1
     [SQPersistDB removeAllVideos];
+
+    // 2
+    self.videosArray = [[NSMutableArray alloc] init];
+    [self updateAfterResponse:self.videosArray];
 }
 
 - (void)editBarButtonItemAction:(id)sender {
