@@ -384,17 +384,6 @@
 
     return CGSizeMake(cellLength, 0);
 }
-//
-//- (CGFloat)getFirstCellHeight {
-//    if(_firstCellHeight) {
-//
-//    } else {
-//        CGFloat cellHeight = 360 * ([self cellSize].width) / 480;
-//        _firstCellHeight = [NSNumber numberWithFloat:cellHeight];
-//    }
-//
-//    return [_firstCellHeight floatValue];
-//}
 
 
 - (UIEdgeInsets)getUIEdgeInsetsForLayout {

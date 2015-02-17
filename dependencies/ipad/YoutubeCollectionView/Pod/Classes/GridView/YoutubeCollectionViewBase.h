@@ -80,8 +80,6 @@
 
 - (CGSize)cellSize;
 
-- (CGFloat)getFirstCellHeight;
-
 - (UIEdgeInsets)getUIEdgeInsetsForLayout;
 
 @property (nonatomic, strong) NSOperationQueue *nodeConstructionQueue;
