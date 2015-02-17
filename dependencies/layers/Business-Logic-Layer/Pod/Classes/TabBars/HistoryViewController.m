@@ -21,7 +21,33 @@
     self.numbersPerLineArray = [NSArray arrayWithObjects:@"3", @"4", nil];
     self.nextPageDelegate = self;
 
+    [self setupNavigation];
+
     [super viewDidLoad];
+}
+
+- (void)setupNavigation {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"remove all"]
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:self
+                                                                            action:@selector(removeAllBarButtonItemAction:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Edit"]
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:self
+                                                                            action:@selector(editBarButtonItemAction:)];
+
+}
+
+#pragma mark -
+#pragma mark - Provided acction methods
+
+
+- (void)removeAllBarButtonItemAction:(id)sender {
+
+}
+
+- (void)editBarButtonItemAction:(id)sender {
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
