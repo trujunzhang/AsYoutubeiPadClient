@@ -282,10 +282,7 @@
     ErrorResponseBlock error = ^(NSError *error) {
         NSString *debug = @"debug";
     };
-    [[GYoutubeHelper getInstance] fetchPlayListFromChannelWithRequestInfo:[self getYoutubeRequestInfo]
-                                                        completionHandler:completion
-                                                             errorHandler:error
-    ];
+    [[GYoutubeHelper getInstance] fetchPlayListFromChannelWithRequestInfo:[self getYoutubeRequestInfo] completionHandler:completion errorHandler:error];
 }
 
 
@@ -400,6 +397,20 @@
 }
 
 - (CGFloat)getFirstCellHeight {
+    NSNumber *firstCellHeight;
+
+    NSString *key = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) ? @"vertical" : @"horizontal";
+    NSString *keyHeight = [NSString stringWithFormat:@"%@_first_cell_height_%d", key, collectionWidth];
+
+    firstCellHeight = [YoutubeParser queryCacheWithKey:keyHeight];
+    if(firstCellHeight) {
+
+    } else {
+        CGFloat cellHeight = 360 * ([self cellSize].width) / 480;
+        firstCellHeight = [NSNumber numberWithFloat:cellHeight];
+        [YoutubeParser cacheWithKey:keyHeight withValue:firstCellHeight];
+    }
+
     return 138;
 }
 
