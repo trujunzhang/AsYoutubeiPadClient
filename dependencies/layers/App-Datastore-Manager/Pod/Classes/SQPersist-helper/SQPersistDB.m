@@ -34,8 +34,14 @@
 + (void)saveVideo:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString duration:(NSString *)duration {
     [[SQPDatabase sharedInstance] beginTransaction];
 
-    // Create Table at the first init (if tbale ne exists) :
-    ABVideo *abVideo = [ABVideo SQPCreateEntity];
+    ABVideo *abVideo = nil;
+
+    NSMutableArray *videos = [ABVideo SQPFetchAllWhere:[NSString stringWithFormat:@"videoID = '%@'", videoID]];
+    if([videos count] == 1) {
+        abVideo = videos[0];
+    } else {
+        abVideo = [ABVideo SQPCreateEntity];
+    }
 
     [abVideo
             setForSavingWithVideoID:videoID
@@ -48,6 +54,9 @@
                   descriptionString:descriptionString
                            duration:duration
     ];
+
+    // INSERT or UPDATE Object :
+    [abVideo SQPSaveEntity];
 
 
     [[SQPDatabase sharedInstance] commitTransaction];
