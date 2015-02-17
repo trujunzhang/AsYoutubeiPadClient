@@ -7,7 +7,6 @@
 //
 
 #import "HistoryViewController.h"
-#import "MobileDB.h"
 #import "YoutubeParser.h"
 
 @interface HistoryViewController ()<YoutubeCollectionNextPageDelegate>
@@ -34,15 +33,15 @@
     self.videosArray = [[NSMutableArray alloc] init];
 
     // Do any additional setup after loading the view.
-    VideoResultsBlock videosBlock = ^(NSArray *videos) {
-        for (ABVideo *abVideo in videos) {
-            [self.videosArray addObject:[YoutubeParser convertAbVideoToYoutubeVideo:abVideo]];
-        }
-        [self updateAfterResponse:self.videosArray];
-
-        NSString *debug = @"debug";
-    };
-    [[MobileDB dbInstance] allVideos:videosBlock];
+//    VideoResultsBlock videosBlock = ^(NSArray *videos) {
+//        for (ABVideo *abVideo in videos) {
+//            [self.videosArray addObject:[YoutubeParser convertAbVideoToYoutubeVideo:abVideo]];
+//        }
+//        [self updateAfterResponse:self.videosArray];
+//
+//        NSString *debug = @"debug";
+//    };
+//    [[MobileDB dbInstance] allVideos:videosBlock];
 }
 
 - (void)didReceiveMemoryWarning {

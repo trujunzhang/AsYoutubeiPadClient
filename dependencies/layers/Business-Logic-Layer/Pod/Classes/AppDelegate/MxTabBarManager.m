@@ -1,4 +1,3 @@
-#import <google-api-services-youtube/GYoutubeHelper.h>
 #import "MxTabBarManager.h"
 #import "YTVideoDetailViewController.h"
 #import "LeftMenuViewController.h"
@@ -6,7 +5,8 @@
 #import "ClientUIHelper.h"
 #import "CollectionConstant.h"
 #import "YoutubeParser.h"
-#import "ABVideo.h"
+#import "SQPersistDB.h"
+#import "GYoutubeHelper.h"
 
 
 @interface MxTabBarManager ()<GYoutubeHelperDelegate> {
@@ -41,17 +41,16 @@
 #pragma mark video local store.
 
 - (void)saveVideo:(YTYouTubeVideoCache *)videoInfo {
-    ABVideo *abVideo = [ABVideo SQPCreateEntity];
-    [abVideo
-            initForSavingWithVideoID:[YoutubeParser getWatchVideoId:videoInfo]
-                          videoTitle:[YoutubeParser getVideoSnippetTitle:videoInfo]
-                        channelTitle:[YoutubeParser getVideoSnippetChannelTitle:videoInfo]
-                          min_string:[YoutubeParser getVideoSnippetChannelPublishedAt:videoInfo]
-                           likeCount:[YoutubeParser getVideoLikeCount:videoInfo]
-                        dislikeCount:[YoutubeParser getVideoDislikeCount:videoInfo]
-                           viewCount:[YoutubeParser getVideoWatchCount:videoInfo]
-                   descriptionString:[YoutubeParser getVideoDescription:videoInfo]
-                            duration:videoInfo.contentDetails.duration
+    [SQPersistDB
+            saveVideo:[YoutubeParser getWatchVideoId:videoInfo]
+           videoTitle:[YoutubeParser getVideoSnippetTitle:videoInfo]
+         channelTitle:[YoutubeParser getVideoSnippetChannelTitle:videoInfo]
+           min_string:[YoutubeParser getVideoSnippetChannelPublishedAt:videoInfo]
+            likeCount:[YoutubeParser getVideoLikeCount:videoInfo]
+         dislikeCount:[YoutubeParser getVideoDislikeCount:videoInfo]
+            viewCount:[YoutubeParser getVideoWatchCount:videoInfo]
+    descriptionString:[YoutubeParser getVideoDescription:videoInfo]
+             duration:videoInfo.contentDetails.duration
     ];
 }
 

@@ -18,6 +18,7 @@
 #import "DebugUtils.h"
 #import "CollectionConstant.h"
 #import "PlayerEventLogger.h"
+#import "SQPersistDB.h"
 
 
 @interface MxAsTubeAppDelegate ()<UIApplicationDelegate, UITabBarControllerDelegate, SWRevealViewControllerDelegate> {
@@ -44,6 +45,8 @@
     [DebugUtils listAppHomeInfo];
 
     [YTCacheImplement removeAllCacheDiskObjects];
+
+    [SQPersistDB setupSqliteDB];
 
     //1
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;

@@ -31,11 +31,23 @@
 #pragma mark -
 #pragma mark
 
-- (void)saveVideo:(ABVideo *)abVideo {
++ (void)saveVideo:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString duration:(NSString *)duration {
     [[SQPDatabase sharedInstance] beginTransaction];
 
     // Create Table at the first init (if tbale ne exists) :
-//    _userJohn = [ABVideo SQPCreateEntity];
+    ABVideo *abVideo = [ABVideo SQPCreateEntity];
+
+    [abVideo
+            setForSavingWithVideoID:videoID
+                         videoTitle:videoTitle
+                       channelTitle:channelTitle
+                         min_string:min_string
+                          likeCount:likeCount
+                       dislikeCount:dislikeCount
+                          viewCount:viewCount
+                  descriptionString:descriptionString
+                           duration:duration
+    ];
 
 
     [[SQPDatabase sharedInstance] commitTransaction];
