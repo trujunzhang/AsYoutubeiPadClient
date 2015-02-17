@@ -332,20 +332,38 @@
     NSString *key = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) ? @"vertical" : @"horizontal";
 
     NSString *keyWidth = [NSString stringWithFormat:@"%@_width_%d", key, collectionWidth];
-    NSString *keyHeight = [NSString stringWithFormat:@"%@_height_%d", key, collectionWidth];
 
     NSNumber *valueWidth = [YoutubeParser queryCacheWithKey:keyWidth];
-    NSNumber *valueHeight = [YoutubeParser queryCacheWithKey:keyHeight];
-    if(valueWidth && valueHeight) {
-        size = CGSizeMake([valueWidth floatValue], [valueHeight floatValue]);
+    if(valueWidth) {
+        size = CGSizeMake([valueWidth floatValue], 0);
     } else {
         size = [self makeCellSize:[UIApplication sharedApplication].statusBarOrientation withCollectionWidth:collectionWidth];
         [YoutubeParser cacheWithKey:keyWidth withValue:[NSNumber numberWithFloat:size.width]];
-        [YoutubeParser cacheWithKey:keyHeight withValue:[NSNumber numberWithFloat:size.height]];
     }
 
     return size;
 }
+
+//- (CGSize)cellSize {
+//    CGSize size;
+//
+//    NSString *key = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) ? @"vertical" : @"horizontal";
+//
+//    NSString *keyWidth = [NSString stringWithFormat:@"%@_width_%d", key, collectionWidth];
+//    NSString *keyHeight = [NSString stringWithFormat:@"%@_height_%d", key, collectionWidth];
+//
+//    NSNumber *valueWidth = [YoutubeParser queryCacheWithKey:keyWidth];
+//    NSNumber *valueHeight = [YoutubeParser queryCacheWithKey:keyHeight];
+//    if(valueWidth && valueHeight) {
+//        size = CGSizeMake([valueWidth floatValue], [valueHeight floatValue]);
+//    } else {
+//        size = [self makeCellSize:[UIApplication sharedApplication].statusBarOrientation withCollectionWidth:collectionWidth];
+//        [YoutubeParser cacheWithKey:keyWidth withValue:[NSNumber numberWithFloat:size.width]];
+//        [YoutubeParser cacheWithKey:keyHeight withValue:[NSNumber numberWithFloat:size.height]];
+//    }
+//
+//    return size;
+//}
 
 
 - (CGSize)makeCellSize:(UIInterfaceOrientation)orientation withCollectionWidth:(CGFloat)collectionWidth {
