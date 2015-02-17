@@ -199,7 +199,7 @@
     self.videoPlayerViewController.moviePlayer.backgroundPlaybackEnabled = YES;
     [self.videoPlayerViewController presentInView:pView];
 
-    self.videoPlayerViewController.moviePlayer.shouldAutoplay = NO;
+    self.videoPlayerViewController.moviePlayer.shouldAutoplay = YES;
 
     [self.videoPlayerViewController.moviePlayer prepareToPlay];
 }
