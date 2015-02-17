@@ -103,7 +103,8 @@
 
     if(itemType == YTSegmentItemVideo) {
         YTYouTubeVideoCache *video = [[self getYoutubeRequestInfo].videoList objectAtIndex:indexPath.row];
-        YTAsCollectionVideoCellNode *videoCellNode = [[YTAsCollectionVideoCellNode alloc] initWithCellNodeOfSize:[self cellSize] firstCellHeight:138 withVideo:video];
+        YTAsCollectionVideoCellNode *videoCellNode =
+                [[YTAsCollectionVideoCellNode alloc] initWithCellNodeOfSize:[self cellSize] firstCellHeight:[self getFirstCellHeight] withVideo:video];
 
         node = videoCellNode;
     }

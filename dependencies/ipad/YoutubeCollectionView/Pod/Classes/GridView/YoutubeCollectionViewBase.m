@@ -394,9 +394,13 @@
 
     CGFloat cellLength = usableSpace / columnCount;
 
-    CGFloat cellHeight = [YTAsRowNode collectionCellHeight:138];
+    CGFloat cellHeight = [YTAsRowNode collectionCellHeight:[self getFirstCellHeight]];
 
     return CGSizeMake(cellLength, cellHeight);
+}
+
+- (CGFloat)getFirstCellHeight {
+    return 138;
 }
 
 
