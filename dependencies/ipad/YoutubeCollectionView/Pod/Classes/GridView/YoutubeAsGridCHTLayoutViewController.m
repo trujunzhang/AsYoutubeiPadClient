@@ -11,10 +11,6 @@
 
 #import "YTAsCollectionVideoCellNode.h"
 
-#import "YoutubeFooterView.h"
-
-#define ASGRIDROWCELL YTAsCollectionVideoCellNode
-
 
 @interface YoutubeAsGridCHTLayoutViewController ()<ASCollectionViewDataSource, ASCollectionViewDelegate>
 @property (strong, nonatomic) ASCollectionView *collectionView;
@@ -107,7 +103,7 @@
 
     if(itemType == YTSegmentItemVideo) {
         YTYouTubeVideoCache *video = [[self getYoutubeRequestInfo].videoList objectAtIndex:indexPath.row];
-        ASGRIDROWCELL *videoCellNode = [[ASGRIDROWCELL alloc] initWithCellNodeOfSize:[self cellSize] withVideo:video];
+        YTAsCollectionVideoCellNode *videoCellNode = [[YTAsCollectionVideoCellNode alloc] initWithCellNodeOfSize:[self cellSize] withVideo:video];
 
         node = videoCellNode;
     }
