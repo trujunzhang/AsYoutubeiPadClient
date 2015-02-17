@@ -16,5 +16,5 @@
 
 + (NSMutableArray *)fetchAllVideos;
 
-+ (void)removeAllVideos:(NSMutableArray *)array;
++ (void)removeAllVideos;
 @end

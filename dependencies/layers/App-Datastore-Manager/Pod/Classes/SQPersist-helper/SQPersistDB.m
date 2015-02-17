@@ -72,8 +72,19 @@
     return videos;
 }
 
-+ (void)removeAllVideos:(NSMutableArray *)videosArray {
++ (void)removeAllVideos {
+    [[SQPDatabase sharedInstance] beginTransaction];
 
+    NSArray *videos = [SQPersistDB fetchAllVideos];
+    for (ABVideo *abVideo in videos) {
+        abVideo.deleteObject = YES;
+        [abVideo SQPSaveEntity];
+    }
+
+
+    [ABVideo SQPFetchAllOrderBy:@"time DESC"];
+
+    [[SQPDatabase sharedInstance] commitTransaction];
 
 }
 @end

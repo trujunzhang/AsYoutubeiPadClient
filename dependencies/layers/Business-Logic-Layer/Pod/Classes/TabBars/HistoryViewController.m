@@ -44,7 +44,7 @@
 
 
 - (void)removeAllBarButtonItemAction:(id)sender {
-    [SQPersistDB removeAllVideos:self.videosArray];
+    [SQPersistDB removeAllVideos];
 }
 
 - (void)editBarButtonItemAction:(id)sender {
