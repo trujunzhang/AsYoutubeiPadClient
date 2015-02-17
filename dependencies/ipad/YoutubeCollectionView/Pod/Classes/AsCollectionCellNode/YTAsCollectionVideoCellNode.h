@@ -12,6 +12,6 @@
 @interface YTAsCollectionVideoCellNode : ASCellNode
 
 
-- (instancetype)initWithCellNodeOfSize:(CGSize)cellSize firstCellHeight:(CGFloat)firstCellHeight withVideo:(id)nodeVideo;
+- (instancetype)initWithCellNodeOfSize:(CGSize)cellSize withVideo:(id)nodeVideo;
 
 @end

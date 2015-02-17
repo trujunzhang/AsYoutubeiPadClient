@@ -133,36 +133,6 @@
 }
 
 
-- (UICollectionViewCell *)collectionCellAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cell_identifier = [self getYoutubeRequestInfo].itemIdentify;
-    YTSegmentItemType itemType = [self getYoutubeRequestInfo].itemType;
-
-    UICollectionViewCell *viewCell = [self.baseCollectionView dequeueReusableCellWithReuseIdentifier:cell_identifier forIndexPath:indexPath];
-
-    switch (itemType) {
-        case YTSegmentItemVideo: {
-            YTYouTubeVideoCache *video = [[self getYoutubeRequestInfo].videoList objectAtIndex:indexPath.row];
-            CollectionVideoReuseCell *gridViewVideoCell = (CollectionVideoReuseCell *)viewCell;
-            [gridViewVideoCell bind:video
-                   placeholderImage:nil
-                           cellSize:[self cellSize]
-              nodeConstructionQueue:self.nodeConstructionQueue];
-        }
-            break;
-        case YTSegmentItemPlaylist: {
-            YTYouTubePlayList *video = [[self getYoutubeRequestInfo].videoList objectAtIndex:indexPath.row];
-            YTGridViewPlaylistCell *gridViewVideoCell = (YTGridViewPlaylistCell *)viewCell;
-            [gridViewVideoCell bind:video
-                   placeholderImage:nil];
-        }
-            break;
-    }
-
-
-    return viewCell;
-}
-
-
 #pragma mark -
 #pragma mark Search events
 
@@ -392,21 +362,21 @@
 
     CGFloat cellLength = usableSpace / columnCount;
 
-    CGFloat cellHeight = [YTAsRowNode collectionCellHeight:[self getFirstCellHeight]];
+//    CGFloat cellHeight = [YTAsRowNode collectionCellHeight:[self getFirstCellHeight]];
 
-    return CGSizeMake(cellLength, cellHeight);
+    return CGSizeMake(cellLength, 0);
 }
-
-- (CGFloat)getFirstCellHeight {
-    if(_firstCellHeight) {
-
-    } else {
-        CGFloat cellHeight = 360 * ([self cellSize].width) / 480;
-        _firstCellHeight = [NSNumber numberWithFloat:cellHeight];
-    }
-
-    return [_firstCellHeight floatValue];
-}
+//
+//- (CGFloat)getFirstCellHeight {
+//    if(_firstCellHeight) {
+//
+//    } else {
+//        CGFloat cellHeight = 360 * ([self cellSize].width) / 480;
+//        _firstCellHeight = [NSNumber numberWithFloat:cellHeight];
+//    }
+//
+//    return [_firstCellHeight floatValue];
+//}
 
 
 - (UIEdgeInsets)getUIEdgeInsetsForLayout {

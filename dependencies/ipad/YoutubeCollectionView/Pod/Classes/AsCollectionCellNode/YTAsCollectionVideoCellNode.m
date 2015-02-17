@@ -18,6 +18,7 @@
     YTAsThirdVideoRowNode *_asThirdVideoRowNode;
 
     CGFloat _firstCellHeight;
+
 }
 @end
 
@@ -27,12 +28,12 @@
 }
 
 
-- (instancetype)initWithCellNodeOfSize:(CGSize)cellSize firstCellHeight:(CGFloat)firstCellHeight withVideo:(id)nodeVideo {
+- (instancetype)initWithCellNodeOfSize:(CGSize)cellSize withVideo:(id)nodeVideo {
     if(!(self = [super init]))
         return nil;
 
     _kittenSize = cellSize;
-    _firstCellHeight = firstCellHeight;
+    _firstCellHeight = 360 * (cellSize.width) / 480;
 
     CGFloat cellY = 0;
     CGRect cgRect = CGRectMake(0, cellY, _kittenSize.width, _firstCellHeight);
@@ -46,6 +47,7 @@
     cgRect = CGRectMake(0, cellY, _kittenSize.width, COLLECTION_CELL_THIRD_HEIGHT);
     _asThirdVideoRowNode = [[YTAsThirdVideoRowNode alloc] initWithCellNodeRect:cgRect withVideo:nodeVideo];
 
+    _kittenSize = CGSizeMake(_kittenSize.width, [YTAsRowNode collectionCellHeight:_firstCellHeight]);
 
     [self addSubnode:_asFirstVideoRowNode];
     [self addSubnode:_asSecondVideoRowNode];

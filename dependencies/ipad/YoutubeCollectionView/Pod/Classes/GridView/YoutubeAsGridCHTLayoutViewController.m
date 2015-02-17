@@ -104,7 +104,7 @@
     if(itemType == YTSegmentItemVideo) {
         YTYouTubeVideoCache *video = [[self getYoutubeRequestInfo].videoList objectAtIndex:indexPath.row];
         YTAsCollectionVideoCellNode *videoCellNode =
-                [[YTAsCollectionVideoCellNode alloc] initWithCellNodeOfSize:[self cellSize] firstCellHeight:[self getFirstCellHeight] withVideo:video];
+                [[YTAsCollectionVideoCellNode alloc] initWithCellNodeOfSize:[self cellSize] withVideo:video];
 
         node = videoCellNode;
     }
@@ -137,18 +137,6 @@
 //    }
 
     return reusableView;
-}
-
-
-#pragma mark -
-#pragma mark  UICollectionViewDelegate
-
-
-#pragma mark - CHTCollectionViewDelegateWaterfallLayout
-
-
-- (CGSize)collectionWaterfallView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [self cellSize];
 }
 
 
