@@ -26,17 +26,9 @@
 #pragma mark -
 #pragma mark
 
-+ (CGFloat)getFirstCellHeight {
-    return 138;
-}
 
-+ (void)setCellFirstHeight:(CGFloat)height {
-
-}
-
-
-+ (CGFloat)collectionCellHeight {
-    return [YTAsRowNode getFirstCellHeight] + COLLECTION_CELL_SECOND_HEIGHT + COLLECTION_CELL_THIRD_HEIGHT;
++ (CGFloat)collectionCellHeight:(CGFloat)firstCellHeight {
+    return firstCellHeight + COLLECTION_CELL_SECOND_HEIGHT + COLLECTION_CELL_THIRD_HEIGHT;
 }
 
 
