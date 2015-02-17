@@ -200,7 +200,12 @@
 
     NSUInteger lastRowCount = [self getYoutubeRequestInfo].videoList.count;
     NSLog(@"lastRowCount = %u", lastRowCount);
-    [[self getYoutubeRequestInfo] appendNextPageData:array];
+
+    if(reload) {
+        [[self getYoutubeRequestInfo] resetVideoList];
+    } else {
+        [[self getYoutubeRequestInfo] appendNextPageData:array];
+    }
 
     if(lastRowCount == 0 || reload) {
         [self.baseCollectionView reloadData];

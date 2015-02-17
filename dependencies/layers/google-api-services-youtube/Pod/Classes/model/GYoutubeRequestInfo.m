@@ -178,8 +178,12 @@
 
 
 - (void)resetInfo {
-    self.videoList = [[NSMutableArray alloc] init];
+    [self resetVideoList];
     self.hasLoadingMore = YES;
+}
+
+- (void)resetVideoList {
+    self.videoList = [[NSMutableArray alloc] init];
 }
 
 
