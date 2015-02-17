@@ -60,7 +60,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self initViewControllers];
 
-//    [self setupPlayer:self.videoPlayViewContainer];  //used
+    [self setupPlayer:self.videoPlayViewContainer];  //used
 
     self.title = [YoutubeParser getVideoSnippetTitle:_detailVideo];
 

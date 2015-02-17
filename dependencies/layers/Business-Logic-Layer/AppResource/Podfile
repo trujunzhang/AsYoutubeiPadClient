@@ -18,7 +18,7 @@ target 'mxAsTubeiPad', :exclusive => true do
   pod 'SWRevealViewController'
   pod 'ISMemoryCache'
   pod 'EGOCache'
-  pod 'ABSQLite'
+  pod 'SQPersist'
 
   # pod 'AsyncDisplayKit', :git => '/Volumes/Home/wanghaogithub720/cocoapods/Cocoapods_Libraries/AsyncDisplayKit', :commit => '5cb261b'
   pod 'AsyncDisplayKit'

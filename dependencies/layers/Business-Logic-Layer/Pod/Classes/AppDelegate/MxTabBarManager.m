@@ -5,8 +5,8 @@
 #import "LeftRevealHelper.h"
 #import "ClientUIHelper.h"
 #import "CollectionConstant.h"
-#import "MobileDB.h"
 #import "YoutubeParser.h"
+#import "ABVideo.h"
 
 
 @interface MxTabBarManager ()<GYoutubeHelperDelegate> {
@@ -41,17 +41,17 @@
 #pragma mark video local store.
 
 - (void)saveVideo:(YTYouTubeVideoCache *)videoInfo {
-    [[MobileDB dbInstance] saveVideo:
-            [[ABVideo alloc] initForSavingWithVideoID:[YoutubeParser getWatchVideoId:videoInfo]
-                                           videoTitle:[YoutubeParser getVideoSnippetTitle:videoInfo]
-                                         channelTitle:[YoutubeParser getVideoSnippetChannelTitle:videoInfo]
-                                           min_string:[YoutubeParser getVideoSnippetChannelPublishedAt:videoInfo]
-                                            likeCount:[YoutubeParser getVideoLikeCount:videoInfo]
-                                         dislikeCount:[YoutubeParser getVideoDislikeCount:videoInfo]
-                                            viewCount:[YoutubeParser getVideoWatchCount:videoInfo]
-                                    descriptionString:[YoutubeParser getVideoDescription:videoInfo]
-                                             duration:videoInfo.contentDetails.duration
-            ]
+    ABVideo *abVideo = [ABVideo SQPCreateEntity];
+    [abVideo
+            initForSavingWithVideoID:[YoutubeParser getWatchVideoId:videoInfo]
+                          videoTitle:[YoutubeParser getVideoSnippetTitle:videoInfo]
+                        channelTitle:[YoutubeParser getVideoSnippetChannelTitle:videoInfo]
+                          min_string:[YoutubeParser getVideoSnippetChannelPublishedAt:videoInfo]
+                           likeCount:[YoutubeParser getVideoLikeCount:videoInfo]
+                        dislikeCount:[YoutubeParser getVideoDislikeCount:videoInfo]
+                           viewCount:[YoutubeParser getVideoWatchCount:videoInfo]
+                   descriptionString:[YoutubeParser getVideoDescription:videoInfo]
+                            duration:videoInfo.contentDetails.duration
     ];
 }
 

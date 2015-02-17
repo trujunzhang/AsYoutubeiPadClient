@@ -52,7 +52,7 @@
     tabBarController.tabBar.tintColor = [UIColor redColor];
     tabBarController.selectedIndex = 0;// default is Subscription View Controller.
 
-    tabBarController.selectedIndex = 2; //test
+    //tabBarController.selectedIndex = 2; //test
     if(!hasShowLeftMenu) {
         tabBarController.selectedIndex = 1; //test
     }

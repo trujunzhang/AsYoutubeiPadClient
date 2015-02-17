@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "SQPObject.h"
 
-@interface ABVideo : NSObject
+@interface ABVideo : SQPObject
 
 @property (strong, nonatomic) NSString *videoID;
 
@@ -17,6 +18,8 @@
 
 @property (strong, nonatomic) NSString *descriptionString;
 @property (strong, nonatomic) NSString *time;
+
+- (void)setForSavingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString duration:(NSString *)duration;
 
 - (instancetype)initForSavingWithVideoID:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString duration:(NSString *)duration;
 

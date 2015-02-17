@@ -33,7 +33,7 @@
 
     _cellWidth = cellSize.width;
 
-    _firstCellHeight = 360 * (cellSize.width) / 480;
+    _firstCellHeight = 180 * (cellSize.width) / 320;
 
     CGFloat cellY = 0;
     CGRect cgRect = CGRectMake(0, cellY, _cellWidth, _firstCellHeight);

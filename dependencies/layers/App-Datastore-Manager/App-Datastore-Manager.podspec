@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
   s.resources = "Pod/Assets/*/*.*"
   s.requires_arc = true
 
-  s.subspec 'sqlite-helper' do |sub|
-    sub.source_files = 'Pod/Classes/sqlite-helper/*.{h,m}'
+  s.subspec 'SQPersist-helper' do |sub|
+    sub.source_files = 'Pod/Classes/SQPersist-helper/*.{h,m}'
   end
 
   s.subspec 'Data' do |sub|
