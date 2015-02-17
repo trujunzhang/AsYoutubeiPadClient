@@ -12,4 +12,7 @@
 + (void)setupSqliteDB;
 
 + (void)saveVideo:(NSString *)videoID videoTitle:(NSString *)videoTitle channelTitle:(NSString *)channelTitle min_string:(NSString *)min_string likeCount:(NSString *)likeCount dislikeCount:(NSString *)dislikeCount viewCount:(NSString *)viewCount descriptionString:(NSString *)descriptionString duration:(NSString *)duration;
+
+
++ (NSMutableArray *)FetchAllVideos;
 @end

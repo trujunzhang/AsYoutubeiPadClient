@@ -8,6 +8,8 @@
 
 #import "HistoryViewController.h"
 #import "YoutubeParser.h"
+#import "SQPersistDB.h"
+#import "ABVideo.h"
 
 @interface HistoryViewController ()<YoutubeCollectionNextPageDelegate>
 @property (nonatomic, strong) NSMutableArray *videosArray;
@@ -31,17 +33,12 @@
 
 - (void)readAllVideosFromDB {
     self.videosArray = [[NSMutableArray alloc] init];
+    NSArray *videos = [SQPersistDB FetchAllVideos];
 
-    // Do any additional setup after loading the view.
-//    VideoResultsBlock videosBlock = ^(NSArray *videos) {
-//        for (ABVideo *abVideo in videos) {
-//            [self.videosArray addObject:[YoutubeParser convertAbVideoToYoutubeVideo:abVideo]];
-//        }
-//        [self updateAfterResponse:self.videosArray];
-//
-//        NSString *debug = @"debug";
-//    };
-//    [[MobileDB dbInstance] allVideos:videosBlock];
+    for (ABVideo *abVideo in videos) {
+        [self.videosArray addObject:[YoutubeParser convertAbVideoToYoutubeVideo:abVideo]];
+    }
+    [self updateAfterResponse:self.videosArray];
 }
 
 - (void)didReceiveMemoryWarning {
