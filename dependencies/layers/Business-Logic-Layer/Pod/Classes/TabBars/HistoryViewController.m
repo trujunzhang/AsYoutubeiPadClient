@@ -27,14 +27,15 @@
 }
 
 - (void)setupNavigation {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"remove all"]
-                                                                             style:UIBarButtonItemStyleBordered
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear All"
+                                                                             style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(removeAllBarButtonItemAction:)];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Edit"]
-                                                                             style:UIBarButtonItemStyleBordered
-                                                                            target:self
-                                                                            action:@selector(editBarButtonItemAction:)];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:@selector(editBarButtonItemAction:)];
 
 }
 
