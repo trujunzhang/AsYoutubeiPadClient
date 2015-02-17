@@ -62,7 +62,7 @@
     [[SQPDatabase sharedInstance] commitTransaction];
 }
 
-+ (NSMutableArray *)FetchAllVideos {
++ (NSMutableArray *)fetchAllVideos {
     [[SQPDatabase sharedInstance] beginTransaction];
 
     NSMutableArray *videos = [ABVideo SQPFetchAllOrderBy:@"time DESC"];
@@ -72,4 +72,8 @@
     return videos;
 }
 
++ (void)removeAllVideos:(NSMutableArray *)videosArray {
+
+
+}
 @end

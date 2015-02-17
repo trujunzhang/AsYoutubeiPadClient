@@ -44,7 +44,7 @@
 
 
 - (void)removeAllBarButtonItemAction:(id)sender {
-
+    [SQPersistDB removeAllVideos:self.videosArray];
 }
 
 - (void)editBarButtonItemAction:(id)sender {
@@ -60,7 +60,7 @@
 
 - (void)readAllVideosFromDB {
     self.videosArray = [[NSMutableArray alloc] init];
-    NSArray *videos = [SQPersistDB FetchAllVideos];
+    NSArray *videos = [SQPersistDB fetchAllVideos];
 
     for (ABVideo *abVideo in videos) {
         [self.videosArray addObject:[YoutubeParser convertAbVideoToYoutubeVideo:abVideo]];
